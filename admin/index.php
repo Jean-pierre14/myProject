@@ -7,8 +7,8 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>454
-        <?php print $_SESSION['username'] .''.$_SESSION['id'];?>
+    <title>ERC/
+        <?php print $_SESSION['username'];?>
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'>
     <link rel="stylesheet" href="../public/css/all.min.css">
@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    <?php include('../includes/loading.php');?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
             <!--
@@ -35,9 +36,10 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                        454
+                        ERC
                     </a>
                 </div>
+
                 <ul class="nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.php">
@@ -91,10 +93,9 @@
             </div>
         </div>
         <div class="main-panel">
-            <!-- Navbar -->
             <nav class="navbar navbar-expand-lg bg-light p-0" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php"> Dashboard </a>
+                    <a class="navbar-brand color-hero" href="index.php"> Dashboard <i class="fas fa-home" aria-hidden="true"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -103,7 +104,7 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navigation">
                         <ul class="nav navbar-nav mr-auto">
                             <li class="nav-item">
-                                <a href="index.php" class="nav-link" data-toggle="dropdown">
+                                <a href="index.php" class="nav-link color-hero" data-toggle="dropdown">
                                     <i class="nc-icon nc-palette"></i>
                                     <span class="d-lg-none">Dashboard</span>
                                 </a>
@@ -124,11 +125,11 @@
                     </div>
                 </div>
             </nav>
-            <!-- End Navbar -->
+            
             <div class="content">
                 <div class="container-fluid p-0">
                     <div class="main-content">
-                        <nav>
+                        <nav class="show-lg">
                             <span>
                                 <img src="../assets/images/gun.png" alt="">
                             </span>
@@ -138,7 +139,6 @@
                                 <li><a href="#" class="bg-pink">Weddings</a></li>
                             </ul>
                         </nav>
-
                         <div class="dashboard">
                             <div class="row p-0 mt-3">
                                 <div class="col-md-4">
@@ -395,8 +395,6 @@
                     </a>
                 </li>
 
-                <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
                 <li class="button-container">
                     <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i
                             class="fa fa-twitter"></i> · sniper</button>
@@ -406,7 +404,6 @@
             </ul>
         </div>
     </div>
-
 </body>
 <script src="../public/bootstrap/jquery.min.js" type="text/javascript"></script>
 <script src="../public/bootstrap/popper.min.js" type="text/javascript"></script>

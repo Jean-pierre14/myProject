@@ -16,6 +16,7 @@ include("lock.php");
     <link rel="stylesheet" href="../public/semantic/semantic.min.css">
     <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet">
     <link href="../assets/css/demo.css" rel="stylesheet">
+    <link rel="stylesheet" href="../public/sass/index.style.min.css">
     <script src="../public/bootstrap/jquery.min.js"></script>
     <script src="../public/bootstrap/popper.min.js"></script>
     <script src="../public/bootstrap/bootstrap.min.js"></script>
@@ -24,6 +25,7 @@ include("lock.php");
 </head>
 
 <body>
+<?php include('../includes/loading.php');?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
             <!--
