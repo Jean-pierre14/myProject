@@ -128,9 +128,96 @@
             <div class="content">
                 <div class="container-fluid p-0">
                     <div class="main-content">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nam maiores blanditiis voluptates laudantium fuga voluptas, facere cupiditate, magnam laboriosam minima ex, enim nisi sed nostrum accusantium unde qui pariatur!
-                        </p>
+                        <nav>
+                            <span>
+                                <img src="../assets/images/gun.png" alt="">
+                            </span>
+                            <ul>
+                                <li><a href="#" class="bg-primary">Members</a></li>
+                                <li><a href="#" class="bg-hero">Pastors</a></li>
+                                <li><a href="#" class="bg-pink">Weddings</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="dashboard">
+                            <div class="row p-0 mt-3">
+                                <div class="col-md-4">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span>
+                                                <b>Total of all Users</b>
+                                            </span>
+                                            <span>
+                                                <small>3000</small>
+                                            </span>
+                                        </p>
+                                        <a href="#" class="btn btn-sm bg-primary">View more</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span>
+                                                <b>Pastors</b>
+                                            </span>
+                                            <span>
+                                                23
+                                            </span>
+                                        </p>
+                                        <a href="#" class="btn btn-sm bg-hero">View more</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span>
+                                                <b>Pastors</b>
+                                            </span>
+                                            <span>
+                                                23
+                                            </span>
+                                        </p>
+                                        <a href="#" class="btn btn-sm btn-primary">View more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-8 col-lg-8 col-sm-12">
+                                    <div class="shadow box-dashboard">
+                                        <h2 class="color-hero">Programmes</h2>
+                                        <table class="table table-sm table-hover table-sprided">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Address</th>
+                                                    <th>Phone</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Hadassa</td>
+                                                    <td>Goma avenu des volcans</td>
+                                                    <td>09999999999</td>
+                                                    <td>
+                                                        <div class="btn-group delete">
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-lg-4 col-sm-12">
+                                    <div class="shadow box-dashboard">
+                                        <h2 class="color-hero">Last users</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
