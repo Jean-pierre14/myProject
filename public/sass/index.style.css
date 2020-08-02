@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-content {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+}
