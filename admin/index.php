@@ -171,30 +171,77 @@
                                     <div class="shadow box-dashboard">
                                         <p class="d-flex justify-content-between align-items-center">
                                             <span>
-                                                <b>Pastors</b>
+                                                <b>Weddings</b>
                                             </span>
                                             <span>
-                                                23
+                                                200
                                             </span>
                                         </p>
-                                        <a href="#" class="btn btn-sm btn-primary">View more</a>
+                                        <a href="#" class="btn btn-sm bg-pink">View more</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row mt-3">
                                 <div class="col-md-8 col-lg-8 col-sm-12">
                                     <div class="shadow box-dashboard">
-                                        <h2 class="color-hero">Programmes</h2>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <h2 class="color-hero">Programmes</h2>
+                                            <a href="#" class="btn shadow"><i class="fa fa-arrow-right color-hero"></i></a>
+                                        </div>
                                         <table class="table table-sm table-hover table-sprided">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Address</th>
+                                                    <th>Full name</th>
+                                                    <th>E-mail</th>
                                                     <th>Phone</th>
                                                     <th></th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                <tr>
+                                                    <td>Hadassa</td>
+                                                    <td>Goma avenu des volcans</td>
+                                                    <td>09999999999</td>
+                                                    <td>
+                                                        <div class="btn-group delete">
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hadassa</td>
+                                                    <td>Goma avenu des volcans</td>
+                                                    <td>09999999999</td>
+                                                    <td>
+                                                        <div class="btn-group delete">
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hadassa</td>
+                                                    <td>Goma avenu des volcans</td>
+                                                    <td>09999999999</td>
+                                                    <td>
+                                                        <div class="btn-group delete">
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Hadassa</td>
+                                                    <td>Goma avenu des volcans</td>
+                                                    <td>09999999999</td>
+                                                    <td>
+                                                        <div class="btn-group delete">
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                                 <tr>
                                                     <td>Hadassa</td>
                                                     <td>Goma avenu des volcans</td>
@@ -212,7 +259,41 @@
                                 </div>
                                 <div class="col-md-4 col-lg-4 col-sm-12">
                                     <div class="shadow box-dashboard">
-                                        <h2 class="color-hero">Last users</h2>
+                                        <h2 class="color-hero">3 Last users</h2>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                <span>
+                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                </span>
+                                                <span>
+                                                    Username
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                <span>
+                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                </span>
+                                                <span>
+                                                    Username 
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                <span>
+                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                </span>
+                                                <span>
+                                                    Username
+                                                </span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                <span>
+                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                </span>
+                                                <span>
+                                                    Username
+                                                </span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>

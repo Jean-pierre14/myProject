@@ -64,6 +64,10 @@
   background-color: #940099;
 }
 
+.color-primary {
+  color: #345fb3;
+}
+
 .color-hero {
   color: #940099;
 }
@@ -72,4 +76,22 @@
   position: relative;
   border-radius: 20px;
   padding: 20px;
+}
+
+.box-dashboard .list-group-item {
+  text-overflow: ellipsis;
+}
+
+.box-dashboard table {
+  position: relative;
+  width: 100%;
+}
+
+.box-dashboard table thead tr th {
+  border-top: 0;
+  font-weight: bold;
+}
+
+.box-dashboard table tbody tr td {
+  padding: 2px;
 }

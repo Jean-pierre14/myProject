@@ -59,6 +59,10 @@
     background-color: rgb(148, 0, 153);
 }
 
+.color-primary {
+    color: #345fb3;
+}
+
 .color-hero {
     color: rgb(148, 0, 153);
 }
@@ -67,4 +71,18 @@
     position: relative;
     border-radius: 20px;
     padding: 20px;
+    .list-group-item {
+        text-overflow: ellipsis;
+    }
+    table {
+        position: relative;
+        width: 100%;
+        thead tr th {
+            border-top: 0;
+            font-weight: bold;
+        }
+        tbody tr td {
+            padding: 2px;
+        }
+    }
 }
