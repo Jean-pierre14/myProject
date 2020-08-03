@@ -7,7 +7,7 @@
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Registration</title>
+    <title>My account</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
@@ -91,7 +91,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand color-hero" href="user.php"> User </a>
+                    <a class="navbar-brand color-hero" href="user.php"> User <i class="fa fa-user"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -268,7 +268,7 @@
                                 <div class="text-danger px-5 d-flex justify-content-between align-items-center mt-3">
                                     <span>Description of me</span>
                                     <span>
-                                        <button class="shadow btn-sm text-danger"><i class="fa fa-edit"></i></button>
+                                        <button class="shadow button-bk-o btn-sm text-danger"><i class="fa fa-edit"></i></button>
                                     </span>
                                 </div>
                             </div>

@@ -13,10 +13,11 @@
 <body>
     <div class="container-fluid" style="height: 100vh;">
         <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card mt-5 shadow">
+            <div class="col-md-3 mt-5">
+                
+                <h2 class="text-center text-success">Log In</h2>
+                <div class="card shadow">
                     <div class="card-body">
-                        <h2 class="text-center text-success">Log In</h2>
                         <?php require_once("./event/event.min.php");?>
                         <?php include("error.php");?>
                         <form action="" method="post">
@@ -29,12 +30,16 @@
                                 <input type="password" name="pass" value="<?php print $pass;?>" id="pass" placeholder="Password" class="form-control">
                             </div>
                             <div class="form-group">
-                                <button type="submit" name="log" class="btn btn-success" id="login_btn">Log in <i class="fa fa-arrow-circle-right"></i></button>
+                                <button type="submit" name="log" class="btn btn-sm btn-block btn-success" id="login_btn">Log in <i class="fa fa-arrow-circle-right"></i></button>
                                 <span id="login_message"></span>
                                 <img src="./assets/images/loading.gif" id="img" alt="" style="display:none;width: 20px;height: 20px;">
                             </div>
-                            <p class="text-center">I don't have an <a href="registration.php" data-toggle="tooltip" rel="tooltip" title="Create an account" class="link text-success">account!</a></p>
                         </form>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-body p-2">
+                    <p class="text-center pt-3">I don't have an <a href="registration.php" data-toggle="tooltip" rel="tooltip" title="Create an account" class="link text-success">account!</a></p>
                     </div>
                 </div>
             </div>

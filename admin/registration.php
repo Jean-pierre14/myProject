@@ -28,11 +28,11 @@ include("lock.php");
 <?php include('../includes/loading.php');?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-            <!--
-        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+                    <!--
+                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-        Tip 2: you can also add an image using data-image tag
-    -->
+                Tip 2: you can also add an image using data-image tag
+            -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
@@ -95,7 +95,7 @@ include("lock.php");
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="registration.php"> Registration </a>
+                    <a class="navbar-brand" href="registration.php"> Registration <i class="fa fa-user-plus"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
