@@ -244,7 +244,7 @@
       </div>
     </div>
     <!-- Pastors -->
-    <div class="container-fluid">
+    <div class="container-fluid m-0 p-0">
         <h3 class="text-center text-success text-uppercase mt-5">pastors</h3>
         <div class="row p-3">
             <div class="col-md-3">
@@ -290,10 +290,10 @@
     <div class="container-fluid">
       <div class="box-divid-two">
         <div class="ui">
-          <img src="./assets/images/erc/INTERCESSION.jpg" alt="" class="ui image img-fluid" style="width: 100%;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MFIU-iQs5OM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div>
-          <div class="container m-0">
+          <div class="container-fluid m-0">
             <div class="row text-center">
               <div class="col-md-3">
                 <div class="card">

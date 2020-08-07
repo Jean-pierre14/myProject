@@ -185,10 +185,10 @@
                                 <div class="col-md-8 col-lg-8 col-sm-12">
                                     <div class="shadow box-dashboard">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <h2 class="color-hero">Programmes</h2>
+                                            <h2 class="color-hero">Pastors</h2>
                                             <a href="#" class="btn shadow"><i class="fa fa-arrow-right color-hero"></i></a>
                                         </div>
-                                        <table class="table table-sm table-hover table-sprided">
+                                        <table class="table table-sm table-hover table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>Full name</th>

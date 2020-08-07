@@ -8,7 +8,8 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>My account</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
@@ -88,11 +89,12 @@
             </div>
         </div>
         <div class="main-panel">
-            <!-- Navbar -->
+
             <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand color-hero" href="user.php"> User <i class="fa fa-user"></i></a>
-                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -121,14 +123,15 @@
                     </div>
                 </div>
             </nav>
-            <!-- End Navbar -->
+
             <div class="content">
                 <div class="container-fluid m-0">
                     <div class="row">
                         <div class="shadow box-dashboard p-3 col-lg-12">
                             <button class="close shadow btn px-3 py-2">&times;</button>
                             <p>
-                                You are the admin of your account, you can delete or edit your account anytime you want. buy choose what you want to edit in order to update it.
+                                You are the admin of your account, you can delete or edit your account anytime you want.
+                                buy choose what you want to edit in order to update it.
                             </p>
                         </div>
                     </div>
@@ -148,7 +151,9 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow color-hero"><i class="fa fa-edit"></i></button>
+                                        <button class="btn  border-0 p-2 shadow color-hero">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
                                     </span>
                                 </p>
                             </div>
@@ -168,7 +173,10 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow color-hero"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editUsername" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow color-hero">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
                                     </span>
                                 </p>
                                 <p class="d-flex justify-content-between align-items-center">
@@ -179,7 +187,10 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow color-hero"><i class="fa fa-edit"></i></button>
+                                        <button class="btn border-0 p-2 shadow color-hero" data-toggle="modal"
+                                            data-target="#editEmail">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
                                     </span>
                                 </p>
                                 <p class="d-flex justify-content-between align-items-center">
@@ -190,7 +201,10 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow color-hero"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editLocation" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow color-hero">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
                                     </span>
                                 </p>
                                 <p class="d-flex justify-content-between align-items-center mb-5">
@@ -201,7 +215,9 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow color-hero"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editPhone" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow color-hero"><i
+                                                class="fa fa-edit"></i></button>
                                     </span>
                                 </p>
                             </div>
@@ -220,7 +236,9 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow text-danger"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editDepartment" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow text-danger"><i
+                                                class="fa fa-edit"></i></button>
                                     </span>
                                 </p>
                                 <p class="d-flex justify-content-between align-items-center">
@@ -231,7 +249,9 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow text-danger"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editStatus" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow text-danger"><i
+                                                class="fa fa-edit"></i></button>
                                     </span>
                                 </p>
                                 <p class="d-flex justify-content-between align-items-center">
@@ -242,7 +262,8 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow text-danger"><i class="fa fa-edit"></i></button>
+                                        <button class="btn  border-0 p-2 shadow text-danger"><i
+                                                class="fa fa-edit"></i></button>
                                     </span>
                                 </p>
                                 <p class="d-flex justify-content-between align-items-center mb-5">
@@ -253,7 +274,9 @@
                                         Grace el bisimwa
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow text-danger"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editDob" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow text-danger"><i
+                                                class="fa fa-edit"></i></button>
                                     </span>
                                 </p>
                             </div>
@@ -268,7 +291,10 @@
                                 <div class="text-danger px-5 d-flex justify-content-between align-items-center mt-3">
                                     <span>Description of me</span>
                                     <span>
-                                        <button class="shadow button-bk-o btn-sm text-danger"><i class="fa fa-edit"></i></button>
+                                        <button type="button" data-target="editDescription" data-toggle="modal"
+                                            class="shadow button-bk-o btn-sm text-danger">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
                                     </span>
                                 </div>
                             </div>
@@ -290,8 +316,9 @@
                     <a href="javascript:void(0)" class="switch-trigger">
                         <p>Background Image</p>
                         <label class="switch">
-                                <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary" data-off-color="primary"><span class="toggle"></span>
-                            </label>
+                            <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary"
+                                data-off-color="primary"><span class="toggle"></span>
+                        </label>
                         <div class="clearfix"></div>
                     </a>
                 </li>
@@ -332,25 +359,21 @@
                     </a>
                 </li>
 
-                <li class="button-container">
-                    <div class="">
-                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank" class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                    </div>
-                </li>
-
                 <li class="header-title pro-title text-center">Want more components?</li>
 
                 <li class="button-container">
                     <div class="">
-                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
+                        <a href="#" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
                     </div>
                 </li>
 
                 <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
 
                 <li class="button-container">
-                    <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i class="fa fa-twitter"></i> · 256</button>
-                    <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i class="fa fa-facebook-square"></i> · 426</button>
+                    <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i
+                            class="fa fa-twitter"></i> · 256</button>
+                    <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i
+                            class="fa fa-facebook-square"></i> · 426</button>
                 </li>
             </ul>
         </div>
@@ -368,14 +391,49 @@
                         <div class="form-group">
                             <label for="about">About me</label>
                             <input type="hidden" value="<?php print $_SESSION['id'];?>" id="id_up" class="form-control">
-                            <textarea name="about" placeholder="Write something..." id="about_up" class="form-control"></textarea>
+                            <textarea name="about" placeholder="Write something..." id="about_up"
+                                class="form-control"></textarea>
                         </div>
                         <div class="form-group col-md-12">
                             <span id="messageError" style="display: none;" class="alert alert-danger"></span>
                             <span id="messageSuccess" style="display: none;" class="alert alert-success"></span>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-sm btn-warning btn-fill about_btn">Update <i class="fa fa-arrow-circle-right"></i></button>
+                            <button type="button" class="btn btn-sm btn-warning btn-fill about_btn">Update <i
+                                    class="fa fa-arrow-circle-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger" data-dismiss="modal">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editEmail">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Email</h4>
+                    <button type="button" class="btn text-danger close m-1" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="about">Email</label>
+                            <input type="hidden" value="<?php print $_SESSION['id'];?>" id="id_up" class="form-control">
+                            <input type="email" id="email" placeholder="E-mail@erc.fr" class="form-control">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <span id="messageError" style="display: none;" class="alert alert-danger"></span>
+                            <span id="messageSuccess" style="display: none;" class="alert alert-success"></span>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Email" class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update email
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -398,5 +456,28 @@
 <script src="../assets/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
 <script src="../assets/js/demo.js"></script>
 <script src="../public/js/myJquery.js"></script>
+
+<script>
+    $().ready(() => {
+        $('#btn-Edit-Email').click(function () {
+            const action = 'editEmail';
+            const id = $('#id_up').val();
+            const email = $('#email').val();
+            if (email.lenght <= 2 || email === undefined || email === '') {
+                alert('Email is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action: action, id: id, email: email },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#email').val('');
+            }
+        })
+    });
+</script>
 
 </html>
