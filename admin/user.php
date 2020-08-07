@@ -142,16 +142,25 @@
                                     <i class="fa fa-user fa-2x"></i>
                                 </span>
                                 <h2>Profil image</h2>
-                                <img src="../assets/images/erc/yvan_profile.jpg" alt="" class="img-fluid">
+                                <?php if($UserData[12] == ''):?>
+                                <div class="text-center">
+                                    <a href="#editprofile">
+                                        <img src="../assets/images/use/user/face-0.jpg" alt="" class="img-fluid">
+                                    </a>
+                                </div>
+                                <?php else:?>
+                                <img src="<?php print $UserData[12]?>" alt="" class="img-fluid">
+                                <?php endif;?>
                                 <p class="d-flex justify-content-between align-items-center mt-2">
                                     <span>
                                         <b>Name: </b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[1];?>
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow color-hero">
+                                        <button type="button" data-target="#editName" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow color-hero">
                                             <i class="fa fa-edit"></i>
                                         </button>
                                     </span>
@@ -170,10 +179,10 @@
                                         <b>Username: </b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[2]; ?>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="editUsername" data-toggle="modal"
+                                        <button type="button" data-target="#editUsername" data-toggle="modal"
                                             class="btn  border-0 p-2 shadow color-hero">
                                             <i class="fa fa-edit"></i>
                                         </button>
@@ -184,7 +193,7 @@
                                         <b>Email: </b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[3]; ?>
                                     </span>
                                     <span>
                                         <button class="btn border-0 p-2 shadow color-hero" data-toggle="modal"
@@ -197,11 +206,11 @@
                                     <span>
                                         <b> Location</b>
                                     </span>
-                                    <span>
-                                        Grace el bisimwa
+                                    <span title="<?php print $UserData[5];?>">
+                                        <?php print $UserData[5]; ?>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="editLocation" data-toggle="modal"
+                                        <button type="button" data-target="#editLocation" data-toggle="modal"
                                             class="btn  border-0 p-2 shadow color-hero">
                                             <i class="fa fa-edit"></i>
                                         </button>
@@ -212,10 +221,10 @@
                                         <b>Phone: </b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[8]; ?>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="editPhone" data-toggle="modal"
+                                        <button type="button" data-target="#editPhone" data-toggle="modal"
                                             class="btn  border-0 p-2 shadow color-hero"><i
                                                 class="fa fa-edit"></i></button>
                                     </span>
@@ -233,10 +242,10 @@
                                         <b>Department</b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[9]; ?>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="editDepartment" data-toggle="modal"
+                                        <button type="button" data-target="#editDepartment" data-toggle="modal"
                                             class="btn  border-0 p-2 shadow text-danger"><i
                                                 class="fa fa-edit"></i></button>
                                     </span>
@@ -246,10 +255,10 @@
                                         <b>Status</b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[6]; ?>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="editStatus" data-toggle="modal"
+                                        <button type="button" data-target="#editStatus" data-toggle="modal"
                                             class="btn  border-0 p-2 shadow text-danger"><i
                                                 class="fa fa-edit"></i></button>
                                     </span>
@@ -259,10 +268,11 @@
                                         <b>Gender</b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[7]; ?>
                                     </span>
                                     <span>
-                                        <button class="btn  border-0 p-2 shadow text-danger"><i
+                                        <button type="button" data-toggle="modal" data-target="#editGender"
+                                            class="btn  border-0 p-2 shadow text-danger"><i
                                                 class="fa fa-edit"></i></button>
                                     </span>
                                 </p>
@@ -271,10 +281,10 @@
                                         <b>Date of birth </b>
                                     </span>
                                     <span>
-                                        Grace el bisimwa
+                                        <?php print $UserData[10]; ?>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="editDob" data-toggle="modal"
+                                        <button type="button" data-target="#editDob" data-toggle="modal"
                                             class="btn  border-0 p-2 shadow text-danger"><i
                                                 class="fa fa-edit"></i></button>
                                     </span>
@@ -289,9 +299,11 @@
                                     <i class="fa fa-book fa-2x"></i>
                                 </span>
                                 <div class="text-danger px-5 d-flex justify-content-between align-items-center mt-3">
-                                    <span>Description of me</span>
                                     <span>
-                                        <button type="button" data-target="editDescription" data-toggle="modal"
+                                        <?php print $UserData[13]; ?>
+                                    </span>
+                                    <span>
+                                        <button type="button" data-target="#editAbout" data-toggle="modal"
                                             class="shadow button-bk-o btn-sm text-danger">
                                             <i class="fa fa-edit"></i>
                                         </button>
@@ -379,33 +391,104 @@
         </div>
     </div>
 
-    <div class="modal fade" id="myModal">
+    <div class="modal fade" id="editAbout">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">About me</h4>
-                    <button type="button" class="btn text-danger close m-1" data-dismiss="modal">&times;</button>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
                 </div>
                 <div class="modal-body">
                     <form action="" method="post">
                         <div class="form-group">
                             <label for="about">About me</label>
                             <input type="hidden" value="<?php print $_SESSION['id'];?>" id="id_up" class="form-control">
-                            <textarea name="about" placeholder="Write something..." id="about_up"
-                                class="form-control"></textarea>
+                            <input type="text" placeholder="Write something...<?php print $UserData[13];?>" id="about"
+                                class="form-control" />
                         </div>
                         <div class="form-group col-md-12">
                             <span id="messageError" style="display: none;" class="alert alert-danger"></span>
                             <span id="messageSuccess" style="display: none;" class="alert alert-success"></span>
                         </div>
                         <div class="form-group">
-                            <button type="button" class="btn btn-sm btn-warning btn-fill about_btn">Update <i
-                                    class="fa fa-arrow-circle-right"></i></button>
+                            <button type="button" class="btn btn-sm btn-warning btn-fill" id="btn-Edit-About">
+                                Update
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="user.php" class="btn btn-sm btn-fill btn-danger" data-dismiss="modal">Close</a>
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editUsername">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Username</h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="about">Username</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <input type="text" id="username" placeholder="Example <?php print $UserData[2];?>"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Username"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Username
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editName">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Name</h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="about">Name</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <input type="text" id="name" placeholder="Example <?php print $UserData[1];?>"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Name" class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update name
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
                 </div>
 
             </div>
@@ -415,15 +498,19 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header p-1">
-                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Email</h4>
-                    <button type="button" class="btn text-danger close m-1" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Email <i class="fa fa-envelopp"></i></h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
                 </div>
                 <div class="modal-body">
                     <form action="" autocomplete="off" method="post">
                         <div class="form-group">
                             <label for="about">Email</label>
                             <input type="hidden" value="<?php print $_SESSION['id'];?>" id="id_up" class="form-control">
-                            <input type="email" id="email" placeholder="E-mail@erc.fr" class="form-control">
+                            <input type="email" id="email" placeholder="Example <?php print $UserData[3];?>"
+                                class="form-control">
                         </div>
                         <div class="form-group col-md-12">
                             <span id="messageError" style="display: none;" class="alert alert-danger"></span>
@@ -438,7 +525,233 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="user.php" class="btn btn-sm btn-fill btn-danger" data-dismiss="modal">Close</a>
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editLocation">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Location</h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="location">Username</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <input type="text" id="location" placeholder="Example <?php print $UserData[5];?>"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Location"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Location
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editPhone">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Phone <i class="fa fa-phone"></i></h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <input type="tel" id="phone" placeholder="Example <?php print $UserData[8];?>"
+                                class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Phone" class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Phone
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editDepartment">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Department <i class="fa fa-gift"></i></h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <select class="form-control" id="department_up">
+                                <option disabled><?php print $UserData[9];?></option>
+                                <?php 
+                                    $selectDepartment = mysqli_query($con, "SELECT * FROM department_tb");
+                                    while($dS = mysqli_fetch_assoc($selectDepartment)){
+                                        ?>
+                                <option value="<?php print $dS['name'];?>">
+                                    <?php print $dS['name'];?>
+                                </option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Department"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Department
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editStatus">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Status <i class="fa fa-gift"></i></h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <select class="form-control" id="status_up">
+                                <option disabled>Status: <?php print $UserData[6];?></option>
+                                <?php 
+                                    $selectDepartment = mysqli_query($con, "SELECT * FROM status_tb");
+                                    while($dS = mysqli_fetch_assoc($selectDepartment)){
+                                        ?>
+                                <option value="<?php print $dS['name'];?>">
+                                    <?php print $dS['name'];?>
+                                </option>
+                                <?php
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Status"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Status
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editGender">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Gender <i class="fa fa-gift"></i></h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <select class="form-control" id="gender">
+                                <option disabled>gender: <?php print $UserData[7];?></option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Gender"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Gender
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editDob">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Date of birth <i class="fa fa-gift"></i></h4>
+                    <a href="user.php" class="btn btn-sm border-0 shadow text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="dob">Date of birth</label>
+                            <input type="hidden" value="<?php print $UserData[0];?>" id="id_up" class="form-control">
+                            <input type="date" id="dob" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-Dob" class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Date of birth
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="user.php" class="btn btn-sm btn-fill btn-danger">Close</a>
                 </div>
 
             </div>
@@ -459,6 +772,24 @@
 
 <script>
     $().ready(() => {
+        $('#btn-Edit-Username').click(function () {
+            let action = 'editUsername';
+            const id = $('#id_up').val();
+            let username = $('#username').val();
+            if (username.lenght <= 4 || username === undefined || username === '') {
+                alert('Username is empty and should have at least 4 caracters');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action: action, id: id, username: username },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#username').val('');
+            }
+        });
         $('#btn-Edit-Email').click(function () {
             const action = 'editEmail';
             const id = $('#id_up').val();
@@ -476,7 +807,151 @@
                 })
                 $('#email').val('');
             }
-        })
+        });
+        $('#btn-Edit-Name').click(function () {
+            const action = 'editName';
+            const id = $('#id_up').val();
+            const name = $('#name').val();
+            if (name.lenght < 4 || name === undefined || name === '') {
+                alert('name is empty and it shouds have at least 4 caracters');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, name },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#name').val('');
+            }
+        });
+        $('#btn-Edit-Location').click(function () {
+            const action = 'editLocation';
+            const id = $('#id_up').val();
+            const location = $('#location').val();
+            if (location.lenght < 4 || location === undefined || location === '') {
+                alert('Location is empty and it shouds have at least 4 caracters');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, location: location },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#location').val('');
+            }
+        });
+        $('#btn-Edit-Status').click(function () {
+            const action = 'editStatus';
+            const id = $('#id_up').val();
+            const status = $('#status_up').val();
+            if (status === '') {
+                alert('status is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, status },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#status').val('');
+            }
+        });
+        $('#btn-Edit-Gender').click(function () {
+            const action = 'editGender';
+            const id = $('#id_up').val();
+            const gender = $('#gender').val();
+            if (gender === '') {
+                alert('gender is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, gender },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#gender').val('');
+            }
+        });
+        $('#btn-Edit-Phone').click(function () {
+            const action = 'editPhone';
+            const id = $('#id_up').val();
+            const phone = $('#phone').val();
+            if (phone.lenght < 4 || phone === undefined || phone === '') {
+                alert('phone is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, phone },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#phone').val('');
+            }
+        });
+        $('#btn-Edit-Department').click(function () {
+            const action = 'editDepartment';
+            const id = $('#id_up').val();
+            const department = $('#department_up').val();
+            if (department === '') {
+                alert('department is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, department: department },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#department').val('');
+            }
+        });
+        $('#btn-Edit-Dob').click(function () {
+            const action = 'editDob';
+            const id = $('#id_up').val();
+            const dob = $('#dob').val();
+            if (dob.lenght < 6 || dob === undefined || dob === '') {
+                alert('Date  of birth is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, dob },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#dob').val('');
+            }
+        });
+        $('#btn-Edit-About').click(function () {
+            const action = 'editAbout';
+            const id = $('#id_up').val();
+            let about = $('#about').val();
+            if (about.lenght < 4 || about === undefined || about === '') {
+                alert('Description is empty');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    method: 'post',
+                    data: { action, id, about },
+                    success: function (data) {
+                        alert(data)
+                    }
+                })
+                $('#about').val('');
+            }
+        });
     });
 </script>
 
