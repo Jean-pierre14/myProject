@@ -1,4 +1,4 @@
-<?php include("lock.php");?>
+<?php include("lock.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +8,10 @@
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>ERC/
-        <?php print $_SESSION['username'];?>
+        <?php print $_SESSION['username']; ?>
     </title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport'>
     <link rel="stylesheet" href="../public/css/all.min.css">
     <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="../public/css/bootstrap-reboot.min.css">
@@ -25,7 +26,7 @@
 </head>
 
 <body>
-    <?php include('../includes/loading.php');?>
+    <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
             <!--
@@ -95,8 +96,10 @@
         <div class="main-panel">
             <nav class="navbar navbar-expand-lg bg-light p-0" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand color-hero" href="index.php"> Dashboard <i class="fas fa-home" aria-hidden="true"></i></a>
-                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-brand color-hero" href="index.php"> Dashboard <i class="fas fa-home"
+                            aria-hidden="true"></i></a>
+                    <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                        aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -125,7 +128,7 @@
                     </div>
                 </div>
             </nav>
-            
+
             <div class="content">
                 <div class="container-fluid p-0">
                     <div class="main-content">
@@ -186,7 +189,8 @@
                                     <div class="shadow box-dashboard">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <h2 class="color-hero">Pastors</h2>
-                                            <a href="#" class="btn shadow"><i class="fa fa-arrow-right color-hero"></i></a>
+                                            <a href="#" class="btn shadow border-0"><i
+                                                    class="fa fa-arrow-right color-hero"></i></a>
                                         </div>
                                         <table class="table table-sm table-hover table-striped">
                                             <thead>
@@ -204,8 +208,10 @@
                                                     <td>09999999999</td>
                                                     <td>
                                                         <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                    class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                    class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -215,8 +221,10 @@
                                                     <td>09999999999</td>
                                                     <td>
                                                         <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                    class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                    class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -226,8 +234,10 @@
                                                     <td>09999999999</td>
                                                     <td>
                                                         <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                    class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                    class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -237,8 +247,10 @@
                                                     <td>09999999999</td>
                                                     <td>
                                                         <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                    class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                    class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -248,8 +260,10 @@
                                                     <td>09999999999</td>
                                                     <td>
                                                         <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                                            <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                    class="fa fa-edit"></i></a>
+                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                    class="fa fa-trash"></i></a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -261,7 +275,8 @@
                                     <div class="shadow box-dashboard">
                                         <h2 class="color-hero">3 Last users</h2>
                                         <ul class="list-group list-group-flush">
-                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                                                 <span>
                                                     <img src="../assets/images/gun.png" alt="" style="width: 20px;">
                                                 </span>
@@ -269,15 +284,8 @@
                                                     Username
                                                 </span>
                                             </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                                                <span>
-                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
-                                                </span>
-                                                <span>
-                                                    Username 
-                                                </span>
-                                            </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                                                 <span>
                                                     <img src="../assets/images/gun.png" alt="" style="width: 20px;">
                                                 </span>
@@ -285,7 +293,17 @@
                                                     Username
                                                 </span>
                                             </li>
-                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                <span>
+                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                </span>
+                                                <span>
+                                                    Username
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                                                 <span>
                                                     <img src="../assets/images/gun.png" alt="" style="width: 20px;">
                                                 </span>
@@ -330,9 +348,9 @@
                         <p class="copyright text-center">
                             ©
                             <script>
-                                document.write(new Date().getFullYear());
+                            document.write(new Date().getFullYear());
                             </script>
-                            <a href="#">Creative Tim</a>, made with love for a better web
+                            <a href="#">Genuis Team</a>, Put God first
                         </p>
                     </nav>
                 </div>
@@ -343,7 +361,8 @@
     <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
             <a href="#" data-toggle="dropdown">
-                <i class="nc-icon nc-align-center fa-2x" style="color: #fff;font-size: 20px;padding:10px;font-weight: 700;"></i>
+                <i class="nc-icon nc-align-center fa-2x"
+                    style="color: #fff;font-size: 20px;padding:10px;font-weight: 700;"></i>
             </a>
 
             <ul class="dropdown-menu">
@@ -417,10 +436,10 @@
 <script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <script src="../assets/js/demo.js"></script>
 <script type="text/javascript">
-    $(document).ready(() => {
-        demo.initDashboardPageCharts();
-        demo.showNotification();
-    });
+$(document).ready(() => {
+    demo.initDashboardPageCharts();
+    demo.showNotification();
+});
 </script>
 
 </html>
