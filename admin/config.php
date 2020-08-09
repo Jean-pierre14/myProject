@@ -191,6 +191,7 @@ if (isset($_POST['action'])) {
 
         $sql = mysqli_query($con, "SELECT * FROM wedding_tb ORDER BY id DESC LIMIT {$limit}");
         if (mysqli_num_rows($sql) > 0) {
+
             while ($row = mysqli_fetch_assoc($sql)) {
                 $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['husband_id']}");
                 $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['wife_id']}");
@@ -227,7 +228,88 @@ if (isset($_POST['action'])) {
                     $arraryW[14] = $rowW['phone'];
                 }
 
-                $output .= '<p>wedding:' . $row['id'] . '</p>';
+                $output .= '
+                    
+                        <div class="list-group list-group-flush">
+                            <p style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                <span>'  . $arraryH[1] . ' & ' . $arraryW[1] . '</span>
+                                <span>' . $row['pastor_name'] . '</span>
+                                <span>
+                                    <i class="fa fa-chevron-down"></i>
+                                </span>
+                            </p>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <img src="' . $arraryH[11] . '" alt="" class="card-img-top">
+                                            <div class="card-body">
+                                                <div class="list-group">
+                                                    <p class="d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                            <i class="fa fa-user"></i>
+                                                        </span>
+                                                        <span class="">
+                                                            ' . $arraryH[1] . '
+                                                        </span>
+                                                    </p>
+                                                    <p class="d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                            <i class="fa fa-map"></i>
+                                                        </span>
+                                                        <span class="">
+                                                            ' . $arraryH[4] . '
+                                                        </span>
+                                                    </p>
+                                                    <p class="d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                            <i class="fa fa-phone"></i>
+                                                        </span>
+                                                        <span class="">
+                                                            ' . $arraryH[14] . '
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <img src="' . $arraryW[11] . '" alt="" class="card-img-top">
+                                            <div class="card-body">
+                                                <div class="list-group">
+                                                    <p class="d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                            <i class="fa fa-user"></i>
+                                                        </span>
+                                                        <span class="">
+                                                            ' . $arraryW[1] . '
+                                                        </span>
+                                                    </p>
+                                                    <p class="d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                            <i class="fa fa-map"></i>
+                                                        </span>
+                                                        <span class="">
+                                                            ' . $arraryW[4] . '
+                                                        </span>
+                                                    </p>
+                                                    <p class="d-flex justify-content-between align-items-center">
+                                                        <span class="">
+                                                            <i class="fa fa-phone"></i>
+                                                        </span>
+                                                        <span class="">
+                                                            ' . $arraryW[14] . '
+                                                        </span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                ';
             }
         } else {
             $output .= '<p class="alert alert-danger ui message negative">There is not Weddings registered</p>';

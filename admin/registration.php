@@ -433,9 +433,11 @@ include("lock.php");
                                                 </form>
                                             </div>
                                             <div class="card-body">
-                                                <h1 class="display-1">List wedding</h1>
-                                                <div id="wedding_list">
-                                                    <!-- Ajax APIs -->
+                                                <!-- <h1 class="display-1">List wedding</h1> -->
+                                                <div class="list-group list-group-flush">
+                                                    <div id="wedding_list">
+                                                        <!-- Ajax APIs -->
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
