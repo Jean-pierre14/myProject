@@ -18,11 +18,6 @@ include("lock.php");
     <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet">
     <link href="../assets/css/demo.css" rel="stylesheet">
     <link rel="stylesheet" href="../public/sass/index.style.min.css">
-    <script src="../public/bootstrap/jquery.min.js"></script>
-    <script src="../public/bootstrap/popper.min.js"></script>
-    <script src="../public/bootstrap/bootstrap.min.js"></script>
-    <script src="../public/js/all.min.js"></script>
-    <script src="../public/semantic/semantic.min.js"></script>
 </head>
 
 <body>
@@ -318,8 +313,136 @@ include("lock.php");
                             <a class="nav-link active" href="?registration=wedding">Wedding</a>
                         </li>
                     </ul>
-                    <div class="container-fluid p-0 m-0 bg-white">
-                        <h3 class="display-1">Wedding</h3>
+                    <div class="container-fluid m-0 bg-white" style="min-height: 80vh;">
+                        <div class="row">
+                            <div class="col-md-5 p-1">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <form action="" method="post">
+                                            <div class="form-group">
+                                                <label for="husband">Husband</label>
+                                                <select name="husband" id="husband" class=" form-control">
+                                                    <option value="">Husband</option>
+                                                    <?php
+                                                        $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE (gender = 'Male' AND statu != 'married')");
+                                                        if(mysqli_num_rows($sqlHusband) > 0){
+                                                            while($dH = mysqli_fetch_assoc($sqlHusband)){
+                                                                $output .= '
+                                                                    <option value="'.$dH['id'].'" title="'.$dH['email'].'">'.$dH['name'].'</option>
+                                                                ';
+                                                            }
+                                                        }else{
+                                                            $output .= '
+                                                            <option value="" class="bg-danger"></option>';
+                                                        }
+                                                        print $output;
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="wife">wife</label>
+                                                <select name="wife" id="wife" class=" form-control">
+                                                    <option value="">Wife</option>
+                                                    <?php
+                                                        $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE (gender = 'Female' AND statu != 'married')");
+                                                        if(mysqli_num_rows($sqlWife) > 0){
+                                                            while($dW = mysqli_fetch_assoc($sqlWife)){
+                                                                $outWife .= '
+                                                                    <option value="'.$dW['id'].'" title="'.$dW['email'].'">'.$dW['name'].'</option>
+                                                                ';
+                                                            }
+                                                        }else{
+                                                            $outWife .= '
+                                                            <option value="" class="bg-danger"></option>';
+                                                        }
+                                                        print $outWife;
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="pastor">Pastor</label>
+                                                <select name="pastor" id="pastor" class=" form-control">
+                                                    <option value="">Pastor Name</option>
+                                                    <?php
+                                                        $sqlP = mysqli_query($con, "SELECT * FROM pastor_tb");
+                                                        if(mysqli_num_rows($sqlP) > 0){
+                                                            while($dP = mysqli_fetch_assoc($sqlP)){
+                                                                $outP .= '
+                                                                    <option value="'.$dP['pastor_name'].'">'.$dP['pastor_name'].'</option>
+                                                                ';
+                                                            }
+                                                        }else{
+                                                            $outP .= '
+                                                            <option value="" class="bg-danger"></option>';
+                                                        }
+                                                        print $outP;
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="about">Status</label>
+                                                    <input type="text" id="about" placeholder="Status of the wedding"
+                                                        class="form-control">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="date">Date</label>
+                                                    <input type="date" id="date" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-fill btn-sm btn-warning"
+                                                    id="btn-record-wedding">
+                                                    Register
+                                                    <i class="fa fa-arrow-circle-right"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-7 p-1">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="p-1 card-header">
+                                                <h1>How it works</h1>
+                                                <!-- <button class="btn border-0 shadow" style="float: right;">&times;</button> -->
+                                            </div>
+                                            <div class="card-body">
+                                                <p>
+                                                    First those who want to be register their wedding should be register
+                                                    as
+                                                    member, then once it done. you search them here. husband to husband
+                                                    place
+                                                    the same to wife
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="card mt-1">
+                                            <div class="card-header p-1">
+                                                <form action="" method="post" class="form-inline">
+                                                    <input type="text" id="wedding_search" placeholder="Search..."
+                                                        class="form-control">
+                                                    <button class="btn btn-warning btn-fill" type="submit"
+                                                        name="search">
+                                                        <i class="fa fa-search"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                            <div class="card-body">
+                                                <h1 class="display-1">List wedding</h1>
+                                                <div id="wedding_list">
+                                                    <!-- Ajax APIs -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <?php endif; ?>
                     <?php else : ?>
@@ -730,10 +853,11 @@ include("lock.php");
                         </ul>
                         <p class="copyright text-center">
                             ©
-                            <script>
-                            document.write(new Date().getFullYear())
-                            </script>
-                            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+                            <?php print Date('Y');?>
+                            <a href="#">
+                                <?php print $team; ?>
+                            </a>,
+                            <?php print $devise; ?>
                         </p>
                     </nav>
                 </div>
@@ -807,8 +931,7 @@ include("lock.php");
 
                 <li class="button-container">
                     <div class="">
-                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro" target="_blank"
-                            class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
+                        <a href="#" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
                     </div>
                 </li>
 
@@ -876,6 +999,12 @@ include("lock.php");
         </div>
     </div>
 </body>
+
+<script src="../public/bootstrap/jquery.min.js"></script>
+<script src="../public/bootstrap/popper.min.js"></script>
+<script src="../public/bootstrap/bootstrap.min.js"></script>
+<script src="../public/js/all.min.js"></script>
+<script src="../public/semantic/semantic.min.js"></script>
 <script src="../assets/js/plugins/bootstrap-switch.js"></script>
 <script src="../assets/js/plugins/chartist.min.js"></script>
 <script src="../assets/js/plugins/bootstrap-notify.js"></script>
@@ -884,169 +1013,208 @@ include("lock.php");
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-$().ready(() => {
-    online();
-    member();
-    memberList();
-    statistic();
-    listPastor();
-    PastorNormal();
-    $(document).on("click", ".RecordPastor", function() {
-        let action = 'RecordPastor';
-        let pastorId = $('#pastorId').val();
-        let pastorName = $('#pastorName').val();
+    $().ready(() => {
+        online();
+        member();
+        memberList();
+        statistic();
+        listPastor();
+        PastorNormal();
+        $(document).on('click', '#btn-record-wedding', function () {
+            let husband = $('#husband').val();
+            let wife = $('#wife').val();
+            let pastor = $('#pastor').val();
+            let about = $('#about').val();
+            let date = $('#date').val();
+            let action = 'weddingRecord';
 
+            if (husband === '' || wife === '' || pastor === '') {
+                alert('Please fill all fields');
+            } else {
+                $.ajax({
+                    url: './config.php',
+                    data: { action, about, date, husband, wife, pastor },
+                    method: 'post',
+                    success: function (data) {
+                        alert(data);
+                        weddings();
+                    }
+                });
+            }
+        })
+        $(document).on("click", ".RecordPastor", function () {
+            let action = 'RecordPastor';
+            let pastorId = $('#pastorId').val();
+            let pastorName = $('#pastorName').val();
+
+            $.ajax({
+                url: '../event/event.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    pastorId: pastorId,
+                    pastorName: pastorName
+                },
+                success: function (data) {
+                    if (data = 'success') {
+                        $('#successMsg').html(
+                            '<p class="ui message positive">Registration success!</p>');
+                    } else {
+                        $('#successMsg').html(
+                            '<p class="ui message negative">Failed! Check these not an empty field</p>'
+                        );
+                    }
+                }
+            })
+        });
+        $('#search_txt').keyup(function () {
+            let action = 'search';
+            let txt = $(this).val();
+
+            if (txt != '') {
+                $.ajax({
+                    url: '../event/event.php',
+                    method: 'post',
+                    data: {
+                        action: action,
+                        txt: txt
+                    },
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#member-list').hide(300);
+                        $('#searchResult').html(data);
+                    }
+                });
+            } else {
+                $('#searchResult').html('');
+                $('#member-list').show(300);
+            }
+        });
+        $('#search_txt2').keyup(function () {
+            let action = 'search2';
+            let txt = $(this).val();
+
+            if (txt != '') {
+                $.ajax({
+                    url: '../event/event.php',
+                    method: 'post',
+                    data: {
+                        action: action,
+                        txt: txt
+                    },
+                    dataType: 'text',
+                    success: function (data) {
+                        $('#PastorNormal').hide(300);
+                        $('#selectPastor').html(data);
+                    }
+                });
+            } else {
+                $('#selectPastor').html('');
+                $('#PastorNormal').show(300);
+            }
+        });
+
+        weddings();
+    });
+
+    function weddings() {
+        let action = 'weddings';
+        let limit = 5;
+        let offset = 0;
+        $.ajax({
+            url: './config.php',
+            data: { action, limit, offset },
+            method: 'post',
+            success: function (data) {
+                $('#wedding_list').html(data)
+            }
+        })
+    }
+
+
+    function PastorNormal() {
+        let action = 'PastorNormal';
         $.ajax({
             url: '../event/event.php',
             method: 'post',
             data: {
-                action: action,
-                pastorId: pastorId,
-                pastorName: pastorName
+                action: action
             },
-            success: function(data) {
-                if (data = 'success') {
-                    $('#successMsg').html(
-                        '<p class="ui message positive">Registration success!</p>');
-                } else {
-                    $('#successMsg').html(
-                        '<p class="ui message negative">Failed! Check these not an empty field</p>'
-                        );
-                }
+            success: function (data) {
+                $('#PastorNormal').html(data)
             }
         })
-    });
-    $('#search_txt').keyup(function() {
-        let action = 'search';
-        let txt = $(this).val();
+    }
 
-        if (txt != '') {
-            $.ajax({
-                url: '../event/event.php',
-                method: 'post',
-                data: {
-                    action: action,
-                    txt: txt
-                },
-                dataType: 'text',
-                success: function(data) {
-                    $('#member-list').hide(300);
-                    $('#searchResult').html(data);
-                }
-            });
-        } else {
-            $('#searchResult').html('');
-            $('#member-list').show(300);
-        }
-    });
-    $('#search_txt2').keyup(function() {
-        let action = 'search2';
-        let txt = $(this).val();
+    function listPastor() {
+        let action = 'listPastor';
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#listPastor').html(data);
+            }
+        })
+    }
 
-        if (txt != '') {
-            $.ajax({
-                url: '../event/event.php',
-                method: 'post',
-                data: {
-                    action: action,
-                    txt: txt
-                },
-                dataType: 'text',
-                success: function(data) {
-                    $('#PastorNormal').hide(300);
-                    $('#selectPastor').html(data);
-                }
-            });
-        } else {
-            $('#selectPastor').html('');
-            $('#PastorNormal').show(300);
-        }
-    });
-});
+    function online() {
+        let action = 'online';
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#online').html(data)
+            }
+        })
+    }
 
-function PastorNormal() {
-    let action = 'PastorNormal';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#PastorNormal').html(data)
-        }
-    })
-}
+    function member() {
+        let action = 'member';
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#member').html(data)
+            }
+        })
+    }
 
-function listPastor() {
-    let action = 'listPastor';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#listPastor').html(data);
-        }
-    })
-}
+    function memberList() {
+        let action = 'member-list';
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#member-list').html(data)
+            }
+        })
+    }
 
-function online() {
-    let action = 'online';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#online').html(data)
-        }
-    })
-}
-
-function member() {
-    let action = 'member';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#member').html(data)
-        }
-    })
-}
-
-function memberList() {
-    let action = 'member-list';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#member-list').html(data)
-        }
-    })
-}
-
-function statistic() {
-    let action = 'statistic';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#statistic').html(data)
-        }
-    })
-}
+    function statistic() {
+        let action = 'statistic';
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#statistic').html(data)
+            }
+        })
+    }
 </script>
 
 </html>

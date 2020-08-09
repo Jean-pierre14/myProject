@@ -13,6 +13,8 @@ $depart = '';
 $dob = '';
 $about = '';
 
+$output = '';
+
 session_start();
 if (!isset($_SESSION['user_level']) or ($_SESSION['user_level'] != 1)) {
     header('location: ../login.php');
@@ -42,3 +44,6 @@ while ($data = mysqli_fetch_assoc($runUser)) {
 }
 
 $on = mysqli_query($con, "UPDATE user_account SET on_off = 'online' WHERE id = '$id'");
+
+$team = 'Genuis Team';
+$devise = 'Put God first';

@@ -1,4 +1,6 @@
 <?php
+
+$output = '';
 require_once('../config/db.php');
 if (isset($_POST['action'])) {
     if ($_POST['action'] == 'editName') {
@@ -166,5 +168,70 @@ if (isset($_POST['action'])) {
                 print 'There is a problem with your query';
             }
         }
+    }
+    if ($_POST['action'] == 'weddingRecord') {
+        $husband = $_POST['husband'];
+        $wife = $_POST['wife'];
+        $about = $_POST['about'];
+        $date = $_POST['date'];
+        $pastor = $_POST['pastor'];
+
+        $sql = mysqli_query($con, "INSERT INTO wedding_tb(pastor_name, husband_id, wife_id, about, date_of) VALUES( '$pastor', '$husband', '$wife', '$about', '$date')");
+        $ChHusband = mysqli_query($con, "UPDATE user_account SET statu = 'married' WHERE id = '$husband'");
+        $ChWife = mysqli_query($con, "UPDATE user_account SET statu = 'married' WHERE id = '$wife'");
+        if ($sql) {
+            print 'Wedding recored';
+        } else {
+            print 'Try again sorry';
+        }
+    }
+    if ($_POST['action'] == 'weddings') {
+        $limit = $_POST['limit'];
+        $offset = $_POST['offset'];
+
+        $sql = mysqli_query($con, "SELECT * FROM wedding_tb ORDER BY id DESC LIMIT {$limit}");
+        if (mysqli_num_rows($sql) > 0) {
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['husband_id']}");
+                $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['wife_id']}");
+                while ($rowH = mysqli_fetch_assoc($sqlHusband)) {
+                    $arraryH = array();
+                    $arraryH[0] = $rowH['id'];
+                    $arraryH[1] = $rowH['name'];
+                    $arraryH[2] = $rowH['username'];
+                    $arraryH[3] = $rowH['email'];
+                    $arraryH[4] = $rowH['locatio'];
+                    $arraryH[5] = $rowH['statu'];
+                    $arraryH[6] = $rowH['gender'];
+                    $arraryH[7] = $rowH['department'];
+                    $arraryH[10] = $rowH['dob'];
+                    $arraryH[11] = $rowH['profile_pic'];
+                    $arraryH[12] = $rowH['about'];
+                    $arraryH[13] = $rowH['on_off'];
+                    $arraryH[14] = $rowH['phone'];
+                }
+                while ($rowW = mysqli_fetch_assoc($sqlWife)) {
+                    $arraryW = array();
+                    $arraryW[0] = $rowW['id'];
+                    $arraryW[1] = $rowW['name'];
+                    $arraryW[2] = $rowW['username'];
+                    $arraryW[3] = $rowW['email'];
+                    $arraryW[4] = $rowW['locatio'];
+                    $arraryW[5] = $rowW['statu'];
+                    $arraryW[6] = $rowW['gender'];
+                    $arraryW[7] = $rowW['department'];
+                    $arraryW[10] = $rowW['dob'];
+                    $arraryW[11] = $rowW['profile_pic'];
+                    $arraryW[12] = $rowW['about'];
+                    $arraryW[13] = $rowW['on_off'];
+                    $arraryW[14] = $rowW['phone'];
+                }
+
+                $output .= '<p>wedding:' . $row['id'] . '</p>';
+            }
+        } else {
+            $output .= '<p class="alert alert-danger ui message negative">There is not Weddings registered</p>';
+        }
+        print $output;
     }
 }
