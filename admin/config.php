@@ -195,6 +195,7 @@ if (isset($_POST['action'])) {
             while ($row = mysqli_fetch_assoc($sql)) {
                 $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['husband_id']}");
                 $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['wife_id']}");
+                $wedding_id = $row['id'];
                 while ($rowH = mysqli_fetch_assoc($sqlHusband)) {
                     $arraryH = array();
                     $arraryH[0] = $rowH['id'];
@@ -229,17 +230,16 @@ if (isset($_POST['action'])) {
                 }
 
                 $output .= '
-                    
                         <div class="list-group list-group-flush">
-                            <p style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                            <p style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center show-case" data-id="' . $wedding_id . '">
                                 <span>'  . $arraryH[1] . ' & ' . $arraryW[1] . '</span>
                                 <span>' . $row['pastor_name'] . '</span>
                                 <span>
                                     <i class="fa fa-chevron-down"></i>
                                 </span>
                             </p>
-                            <div class="container">
-                                <div class="row">
+                            <div class="container-fluid p-0 display-' . $row['id'] . '" style="display: none">
+                                <div class="row py-2">
                                     <div class="col-md-6">
                                         <div class="card">
                                             <img src="' . $arraryH[11] . '" alt="" class="card-img-top">
@@ -306,6 +306,21 @@ if (isset($_POST['action'])) {
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <p class="d-flex justify-content-between align-items-center">
+                                                    <span class="">Date: </span>
+                                                    <span class="">' . $row['date_of'] . '</span>
+                                                </p>
+                                                <p class="d-flex justify-content-between align-items-center">
+                                                    <span class="">Pastor: </span>
+                                                    <span class="">' . $row['pastor_name'] . '</span>
+                                                </p>
+                                                <a href="./wedding.php?get=' . $row['id'] . '" class="btn btn-danger btn-fill btn-sm">Divorce</a>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -315,5 +330,19 @@ if (isset($_POST['action'])) {
             $output .= '<p class="alert alert-danger ui message negative">There is not Weddings registered</p>';
         }
         print $output;
+    }
+    if ($_POST['action'] == 'divorce') {
+        $id = $_POST['id'];
+        $h = $_POST['h'];
+        $w = $_POST['w'];
+        $h_name = $_POST['h_name'];
+        $w_name = $_POST['w_name'];
+
+        $divorce = mysqli_query($con, "INSERT INTO divorce_tb(h_id, h_name, w_id, w_name) VALUE('$h', '$h_name', '$w', '$w_name')");
+        $sql = mysqli_query($con, "DELETE FROM wedding_tb WHERE id = {$id}");
+        $divorceH = mysqli_query($con, "UPDATE user_account SET statu = 'divorce' WHERE id = {$h}");
+        $divorceW = mysqli_query($con, "UPDATE user_account SET statu = 'divorce' WHERE id = {$w}");
+
+        print 'Divorce success';
     }
 }

@@ -24,15 +24,11 @@ include("lock.php");
     <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-            <!--
-                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
-                Tip 2: you can also add an image using data-image tag
-            -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
-                        454
+                        ERC/GOMA
                     </a>
                 </div>
                 <ul class="nav">
@@ -55,9 +51,9 @@ include("lock.php");
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./typography.php">
+                        <a class="nav-link" href="./wedding.php">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
+                            <p>Wedding</p>
                         </a>
                     </li>
                     <li>
@@ -76,12 +72,6 @@ include("lock.php");
                         <a class="nav-link" href="./notifications.php">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Notifications</p>
-                        </a>
-                    </li>
-                    <li class="nav-item active active-pro">
-                        <a class="nav-link active" href="upgrade.php">
-                            <i class="nc-icon nc-alien-33"></i>
-                            <p>Upgrade to PRO</p>
                         </a>
                     </li>
                 </ul>
@@ -434,10 +424,8 @@ include("lock.php");
                                             </div>
                                             <div class="card-body">
                                                 <!-- <h1 class="display-1">List wedding</h1> -->
-                                                <div class="list-group list-group-flush">
-                                                    <div id="wedding_list">
-                                                        <!-- Ajax APIs -->
-                                                    </div>
+                                                <div id="wedding_list">
+                                                    <!-- Ajax APIs -->
                                                 </div>
                                             </div>
                                         </div>
@@ -1022,6 +1010,11 @@ include("lock.php");
         statistic();
         listPastor();
         PastorNormal();
+
+        $(document).on('click', '.show-case', function () {
+            let id = $(this).data('id');
+            $('.display-' + id).toggle('slow');
+        });
         $(document).on('click', '#btn-record-wedding', function () {
             let husband = $('#husband').val();
             let wife = $('#wife').val();
@@ -1121,7 +1114,7 @@ include("lock.php");
 
     function weddings() {
         let action = 'weddings';
-        let limit = 5;
+        let limit = 10;
         let offset = 0;
         $.ajax({
             url: './config.php',
