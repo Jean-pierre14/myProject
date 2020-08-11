@@ -231,13 +231,13 @@ if (isset($_POST['action'])) {
 
                 $output .= '
                         <div class="list-group list-group-flush">
-                            <p style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center show-case" data-id="' . $wedding_id . '">
+                            <a href="wedding.php?get='.$row['id'].'" style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center show-case" data-id="' . $wedding_id . '">
                                 <span>'  . $arraryH[1] . ' & ' . $arraryW[1] . '</span>
                                 <span>' . $row['pastor_name'] . '</span>
                                 <span>
                                     <i class="fa fa-chevron-down"></i>
                                 </span>
-                            </p>
+                            </a>
                             <div class="container-fluid p-0 display-' . $row['id'] . '" style="display: none">
                                 <div class="row py-2">
                                     <div class="col-md-6">
@@ -324,6 +324,155 @@ if (isset($_POST['action'])) {
                                 </div>
                             </div>
                         </div>
+                ';
+            }
+        } else {
+            $output .= '<p class="alert alert-danger ui message negative">There is not Weddings registered</p>';
+        }
+        print $output;
+    }
+    if ($_POST['action'] == 'id_wedding') {
+        $id = $_POST['id'];
+        $sql = mysqli_query($con, "SELECT * FROM wedding_tb WHERE id = {$id}");
+        if (mysqli_num_rows($sql) > 0) {
+
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['husband_id']}");
+                $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['wife_id']}");
+                $wedding_id = $row['id'];
+                while ($rowH = mysqli_fetch_assoc($sqlHusband)) {
+                    $arraryH = array();
+                    $arraryH[0] = $rowH['id'];
+                    $arraryH[1] = $rowH['name'];
+                    $arraryH[2] = $rowH['username'];
+                    $arraryH[3] = $rowH['email'];
+                    $arraryH[4] = $rowH['locatio'];
+                    $arraryH[5] = $rowH['statu'];
+                    $arraryH[6] = $rowH['gender'];
+                    $arraryH[7] = $rowH['department'];
+                    $arraryH[10] = $rowH['dob'];
+                    $arraryH[11] = $rowH['profile_pic'];
+                    $arraryH[12] = $rowH['about'];
+                    $arraryH[13] = $rowH['on_off'];
+                    $arraryH[14] = $rowH['phone'];
+                }
+                while ($rowW = mysqli_fetch_assoc($sqlWife)) {
+                    $arraryW = array();
+                    $arraryW[0] = $rowW['id'];
+                    $arraryW[1] = $rowW['name'];
+                    $arraryW[2] = $rowW['username'];
+                    $arraryW[3] = $rowW['email'];
+                    $arraryW[4] = $rowW['locatio'];
+                    $arraryW[5] = $rowW['statu'];
+                    $arraryW[6] = $rowW['gender'];
+                    $arraryW[7] = $rowW['department'];
+                    $arraryW[10] = $rowW['dob'];
+                    $arraryW[11] = $rowW['profile_pic'];
+                    $arraryW[12] = $rowW['about'];
+                    $arraryW[13] = $rowW['on_off'];
+                    $arraryW[14] = $rowW['phone'];
+                }
+
+                $output .= '
+                <div class="shadow box-dashboard bg-white">
+                    <span class="top-icon bg-primary">
+                        <i class="fa fa-user fa-2x"></i>
+                    </span>
+                    <p class="d-flex justify-content-between align-items-center mt-5">
+                        <span>
+                            <b>Husband name: </b>
+                        </span>
+                        <span>
+                            '.$arraryH[1].'
+                        </span>
+                        <span>
+                            <button type="button" data-target="#editPastor" data-id="'.$arraryH[0].'" data-toggle="modal"
+                                class="btn  border-0 p-2 shadow color-hero">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+                        </span>
+                    </p>
+                    <p class="d-flex justify-content-between align-items-center mt-2">
+                        <span>
+                            <b>Wife Name: </b>
+                        </span>
+                        <span>
+                            '.$arraryW[1].'
+                        </span>
+                        <span>
+                            <button type="button" data-target="#editPastor" data-id="'.$arraryW[0].'" data-toggle="modal"
+                                class="btn  border-0 p-2 shadow color-hero">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+                        </span>
+                    </p>
+                    <p class="d-flex justify-content-between align-items-center mt-2">
+                        <span>
+                            <b>Pastor Name: </b>
+                        </span>
+                        <span>
+                            '.$row['pastor_name'].'
+                        </span>
+                        <span>
+                            <button type="button" data-target="#editPastor" data-toggle="modal"
+                                class="btn  border-0 p-2 shadow color-hero">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+                        </span>
+                    </p>
+                    <p class="d-flex justify-content-between align-items-center mt-2">
+                        <span>
+                            <b>About: </b>
+                        </span>
+                        <span>
+                            '.$row['about'].'
+                        </span>
+                        <span>
+                            <button type="button" data-target="#editPastor" data-toggle="modal"
+                                class="btn  border-0 p-2 shadow color-hero">
+                                <i class="fa fa-edit"></i>
+                            </button>
+                        </span>
+                    </p>
+                </div>
+                <div class="shadow box-dashboard bg-white mt-4">
+                    <span class="top-icon bg-hero">
+                        <i class="fa fa-gift fa-2x"></i>
+                    </span>
+                    <p class="d-flex justify-content-between align-items-center mt-5">
+                        <span>
+                            <b>Date of the wedding: </b>
+                        </span>
+                        <span>
+                            '.$row['date_of'].'
+                        </span>
+                        <span>
+                            <button type="button" data-target="#editPastor" data-toggle="modal"
+                                class="btn  border-0 p-2 shadow color-hero">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+                        </span>
+                    </p>
+                </div>
+                <div class="shadow box-dashboard bg-white mt-4">
+                    <span class="top-icon bg-danger">
+                        <i class="fa fa-trash fa-2x"></i>
+                    </span>
+                    <p class="d-flex justify-content-between align-items-center mt-5 text-danger">
+                        <span>
+                            <b>Divorce: </b>
+                        </span>
+                        <span>
+                            '.$arraryH[1].' '.$arraryW[1].'
+                        </span>
+                        <span>
+                            <button type="button" data-target="#editPastor" data-toggle="modal"
+                                class="btn btn-danger border-0 p-2 shadow color-hero">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </span>
+                    </p>
+                </div>
                 ';
             }
         } else {

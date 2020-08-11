@@ -126,8 +126,34 @@ include("lock.php");
                     </div>
                 </div>
             </nav>
-            <div class="content m-0 p-0">
-                <h1 class="display-1">Weddings</h1>
+            <div class="content m-0">
+                <div class="container-fluid p-0">
+                    <div class="row">
+                        <div class="col-md-8 col-sm-12">
+                            <!-- <h1 class="display-1">List of weddings</h1> -->
+                            <?php if(isset($_GET['get'])):?>
+                                <?php
+                                    $id_get = $_GET['get'];
+                                ?>
+                                <input type="hidden" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
+                                <!-- <h1 class="display-4 text-danger">Get me</h1> -->
+                                <div id="getMe">
+                                    <!-- Url Api -->
+                                </div>
+                            <?php else: ?>
+                                <h1 class="display-4 text-success">Normal</h1>
+                            <?php endif;?>
+                        </div>
+                        <div class="col-md-4 col-sm-0 pt-2">
+                            <form action="" method="post">
+                                <input type="search" name="search" id="search" placeholder="Search..." class="form-control">
+                            </form>
+                            <div id="wedding_list" class="mt-2" style="font-size: 12px;">
+                                <!-- Url Api -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -167,140 +193,6 @@ include("lock.php");
             </footer>
         </div>
     </div>
-
-    <div class="fixed-plugin">
-        <div class="dropdown show-dropdown">
-            <a href="#" data-toggle="dropdown">
-                <i class="fa fa-cog fa-2x"> </i>
-            </a>
-
-            <ul class="dropdown-menu">
-                <li class="header-title"> Sidebar Style</li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger">
-                        <p>Background Image</p>
-                        <label class="switch">
-                            <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary"
-                                data-off-color="primary"><span class="toggle"></span>
-                        </label>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger background-color">
-                        <p>Filters</p>
-                        <div class="pull-right">
-                            <span class="badge filter badge-black" data-color="black"></span>
-                            <span class="badge filter badge-azure" data-color="azure"></span>
-                            <span class="badge filter badge-green" data-color="green"></span>
-                            <span class="badge filter badge-orange" data-color="orange"></span>
-                            <span class="badge filter badge-red" data-color="red"></span>
-                            <span class="badge filter badge-purple active" data-color="purple"></span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="header-title">Sidebar Images</li>
-
-                <li class="active">
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-1.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-3.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-5.jpg" alt="" />
-                    </a>
-                </li>
-
-                <li class="button-container">
-                    <div class="">
-                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank"
-                            class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                    </div>
-                </li>
-
-                <li class="header-title pro-title text-center">Want more components?</li>
-
-                <li class="button-container">
-                    <div class="">
-                        <a href="#" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-                    </div>
-                </li>
-
-                <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
-                <li class="button-container">
-                    <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i
-                            class="fa fa-twitter"></i> · 256</button>
-                    <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i
-                            class="fa fa-facebook-square"></i> · 426</button>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-success">Add New Pastor</h4>
-                    <button type="button" class="btn close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div id="successMsg"></div>
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <select name="pastorId" id="pastorId" class="custom-select">
-                                <option value="">-- Select Pastor ---</option>
-                                <?php
-                                $item = '';
-                                $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
-                                if (@mysqli_num_rows($recordPastor) > 0) {
-                                    while ($rowrecord = mysqli_fetch_array($recordPastor)) {
-                                        $pastorId = $rowrecord['id'];
-                                        $pastorname = $rowrecord['name'];
-                                        print '<option value="' . $pastorId . '">' . $pastorname . '</option>';
-                                    }
-                                } else {
-                                    $item .= '<option class="text-danger">There no data</option>';
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="pastorName" placeholder="Your Pastor">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Pastor name</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-fill btn-sm btn-success RecordPastor">Record <i
-                                    class="fa fa-arrow-circle-right"></i></button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
 
 <script src="../public/bootstrap/jquery.min.js"></script>
@@ -316,107 +208,59 @@ include("lock.php");
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-$().ready(() => {
-    online();
-    member();
-    memberList();
-    statistic();
-    listPastor();
-    PastorNormal();
-
-    weddings();
-});
-
-function weddings() {
-    let action = 'weddings';
-    let limit = 10;
-    let offset = 0;
-    $.ajax({
-        url: './config.php',
-        data: {
-            action,
-            limit,
-            offset
-        },
-        method: 'post',
-        success: function(data) {
-            $('#wedding_list').html(data)
-        }
-    })
-}
-
-
-
-
-function listPastor() {
-    let action = 'listPastor';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#listPastor').html(data);
-        }
-    })
-}
-
-function online() {
-    let action = 'online';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#online').html(data)
-        }
-    })
-}
-
-function member() {
-    let action = 'member';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#member').html(data)
-        }
-    })
-}
-
-function memberList() {
-    let action = 'member-list';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#member-list').html(data)
-        }
-    })
-}
-
-function statistic() {
-    let action = 'statistic';
-    $.ajax({
-        url: '../event/event.php',
-        method: 'post',
-        data: {
-            action: action
-        },
-        success: function(data) {
-            $('#statistic').html(data)
-        }
-    })
-}
+    $(document).ready(function(){
+        let flag = 0;
+        let action = 'weddings';
+        $.ajax({
+            url: './config.php',
+            data: {
+                action,
+                limit: 3,
+                offset: 0
+            },
+            method: 'post',
+            success: function(data) {
+                $('#wedding_list').html(data);
+                flag += 3;
+            }
+        });
+        $(window).scroll( function(){
+            if($(window).scrollTop() >= $(document).height() - $(window).height()){
+                let action = 'weddings';
+                let limit = 10;
+                let offset = flag;
+                // alert(offset)
+                $.ajax({
+                    url: './config.php',
+                    data: {
+                        action,
+                        limit,
+                        offset
+                    },
+                    method: 'post',
+                    success: function(data) {
+                        $('#wedding_list').html(data);
+                        flag += 3;
+                    }
+                })
+            }
+        })
+        getWedding();
+    });
+    function getWedding(){
+        let action = 'id_wedding';
+        let id = $('#id_wedding').val();
+        
+        $.ajax({
+            url: './config.php',
+            data: {action, id},
+            method: 'post',
+            success: function(data){
+                $('#getMe').html(data)
+            }
+        })
+    }
 </script>
+
 
 </html>
