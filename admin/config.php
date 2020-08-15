@@ -231,13 +231,13 @@ if (isset($_POST['action'])) {
 
                 $output .= '
                         <div class="list-group list-group-flush">
-                            <a href="wedding.php?get='.$row['id'].'" style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center show-case" data-id="' . $wedding_id . '">
+                            <div style="cursor: pointer" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center show-case" data-id="' . $wedding_id . '">
                                 <span>'  . $arraryH[1] . ' & ' . $arraryW[1] . '</span>
                                 <span>' . $row['pastor_name'] . '</span>
                                 <span>
                                     <i class="fa fa-chevron-down"></i>
                                 </span>
-                            </a>
+                            </div>
                             <div class="container-fluid p-0 display-' . $row['id'] . '" style="display: none">
                                 <div class="row py-2">
                                     <div class="col-md-6">
@@ -335,7 +335,6 @@ if (isset($_POST['action'])) {
         $id = $_POST['id'];
         $sql = mysqli_query($con, "SELECT * FROM wedding_tb WHERE id = {$id}");
         if (mysqli_num_rows($sql) > 0) {
-
             while ($row = mysqli_fetch_assoc($sql)) {
                 $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['husband_id']}");
                 $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['wife_id']}");
@@ -372,7 +371,7 @@ if (isset($_POST['action'])) {
                     $arraryW[13] = $rowW['on_off'];
                     $arraryW[14] = $rowW['phone'];
                 }
-
+                
                 $output .= '
                 <div class="shadow box-dashboard bg-white">
                     <span class="top-icon bg-primary">
@@ -386,8 +385,8 @@ if (isset($_POST['action'])) {
                             '.$arraryH[1].'
                         </span>
                         <span>
-                            <button type="button" data-target="#editPastor" data-id="'.$arraryH[0].'" data-toggle="modal"
-                                class="btn  border-0 p-2 shadow color-hero">
+                            <button type="button" data-target="#'.$arraryH[0].'" data-toggle="modal" data-id="'.$arraryH[0].'"
+                                class="btn border-0 p-2 shadow color-hero">
                                 <i class="fa fa-chevron-left"></i>
                             </button>
                         </span>
@@ -473,6 +472,23 @@ if (isset($_POST['action'])) {
                         </span>
                     </p>
                 </div>
+                ';
+                $output .= '
+                    <div class="modal fade" id="'.$arraryH[0].'">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header p-1">
+                                    <h3 class="">Modal</h3>
+                                </div>
+                                <div class="modal-body">
+                                    ---
+                                </div>
+                                <div class="modal-footer">
+                                    ---
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 ';
             }
         } else {
