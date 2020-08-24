@@ -331,6 +331,67 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
+    if ($_POST['action'] == 'Weddings') {
+        $limit = $_POST['limit'];
+        $offset = $_POST['offset'];
+
+        $sql = mysqli_query($con, "SELECT * FROM wedding_tb ORDER BY id DESC LIMIT {$limit}");
+        if (mysqli_num_rows($sql) > 0) {
+
+            while ($row = mysqli_fetch_assoc($sql)) {
+                $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['husband_id']}");
+                $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE id ={$row['wife_id']}");
+                $wedding_id = $row['id'];
+                while ($rowH = mysqli_fetch_assoc($sqlHusband)) {
+                    $arraryH = array();
+                    $arraryH[0] = $rowH['id'];
+                    $arraryH[1] = $rowH['name'];
+                    $arraryH[2] = $rowH['username'];
+                    $arraryH[3] = $rowH['email'];
+                    $arraryH[4] = $rowH['locatio'];
+                    $arraryH[5] = $rowH['statu'];
+                    $arraryH[6] = $rowH['gender'];
+                    $arraryH[7] = $rowH['department'];
+                    $arraryH[10] = $rowH['dob'];
+                    $arraryH[11] = $rowH['profile_pic'];
+                    $arraryH[12] = $rowH['about'];
+                    $arraryH[13] = $rowH['on_off'];
+                    $arraryH[14] = $rowH['phone'];
+                }
+                while ($rowW = mysqli_fetch_assoc($sqlWife)) {
+                    $arraryW = array();
+                    $arraryW[0] = $rowW['id'];
+                    $arraryW[1] = $rowW['name'];
+                    $arraryW[2] = $rowW['username'];
+                    $arraryW[3] = $rowW['email'];
+                    $arraryW[4] = $rowW['locatio'];
+                    $arraryW[5] = $rowW['statu'];
+                    $arraryW[6] = $rowW['gender'];
+                    $arraryW[7] = $rowW['department'];
+                    $arraryW[10] = $rowW['dob'];
+                    $arraryW[11] = $rowW['profile_pic'];
+                    $arraryW[12] = $rowW['about'];
+                    $arraryW[13] = $rowW['on_off'];
+                    $arraryW[14] = $rowW['phone'];
+                }
+
+                $output .= '
+                        <div class="list-group list-group-flush">
+                            <a href="wedding.php?get='.$row['id'].'" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center show-case" data-id="' . $wedding_id . '">
+                                <span>'  . $arraryH[2] . ' & ' . $arraryW[2] . '</span>
+                                <span>' . $row['pastor_name'] . '</span>
+                                <span>
+                                    <i class="fa fa-chevron-right"></i>
+                                </span>
+                            </a>                            
+                        </div>
+                ';
+            }
+        } else {
+            $output .= '<p class="alert alert-danger ui message negative">There is not Weddings registered</p>';
+        }
+        print $output;
+    }
     if ($_POST['action'] == 'id_wedding') {
         $id = $_POST['id'];
         $sql = mysqli_query($con, "SELECT * FROM wedding_tb WHERE id = {$id}");
@@ -385,8 +446,7 @@ if (isset($_POST['action'])) {
                             '.$arraryH[1].'
                         </span>
                         <span>
-                            <button type="button" data-target="#'.$arraryH[0].'" data-toggle="modal" data-id="'.$arraryH[0].'"
-                                class="btn border-0 p-2 shadow color-hero">
+                            <button type="button" id="getMe" class="btn border-0 p-2 shadow color-hero">
                                 <i class="fa fa-chevron-left"></i>
                             </button>
                         </span>
@@ -474,21 +534,7 @@ if (isset($_POST['action'])) {
                 </div>
                 ';
                 $output .= '
-                    <div class="modal fade" id="'.$arraryH[0].'">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header p-1">
-                                    <h3 class="">Modal</h3>
-                                </div>
-                                <div class="modal-body">
-                                    ---
-                                </div>
-                                <div class="modal-footer">
-                                    ---
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 ';
             }
         } else {
@@ -509,5 +555,269 @@ if (isset($_POST['action'])) {
         $divorceW = mysqli_query($con, "UPDATE user_account SET statu = 'divorce' WHERE id = {$w}");
 
         print 'Divorce success';
+    }
+    
+
+
+    // Dashboard items
+    if ($_POST['action'] == 'requestCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countRequest FROM suscribe_tb WHERE read_unread ='unread'");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                print $row['countRequest'];
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'pastorCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM pastor_tb");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-hero btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'weddingCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM wedding_tb");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-hero btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'usersCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM user_account");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-hero btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'divorceCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM user_account WHERE statu = 'divorce'");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-hero btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'singleCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM user_account WHERE statu = 'single'");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-hero btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'maleCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM user_account WHERE gender = 'male'");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-hero btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+    if ($_POST['action'] == 'femaleCount'){
+        $sql = mysqli_query($con, "SELECT COUNT(*) AS countItem FROM user_account WHERE gender = 'female'");
+        
+        if($sql){
+            if(mysqli_num_rows($sql) > 0){
+                $row = mysqli_fetch_assoc($sql);
+                if($row['countItem'] == 0){
+                    print '<p class="btn btn-danger btn-sm shadow">Zero</p>';
+                }else{
+                    print '<p class="btn bg-success text-light btn-sm shadow">'.$row['countItem'].'</p>';
+                }
+            }else{
+                print 'Zero';
+            }
+        }else{
+            print 'Error';
+        }
+    }
+
+    if($_POST['action'] == 'tablePastor'){
+        $output .= '
+        <table class="table table-sm table-hover table-striped">
+            <thead>
+                <tr>
+                    <th>Full name</th>
+                    <th>E-mail</th>
+                    <th>Phone</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+        ';
+        $sql = mysqli_query($con, 'SELECT * FROM pastor_tb ORDER BY id DESC LIMIT 4');
+        if(mysqli_num_rows($sql) > 0){
+            while($row = mysqli_fetch_assoc($sql)){
+                $sqlPastor = mysqli_query($con, "SELECT * FROM user_account WHERE id= '".$row['user_id']."'");
+                $arrayPastor = array();
+                while($data = mysqli_fetch_assoc($sqlPastor)){
+                    $output .= '
+                    <tr class="">
+                        <td class="">'.$row['pastor_name'].'</td>
+                        <td class="">'.$data['email'].'</td>
+                        <td class="">'.$data['phone'].'</td>
+                        <td class="">
+                            <div class="btn-group delete">
+                                <a href="#edit'.$row['user_id'].'" class="btn btn-sm btn-info">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="#delete'.$row['user_id'].'" class="btn btn-sm btn-danger">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                ';
+                }
+            }
+        }else{
+            $output .= '<p class="p-3 alert alert-danger ui message negative">There is not data into record</p>';
+        }
+        $output .= '
+            </tbody>
+        </table>
+        ';
+        print $output;
+    }
+
+    if($_POST['action'] == 'users'){
+        $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT 3");
+        if(mysqli_num_rows($sql) > 0){
+            $output .= '
+                    <div class="list-group list-group-flush m-0">
+                ';
+            while($row = mysqli_fetch_assoc($sql)){
+                $output .= '
+                    <a href="./users.php?user='.$row['id'].'" class="d-flex justify-content-between list-group-item">';
+                if($row['profile_pic'] == ''){
+                    $output .= '
+                    <span>
+                        <img class"ui avatar" src="../assets/images/use/user/face-0.jpg" style="width: 30px;border-radius: 50%"/>
+                    </span>
+                    ';
+                }else{
+                    $output .= '
+                    <span>
+                        <img class"ui avatar" src="'.$row['profile_pic'].'" style="width: 30px;border-radius: 50%"/>
+                    </span>
+                    ';
+                }
+                $output .= '
+                        <span class="">'.$row['username'].'</span>
+                    </a>
+                ';
+            }
+            $output .= '</div>';
+        }else{
+            $output .= '<p class="alert alert-danger ui message negative">There is not data</p>';
+        }
+        print $output;
+    }
+    
+    // Dashboard end 
+
+    if($_POST['action'] == 'usersList'){
+        $offset = $_POST['offset'];
+        $limit = $_POST['limit'];
+        $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT {$limit}");
+        if(mysqli_num_rows($sql) > 0){
+            $output .= '
+                    <div class="list-group mt-3 shadow list-group-flush m-0">
+                ';
+            while($row = mysqli_fetch_assoc($sql)){
+                $output .= '
+                    <a href="./users.php?user='.$row['id'].'" class="d-flex justify-content-between list-group-item">';
+                if($row['profile_pic'] == ''){
+                    $output .= '
+                    <span>
+                        <img class"ui avatar" src="../assets/images/use/user/face-0.jpg" style="width: 30px;border-radius: 50%"/>
+                    </span>
+                    ';
+                }else{
+                    $output .= '
+                    <span>
+                        <img class"ui avatar" src="'.$row['profile_pic'].'" style="width: 30px;border-radius: 50%"/>
+                    </span>
+                    ';
+                }
+                $output .= '
+                        <span class="">'.$row['username'].'</span>
+                    </a>
+                ';
+            }
+            $output .= '</div>';
+        }else{
+            $output .= '<p class="alert alert-danger ui message negative">There is not data</p>';
+        }
+        print $output;
     }
 }

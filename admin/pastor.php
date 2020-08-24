@@ -51,7 +51,7 @@ include("lock.php");
                             <p>Registration</p>
                         </a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="./wedding.php">
                             <i class="nc-icon nc-paper-2"></i>
                             <p>Wedding</p>
@@ -63,7 +63,7 @@ include("lock.php");
                             <p>Members</p>
                         </a>
                     </li>
-                    <li>
+                    <li  class="nav-item active">
                         <a class="nav-link" href="./pastor.php">
                             <i class="nc-icon nc-pin-3"></i>
                             <p>Pastors</p>
@@ -79,9 +79,9 @@ include("lock.php");
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-expand-lg bg-white p-0 m-0" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="wedding.php"> Wedding <i class="fa fa-user-plus"></i></a>
+                    <a class="navbar-brand" href="registration.php"> Pastors <i class="fa fa-user-plus"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -133,17 +133,16 @@ include("lock.php");
                         <div class="col-md-8 col-sm-12">
                             <!-- <h1 class="display-1">List of weddings</h1> -->
                             <?php if(isset($_GET['get'])):?>
-                                
-                                <?php $id_get = $_GET['get'];?>
-                                <!-- Get the ID -->
+                                <?php
+                                    $id_get = $_GET['get'];
+                                ?>
                                 <input type="hidden" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
-                                
                                 <!-- <h1 class="display-4 text-danger">Get me</h1> -->
                                 <div id="getMe">
                                     <!-- Url Api -->
                                 </div>
                             <?php else: ?>
-                                <div class="shadow box-dashboard bg-white">
+                                <div class="shadow box-dashboard">
                                     <span class="top-icon bg-primary">
                                         <i class="fa fa-user fa-2x"></i>
                                     </span>
@@ -151,18 +150,14 @@ include("lock.php");
                                     <div class="container-fluid m-0 p-0">
                                         <div id="demo" class="carousel slide" data-ride="carousel">
                                             <div class="carousel-inner">
-                                                <!-- PhotoShop -->
-                                                <div class="carousel-item active">
-                                                    <img src="../assets/images/use/user/happywedding.png" alt="" class="img-fluid"/>
-                                                </div>
-                                                <!-- PS -->
-                                                <div class="carousel-item">
-                                                    <img src="../assets/images/use/user/great.png" alt="" class="img-fluid">
-                                                </div>
+                                                <div class="carousel-item active">---1</div>
+                                                <div class="carousel-item">---2</div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <h1 class="display-4 text-success">Normal</h1>
+                                <h1 class="display-1">Carousel</h1>
                             <?php endif;?>
                         </div>
                         <div class="col-md-4 col-sm-0 pt-2">
@@ -214,39 +209,6 @@ include("lock.php");
             </footer>
         </div>
     </div>
-    <div class="modal fade" id="hModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header p-1">
-                    <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit <?php print $thisArr[2]?></h4>
-                    <a href="wedding.php" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
-                        &times;
-                    </a>
-                </div>
-                <div class="modal-body">
-                    <form action="" autocomplete="off" method="post">
-                        <div class="form-group">
-                            <label for="about">Username</label>
-                            <input type="hidden" value="<?php print $thisArr[0];?>" id="id_up" class="form-control">
-                            <input type="text" id="username" placeholder="Example <?php print $thisArr[2];?>"
-                                class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <button type="button" id="btn-Edit-Username" class="btn btn-sm btn-warning btn-fill about_btn">
-                                <i class="fa fa-arrow-circle-right"></i>
-                                Update Username
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="wedding.php" class="btn btn-sm btn-fill btn-danger">Close</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
 
 <script src="../public/bootstrap/jquery.min.js"></script>
@@ -263,11 +225,8 @@ include("lock.php");
 
 <script>
     $(document).ready(function(){
-        $(document).on('#getMe', 'click', function(){
-            alert("Clicked")
-        })
         let flag = 0;
-        let action = 'Weddings';
+        let action = 'weddings';
         $.ajax({
             url: './config.php',
             data: {
@@ -278,14 +237,15 @@ include("lock.php");
             method: 'post',
             success: function(data) {
                 $('#wedding_list').html(data);
-                flag += 5;
+                flag += 3;
             }
         });
         $(window).scroll( function(){
             if($(window).scrollTop() >= $(document).height() - $(window).height()){
-                let action = 'Weddings';
+                let action = 'weddings';
                 let limit = 10;
                 let offset = flag;
+                // alert(offset)
                 $.ajax({
                     url: './config.php',
                     data: {
@@ -317,4 +277,6 @@ include("lock.php");
         })
     }
 </script>
+
+
 </html>

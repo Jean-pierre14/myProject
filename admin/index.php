@@ -29,11 +29,6 @@
     <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-            <!--
-                Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
-
-                Tip 2: you can also add an image using data-image tag
-            -->
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
@@ -66,20 +61,20 @@
                             <p>Wedding</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="./icons.html">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./users.php">
                             <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
+                            <p>Members</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./maps.html">
+                        <a class="nav-link" href="./pastor.php">
                             <i class="nc-icon nc-pin-3"></i>
-                            <p>Maps</p>
+                            <p>Pastors</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./notifications.html">
+                        <a class="nav-link" href="./notifications.php">
                             <i class="nc-icon nc-bell-55"></i>
                             <p>Notifications</p>
                         </a>
@@ -132,6 +127,12 @@
                                 <img src="../assets/images/gun.png" alt="">
                             </span>
                             <ul>
+                                <li>
+                                    <a href="#" class="bg-danger shadow">
+                                        <i class="fa fa-database"></i> 
+                                        <span id="requestCount">23</span>
+                                    </a>
+                                </li>
                                 <li><a href="#" class="bg-primary">Members</a></li>
                                 <li><a href="#" class="bg-hero">Pastors</a></li>
                                 <li><a href="#" class="bg-pink">Weddings</a></li>
@@ -139,43 +140,43 @@
                         </nav>
                         <div class="dashboard">
                             <div class="row p-0 mt-3">
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-sm-12 p-1">
                                     <div class="shadow box-dashboard">
                                         <p class="d-flex justify-content-between align-items-center">
                                             <span>
                                                 <b>Total of all Users</b>
                                             </span>
                                             <span>
-                                                <small>3000</small>
+                                                <small class="usersCount">3000</small>
                                             </span>
                                         </p>
-                                        <a href="#" class="btn btn-sm bg-primary">View more</a>
+                                        <a href="./users.php" class="btn btn-sm bg-primary">View more</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-sm-12 p-1">
                                     <div class="shadow box-dashboard">
                                         <p class="d-flex justify-content-between align-items-center">
                                             <span>
                                                 <b>Pastors</b>
                                             </span>
-                                            <span>
+                                            <span class="pastorCount">
                                                 23
                                             </span>
                                         </p>
-                                        <a href="#" class="btn btn-sm bg-hero">View more</a>
+                                        <a href="./pastor.php" class="btn btn-sm bg-hero">View more</a>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-sm-12 p-1">
                                     <div class="shadow box-dashboard">
                                         <p class="d-flex justify-content-between align-items-center">
                                             <span>
                                                 <b>Weddings</b>
                                             </span>
-                                            <span>
+                                            <span class="weddingCount">
                                                 200
                                             </span>
                                         </p>
-                                        <a href="#" class="btn btn-sm bg-pink">View more</a>
+                                        <a href="./wedding.php" class="btn btn-sm bg-pink">View more</a>
                                     </div>
                                 </div>
                             </div>
@@ -184,129 +185,192 @@
                                     <div class="shadow box-dashboard">
                                         <div class="d-flex justify-content-between align-items-center">
                                             <h2 class="color-hero">Pastors</h2>
-                                            <a href="#" class="btn shadow border-0"><i
-                                                    class="fa fa-arrow-right color-hero"></i></a>
+                                            <a href="./pastor.php" title="Pastor page" class="btn shadow border-0">
+                                                <i class="fa fa-arrow-right color-hero"></i>
+                                            </a>
                                         </div>
-                                        <table class="table table-sm table-hover table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Full name</th>
-                                                    <th>E-mail</th>
-                                                    <th>Phone</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                        <div id="tablePastor">
+                                            <!-- URL API pastor -->
+                                            <table class="table table-sm table-hover table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Full name</th>
+                                                        <th>E-mail</th>
+                                                        <th>Phone</th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Hadassa</td>
+                                                        <td>Goma avenu des volcans</td>
+                                                        <td>09999999999</td>
+                                                        <td>
+                                                            <div class="btn-group delete">
+                                                                <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                                <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                        class="fa fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hadassa</td>
+                                                        <td>Goma avenu des volcans</td>
+                                                        <td>09999999999</td>
+                                                        <td>
+                                                            <div class="btn-group delete">
+                                                                <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                                <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                        class="fa fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hadassa</td>
+                                                        <td>Goma avenu des volcans</td>
+                                                        <td>09999999999</td>
+                                                        <td>
+                                                            <div class="btn-group delete">
+                                                                <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                                <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                        class="fa fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hadassa</td>
+                                                        <td>Goma avenu des volcans</td>
+                                                        <td>09999999999</td>
+                                                        <td>
+                                                            <div class="btn-group delete">
+                                                                <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                                <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                        class="fa fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Hadassa</td>
+                                                        <td>Goma avenu des volcans</td>
+                                                        <td>09999999999</td>
+                                                        <td>
+                                                            <div class="btn-group delete">
+                                                                <a href="#edit" class="btn btn-sm btn-info"><i
+                                                                        class="fa fa-edit"></i></a>
+                                                                <a href="#delete" class="btn btn-sm btn-danger"><i
+                                                                        class="fa fa-trash"></i></a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <a href="./registration.php?registration=pastor" class="btn btn-sm btn-danger">
+                                            <i class="fa fa-database"></i>
+                                            Add Pastor
+                                        </a>                                        
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-4 col-sm-12">
                                     <div class="shadow box-dashboard">
-                                        <h2 class="color-hero">3 Last users</h2>
-                                        <ul class="list-group list-group-flush">
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                                                <span>
-                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
-                                                </span>
-                                                <span>
-                                                    Username
-                                                </span>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                                                <span>
-                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
-                                                </span>
-                                                <span>
-                                                    Username
-                                                </span>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                                                <span>
-                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
-                                                </span>
-                                                <span>
-                                                    Username
-                                                </span>
-                                            </li>
-                                            <li
-                                                class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
-                                                <span>
-                                                    <img src="../assets/images/gun.png" alt="" style="width: 20px;">
-                                                </span>
-                                                <span>
-                                                    Username
-                                                </span>
-                                            </li>
-                                        </ul>
+                                        <a href="./users.php" title="Users page" class="btn close shadow border-0">
+                                            <i class="fa fa-arrow-right color-hero"></i>
+                                        </a>
+                                        <h2 class="color-hero">users</h2>
+                                        <div class="users">
+                                            <!-- API -->
+                                            <ul class="list-group list-group-flush">
+                                               <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                    <span>
+                                                        <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                    </span>
+                                                    <span>
+                                                        Username
+                                                    </span>
+                                                </li>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                    <span>
+                                                        <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                    </span>
+                                                    <span>
+                                                        Username
+                                                    </span>
+                                                </li>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                    <span>
+                                                        <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                    </span>
+                                                    <span>
+                                                        Username
+                                                    </span>
+                                                </li>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
+                                                    <span>
+                                                        <img src="../assets/images/gun.png" alt="" style="width: 20px;">
+                                                    </span>
+                                                    <span>
+                                                        Username
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <a href="./users.php" class="btn shadow btn-danger btn-sm mt-4">View more</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-3 p-0">
+                                <div class="col-md-3 col-sm-12 p-1">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span class="text-danger">
+                                                <b>Fiance</b>
+                                            </span>
+                                            <span class="weddingCount"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 p-1">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span class="text-warning">
+                                                <b>Divorce</b>
+                                            </span>
+                                            <span class="divorceCount"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 p-1">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span class="text-warning">
+                                                <b>Single</b>
+                                            </span>
+                                            <span class="singleCount">23</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-12 p-1">
+                                    <div class="shadow box-dashboard">
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span class="text-danger">
+                                                <b>Male</b>
+                                            </span>
+                                            <span class="maleCount">23</span>
+                                        </p>
+                                        <p class="d-flex justify-content-between align-items-center">
+                                            <span class="text-success">
+                                                <b>Female</b>
+                                            </span>
+                                            <span class="femaleCount">23</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -352,89 +416,154 @@
             </footer>
         </div>
     </div>
-
-    <div class="fixed-plugin">
-        <div class="dropdown show-dropdown">
-            <a href="#" data-toggle="dropdown">
-                <i class="nc-icon nc-align-center fa-2x"
-                    style="color: #fff;font-size: 20px;padding:10px;font-weight: 700;"></i>
-            </a>
-
-            <ul class="dropdown-menu">
-                <li class="header-title"> Sidebar Style</li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger">
-                        <p>Background Image</p>
-                        <label class="switch">
-                            <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary"
-                                data-off-color="primary"><span class="toggle"></span>
-                        </label>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger background-color">
-                        <p>Filters</p>
-                        <div class="pull-right">
-                            <span class="badge filter badge-black" data-color="black"></span>
-                            <span class="badge filter badge-azure" data-color="azure"></span>
-                            <span class="badge filter badge-green" data-color="green"></span>
-                            <span class="badge filter badge-orange" data-color="orange"></span>
-                            <span class="badge filter badge-red" data-color="red"></span>
-                            <span class="badge filter badge-purple active" data-color="purple"></span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="header-title">Sidebar Images</li>
-
-                <li class="active">
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-1.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-3.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-5.jpg" alt="" />
-                    </a>
-                </li>
-
-                <li class="button-container">
-                    <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i
-                            class="fa fa-twitter"></i> · sniper</button>
-                    <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i
-                            class="fa fa-facebook-square"></i> Racine14</button>
-                </li>
-            </ul>
-        </div>
-    </div>
 </body>
 <script src="../public/bootstrap/jquery.min.js" type="text/javascript"></script>
 <script src="../public/bootstrap/popper.min.js" type="text/javascript"></script>
 <script src="../public/js/bootstrap-notify.js" type="text/javascript"></script>
 <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../assets/js/plugins/bootstrap-switch.js"></script>
 <script src="../public/js/all.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script> -->
 <script src="../assets/js/plugins/chartist.min.js"></script>
 <script src="../assets/js/plugins/bootstrap-notify.js"></script>
-<script src="../assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
+<script src="../assets/js/light-bootstrap-dashboard.js " type="text/javascript"></script>
 <script src="../assets/js/demo.js"></script>
 <script type="text/javascript">
 $(document).ready(() => {
-    demo.initDashboardPageCharts();
-    demo.showNotification();
+    requestCount();
+    pastorCount();
+    usersCount();
+    weddingsCount();
+    fianceCount();
+    singleCount();
+    divorceCount();
+    maleCount();
+    femaleCount();
+    tablePastor();
+    users();
 });
+function users(){
+    let action = 'users';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.users').html(data)
+        }
+    })
+    setTimeout('users()', 2000)
+}
+function tablePastor(){
+    let action = 'tablePastor';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('#tablePastor').html(data)
+        }
+    })
+}
+function requestCount(){
+    let action = 'requestCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('#requestCount').html(data)
+        }
+    })
+    setTimeout('requestCount()', 1000)
+}
+function pastorCount(){
+    let action = 'pastorCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.pastorCount').html(data)
+        }
+    })
+}
+function weddingsCount(){
+    let action = 'weddingCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.weddingCount').html(data)
+        }
+    })
+}
+function usersCount(){
+    let action = 'usersCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.usersCount').html(data)
+        }
+    })
+}
+function singleCount(){
+    let action = 'singleCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.singleCount').html(data)
+        }
+    })
+}
+function fianceCount(){
+    let action = 'fianceCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.fianceCount').html(data)
+        }
+    })
+}
+function divorceCount(){
+    let action = 'divorceCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.divorceCount').html(data)
+        }
+    })
+}
+function maleCount(){
+    let action = 'maleCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.maleCount').html(data)
+        }
+    })
+}
+function femaleCount(){
+    let action = 'femaleCount';
+    $.ajax({
+        url: './config.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('.femaleCount').html(data)
+        }
+    })
+}
 </script>
 
 </html>

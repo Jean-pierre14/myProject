@@ -1,0 +1,18 @@
+.top-text-left{
+    position: relative;
+    margin-top: -20px;
+}
+
+.icon-left-center{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    border-bottom-left-radius: 20px;
+
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+}

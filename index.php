@@ -1,412 +1,491 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ERC</title>
-    <link rel="stylesheet" href="./public/semantic/semantic.min.css">
-    <script src="./public/semantic/semantic.min.js"></script>
+    <link rel="stylesheet" href="./public/css/all.min.css">
     <link rel="stylesheet" href="./public/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="./public/css/demo.css">
-    <link rel="stylesheet" href="./public/css/light-bootstrap-dashboard.css">
-    <link rel="stylesheet" href="./public/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" href="./public/css/style.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-<body>
-  <div class="jumbotron m-0">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="./public/img/design/erc_top.png" alt="" class="ui image img-fluid">
-      </div>
-      <div class="col-md-8 justify-content-center text-center">
-        <h3 class="text-success">Restoration Church Goma</h3>
-        <p><i>Evangelical Restoration Church</i></p>
-      </div>
-    </div>
-
-  </div>
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">ERC</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="nav navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Programmes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About us</a>
-            </li>    
-          </ul>
-        </div>  
-    </nav>
-    <div class="container-fluid m-0 bg-img1">
-        <div class="row bg-img1">
-            <div class="col-md-4">
-                <div class="box mt-5 text-center">
-                    <p>Restoration Church Goma</p>
-                    <small class="ui small mt-5">Evangelical Restoration Church</small>
-                    <p>
-                        Only God knows what is gonna happen in your life but today he choose you to join us
-                    </p>
-                    <a href="login.php" class="btn btn-success btn-xl mt-5">Join us <i class="fa fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="col-md-8 p-5">
-                <div id="demo" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/use/design/pastors.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-success">Pastor</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/use/design/choir.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-primary">Choir</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/use/design/pray.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <p class="text-danger">Prays and worships</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/use/design/pastors.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-success">Put God first</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/use/design/yvan.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-info">Yvan Castanou</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/use/design/lombo.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-dark">Lord Lombo</h3>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="carousel-item">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/erc/marcelo2.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-success">Marcelo</h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/erc/malagasygospel02.jpg" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-danger"> Choir </h3>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="card">
-                              <img src="./assets/images/erc/intercession_word.jfif" alt="" class="ui image img-fluid">
-                              <div class="card-body">
-                                <h3 class="text-danger">Intercession</h3>
-                              </div>
-                            </div>
-                          </div>
-                          
-                        </div>
-                      </div>
-                      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                      </a>
-                      <a class="carousel-control-next" href="#demo" data-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                      </a>
-                    </div>        
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid bg-img2">
-      <div class="row">
-        <div class="col-md-10 offset-md-1 bg-box">
-          <h2 class="text-center text-uppercase text-success">Programmes</h2>
-          <table class="ui table p-1 text-grey table-hover">
-              <thead>
-                  <tr>
-                      <th> moment </th>
-                      <th> pastor </th>
-                      <th> Theme </th>
-                      <th> Time </th>
-                      <th> Date </th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td> Morning </td>
-                      <td> Pastor Hadassa </td>
-                      <td> Le peche fait quoi dans nos vie? </td>
-                      <td> 08:20 - 09:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-                  <tr>
-                      <td> Morning </td>
-                      <td> Pastor Hadassa </td>
-                      <td> Le peche fait quoi dans nos vie? </td>
-                      <td> 08:20 - 09:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-                  <tr>
-                      <td> Morning </td>
-                      <td> Pastor Hadassa </td>
-                      <td> Le peche fait quoi dans nos vie? </td>
-                      <td> 08:20 - 09:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-                  <tr>
-                      <td> Morning </td>
-                      <td> Pastor Hadassa </td>
-                      <td> Le peche fait quoi dans nos vie? </td>
-                      <td> 08:20 - 09:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-              </tbody>
-          </table>
-          <h1 class="text-center text-uppercase text-light">Sunday</h1>
-          <table class="ui table p-1 text-grey table-hover">
-              <thead>
-                  <tr>
-                      <th> moment </th>
-                      <th> pastor </th>
-                      <th> Theme </th>
-                      <th> Time </th>
-                      <th> Date </th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td> Morning </td>
-                      <td> Pastor Hadassa </td>
-                      <td> Le peche fait quoi dans nos vie? </td>
-                      <td> 08:20 - 10:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-                  <tr>
-                      <td> Morning </td>
-                      <td> Pastor Hadassa </td>
-                      <td> Le peche fait quoi dans nos vie? </td>
-                      <td> 08:20 - 09:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-                  <tr>
-                      <td> Evening </td>
-                      <td> Pastor Ndaye </td>
-                      <td> L'evangelisation dans le monde est notre mission </td>
-                      <td> 08:20 - 09:45 </td>
-                      <td> 20/12/2020 </td>
-                  </tr>
-              </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-    <!-- Pastors -->
-    <div class="container-fluid m-0 p-0">
-        <h3 class="text-center text-success text-uppercase mt-5">pastors</h3>
-        <div class="row p-3">
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="./assets/images/erc/hadassa.jpg" alt="" class="ui image img-fluid">
-                    <div class="card-body">
-                        <p>Hadassa Mbanza</p>
-                        <button type="button" class="btn btn-sm btn-fill btn-success">View more</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="./assets/images/erc/yvan.jpg" alt="" class="ui image img-fluid">
-                    <div class="card-body">
-                        <p>Yvan Castanou</p>
-                        <button type="button" class="btn btn-sm btn-fill btn-success">View more</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="./assets/images/erc/lombo6.jpg" alt="" class="ui image img-fluid">
-                    <div class="card-body">
-                        <p>Lord Lombo</p>
-                        <button type="button" class="btn btn-sm btn-fill btn-success">View more</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="card">
-                    <img src="./assets/images/erc/marcelo3.jpg" alt="" class="ui image img-fluid">
-                    <div class="card-body">
-                        <p>Marcelo Tunasi</p>
-                        <button type="button" class="btn btn-sm btn-fill btn-info">View more</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Pastor -->
-
-    <div class="container-fluid">
-      <div class="box-divid-two">
-        <div class="ui">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/MFIU-iQs5OM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div>
-          <div class="container-fluid m-0">
-            <div class="row text-center">
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header p-1">
-                    <p>Affermissement</p>
-                  </div>
-                  <div class="card-body"><i class="fa fa-home fa-4x text-success"></i></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header p-1">
-                    <p>intercession</p>
-                  </div>
-                  <div class="card-body">
-                    <i class="fa fa-church fa-4x"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header p-1">
-                    <p>Media</p>
-                  </div>
-                  <div class="card-body">
-                    <i class="fa fa-save fa-4x"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card">
-                  <div class="card-header p-1">
-                    <p>Protocol</p>
-                  </div>
-                  <div class="card-body">
-                    <i class="fa fa-street-view fa-4x"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-12 m-0 p-0">
-                graphic
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid p-3 text-light footer bg-dark m-0">
-        <div class="row">
-            <div class="col-md-3">
-                <?php require_once("./event/event.php");?>
-                <h3 class="text-center">contact us</h3>
-                <?php include("error.php");?>
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Example@erc.com" class="text-light transparent form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" class="text-light transparent form-control" placeholder="Message..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit" name="subscribe" class="btn btn-fill btn-sm btn-success">send <i class="fa fa-arrow-left"></i></button>
-                    </div>
-                </form>
-            </div>
-            <div class="col-md-3">
-                <h3 class="text-center">Branch and Partners</h3>
-                <ul class="ul ml-2">
-                    <li><a href="#" data-toggle="tooltip" rel="tooltip" title="kinshasa DRC">E R C Kinshasa</a></li>
-                    <li><a href="#" data-toggle="tooltip" rel="tooltip" title="Kigali Rwanda">E R C Kigali</a></li>
-                    <li><a href="#" data-toggle="tooltip" rel="tooltip" title="Goma Nord-kivu DRC">E R C Goma town</a></li>
-                    <li><a href="#" data-toggle="tooltip" rel="tooltip" title="Goma Nord-kivu DRC">E R C Ndosho</a></li>
-                    <li><a href="#" data-toggle="tooltip" rel="tooltip" title="Beni Nord-kivu DRC">E R C Beni</a></li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-              <div class="container-flui">
-                <div class="row">
-                  <div class="col-md-6 text-center">
-                    <h3>Invitation</h3>
-                    <p class="text-light">
-                      Let'us worship, praise together our lord Jesus Christ
-                    </p>
-                    <a href="login.php" class="mt-5 btn btn-lg btn-success btn-fill">Join Us <i class="fa fa-arrow-right"></i></a>
-                  </div>
-                  <div class="col-md-6">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta ab impedit cumque debitis ullam illum quae tempore adipisci architecto. Quam, commodi! Quia, placeat obcaecati omnis beatae dolor odit aliquam ipsa?
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-    
+    <link rel="stylesheet" href="./public/sass/home.min.css">
+    <link rel="stylesheet" href="./public/sass/index.style.min.css">
     <script src="./public/bootstrap/jquery.min.js"></script>
-    <script src="./public/bootstrap/popper.min.js"></script>
-    <script src="./public/bootstrap/bootstrap.min.js"></script>
-    <script src="./public/js/light-bootstrap-dashboard.js"></script>
-    <script src="./public/js/bootstrap-notify.js"></script>
-    <script src="./public/semantic/semantic.min.js"></script>
-    <script src="./public/js/Chart.bundle.min.js"></script>
     <script src="./public/js/all.min.js"></script>
-    <script src="./public/js/uikit.min.js"></script>
-    <script src="./public/js/myJquery.js"></script>
-    <script>
-      window.addEventListener('load', function(){
-        let load = document.getElementsByClassName('load');
-        document.body.removeChild(load);
-      })
-    </script>
+    <script src="./public/bootstrap/bootstrap.min.js"></script>
+    <script src="./public/bootstrap/popper.min.js"></script>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    
+    <a class="navbar-brand" href="#myPage" title="Eglise Restauration Church">ERC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#programme">Programmes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pastor">Pastors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#wedding">Weddings</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact us</a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+<div class="jumbotron text-center m-0">
+  <h1>Eglise Restauration Church</h1> 
+  <p>Welcome, Join us</p>
+  <a href="login.php" class="btn btn-fill btn-success shadow" title="Be connected">
+      <span><i class="fa fa-chevron-right"></i></span>
+      Sign In</a> 
+</div>
+
+
+<div class="container-fluid m-0 bg-img bg-home bg-warning" style="min-height: 100vh;" id="home">
+    <div class="row justity-content-center bg-light-opacity-6 p-2">
+       <div class="col-md-4 mt-4 text-center text-dark">
+           <div class="box-design bg-white shadow">
+                <h3 class="display-4">Welcome</h3>
+                <p class="text-dark display-5">
+                    This system help christians to know, and stay connected to the church news everywhere they are,
+                    we need to worship God all the time, stay connected and see what happen
+                </p>
+                <a href="login.php" class="btn btn-sm shadow btn-success">
+                    <i class="fa fa-chevron-right"></i> 
+                    Join Us
+                </a>
+           </div>
+       </div>
+       <div class="col-md-8 pt-5 mt-4">
+           <div id="demo" class="carousel slide" data-ride="carousel">
+               <div class="carousel-inner">
+                   <div class="carousel-item active">
+                       <div class="container-fluid m-0 p-0">
+                           <div class="row justify-content-center">
+                               <div class="col-md-6 text-secondary">
+                                   <div class="box-home-design bg-white shadow">
+                                       <div class="icon-top bg-hero shadow">
+                                           <i class="fa fa-users fa-2x"></i>
+                                       </div>
+                                       <div class="grid-1-3 p-4">
+                                           <div class="text-center">
+                                               <i class="fa fa-users fa-4x"></i>
+                                           </div>
+                                           <div class="text-dark">
+                                               <p class="display-5">
+                                                   All members are connected, find them here <br><br>
+                                               </p>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-md-6">
+                                <div class="box-home-design bg-white shadow">
+                                    <div class="icon-top shadow">
+                                        <i class="fa fa-users fa-2x"></i>
+                                    </div>
+                                    <div class="grid-1-3 p-4">
+                                        <div class="text-center">
+                                            <i class="fa fa-user fa-4x"></i>
+                                        </div>
+                                        <div class="text-dark">
+                                            <p class="display-5">
+                                                Join us and you will have your own account, with all permission
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="carousel-item">
+                    <div class="container-fluid m-0 p-0">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-secondary">
+                                <div class="box-home-design bg-white shadow">
+                                    <div class="icon-top shadow bg-hero">
+                                        <i class="fa fa-search fa-2x"></i>
+                                    </div>
+                                    <div class="grid-1-3 p-4">
+                                        <div class="text-center">
+                                            <i class="fa fa-search fa-4x"></i>
+                                        </div>
+                                        <div class="text-dark">
+                                            <p class="display-5">
+                                                You are looking for someone, Stay calme and him or her
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                             <div class="box-home-design bg-white shadow">
+                                 <div class="icon-top bg-success">
+                                     <i class="fa fa-users fa-2x"></i>
+                                 </div>
+                                 <div class="grid-1-3 p-4">
+                                     <div class="text-center">
+                                         <i class="fa fa-user fa-4x"></i>
+                                     </div>
+                                     <div class="text-dark">
+                                         <p class="display-5">
+                                             Join us and you will have your own account, with all permission
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                   <div class="carousel-item">
+                    <div class="container-fluid m-0 p-0">
+                        <div class="row justify-content-center">
+                            <div class="col-md-6 text-secondary">
+                                <div class="box-home-design bg-white shadow">
+                                    <div class="icon-top shadow bg-pink">
+                                        <i class="fa fa-users fa-2x"></i>
+                                    </div>
+                                    <div class="grid-1-3 p-4">
+                                        <div class="text-center">
+                                            <i class="fa fa-users fa-4x"></i>
+                                        </div>
+                                        <div class="text-dark">
+                                            <p class="display-5">
+                                                All members are connected, find them here
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                             <div class="box-home-design bg-white shadow">
+                                 <div class="icon-top bg-hero">
+                                     <i class="fa fa-users fa-2x"></i>
+                                 </div>
+                                 <div class="grid-1-3 p-4">
+                                     <div class="text-center">
+                                         <i class="fa fa-user fa-4x"></i>
+                                     </div>
+                                     <div class="text-dark">
+                                         <p class="display-5">
+                                             Join us and you will have your own account, with all permission
+                                         </p>
+                                     </div>
+                                 </div>
+                             </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+<div class="container-fluid m-0 bg-secondary" style="min-height: 100vh;" id="services">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-sm-12">
+            <div class="container-fluid m-0">
+                <h3 class="text-center display-5 text-light text-uppercase">department</h3>
+                <div class="row">
+                    <div class="col-md-4 p-2">
+                        <div class="services bg-white">
+                            <i class="fa fa-users fa-2x"></i>
+                            <span>Members</span>
+                        </div>                                                
+                    </div>
+                    <div class="col-md-4 p-2">
+                        <div class="services bg-white">
+                            <i class="fa fa-home fa-2x"></i>
+                            <span>Intercession</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-2">
+                        <div class="services bg-white">
+                            <i class="fa fa-database fa-2x"></i>
+                            <span>Media</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-2">
+                        <div class="services bg-white">
+                            <i class="fa fa-chevron-right fa-2x"></i>
+                            <span>Choral</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-2">
+                        <div class="services bg-white">
+                            <i class="fa fa-chevron-left fa-2x"></i>
+                            <span>security</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4 p-2">
+                        <div class="services bg-white">
+                            <i class="fa fa-chevron-left fa-2x"></i>
+                            <span>Young</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid m-0" style="min-height: 100vh;" id="programme">
+    <div class="row">
+        <div class="col-md-8 col-sm-12">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container-fluid m-0">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card">
+                                        <img src="./assets/images/erc/hadassa.jpg" alt="name of the pastor" class="card-img-top">
+                                        <div class="card-body">
+                                            <h3>Hadassa</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card">
+                                        <img src="./assets/images/erc/lombo6.jpg" alt="name of the pastor" class="card-img-top">
+                                        <div class="card-body">
+                                            <h3>Lombo</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container-fluid m-0">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card">
+                                        <img src="./assets/images/erc/hadassa.jpg" alt="name of the pastor" class="card-img-top">
+                                        <div class="card-body">
+                                            <h3>Hadassa</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="card">
+                                        <img src="./assets/images/erc/lombo6.jpg" alt="name of the pastor" class="card-img-top">
+                                        <div class="card-body">
+                                            <h3>Lombo</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <h3 class="text-warning text-center">Today programmes</h3>
+            <table class="table table-sm table-striped table-hover">
+                <thead>
+                    <tr class="border-0">
+                        <th>Preach</th>
+                        <th>Moderator</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pastor Ndaye</td>
+                        <td>Bahizi christian</td>
+                        <td>09:30-11:00</td>
+                    </tr>
+                    <tr>
+                        <td>Pastor Ndaye</td>
+                        <td>Bahizi christian</td>
+                        <td>09:30-11:00</td>
+                    </tr>
+                    <tr>
+                        <td>Pastor Ndaye</td>
+                        <td>Bahizi christian</td>
+                        <td>09:30-11:00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container-fluid m-0 bg-img bg-programme p-5" style="min-height: 100vh;" id="pastor">
+    <div class="row bg-light-opacity-6 p-2">
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name of the pastor</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 p-2 col-sm-12">
+            <div class="card shadow">
+                <img src="./assets/images/erc/Lord-Lombo.jpg" alt="" class="card-img-top">
+                <div class="card-body">
+                    <h3>Name</h3>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mt-5">
+            <a href="#" class="btn btn-sm btn-danger shadow"><i class="fa fa-chevron-right"></i> View more pastors</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid m-0 bg-warning" style="min-height: 100vh;" id="wedding">
+    <div class="row bg-white">
+        <div class="col-md-7 col-sm-12">
+            <h2>Weddings</h2>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <h2>Wedding carousel images</h2>
+                    </div>
+                    <div class="carousel-item">
+                        <h2>Wedding carousel images22</h2>
+                    </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quidem inventore soluta nobis vero doloremque, in iusto molestias quod, dicta quis explicabo quaerat nihil nisi totam earum ex quae iste.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container-fluid m-0" style="min-height: 100vh;" id="contact">
+    <div class="row min-sm bg-warning shadow" style="border-radius: 10px;">
+        <div class="col-md-12 col-sm-12">
+            <h3 class="display-3 text-white text-center">Contact Us</h3>
+        </div>
+        <div class="col-md-5 col-sm-12">
+            <?php require_once('./event/event.php'); include('./error.php');?>
+            <form action="" method="post">
+                <div class="form-group">
+                    <label for="email" class="text-light">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email@exemple.rw" class="form-control transparent border-light border-3 text-white">
+                </div>
+                <div class="form-group">
+                    <label for="message" class="text-light">Message</label>
+                    <textarea id="message" name="message" class="form-control transparent border-light border-3 text-white" placeholder="Typing..."></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="subscribe" class="btn btn-success"><i class="fa fa-database"></i> Send request</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-7">
+            <h3>Image design share users</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, commodi quia, consequuntur quasi illum, architecto necessitatibus accusantium facere incidunt magnam ipsum soluta. Voluptatibus quod debitis, iure fuga sed sapiente hic.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $(".navbar a, footer a[href='#myPage']").on('click', function(e) {
+    
+    if (this.hash !== "") {
+      e.preventDefault();
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        window.location.hash = hash;
+      });
+    }
+
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+  
+})
+
+</script>
 </body>
 </html>

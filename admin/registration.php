@@ -56,16 +56,16 @@ include("lock.php");
                             <p>Wedding</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="./icons.php">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./users.php">
                             <i class="nc-icon nc-atom"></i>
-                            <p>Icons</p>
+                            <p>Members</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./maps.php">
+                        <a class="nav-link" href="./pastor.php">
                             <i class="nc-icon nc-pin-3"></i>
-                            <p>Maps</p>
+                            <p>Pastors</p>
                         </a>
                     </li>
                     <li>

@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $con = mysqli_connect("localhost", "root", "", "erc_db") OR die("Cannot be connect to this DB");    
     // Varibles
     $errors = [];
@@ -284,7 +283,7 @@
         }
 
         if(count($errors) == 0){
-            $sql = "INSERT INTO suscribe_tb(email, context) VALUES('$email', '$message')";
+            $sql = "INSERT INTO suscribe_tb(email, context, read_unread) VALUES('$email', '$message', 'unread')";
             $result = mysqli_query($con, $sql);
 
             if($result){
