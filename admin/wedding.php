@@ -136,7 +136,7 @@ include("lock.php");
                                 
                                 <?php $id_get = $_GET['get'];?>
                                 <!-- Get the ID -->
-                                <input type="hidden" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
+                                <input type="text" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
                                 
                                 <!-- <h1 class="display-4 text-danger">Get me</h1> -->
                                 <div id="getMe">
@@ -247,6 +247,10 @@ include("lock.php");
             </div>
         </div>
     </div>
+
+    <div id="meGet">
+        <!-- Api URL -->
+    </div>
 </body>
 
 <script src="../public/bootstrap/jquery.min.js"></script>
@@ -263,9 +267,20 @@ include("lock.php");
 
 <script>
     $(document).ready(function(){
-        $(document).on('#getMe', 'click', function(){
-            alert("Clicked")
-        })
+        $(document).on("click", "#getMeH", function(){
+            let action = 'getMe';
+            let id_wedding = $('#id_wedding');
+            let id = $(this).data('id');
+        
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {action, id, id_wedding},
+                success: function(data){
+                    $('#meGt').html(data);
+                }
+            })
+        });
         let flag = 0;
         let action = 'Weddings';
         $.ajax({

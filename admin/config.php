@@ -432,7 +432,6 @@ if (isset($_POST['action'])) {
                     $arraryW[13] = $rowW['on_off'];
                     $arraryW[14] = $rowW['phone'];
                 }
-                
                 $output .= '
                 <div class="shadow box-dashboard bg-white">
                     <span class="top-icon bg-primary">
@@ -443,10 +442,10 @@ if (isset($_POST['action'])) {
                             <b>Husband name: </b>
                         </span>
                         <span>
-                            '.$arraryH[1].'
+                            '.$arraryH[1].'OOOOO
                         </span>
                         <span>
-                            <button type="button" id="getMe" class="btn border-0 p-2 shadow color-hero">
+                            <button type="button" id="getMeH" data-id="'.$arraryH[0].'" class="btn border-0 p-2 shadow color-hero">
                                 <i class="fa fa-chevron-left"></i>
                             </button>
                         </span>
@@ -555,6 +554,67 @@ if (isset($_POST['action'])) {
         $divorceW = mysqli_query($con, "UPDATE user_account SET statu = 'divorce' WHERE id = {$w}");
 
         print 'Divorce success';
+    }
+
+    if($_POST['action'] == 'getMe'){
+        
+        $id = $_POST['id'];
+        $idW = $_POST['id_wedding'];
+
+        $sql = mysqli_query($con, "SELECT * FROM user_account WHERE id = {$id}");
+        if(mysqli_num_rows($sql) == 1){
+           while($row = mysqli_fetch_assoc($sql)){
+                $output .= '
+                <div class="modal shadow" id="myModal" style="display:block">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal Heading</h4>
+                            <button type="button" class="close btn btn-sm closeMe">&times;</button>
+                        </div>
+
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-6 col-sm-12">
+                                        <div class="card">
+                                            <img src="'.$row['profile_pic'].'" alt="" class="img-fluid card-img-top">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-6 col-sm-12">
+                                        <div class="box-dashboard shadow">
+                                            <div class="top-icon-right">
+                                                <i class="fa fa-user"></i>
+                                            </div>
+                                            <div class="mt-4">
+                                                <p class="d-flex">
+                                                    <span class="">Name: </span>
+                                                    <span class="">'.$row['name'].'</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-fill btn-danger closeMe" data-dismiss="modal">Close</button>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+                ';
+           } 
+        }else{
+            $output .= '<p class="alert alert-danger ui message negative">Haking is perfect</p>';
+        }
+        print $output;
     }
     
 

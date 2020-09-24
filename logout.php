@@ -7,6 +7,7 @@ $result = mysqli_query($con, $sql);
 
 if($result){
     print "offline";
+    session_destroy();
 }else{
     print " online " . $_SESSION['id'];
 }
