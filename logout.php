@@ -6,7 +6,7 @@ $sql = "UPDATE user_account SET on_off = 'offline' WHERE id = '$id'";
 $result = mysqli_query($con, $sql);
 
 if($result){
-    print "offline";
+    header("Location: login.php");
     session_destroy();
 }else{
     print " online " . $_SESSION['id'];

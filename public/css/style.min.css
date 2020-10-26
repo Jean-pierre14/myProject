@@ -230,3 +230,60 @@ table tr:hover {
 }
 
 /* Nav */
+
+.content-not{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    /* background: #ccc; */
+    padding: 0;
+    margin: 0;
+}
+.content-not .header-not, .content-not .footer-not{
+    position: relative;
+    width: 100%;
+    display: block;
+}
+.content-not .header-not{
+    height: 50px;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.content-not form{
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.content-not .body-not{
+    position: relative;
+    height: 430px;
+    overflow-y: scroll;
+}
+.content-not .footer-not{
+    position: absolute;
+    bottom: 0;
+    /* height: 50px; */
+    /* background: #fff; */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+textarea{
+    outline: none;
+}
+
+.boule{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+

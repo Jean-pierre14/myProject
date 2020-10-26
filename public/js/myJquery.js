@@ -1,8 +1,6 @@
 $(document).ready(() => {
     news();
     about();
-
-
 });
 
 

@@ -15,9 +15,22 @@
 
 <script src="../public/js/jquery-3.4.0.min.js"></script>
 <script>
-    $(window).on('load', function() {
-        $('.loading-page').fadeOut('slow');
-    });
+$(window).on('load', function() {
+    $('.loading-page').fadeOut('slow');
+
+    // $('.body-not').animate({
+    //     scrollTop: 430
+    // }, 10)
+
+    // $('.body-not').scrollTop($('.body-not')[0].scrollHeight)
+
+    // Other part
+    // scrollTop = scrollHeight - clienHeight
+    // $('.body-not').animate({
+    //     scrollTop: $('.body-not')[0].scrollHeight - $('.body-not').clienHeight
+    // }, 1000)
+    // End
+});
 </script>
 
 </html>

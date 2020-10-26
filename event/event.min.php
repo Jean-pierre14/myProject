@@ -62,11 +62,13 @@ if (isset($_POST['new-user'])) {
     // Zero error
     if( count($errors) == 0 ){
         $pass = 1234;
+
         if($rand == 1){
-            $profile_pic = "../assets/images/use/user/face-0.jpg";
+            $profile_pic = "/assets/images/use/user/face-0.jpg";
         } else if($rand == 2){
-            $profile_pic = "../assets/images/use/user/face-1.jpg";
+            $profile_pic = "/assets/images/use/user/face-1.jpg";
         }
+
         $about = 'My status!!! Who are you?';
         $password = md5($pass);
         $on_off = 'offline';
@@ -128,11 +130,17 @@ if(isset($_POST['register'])){
     // Zero error
     if( count($errors) == 0 ) {
 
+        // Image profile
+        if($rand == 1){
+            $profile_pic = "/assets/images/use/user/face-0.jpg";
+        } else if($rand == 2){
+            $profile_pic = "/assets/images/use/user/face-1.jpg";
+        }
         // Criptage of our password
         $password = md5($pass);
         
-        $sql = "INSERT INTO user_account(`username`,`name`,`email`,`pass`,`locatio`,`phone`,`dob`,`statu`,`gender`,`department`,`about`) 
-        VALUES('$username','$name','$email','$password','$location','$phones','$dob','$status','$gender','$depart','$about')";
+        $sql = "INSERT INTO user_account(`username`,`name`,`email`,`pass`,`locatio`,`phone`,`dob`,`statu`,`gender`,`department`,`about`, `profile_pic`) 
+        VALUES('$username','$name','$email','$password','$location','$phones','$dob','$status','$gender','$depart','$about', '$profile_pic')";
 
         $result = mysqli_query($con, $sql);
 

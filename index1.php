@@ -25,22 +25,27 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="#home" data-toggle="collapse" data-target="#collapsibleNavbar">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
+                    <a class="nav-link" href="#services" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#programme">Programmes</a>
+                    <a class="nav-link" href="#programme" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">Programmes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#pastor">Pastors</a>
+                    <a class="nav-link" href="#pastor" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">Pastors</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#wedding">Weddings</a>
+                    <a class="nav-link" href="#wedding" data-toggle="collapse"
+                        data-target="#collapsibleNavbar">Weddings</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact us</a>
+                    <a class="nav-link" href="#contact" data-toggle="collapse" data-target="#collapsibleNavbar">Contact
+                        us</a>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,6 @@
 <?php
     include("../../config/db.php");
+    
     $limit = $_POST['limit'];
     $offset = $_POST['offset'];
 
@@ -19,7 +20,7 @@
                         if($data['profile_pic'] == ''){
                             $output .= '<img src="../assets/images/use/user/face-0.jpg" alt="" class="ui avatar" style="width: 20px; border-radius: 50%">';
                         }else{
-                            $output .= '<img src="'.$data['profile_pic'].'" alt="" class="avatar" style="width: 20px; border-radius: 50%">';
+                            $output .= '<img src="../'.$data['profile_pic'].'" alt="" class="avatar" style="width: 20px; border-radius: 50%">';
                         }
                     $output .= '
                         </span>

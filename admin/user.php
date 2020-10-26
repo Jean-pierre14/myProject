@@ -79,7 +79,7 @@
                             <p>Notifications</p>
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
@@ -144,7 +144,7 @@
                                     </a>
                                 </div>
                                 <?php else:?>
-                                <img src="<?php print $UserData[12]?>" alt="" class="img-fluid">
+                                <img src="../<?php print $UserData[12]?>" alt="" class="img-fluid">
                                 <?php endif;?>
                                 <p class="d-flex justify-content-between align-items-center mt-2">
                                     <span>
@@ -766,188 +766,228 @@
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    $().ready(() => {
-        $('#btn-Edit-Username').click(function () {
-            let action = 'editUsername';
-            const id = $('#id_up').val();
-            let username = $('#username').val();
-            if (username.lenght <= 4 || username === undefined || username === '') {
-                alert('Username is empty and should have at least 4 caracters');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action: action, id: id, username: username },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#username').val('');
-            }
-        });
-        $('#btn-Edit-Email').click(function () {
-            const action = 'editEmail';
-            const id = $('#id_up').val();
-            const email = $('#email').val();
-            if (email.lenght <= 2 || email === undefined || email === '') {
-                alert('Email is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action: action, id: id, email: email },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#email').val('');
-            }
-        });
-        $('#btn-Edit-Name').click(function () {
-            const action = 'editName';
-            const id = $('#id_up').val();
-            const name = $('#name').val();
-            if (name.lenght < 4 || name === undefined || name === '') {
-                alert('name is empty and it shouds have at least 4 caracters');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, name },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#name').val('');
-            }
-        });
-        $('#btn-Edit-Location').click(function () {
-            const action = 'editLocation';
-            const id = $('#id_up').val();
-            const location = $('#location').val();
-            if (location.lenght < 4 || location === undefined || location === '') {
-                alert('Location is empty and it shouds have at least 4 caracters');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, location: location },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#location').val('');
-            }
-        });
-        $('#btn-Edit-Status').click(function () {
-            const action = 'editStatus';
-            const id = $('#id_up').val();
-            const status = $('#status_up').val();
-            if (status === '') {
-                alert('status is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, status },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#status').val('');
-            }
-        });
-        $('#btn-Edit-Gender').click(function () {
-            const action = 'editGender';
-            const id = $('#id_up').val();
-            const gender = $('#gender').val();
-            if (gender === '') {
-                alert('gender is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, gender },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#gender').val('');
-            }
-        });
-        $('#btn-Edit-Phone').click(function () {
-            const action = 'editPhone';
-            const id = $('#id_up').val();
-            const phone = $('#phone').val();
-            if (phone.lenght < 4 || phone === undefined || phone === '') {
-                alert('phone is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, phone },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#phone').val('');
-            }
-        });
-        $('#btn-Edit-Department').click(function () {
-            const action = 'editDepartment';
-            const id = $('#id_up').val();
-            const department = $('#department_up').val();
-            if (department === '') {
-                alert('department is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, department: department },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#department').val('');
-            }
-        });
-        $('#btn-Edit-Dob').click(function () {
-            const action = 'editDob';
-            const id = $('#id_up').val();
-            const dob = $('#dob').val();
-            if (dob.lenght < 6 || dob === undefined || dob === '') {
-                alert('Date  of birth is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, dob },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#dob').val('');
-            }
-        });
-        $('#btn-Edit-About').click(function () {
-            const action = 'editAbout';
-            const id = $('#id_up').val();
-            let about = $('#about').val();
-            if (about.lenght < 4 || about === undefined || about === '') {
-                alert('Description is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, about },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#about').val('');
-            }
-        });
+$().ready(() => {
+    $('#btn-Edit-Username').click(function() {
+        let action = 'editUsername';
+        const id = $('#id_up').val();
+        let username = $('#username').val();
+        if (username.lenght <= 4 || username === undefined || username === '') {
+            alert('Username is empty and should have at least 4 caracters');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    id: id,
+                    username: username
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#username').val('');
+        }
     });
+    $('#btn-Edit-Email').click(function() {
+        const action = 'editEmail';
+        const id = $('#id_up').val();
+        const email = $('#email').val();
+        if (email.lenght <= 2 || email === undefined || email === '') {
+            alert('Email is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    id: id,
+                    email: email
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#email').val('');
+        }
+    });
+    $('#btn-Edit-Name').click(function() {
+        const action = 'editName';
+        const id = $('#id_up').val();
+        const name = $('#name').val();
+        if (name.lenght < 4 || name === undefined || name === '') {
+            alert('name is empty and it shouds have at least 4 caracters');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    name
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#name').val('');
+        }
+    });
+    $('#btn-Edit-Location').click(function() {
+        const action = 'editLocation';
+        const id = $('#id_up').val();
+        const location = $('#location').val();
+        if (location.lenght < 4 || location === undefined || location === '') {
+            alert('Location is empty and it shouds have at least 4 caracters');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    location: location
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#location').val('');
+        }
+    });
+    $('#btn-Edit-Status').click(function() {
+        const action = 'editStatus';
+        const id = $('#id_up').val();
+        const status = $('#status_up').val();
+        if (status === '') {
+            alert('status is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    status
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#status').val('');
+        }
+    });
+    $('#btn-Edit-Gender').click(function() {
+        const action = 'editGender';
+        const id = $('#id_up').val();
+        const gender = $('#gender').val();
+        if (gender === '') {
+            alert('gender is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    gender
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#gender').val('');
+        }
+    });
+    $('#btn-Edit-Phone').click(function() {
+        const action = 'editPhone';
+        const id = $('#id_up').val();
+        const phone = $('#phone').val();
+        if (phone.lenght < 4 || phone === undefined || phone === '') {
+            alert('phone is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    phone
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#phone').val('');
+        }
+    });
+    $('#btn-Edit-Department').click(function() {
+        const action = 'editDepartment';
+        const id = $('#id_up').val();
+        const department = $('#department_up').val();
+        if (department === '') {
+            alert('department is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    department: department
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#department').val('');
+        }
+    });
+    $('#btn-Edit-Dob').click(function() {
+        const action = 'editDob';
+        const id = $('#id_up').val();
+        const dob = $('#dob').val();
+        if (dob.lenght < 6 || dob === undefined || dob === '') {
+            alert('Date  of birth is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    dob
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#dob').val('');
+        }
+    });
+    $('#btn-Edit-About').click(function() {
+        const action = 'editAbout';
+        const id = $('#id_up').val();
+        let about = $('#about').val();
+        if (about.lenght < 4 || about === undefined || about === '') {
+            alert('Description is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    about
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#about').val('');
+        }
+    });
+});
 </script>
 
 </html>

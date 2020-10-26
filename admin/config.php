@@ -581,7 +581,7 @@ if (isset($_POST['action'])) {
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6 col-sm-12">
                                         <div class="card">
-                                            <img src="'.$row['profile_pic'].'" alt="" class="img-fluid card-img-top">
+                                            <img src="../../'.$row['profile_pic'].'" alt="" class="img-fluid card-img-top">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-sm-12">
@@ -827,7 +827,7 @@ if (isset($_POST['action'])) {
                 }else{
                     $output .= '
                     <span>
-                        <img class"ui avatar" src="'.$row['profile_pic'].'" style="width: 30px;border-radius: 50%"/>
+                        <img class"ui avatar" src="../'.$row['profile_pic'].'" style="width: 30px;border-radius: 50%"/>
                     </span>
                     ';
                 }
@@ -865,7 +865,7 @@ if (isset($_POST['action'])) {
                 }else{
                     $output .= '
                     <span>
-                        <img class"ui avatar" src="'.$row['profile_pic'].'" style="width: 30px;border-radius: 50%"/>
+                        <img class"ui avatar" src="../'.$row['profile_pic'].'" style="width: 30px;border-radius: 50%"/>
                     </span>
                     ';
                 }

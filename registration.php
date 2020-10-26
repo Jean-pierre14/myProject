@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +11,9 @@
     <script src="./public/bootstrap/bootstrap.min.js"></script>
     <script src="./public/js/all.min.js"></script>
 </head>
+
 <body>
-    <div class="container-fluid bg-img1" style="height: 100%;">
+    <div class="container-fluid bg-img1" style="height: 100vh;">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card shadow text-light mt-5 transparent" style="overflow: hidden;">
@@ -21,10 +23,13 @@
                                 <div class="col-md-4">
                                     <h3 class="text-center">ERC</h3>
                                     <p class="text-center">
-                                        Create your an account and join us in our web, where we make discussions in our blog, 
-                                        the object is to be link each orthe in the name of jesus our lord
+                                        Create your an account and join us in our website, where we make discussions in
+                                        our
+                                        blog,
+                                        the object is to be link each other in the name of jesus our lord
                                     </p>
-                                    <a href="login.php" class="btn btn-sm btn-danger">Log In <i class="fa fa-arrow-circle-left"></i></a>
+                                    <a href="login.php" class="btn btn-sm btn-danger">Log In <i
+                                            class="fa fa-arrow-circle-left"></i></a>
                                 </div>
                                 <div class="col-md-8">
                                     <h3 class="text-center text-success">Create an account</h3>
@@ -33,31 +38,42 @@
                                         <div class="form-row p-0">
                                             <div class="form-group col-md-4">
                                                 <label for="username">Username</label>
-                                                <input type="text" value="<?php print $username; ?>" name="username" id="username" placeholder="Username" class="form-control transparent">
+                                                <input type="text" value="<?php print $username; ?>" name="username"
+                                                    id="username" placeholder="Username"
+                                                    class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="name">name</label>
-                                                <input type="text" value="<?php print $name; ?>" name="name" id="name" placeholder="name" class="form-control transparent">                                                
+                                                <input type="text" value="<?php print $name; ?>" name="name" id="name"
+                                                    placeholder="name" class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="email">Email</label>
-                                                <input type="email" value="<?php print $email; ?>" id="email" name="email" placeholder="Example@erc.com" class="form-control transparent">
+                                                <input type="email" value="<?php print $email; ?>" id="email"
+                                                    name="email" placeholder="Example@erc.com"
+                                                    class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="pass">Password</label>
-                                                <input type="password" value="<?php print $pass; ?>" name="pass" id="pass" placeholder="Password" class="form-control transparent">
+                                                <input type="password" value="<?php print $pass; ?>" name="pass"
+                                                    id="pass" placeholder="Password" class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="confirm">Confirm Password</label>
-                                                <input type="password" value="<?php print $cpass; ?>" id="confrim" name="cpass" placeholder="confrim password" class="form-control transparent">
+                                                <input type="password" value="<?php print $cpass; ?>" id="confrim"
+                                                    name="cpass" placeholder="confrim password"
+                                                    class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="location">Location</label>
-                                                <input type="text" value="<?php print $location; ?>" id="location" name="location" placeholder="location" class="form-control transparent">
+                                                <input type="text" value="<?php print $location; ?>" id="location"
+                                                    name="location" placeholder="location"
+                                                    class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="phones">phones</label>
-                                                <input type="tel" value="<?php print $phones; ?>" id="phones" name="phones" placeholder="Phones" class="form-control transparent">
+                                                <input type="tel" value="<?php print $phones; ?>" id="phones"
+                                                    name="phones" placeholder="Phones" class="form-control transparent">
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="dob">Date of birth</label>
@@ -79,7 +95,8 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="Gender">Gender</label>
-                                                <select name="gender" value="<?php print  $gender; ?>" id="Gender" class="form-control transparent">
+                                                <select name="gender" value="<?php print  $gender; ?>" id="Gender"
+                                                    class="form-control transparent">
                                                     <option value="">-- select --</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
@@ -87,7 +104,8 @@
                                             </div>
                                             <div class="form-group col-md-4">
                                                 <label for="status">Department</label>
-                                                <select name="depart" value="<?php print  $depart; ?>" id="depart" class="form-control transparent">
+                                                <select name="depart" value="<?php print  $depart; ?>" id="depart"
+                                                    class="form-control transparent">
                                                     <option value="">-- select --</option>
                                                     <?php
                                                         $depart = mysqli_query($con, "SELECT * FROM department_tb");
@@ -99,10 +117,13 @@
                                             </div>
                                             <div class="form-group col-md-12">
                                                 <label for="about">About</label>
-                                                <textarea name="about" value="<?php print  $about; ?>" id="about" placeholder="About ..." class="form-control transparent"></textarea>
+                                                <textarea name="about" value="<?php print  $about; ?>" id="about"
+                                                    placeholder="About ..." class="form-control transparent"></textarea>
                                             </div>
                                             <div class="form-group col-md-12">
-                                                <button type="submit" name="register" class="btn btn-sm btn-success">Register <i class="fa fa-arrow-circle-right"></i></button>
+                                                <button type="submit" name="register"
+                                                    class="btn btn-sm btn-success">Register <i
+                                                        class="fa fa-arrow-circle-right"></i></button>
                                             </div>
                                         </div>
                                     </form>
@@ -114,12 +135,13 @@
             </div>
         </div>
     </div>
-    
+
     <script src="./public/js/jquery-3.4.0.min.js"></script>
     <script>
-        $().ready( function(){
-            
-        });
+    $().ready(function() {
+
+    });
     </script>
 </body>
+
 </html>

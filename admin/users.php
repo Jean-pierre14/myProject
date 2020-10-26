@@ -183,7 +183,7 @@
 
                                                         }else{
                                                             $getUser .= '
-                                                            <img src="'.$row['profile_pic'].'" alt="" class="img-fluid">';
+                                                            <img src="../'.$row['profile_pic'].'" alt="" class="img-fluid">';
                                                         }
                                                         $getUser .= '
                                                         

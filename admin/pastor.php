@@ -63,7 +63,7 @@ include("lock.php");
                             <p>Members</p>
                         </a>
                     </li>
-                    <li  class="nav-item active">
+                    <li class="nav-item active">
                         <a class="nav-link" href="./pastor.php">
                             <i class="nc-icon nc-pin-3"></i>
                             <p>Pastors</p>
@@ -81,7 +81,7 @@ include("lock.php");
         <div class="main-panel">
             <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="registration.php"> Pastors <i class="fa fa-user-plus"></i></a>
+                    <a class="navbar-brand" href="registration.php"> Pastors <i class="fa fa-users"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -128,45 +128,16 @@ include("lock.php");
                 </div>
             </nav>
             <div class="content m-0">
-                <div class="container-fluid p-0">
+                <div class="container-fluid p-0 m-0">
                     <div class="row">
-                        <div class="col-md-8 col-sm-12">
-                            <!-- <h1 class="display-1">List of weddings</h1> -->
-                            <?php if(isset($_GET['get'])):?>
-                                <?php
-                                    $id_get = $_GET['get'];
-                                ?>
-                                <input type="hidden" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
-                                <!-- <h1 class="display-4 text-danger">Get me</h1> -->
-                                <div id="getMe">
-                                    <!-- Url Api -->
-                                </div>
-                            <?php else: ?>
-                                <div class="shadow box-dashboard">
-                                    <span class="top-icon bg-primary">
-                                        <i class="fa fa-user fa-2x"></i>
-                                    </span>
-                                    <h2 class="top-text-left">Weddings</h2>
-                                    <div class="container-fluid m-0 p-0">
-                                        <div id="demo" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">---1</div>
-                                                <div class="carousel-item">---2</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h1 class="display-4 text-success">Normal</h1>
-                                <h1 class="display-1">Carousel</h1>
-                            <?php endif;?>
+                        <div class="col-md-6 p-2">
+                            <h2>Pastors</h2>
                         </div>
-                        <div class="col-md-4 col-sm-0 pt-2">
+                        <div class="col-md-6 p-2">
                             <form action="" method="post">
-                                <input type="search" name="search" id="search" placeholder="Search..." class="form-control">
+                                <input type="search" name="search" id="search" class="form-control"
+                                    placeholder="Search...">
                             </form>
-                            <div id="wedding_list" class="mt-2" style="font-size: 12px;">
-                                <!-- Url Api -->
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -224,58 +195,62 @@ include("lock.php");
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    $(document).ready(function(){
-        let flag = 0;
-        let action = 'weddings';
-        $.ajax({
-            url: './config.php',
-            data: {
-                action,
-                limit: 3,
-                offset: 0
-            },
-            method: 'post',
-            success: function(data) {
-                $('#wedding_list').html(data);
-                flag += 3;
-            }
-        });
-        $(window).scroll( function(){
-            if($(window).scrollTop() >= $(document).height() - $(window).height()){
-                let action = 'weddings';
-                let limit = 10;
-                let offset = flag;
-                // alert(offset)
-                $.ajax({
-                    url: './config.php',
-                    data: {
-                        action,
-                        limit,
-                        offset
-                    },
-                    method: 'post',
-                    success: function(data) {
-                        $('#wedding_list').html(data);
-                        flag += 3;
-                    }
-                })
-            }
-        })
-        getWedding();
+$(document).ready(function() {
+    let flag = 0;
+    let action = 'weddings';
+    $.ajax({
+        url: './config.php',
+        data: {
+            action,
+            limit: 3,
+            offset: 0
+        },
+        method: 'post',
+        success: function(data) {
+            $('#wedding_list').html(data);
+            flag += 3;
+        }
     });
-    function getWedding(){
-        let action = 'id_wedding';
-        let id = $('#id_wedding').val();
-        
-        $.ajax({
-            url: './config.php',
-            data: {action, id},
-            method: 'post',
-            success: function(data){
-                $('#getMe').html(data)
-            }
-        })
-    }
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+            let action = 'weddings';
+            let limit = 10;
+            let offset = flag;
+            // alert(offset)
+            $.ajax({
+                url: './config.php',
+                data: {
+                    action,
+                    limit,
+                    offset
+                },
+                method: 'post',
+                success: function(data) {
+                    $('#wedding_list').html(data);
+                    flag += 3;
+                }
+            })
+        }
+    })
+    getWedding();
+});
+
+function getWedding() {
+    let action = 'id_wedding';
+    let id = $('#id_wedding').val();
+
+    $.ajax({
+        url: './config.php',
+        data: {
+            action,
+            id
+        },
+        method: 'post',
+        success: function(data) {
+            $('#getMe').html(data)
+        }
+    })
+}
 </script>
 
 
