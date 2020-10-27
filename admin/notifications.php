@@ -123,12 +123,74 @@
                                 <?php print Date('Y:'.'m:'.'d');?>
                             </span>
                             <span>
-                                <a href="#programmes" class="btn btn-primary">Programmes</a>
+                                <a href="notifications.php?event=programme" class="btn btn-primary">Programmes</a>
                             </span>
                             <span>
-                                <a href="#request" class="btn btn-primary">Request</a>
+                                <a href="notifications.php" class="btn btn-primary">Blog</a>
+                            </span>
+                            <span>
+                                <a href="notifications.php?event=request" class="btn btn-primary">Request</a>
                             </span>
                         </div>
+                        <?php if(isset($_GET['event'])):?>
+                        <?php if($_GET['event'] == 'programme'):?>
+                        <h3>Programmes</h3>
+                        <?php elseif($_GET['event'] == 'request'):?>
+
+                        <div class="row">
+                            <div class="col-md-8 p-2">
+                                <div id="requests">
+                                    <div class="card card-body">
+                                        <h3>Requests <span class="badge badge-danger">23</span></h3>
+                                    </div>
+                                    
+                                    <div class="card mt-2">
+                                        <div class="card-header p-1">
+                                            <div class="close">
+                                                <div class="btn-group">
+                                                    <a href="#view" class="btn btn-primary btn-sm"><i
+                                                            class="fa fa-flag-checkered"></i></a>
+                                                    <a href="#view" class="btn btn-danger btn-sm"><i
+                                                            class="fa fa-flag-checkered"></i></a>
+                                                </div>
+                                            </div>
+                                            <h2 class="m-0 p-0">Email</h2>
+                                            
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, nostrum.
+                                                Architecto tempora ad cupiditate perspiciatis nihil assumenda explicabo
+                                                ipsa
+                                                odio fugiat tenetur adipisci, eum culpa omnis neque qui saepe aliquid!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="card mt-2">
+                                        <div class="card-header p-1">
+                                            <h2 class="m-0 p-0">Email</h2>
+                                        </div>
+                                        <div class="card-body">
+                                            <p>
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, nostrum.
+                                                Architecto tempora ad cupiditate perspiciatis nihil assumenda explicabo
+                                                ipsa
+                                                odio fugiat tenetur adipisci, eum culpa omnis neque qui saepe aliquid!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card-body">
+                                    <h3 class="m-0 p-0"><?php print $_SESSION['username'];?></h3>
+                                    <a href="user.php" class="btn btn-block btn-primary">My profile</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php endif;?>
+                        <?php else:?>
                         <div class="body-not">
                             <div id="blog">
                                 <div class="bg-danger p-3 shadow m-3">
@@ -139,12 +201,15 @@
                             </div>
                         </div>
                         <div class="footer-not">
-                            <form action="" method="post" class="">
-                                <input type="hidden" id="user_id" value="<?php print $_SESSION['id'];?>" class="form-control">
+                            <form action="" method="post" class="" id="form">
+                                <input type="hidden" id="user_id" value="<?php print $_SESSION['id'];?>"
+                                    class="form-control">
                                 <input name="message" id="ContextMsg" placeholder="Typing...." class="form-control">
                                 <button type="button" id="Add-blog" class="btn btn-warning">Send</button>
                             </form>
                         </div>
+                        <?php endif;?>
+
                     </div>
                 </div>
             </div>

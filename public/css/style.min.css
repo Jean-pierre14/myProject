@@ -260,9 +260,12 @@ table tr:hover {
 }
 
 .content-not .body-not{
-    position: relative;
+    position: absolute;
+    top: 50px;
+    left: 0;
     height: 430px;
-    overflow-y: scroll;
+    width: 100%;
+    overflow: auto;
 }
 .content-not .footer-not{
     position: absolute;
@@ -285,5 +288,13 @@ textarea{
     height: 30px;
     border-radius: 50%;
 }
-
+#ContextMsg.error{
+    background: red;
+}
+#requests{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow-y: auto;
+}
 

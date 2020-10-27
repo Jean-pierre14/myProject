@@ -1,5 +1,5 @@
 // blog
-findAll()
+
 function findAll(){
     fetch('http://localhost:7000/blog').then(
         res => {
@@ -8,6 +8,8 @@ function findAll(){
                     var blog = ''
                     
                     data.forEach(item=>{
+                        let time = new Date(item.create_at)
+                        time = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()} >> ${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
                         blog += `
                             <div class="bg-white p-3 shadow m-3">
                                 <p class="text-blog p-0 m-0">
@@ -22,15 +24,16 @@ function findAll(){
                                             </span>
                                         </span>
                                         
-                                        <span>
-                                            ${item.create_at}
-                                        </span>
+                                        <small>
+                                            ${time}
+                                        </small>
                                     </p>
                                 </div>
                             </div>
                         `
                     })
                     document.getElementById('blog').innerHTML = blog
+                    $('.body-not').animate({scrollTop: $('.body-not')[0].scrollHeight}, 1000);
                 }
             }).catch(err=>{if(err) throw err})
         }
@@ -45,13 +48,15 @@ const errors = []
 add.addEventListener('click', addPost)
 
 function addPost(e){
-    e.preventDefault(e);
+    e.preventDefault();
     
     let user_id = document.getElementById('user_id').value
-    let context = document.getElementById('ContextMsg').value
-
+    // let context = document.getElementById('ContextMsg').value.trim()
+    let context = $('#ContextMsg').val()
+    // Validation
     if(!user_id || !context){
         alert("Message is empty")
+        
     }else{
         
         fetch('http://localhost:7000/blog', {
@@ -62,7 +67,8 @@ function addPost(e){
             },body: JSON.stringify({user_id: user_id, context: context})
         })
         findAll()
-        window.location.href = 'notifications.php'
+        $('#ContextMsg').val('')
+        // window.location.href = 'notifications.php'
     }
 }
 // End blog
@@ -71,7 +77,5 @@ function addPost(e){
 // Jquery
 
 $(document).ready(function(){
-    $('.body-not').animate({
-        scrollTop: $('.body-not').prop('scrollHeight')
-    }, 1000)
-});
+    findAll()
+});    
