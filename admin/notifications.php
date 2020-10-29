@@ -155,7 +155,6 @@
                                                 </div>
                                             </div>
                                             <h2 class="m-0 p-0">Email</h2>
-                                            
                                         </div>
                                         <div class="card-body">
                                             <p>
@@ -204,8 +203,10 @@
                             <form action="" method="post" class="" id="form">
                                 <input type="hidden" id="user_id" value="<?php print $_SESSION['id'];?>"
                                     class="form-control">
-                                <input name="message" id="ContextMsg" placeholder="Typing...." class="form-control">
-                                <button type="button" id="Add-blog" class="btn btn-warning">Send</button>
+                                <input name="message" autocomplete="off" autofocus id="ContextMsg" placeholder="Typing...." class="form-control">
+                                <button type="button" id="Add-blog" class="btn btn-warning">
+                                    <i class="fa fa-paper-plane"></i>
+                                </button>
                             </form>
                         </div>
                         <?php endif;?>

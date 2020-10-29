@@ -280,6 +280,7 @@ table tr:hover {
 
 textarea{
     outline: none;
+    border-radius: 0;
 }
 
 .boule{
@@ -296,5 +297,14 @@ textarea{
     width: 100%;
     height: 75vh;
     overflow-y: auto;
+}
+
+
+.img-avatar{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 2px solid transparent;
+    border-radius: 50%;
 }
 

@@ -650,31 +650,34 @@
             res.json().then(data => {
                 // console.log(data)
                 if (data.length > 0) {
-                    var temp = ''
+					var temp = ''
+					
                     data.forEach((u) => {
-                        temp += `
-                    <div class="my-3 bg-white p-3 shadow-lg">
-                        <div class="content-text">
-                            <h3>${u.title}</h3>
-                            <p>
-                                ${u.context}
-                            </p>
-                        </div>
-                        <div class="footer-content">
-                            <p class="p-0 m-0 d-flex justify-content-between align-items-center">
-                                <span>
-                                    <span class="">
-                                        <img src=".${u.profile_pic}" alt="userimage" width="45" class="img-fluid border-50">
-                                    </span>
-                                    <span>${u.username}</span>
-                                </span>
-                                <span>
-                                    ${u.created_at}
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                `
+						var time = new Date(u.created_at)
+						time = `${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
+						temp += `
+							<div class="my-3 bg-white p-3 shadow-lg">
+								<div class="content-text">
+									<h3>${u.title}</h3>
+									<p>
+										${u.context}
+									</p>
+								</div>
+								<div class="footer-content">
+									<p class="p-0 m-0 d-flex justify-content-between align-items-center">
+										<span>
+											<span class="">
+												<img src=".${u.profile_pic}" alt="userimage" width="45" class="img-fluid img-avatar border-50">
+											</span>
+											<span>${u.username}</span>
+										</span>
+										<small>
+											${time}
+										</small>
+									</p>
+								</div>
+							</div>
+						`
                     })
                     document.getElementById('programmes_APi').innerHTML = temp
                 }
