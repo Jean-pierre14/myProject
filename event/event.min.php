@@ -232,3 +232,39 @@ if(isset($_POST['log'])){
         }        
     }
 }
+
+
+// Action
+if(isset($_POST['action'])){
+    if($_POST['action'] == 'programmeOne'){
+        
+        $SQL = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, programmes_tb.userId, programmes_tb.context, programmes_tb.created_at FROM user_account INNER JOIN programmes_tb WHERE user_account.id=programmes_tb.userId ORDER BY id DESC LIMIT 1");
+
+        if(mysqli_num_rows($SQL) > 0){
+            while($row = mysqli_fetch_assoc($SQL)){
+                
+                $output = '
+                    <div class="box shadow-sm bg-white p-3 mb-3">
+                        <p class="d-flex justify-content-between align-content-center">
+                            <span>
+                                <a href="./'.$row['profile_pic'].'" class="" data-lightbox="mygallery">
+                                    <img src="./'.$row['profile_pic'].'" alt="UserImage" class="img avatar img-avatar">
+                                </a>
+                            </span>
+                            <span>'.$row['username'].'</span>
+                        </p>
+                        <div class="body-box">
+                            <p>
+                                '.$row['context'].'
+                            </p>
+                        </div>
+                        <small>
+                            '.$row['created_at'].'
+                        </small>
+                    </div>
+                ';
+            }
+        }
+        print $output;
+    }
+}
