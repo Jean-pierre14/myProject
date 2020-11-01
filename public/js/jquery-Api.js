@@ -10,5 +10,17 @@ $(document).ready(function(){
             }
         })
     }
+    function testimonial(){
+        let action = 'testimonial'
+        $.ajax({
+            url: './event/event.min.php',
+            method: 'post',
+            data: {action},
+            success: function(data){
+                $('#testimonial').html(data)
+            }
+        })
+    }
     ProgrammeOne()
+    testimonial()
 })

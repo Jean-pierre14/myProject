@@ -267,4 +267,32 @@ if(isset($_POST['action'])){
         }
         print $output;
     }
+    if($_POST['action'] == 'testimonial'){
+        $SQL = "SELECT `name`,`about`, profile_pic FROM `user_account` ORDER BY `id` DESC LIMIT 5";
+        $results = mysqli_query($con, $SQL);
+        
+        if(mysqli_num_rows($results) > 0){
+            $output .= '<div class="testi-slider owl-carousel" data-slider-id="1">';
+            while($row = mysqli_fetch_assoc($results)){
+                $output .= '
+                <div class="item">
+					<div class="testi-item">
+						<img src="./'.$row['profile_pic'].'" alt="" class="img-avatar">
+						<h4 class="text-uppercase">'.$row['name'].'</h4>
+						
+						<div class="wow fadeIn" data-wow-duration="1s">
+							<p class="">
+								'.$row['about'].'
+							</p>
+						</div>
+					</div>
+				</div>
+                ';
+            }
+            $output .= '</div>';
+        }else{
+            $output .= '<p class="alert alert-danger shadow">There no data</p>';
+        }
+        print $output;
+    }
 }
