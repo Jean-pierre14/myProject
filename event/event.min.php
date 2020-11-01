@@ -295,4 +295,21 @@ if(isset($_POST['action'])){
         }
         print $output;
     }
+    if($_POST['action'] == 'pastors-5'){
+        $SQL = "SELECT pastor_name FROM pastor_tb ORDER BY id DESC LIMIT 4";
+        $result = mysqli_query($con, $SQL);
+
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $output .= '
+                    <li>
+                        <a href="#">'.$row['pastor_name'].'</a>
+                    </li>
+                ';
+            }
+        }else{
+            $output .= '<p class="alert alert-warning my-5 shadow">No pastors register</p>';
+        }
+        print $output;
+    }
 }

@@ -29,6 +29,21 @@ $(document).ready(function () {
     });
   }
 
+  function pastors() {
+    var action = 'pastors-5';
+    $.ajax({
+      url: './event/event.min.php',
+      method: 'post',
+      data: {
+        action: action
+      },
+      success: function success(data) {
+        $('#pastors-5').html(data);
+      }
+    });
+  }
+
   ProgrammeOne();
   testimonial();
+  pastors();
 });

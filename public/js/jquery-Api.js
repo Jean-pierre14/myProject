@@ -21,6 +21,18 @@ $(document).ready(function(){
             }
         })
     }
+    function pastors(){
+        let action = 'pastors-5'
+        $.ajax({
+            url: './event/event.min.php',
+            method: 'post',
+            data: {action},
+            success: function(data){
+                $('#pastors-5').html(data)
+            }
+        })
+    }
     ProgrammeOne()
     testimonial()
+    pastors()
 })
