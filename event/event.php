@@ -7,7 +7,7 @@
     $outFemale = '';
 
     if(isset($_POST['action'])){
-        if($_POST['action'] == "subscribe"){
+        if($_POST['action'] == "suscribe"){
 
             $email = mysqli_real_escape_string($con, htmlentities(trim($_POST['email'])));
             $message = mysqli_real_escape_string($con, htmlentities(trim($_POST['message'])));
