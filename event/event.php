@@ -7,6 +7,29 @@
     $outFemale = '';
 
     if(isset($_POST['action'])){
+        if($_POST['action'] == "subscribe"){
+
+            $email = mysqli_real_escape_string($con, htmlentities(trim($_POST['email'])));
+            $message = mysqli_real_escape_string($con, htmlentities(trim($_POST['message'])));
+    
+            if(empty($email)){array_push($errors, "Email is invalid");}
+            if(empty($message)){array_push($errors, "Message filed is empty");}
+    
+            if(count($errors) > 0){
+                foreach($errors as $error){
+                    $output .= '<p class="alert alert-danger ui message negative">'.$error.'</p>';
+                }
+            }
+    
+            if(count($errors) == 0){
+                $sql = "INSERT INTO suscribe_tb(email, context, read_unread) VALUES('$email', '$message', 'unread')";
+                $result = mysqli_query($con, $sql);
+    
+                if($result){
+                    $output .= '<p class="alert alert-success ui message positive">Your message was Sended</p>';
+                }
+            }
+        }    
         if ( $_POST['action'] == 'online') {
             $query = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT 5");
             if(@mysqli_num_rows($query) > 0){
@@ -268,28 +291,5 @@
 
         }
     }
-    if(isset($_POST['subscribe'])){
-
-        $email = mysqli_real_escape_string($con, htmlentities(trim($_POST['email'])));
-        $message = mysqli_real_escape_string($con, htmlentities(trim($_POST['message'])));
-
-        if(empty($email)){array_push($errors, "Email is invalid");}
-        if(empty($message)){array_push($errors, "Message filed is empty");}
-
-        if(count($errors) > 0){
-            foreach($errors as $error){
-                $output .= '<p class="alert alert-danger ui message negative">'.$error.'</p>';
-            }
-        }
-
-        if(count($errors) == 0){
-            $sql = "INSERT INTO suscribe_tb(email, context, read_unread) VALUES('$email', '$message', 'unread')";
-            $result = mysqli_query($con, $sql);
-
-            if($result){
-                $output .= '<p class="alert alert-success ui message positive">Your message was Sended</p>';
-            }
-        }
-    }
-
+    
     

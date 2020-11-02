@@ -331,20 +331,35 @@
 								</div>
 								<div class="form-group">
 									<label for="message">Message</label>
-									<textarea name="message" id="message" class="form-control" placeholder="Message..."></textarea>
+									<input type="text" placeholder="Typing..." id="context" class="form-control">
 								</div>
 								<div class="form-group">
-									<button type="submit" name="subscribe" class="btn btn-fill btn-sm btn-success">send <i class="fa fa-arrow-left"></i></button>
+									<div class="buttons gray flex-row d-flex" id="request-btn">
+										<i class="fa fa-paper-plane" aria-hidden="true"></i>
+										<div class="desc">
+											<button type="button" class="border-0 transparent text-white">
+												<p>
+													<span>Sign In</span>
+												</p>
+											</button>
+										</div>
+									</div>
+									
 								</div>
 							</form>
 					</div>
 				</div>
 			</div>
 			<div class="footer-bottom row align-items-center">
-				<p class="footer-text m-0 col-lg-6 col-md-12"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;<script>document.write(new Date().getFullYear());</script> Put God first
-					<i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="#" target="_blank">Genuis team</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+				<p class="footer-text m-0 col-lg-6 col-md-12">
+					Copyright &copy; 
+					<script>
+						document.write(new Date().getFullYear());
+					</script>
+					 Put God first
+					<i class="fa fa-users" aria-hidden="true"></i> by 
+					<a href="#" target="_blank">Genuis team</a>
+				</p>
 				<div class="col-lg-6 col-md-6 social-link">
 					<div class="download-button d-flex flex-row justify-content-end">
 						<div class="buttons gray flex-row d-flex">
@@ -375,8 +390,7 @@
 	
 
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
 	<script src="js/tilt.jquery.min.js"></script>
 	<script src="js/vendor/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
@@ -396,7 +410,33 @@
 	<script src="./public/js/jquery-Api.js"></script>
 
 	<script>
+		$(document).ready(function(){
+			
+
+			$('#request-btn').click(function(){
+				let email = $("#email").val().trim()
+				let message = $("#context").val().trim()
+				
+				if(!email || !message){
+					alert("Complet all fields please")
+				}else{
+					let action = 'suscribe'
+					$.ajax({
+						url: './event/event.php',
+						method: 'post',
+						data: {action, email, message},
+						success: function(data){
+							$('#email').val('')
+							$('#context').val('')
+							$('#success').html(data)
+						}
+					})
+				}
+			})
+		})
 		// APIs
+		
+		// fetch('http://localhost:7000/request').then()
 		fetch('http://localhost:7000/programmes').then(
         res => {
             res.json().then(data => {

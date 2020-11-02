@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    
     function ProgrammeOne(){
         let action = 'programmeOne'
         $.ajax({
@@ -32,6 +33,7 @@ $(document).ready(function(){
             }
         })
     }
+
     ProgrammeOne()
     testimonial()
     pastors()
