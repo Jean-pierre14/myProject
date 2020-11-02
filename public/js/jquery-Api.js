@@ -33,8 +33,21 @@ $(document).ready(function(){
             }
         })
     }
+    function weddings(){
+        let action = 'weddings'
+        $.ajax({
+            url: './event/event.min.php',
+            method: 'post',
+            data: {action},
+            success: function(data){
+                $('#weddings-list').html(data)
+            }
+        })
+    }
+
 
     ProgrammeOne()
     testimonial()
     pastors()
+    weddings()
 })

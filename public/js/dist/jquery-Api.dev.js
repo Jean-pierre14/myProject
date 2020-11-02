@@ -43,7 +43,22 @@ $(document).ready(function () {
     });
   }
 
+  function weddings() {
+    var action = 'weddings';
+    $.ajax({
+      url: './event/event.min.php',
+      method: 'post',
+      data: {
+        action: action
+      },
+      success: function success(data) {
+        $('#weddings-list').html(data);
+      }
+    });
+  }
+
   ProgrammeOne();
   testimonial();
   pastors();
+  weddings();
 });

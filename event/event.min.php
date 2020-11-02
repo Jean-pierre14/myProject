@@ -312,4 +312,22 @@ if(isset($_POST['action'])){
         }
         print $output;
     }
+    if($_POST['action'] == 'weddings'){
+        $SQL = "SELECT user_account.name,user_account.id, wedding_tb.husband_id, wedding_tb.wife_id FROM user_account INNER JOIN wedding_tb WHERE user_account.id=wedding_tb.husband_id";
+        // $SQL = "SELECT user_account.name,user_account.id FROM user_account FULL OUTER JOIN wedding_tb WHERE user_account.id=weddind_tb.husband_id";
+        $result = mysqli_query($con, $SQL);
+
+        if(@mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $output .= '
+                    <li>
+                        <a href="#">'.$row['name'].'</a>
+                    </li>
+                ';
+            }
+        }else{
+            $output .= '<p class="alert alert-warning my-5 shadow">No pastors register</p>';
+        }
+        print $output;
+    }
 }
