@@ -4,12 +4,12 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/x-icon">
     <meta name="author" content="jean-pierre14">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="UTF-8">
-    <title>ERC/<?php print "Username";?></title>
+    <title>ERC/<?php print $user_array[1];?></title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -55,7 +55,7 @@
                 <div class="col-lg-12 d-flex align-items-center justify-content-between">
                     <div class="left-part">
                         <h1>
-                            Welcome <?php print "Username";?>
+                            Welcome <span class="text-uppercase"><?php print $user_array[1];?></span>
                         </h1>
                         <p>
                             at this place we will display the word of the day, it can be the new of the or a word of
@@ -63,7 +63,7 @@
                         </p>
                     </div>
                     <div class="right-part">
-                        <a href="index.html">home</a>
+                        <a href="index.php">home/<?php print $user_array[1];?></a>
                     </div>
                 </div>
             </div>

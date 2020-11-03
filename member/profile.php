@@ -4,12 +4,12 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="img/fav.png">
+    <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/png">
     <meta name="author" content="jean-pierre14">
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta charset="UTF-8">
-    <title>ERC/<?php print "Username";?></title>
+    <title>ERC/<?php print $user_array[1] ;?></title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -57,13 +57,13 @@
                             Profile
                         </h1>
                         <p>
-                            this place is for the description of the user, or is about info
+                            <?php print $user_array[4];?>
                         </p>
                     </div>
                     <div class="right-part">
                         <a href="index.html">home</a>
                         <span class="fa fa-caret-right"></span>
-                        <a href="profile.php"><?php print "Username";?></a>
+                        <a href="profile.php"><?php print $user_array[1];?></a>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="row align-items-center">
                     <div class="col single-fact">
                         <h2>100K+</h2>
-                        <p>Total member</p>
+                        <p>Total members</p>
                     </div>
                     <div class="col single-fact">
                         <h2>10K+</h2>
@@ -99,18 +99,15 @@
             </div>
         </div>
     </section>
-    <!-- End fact Area -->
 
-    <!-- Start feature Area -->
     <section class="feature-area section-gap-top">
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-6">
                     <div class="section-title text-center">
-                        <h2>Unique Features</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
+                        <h2>Your status</h2>
+                        <p>
+                            <?php print $user_array[4];?>
                         </p>
                     </div>
                 </div>

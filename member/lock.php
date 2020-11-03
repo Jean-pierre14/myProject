@@ -4,3 +4,6 @@
         header('location: ../login.php');
         exit();
     }
+
+    require_once("./includes/config.php");
+    
