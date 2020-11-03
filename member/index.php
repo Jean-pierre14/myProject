@@ -85,10 +85,10 @@
                         </div>
                         <div class="col-lg-3  col-md-3 meta-details">
                             <ul class="tags">
-                                <li><a href="#">Food,</a></li>
-                                <li><a href="#">Technology,</a></li>
-                                <li><a href="#">Politics,</a></li>
-                                <li><a href="#">Lifestyle</a></li>
+                                <li><a href="#">Preachers,</a></li>
+                                <li><a href="#">Worship,</a></li>
+                                <li><a href="#">Songs,</a></li>
+                                <li><a href="#">Goma pour Christ</a></li>
                             </ul>
                             <div class="user-details row">
                                 <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span
