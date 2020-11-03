@@ -3,21 +3,13 @@
 <html lang="zxx" class="no-js">
 
 <head>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="shortcut icon" href="img/fav.png">
-
     <meta name="author" content="jean-pierre14">
-
     <meta name="description" content="">
-
     <meta name="keywords" content="">
-
     <meta charset="UTF-8">
-
     <title>ERC/<?php print "Username";?></title>
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -40,7 +32,7 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li class="menu-active"><a href="profile.php">Profile</a></li>
 
                         <li class="menu-has-children"><a href="">Blog</a>
@@ -49,6 +41,7 @@
                                 <li><a href="blog-single.html">Blog Single</a></li>
                             </ul>
                         </li>
+                        <li class="shadow btn btn-danger"><a href="#">Logout</a></li>
                     </ul>
                 </nav>
             </div>
@@ -61,50 +54,46 @@
                 <div class="col-lg-12 d-flex align-items-center justify-content-between">
                     <div class="left-part">
                         <h1>
-                            About Us
+                            Profile
                         </h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore
-                            magna aliqua.
+                            this place is for the description of the user, or is about info
                         </p>
                     </div>
                     <div class="right-part">
                         <a href="index.html">home</a>
                         <span class="fa fa-caret-right"></span>
-                        <a href="about.html">about</a>
+                        <a href="profile.php"><?php print "Username";?></a>
                     </div>
                 </div>
             </div>
         </div>
         </div>
     </section>
-    <!-- End banner Area -->
 
-    <!-- Start fact Area -->
     <section class="fact-area section-gap-top">
         <div class="container">
             <div class="fact-box">
                 <div class="row align-items-center">
                     <div class="col single-fact">
                         <h2>100K+</h2>
-                        <p>Total Downloads</p>
+                        <p>Total member</p>
                     </div>
                     <div class="col single-fact">
                         <h2>10K+</h2>
-                        <p>Positive Reviews</p>
+                        <p>Pastors</p>
                     </div>
                     <div class="col single-fact">
                         <h2>50K+</h2>
-                        <p>Daily Visitors</p>
+                        <p>Female</p>
                     </div>
                     <div class="col single-fact">
                         <h2>0.02%</h2>
-                        <p>Uninstallation Rate</p>
+                        <p>Male</p>
                     </div>
                     <div class="col single-fact">
                         <h2>15K+</h2>
-                        <p>Pro User</p>
+                        <p>Weddings</p>
                     </div>
                 </div>
             </div>

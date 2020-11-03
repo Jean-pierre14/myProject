@@ -33,7 +33,7 @@
                 </div>
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.html">Home</a></li>
+                        <li class="menu-active"><a href="index.php">Home</a></li>
                         <li><a href="profile.php">Profile</a></li>
 
                         <li class="menu-has-children"><a href="">Blog</a>
@@ -58,17 +58,12 @@
                             Welcome <?php print "Username";?>
                         </h1>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                            incididunt ut labore et dolore
-                            magna aliqua.
+                            at this place we will display the word of the day, it can be the new of the or a word of
+                            motivation, ... everything that is
                         </p>
                     </div>
                     <div class="right-part">
                         <a href="index.html">home</a>
-                        <span class="fa fa-caret-right"></span>
-                        <a href="blog-home.html">BLog</a>
-                        <span class="fa fa-caret-right"></span>
-                        <a href="blog-single.html">BLog Details</a>
                     </div>
                 </div>
             </div>
