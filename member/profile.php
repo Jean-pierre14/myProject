@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/hexagons.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -108,6 +108,22 @@
                         <h2>Your status</h2>
                         <p>
                             <?php print $user_array[4];?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="box-user p-3">
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span><?php print $user_array[1];?></span>
+                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                                    class="fa fa-edit"></i></button>
+                        </p>
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span><?php print $user_array[2];?></span>
+                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                                    class="fa fa-edit"></i></button>
                         </p>
                     </div>
                 </div>

@@ -3292,3 +3292,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: none !important;
   outline: none !important;
 }
+
+.box-user{
+  position: relative;
+  display: block;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+}
