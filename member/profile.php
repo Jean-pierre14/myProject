@@ -112,9 +112,14 @@
                     </div>
                 </div>
             </div>
+
             <div class="row">
-                <div class="col-md-4">
-                    <div class="box-user p-3">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-feature">
+                        <a href="#" class="title">
+                            <span class="lnr lnr-user"></span>
+                            <h3><?php print $user_array[2];?></h3>
+                        </a>
                         <p class="d-flex justify-content-between align-items-center">
                             <span><?php print $user_array[1];?></span>
                             <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
@@ -127,42 +132,36 @@
                         </p>
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <div class="single-feature">
                         <a href="#" class="title">
-                            <span class="lnr lnr-book"></span>
-                            <h3>Expert Technicians</h3>
+                            <span class="lnr lnr-location"></span>
+                            <h3>Address</h3>
                         </a>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span><?php print $user_array[3];?></span>
+                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                                    class="fa fa-edit"></i></button>
+                        </p>
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span><?php print $user_array[5];?></span>
+                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                                    class="fa fa-edit"></i></button>
                         </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="single-feature">
                         <a href="#" class="title">
-                            <span class="lnr lnr-book"></span>
-                            <h3>Professional Service</h3>
+                            <span class="lnr lnr-phone"></span>
+                            <h3>Personne info</h3>
                         </a>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span><?php print $user_array[9];?></span>
+                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                                    class="fa fa-edit"></i></button>
                         </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single-feature">
-                        <a href="#" class="title">
-                            <span class="lnr lnr-book"></span>
-                            <h3>Great Support</h3>
-                        </a>
-                        <p>
-                            Usage of the Internet is becoming more common due to rapid advancement of technology and
-                            power.
-                        </p>
+                        <input type="text" placeholder="New phone number" class="form-control mt-3">
                     </div>
                 </div>
 
@@ -176,19 +175,16 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5 home-about-left">
-                    <img class="img-fluid" src="img/iphone.png" alt="">
+                    <img class="img-fluid" src="../img/iphone.png" alt="">
                 </div>
                 <div class="offset-lg-1 col-lg-5 home-about-right">
                     <h1>
-                        We Believe that <br>
-                        Interior beautifies the <br>
-                        Total Architecture
+                        the Evangelical <br>
+                        Restoration <br>
+                        Church
                     </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore
-                        magna aliqua.Ut
-                        enim ad minim. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.
+                    <p class="word-day">
+                        Word of the day
                     </p>
                     <a class="primary-btn text-uppercase" href="#">Get Details</a>
                 </div>
