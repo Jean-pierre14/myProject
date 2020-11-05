@@ -164,6 +164,20 @@
                         <input type="text" placeholder="New phone number" class="form-control mt-3">
                     </div>
                 </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-feature">
+                        <a href="#" class="title">
+                            <span class="lnr lnr-status"></span>
+                            <h3>Status</h3>
+                        </a>
+                        <p class="d-flex justify-content-between align-items-center">
+                            <span><?php print $user_array[3];?></span>
+                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                                    class="fa fa-edit"></i></button>
+                        </p>
+                        <input type="text" placeholder="Typing..." class="form-control mt-3">
+                    </div>
+                </div>
 
             </div>
         </div>
