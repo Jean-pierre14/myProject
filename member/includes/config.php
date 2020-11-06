@@ -20,6 +20,7 @@ if(@mysqli_num_rows($User) > 0){
         $user_array[7] = $data['statu'];
         $user_array[8] = $data['gender'];
         $user_array[9] = $data['phone'];
+        $user_array[10] = $data['profile_pic'];
     }
 }else{
     header("Location: ../login.php");

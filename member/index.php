@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/hexagons.min.css">
     <link rel="stylesheet" href="css/owl.carousel.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
                                 <li><a href="blog-single.html">Blog Single</a></li>
                             </ul>
                         </li>
-                        <li class="shadow btn btn-danger"><a href="#">Logout</a></li>
+                        <li class="shadow btn btn-danger"><a href="../logout.php">Logout</a></li>
                     </ul>
                 </nav>
             </div>
@@ -63,7 +63,12 @@
                         </p>
                     </div>
                     <div class="right-part">
-                        <a href="index.php">home/<?php print $user_array[1];?></a>
+                        <a href="index.php">
+                            home/
+                            <span class="p-0 m-0">
+                                <img src="../<?php print $user_array[10];?>" alt="" class="img-avatar">
+                            </span>
+                            <?php print $user_array[1];?></a>
                     </div>
                 </div>
             </div>
