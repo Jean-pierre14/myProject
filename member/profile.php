@@ -36,11 +36,8 @@
                         <li class="menu-active">
                             <a href="profile.php">Profile</a>
                         </li>
-                        <li class="menu-has-children"><a href="">Blog</a>
-                            <ul>
-                                <li><a href="blog-home.html">Blog Home</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                            </ul>
+                        <li class="menu-has-children">
+                            <a href="#">Blog</a>
                         </li>
                         <li class="shadow btn btn-danger"><a href="../logout.php">Logout</a></li>
                     </ul>
@@ -123,13 +120,14 @@
                         </a>
                         <p class="d-flex justify-content-between align-items-center">
                             <span><?php print $user_array[1];?></span>
-                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
+                            <button type="button" class="btn btn-sm shadow" data-toggle="modal"
+                                data-target="#my-username" id="<?php print $user_array[0];?>"><i
                                     class="fa fa-edit"></i></button>
                         </p>
                         <p class="d-flex justify-content-between align-items-center">
                             <span><?php print $user_array[2];?></span>
-                            <button type="button" class="btn btn-sm shadow" id="<?php print $user_array[0];?>"><i
-                                    class="fa fa-edit"></i></button>
+                            <button type="button" class="btn btn-sm shadow" data-toggle="modal" data-target="#my-name"
+                                id="<?php print $user_array[0];?>"><i class="fa fa-edit"></i></button>
                         </p>
                     </div>
                 </div>
@@ -319,6 +317,38 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal fade" id="my-username">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-uppercase">
+                        <?php print $user_array[1];?>
+                    </h4>
+                    <a href="profile.php" class="close">&times;</a>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form action="" method="post">
+                        <div class="form-group">
+                            <label for="New-username">Username</label>
+                            <input type="text" placeholder="<?php print $user_array[1];?>" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-sm btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="profile.php" class="btn btn-sm btn-danger">Close</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
 
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"

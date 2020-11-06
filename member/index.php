@@ -36,11 +36,8 @@
                         <li class="menu-active"><a href="index.php">Home</a></li>
                         <li><a href="profile.php">Profile</a></li>
 
-                        <li class="menu-has-children"><a href="">Blog</a>
-                            <ul>
-                                <li><a href="blog-home.html">Blog Home</a></li>
-                                <li><a href="blog-single.html">Blog Single</a></li>
-                            </ul>
+                        <li class="menu-has-children">
+                            <a href="#">Blog</a>
                         </li>
                         <li class="shadow btn btn-danger"><a href="../logout.php">Logout</a></li>
                     </ul>
