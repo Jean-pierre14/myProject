@@ -78,19 +78,19 @@
                         <p>Total members</p>
                     </div>
                     <div class="col single-fact">
-                        <h2>10K+</h2>
+                        <h2 id="userPastor">10K+</h2>
                         <p>Pastors</p>
                     </div>
                     <div class="col single-fact">
-                        <h2>50K+</h2>
+                        <h2 id="userFemale">50K+</h2>
                         <p>Female</p>
                     </div>
                     <div class="col single-fact">
-                        <h2>0.02%</h2>
+                        <h2 id="userMale">0.02%</h2>
                         <p>Male</p>
                     </div>
                     <div class="col single-fact">
-                        <h2>15K+</h2>
+                        <h2 id="userWedding">15K+</h2>
                         <p>Weddings</p>
                     </div>
                 </div>

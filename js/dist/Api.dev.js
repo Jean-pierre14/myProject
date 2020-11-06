@@ -2,6 +2,10 @@
 
 $(document).ready(function () {
   usersTotal();
+  usersPastor();
+  usersFemale();
+  usersMale();
+  usersWedding();
 });
 
 function usersTotal() {

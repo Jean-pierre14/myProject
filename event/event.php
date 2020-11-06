@@ -301,7 +301,7 @@
                 print $data['countItem'];
             }
         }
-        if($_POST['action'] == 'userPastors'){
+        if($_POST['action'] == 'userPastor'){
             $sql = mysqli_query($con, "SELECT COUNT(id) AS countItem FROM pastor_tb");
 
             if(@mysqli_num_rows($sql) === 0){

@@ -1,5 +1,9 @@
 $(document).ready(function(){
-    usersTotal()
+    usersTotal();
+    usersPastor();
+    usersFemale();
+    usersMale();
+    usersWedding();
 })
 
 
