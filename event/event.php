@@ -290,6 +290,57 @@
             }
 
         }
+
+        if($_POST['action'] == 'userTotal'){
+            $sql = mysqli_query($con, "SELECT COUNT(id) AS countItem FROM user_account");
+
+            if(@mysqli_num_rows($sql) === 0){
+                print "zero user";
+            }else{
+                $data = mysqli_fetch_array($sql);
+                print $data['countItem'];
+            }
+        }
+        if($_POST['action'] == 'userPastors'){
+            $sql = mysqli_query($con, "SELECT COUNT(id) AS countItem FROM pastor_tb");
+
+            if(@mysqli_num_rows($sql) === 0){
+                print "Zero Pastor";
+            }else{
+                $data = mysqli_fetch_array($sql);
+                print $data['countItem'];
+            }
+        }
+        if($_POST['action'] == 'userFemale'){
+            $sql = mysqli_query($con, "SELECT COUNT(id) AS countItem FROM user_account WHERE gender = 'Female'");
+
+            if(@mysqli_num_rows($sql) === 0){
+                print "Zero Female";
+            }else{
+                $data = mysqli_fetch_array($sql);
+                print $data['countItem'];
+            }
+        }
+        if($_POST['action'] == 'userMale'){
+            $sql = mysqli_query($con, "SELECT COUNT(id) AS countItem FROM user_account WHERE gender = 'Male'");
+
+            if(@mysqli_num_rows($sql) === 0){
+                print "Zero Male";
+            }else{
+                $data = mysqli_fetch_array($sql);
+                print $data['countItem'];
+            }
+        }
+        if($_POST['action'] == 'userWedding'){
+            $sql = mysqli_query($con, "SELECT COUNT(id) AS countItem FROM wedding_tb");
+
+            if(@mysqli_num_rows($sql) === 0){
+                print "Zero Wedding";
+            }else{
+                $data = mysqli_fetch_array($sql);
+                print $data['countItem'];
+            }
+        }
     }
     
     
