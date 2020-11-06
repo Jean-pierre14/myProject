@@ -6,6 +6,8 @@ $(document).ready(function(){
     usersWedding();
 })
 
+let profile = document.getElementById('profile-img')
+
 
 function usersTotal(){
     let action = "userTotal"

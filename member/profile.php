@@ -70,7 +70,8 @@
     </section>
 
     <section class="fact-area section-gap-top">
-        <div class="container">
+        <div class="container py-5 profile-img" data-profile="../<?php print $user_array[10];?>">
+
             <div class="fact-box">
                 <div class="row align-items-center">
                     <div class="col single-fact">

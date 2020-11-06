@@ -7,6 +7,7 @@ $(document).ready(function () {
   usersMale();
   usersWedding();
 });
+var profile = document.getElementById('profile-img');
 
 function usersTotal() {
   var action = "userTotal";
