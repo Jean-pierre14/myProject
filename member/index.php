@@ -76,6 +76,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
+                    <!-- API to wedding -->
+
+                    <!-- End API to wedding -->
                     <div class="single-post row">
                         <div class="col-lg-12">
                             <div class="feature-img">
