@@ -26,7 +26,12 @@ $(document).ready(function () {
       }
     });
   });
+  wedding();
 });
+
+function weddings() {
+  var action = 'wedding';
+}
 
 function newUsers4() {
   var action = 'newUsers4';

@@ -22,7 +22,12 @@ $(document).ready(function(){
             }
         })
     })
+    wedding()
 })
+
+function  weddings(){
+    let action = 'wedding'
+}
 
 function newUsers4(){
     let action = 'newUsers4'
