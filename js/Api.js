@@ -4,10 +4,52 @@ $(document).ready(function(){
     usersFemale();
     usersMale();
     usersWedding();
+    wordOfDay();
+    newUsers4();
+
+    $('#update-username').click(function(){
+        let username = $('#newUser');
+        let id = $('#userId');
+        let action = 'editUsername';
+
+        alert(action)
+        $.ajax({
+            url: "../admin/config.php",
+            method: 'POST',
+            data: {username, id, action},
+            success: function(data){
+                alert(data)
+            }
+        })
+    })
 })
+
+function newUsers4(){
+    let action = 'newUsers4'
+    let offset = 4
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {action, offset},
+        success: function(data){
+            $('#newUsers4').html(data)
+        }
+    })
+}
 
 let profile = document.getElementById('profile-img')
 
+function wordOfDay(){
+    let action = 'word_of_day'
+    $.ajax({
+        url: "../event/event.php",
+        method: 'POST',
+        data: {action},
+        success: function(data){
+            $("#word_of_day").html(data)
+        }
+    })
+}
 
 function usersTotal(){
     let action = "userTotal"

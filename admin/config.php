@@ -127,7 +127,6 @@ if (isset($_POST['action'])) {
     if ($_POST['action'] == 'editUsername') {
         $id = $_POST['id'];
         $username = htmlentities(mysqli_real_escape_string($con, trim($_POST['username'])));
-
         if (empty($username)) {
             print 'Username is empty sorry try again';
         } else {
@@ -555,7 +554,6 @@ if (isset($_POST['action'])) {
 
         print 'Divorce success';
     }
-
     if($_POST['action'] == 'getMe'){
         
         $id = $_POST['id'];
@@ -616,9 +614,6 @@ if (isset($_POST['action'])) {
         }
         print $output;
     }
-    
-
-
     // Dashboard items
     if ($_POST['action'] == 'requestCount'){
         $sql = mysqli_query($con, "SELECT COUNT(*) AS countRequest FROM suscribe_tb WHERE read_unread ='unread'");

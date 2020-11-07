@@ -10,7 +10,6 @@
     <meta name="keywords" content="">
     <meta charset="UTF-8">
     <title>ERC/<?php print $user_array[1] ;?></title>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -322,7 +321,7 @@
     <div class="modal fade" id="my-username">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header bg-warning">
                     <h4 class="modal-title text-uppercase">
                         <?php print $user_array[1];?>
                     </h4>
@@ -333,11 +332,12 @@
                 <div class="modal-body">
                     <form action="" method="post">
                         <div class="form-group">
+                            <input type="hidden" value="<?php print $user_array[0];?>" id="userId" class="form-control">
                             <label for="New-username">Username</label>
                             <input type="text" placeholder="<?php print $user_array[1];?>" class="form-control">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-sm btn-primary">Update</button>
+                            <button type="button" class="btn btn-sm btn-primary" id="update-username">Update</button>
                         </div>
                     </form>
                 </div>

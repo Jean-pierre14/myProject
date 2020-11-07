@@ -341,6 +341,59 @@
                 print $data['countItem'];
             }
         }
+
+        if($_POST['action'] == 'word_of_day'){
+            $sql = "SELECT user_account.id,user_account.name,user_account.profile_pic,words_tb.userId, words_tb.context, words_tb.created FROM user_account INNER JOIN words_tb WHERE user_account.id=words_tb.userId ORDER BY id LIMIT 1";
+
+            $result = mysqli_query($con, $sql);
+            if(@mysqli_num_rows($result) > 0){
+                $data = mysqli_fetch_array($result);
+                $output .= '
+                <div class="bg-white p-3">
+                    <div class="close">
+                        <img src="../'.$data['profile_pic'].'" alt="'.$data['name'].'" class="img-avatar">
+                    </div>
+                    <h3>'.$data['name'].'</h3>
+                    <div class="body-home">
+                        <p class="">
+                            '.$data['context'].'
+                        </p>
+                    </div>
+                    <small class="">'.$data['created'].'</small>
+                </div>';
+            }else{
+                $output .= '<p class="">We thank you to join our community <br> <b>jesus Christ</b> is our <b>Lord</b></p>';
+            }
+            print $output;
+        }
+
+        if($_POST['action'] == 'newUsers4'){
+            $offset = $_POST['offset'];
+            $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT 4");
+
+            if(@mysqli_num_rows($sql) > 0){
+                while($row = mysqli_fetch_array($sql)){
+                    $output .= '
+                    <div class="single-post-list d-flex flex-row align-items-center">
+                        <div class="thumb">
+                            <a href="../'.$row['profile_pic'].'">
+                                <img src="../'.$row['profile_pic'].'" alt="'.$row['name'].'" style="width: 100px;height: 70px;object-fit:cover">
+                            </a>
+                        </div>
+                        <div class="details">
+                            <a href="profile.php?profile='.$row['id'].'">
+                                <h6>'.$row['name'].'</h6>
+                            </a>
+                            <small>'.$row['email'].'</small>
+                        </div>
+                    </div>
+                    ';
+                }
+            }else{
+                $output .= '<p class="text-danger">We request you to tell people to join you</p>';
+            }
+            print $output;
+        }
     }
     
     

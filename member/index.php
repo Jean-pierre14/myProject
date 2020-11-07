@@ -54,7 +54,7 @@
                         <h1>
                             Welcome <span class="text-uppercase"><?php print $user_array[1];?></span>
                         </h1>
-                        <p>
+                        <p id="word_of_day">
                             at this place we will display the word of the day, it can be the new of the or a word of
                             motivation, ... everything that is
                         </p>
@@ -72,9 +72,6 @@
         </div>
         </div>
     </section>
-    <!-- End banner Area -->
-
-    <!-- Start post-content Area -->
     <section class="post-content-area single-post-area">
         <div class="container">
             <div class="row">
@@ -349,29 +346,21 @@
                             </form>
                         </div>
                         <div class="single-sidebar-widget user-info-widget">
-                            <img src="img/blog/user-info.png" alt="">
+                            <img src="../<?php print $user_array[10];?>" alt="" style="border-radius: 50%">
                             <a href="#">
-                                <h4>Charlie Barber</h4>
+                                <h4><?php print $user_array[2];?></h4>
                             </a>
                             <p>
-                                Senior blog writer
+                                <?php print $user_array[5];?>
                             </p>
-                            <ul class="social-links">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul>
+
                             <p>
-                                Boot camps have its supporters andit sdetractors. Some people do not understand why
-                                you should have to spend
-                                money on boot
-                                camp when you can get. Boot camps have itssuppor ters andits detractors.
+                                <?php print $user_array[4];?>
                             </p>
                         </div>
                         <div class="single-sidebar-widget popular-post-widget">
-                            <h4 class="popular-title">Popular Posts</h4>
-                            <div class="popular-post-list">
+                            <h4 class="popular-title">New members </h4>
+                            <div class="popular-post-list" id="newUsers4">
                                 <div class="single-post-list d-flex flex-row align-items-center">
                                     <div class="thumb">
                                         <img class="img-fluid" src="img/blog/pp1.jpg" alt="">
@@ -515,9 +504,7 @@
             </div>
         </div>
     </section>
-    <!-- End post-content Area -->
 
-    <!-- Start Footer Area -->
     <footer class="footer-area section-gap">
         <div class="container">
             <div class="row">
@@ -615,8 +602,11 @@
             </div>
         </div>
     </footer>
-    <!-- End Footer Area -->
 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
@@ -637,6 +627,7 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/mail-script.js"></script>
     <script src="js/main.js"></script>
+    <script src="../js/Api.js"></script>
 </body>
 
 </html>

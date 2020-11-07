@@ -6,8 +6,59 @@ $(document).ready(function () {
   usersFemale();
   usersMale();
   usersWedding();
+  wordOfDay();
+  newUsers4();
+  $('#update-username').click(function () {
+    var username = $('#newUser');
+    var id = $('#userId');
+    var action = 'editUsername';
+    alert(action);
+    $.ajax({
+      url: "../admin/config.php",
+      method: 'POST',
+      data: {
+        username: username,
+        id: id,
+        action: action
+      },
+      success: function success(data) {
+        alert(data);
+      }
+    });
+  });
 });
+
+function newUsers4() {
+  var action = 'newUsers4';
+  var offset = 4;
+  $.ajax({
+    url: '../event/event.php',
+    method: 'post',
+    data: {
+      action: action,
+      offset: offset
+    },
+    success: function success(data) {
+      $('#newUsers4').html(data);
+    }
+  });
+}
+
 var profile = document.getElementById('profile-img');
+
+function wordOfDay() {
+  var action = 'word_of_day';
+  $.ajax({
+    url: "../event/event.php",
+    method: 'POST',
+    data: {
+      action: action
+    },
+    success: function success(data) {
+      $("#word_of_day").html(data);
+    }
+  });
+}
 
 function usersTotal() {
   var action = "userTotal";
