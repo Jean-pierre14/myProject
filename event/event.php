@@ -394,6 +394,10 @@
             }
             print $output;
         }
+        if($_POST['action'] == 'weddingsFind'){
+            print "<h2>wedding from the database</h2>";
+            
+        }
     }
     
     

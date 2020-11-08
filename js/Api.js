@@ -26,13 +26,14 @@ $(document).ready(function(){
 })
 
 function  weddings(){
-    let action = 'wedding'
+    let action = 'weddingsFind'
+    alert("wedingsFind")
     $.ajax({
         url: '../event/event.php',
         method: 'POST',
         data: {action},
         success: function(data){
-            $('#wedingsFind').html(data)
+            $('#weddingsFind').html(data)
         }
     })
 }

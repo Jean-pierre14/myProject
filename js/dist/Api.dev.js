@@ -30,7 +30,8 @@ $(document).ready(function () {
 });
 
 function weddings() {
-  var action = 'wedding';
+  var action = 'weddingsFind';
+  alert("wedingsFind");
   $.ajax({
     url: '../event/event.php',
     method: 'POST',
@@ -38,7 +39,7 @@ function weddings() {
       action: action
     },
     success: function success(data) {
-      $('#wedingsFind').html(data);
+      $('#weddingsFind').html(data);
     }
   });
 }

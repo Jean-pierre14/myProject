@@ -77,7 +77,7 @@
             <div class="row">
                 <div class="col-lg-8 posts-list">
                     <!-- API to wedding -->
-                    <div id="wedingsFind"></div>
+                    <div id="weddingsFind"></div>
                     <!-- End API to wedding -->
                     <div class="single-post row">
                         <div class="col-lg-12">
