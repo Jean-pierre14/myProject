@@ -22,11 +22,19 @@ $(document).ready(function(){
             }
         })
     })
-    wedding()
+    weddings()
 })
 
 function  weddings(){
     let action = 'wedding'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'POST',
+        data: {action},
+        success: function(data){
+            $('#wedingsFind').html(data)
+        }
+    })
 }
 
 function newUsers4(){

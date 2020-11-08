@@ -26,11 +26,21 @@ $(document).ready(function () {
       }
     });
   });
-  wedding();
+  weddings();
 });
 
 function weddings() {
   var action = 'wedding';
+  $.ajax({
+    url: '../event/event.php',
+    method: 'POST',
+    data: {
+      action: action
+    },
+    success: function success(data) {
+      $('#wedingsFind').html(data);
+    }
+  });
 }
 
 function newUsers4() {
