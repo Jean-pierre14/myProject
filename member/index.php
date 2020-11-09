@@ -76,6 +76,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
+                    <!-- Programmes -->
+                    <div id="programmes"></div>
+                    <!-- End Programmes -->
                     <!-- API to wedding -->
                     <div id="weddingsFind"></div>
                     <!-- End API to wedding -->
@@ -98,7 +101,8 @@
                                 <p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span
                                         class="lnr lnr-calendar-full"></span></p>
                                 <p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span
-                                        class="lnr lnr-eye"></span></p>
+                                        class="lnr lnr-eye"></span>
+                                </p>
                                 <p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span
                                         class="lnr lnr-bubble"></span></p>
                                 <ul class="social-links col-lg-12 col-md-12 col-6">

@@ -27,11 +27,25 @@ $(document).ready(function () {
     });
   });
   weddings();
+  programmes();
 });
+
+function programmes() {
+  var action = 'programmes';
+  $.ajax({
+    url: '../event/event.php',
+    method: 'post',
+    data: {
+      action: action
+    },
+    success: function success(data) {
+      $('#programmes').html(data);
+    }
+  });
+}
 
 function weddings() {
   var action = 'weddingsFind';
-  alert("wedingsFind");
   $.ajax({
     url: '../event/event.php',
     method: 'POST',

@@ -23,11 +23,24 @@ $(document).ready(function(){
         })
     })
     weddings()
+    programmes()
 })
+
+function programmes(){
+    let action = 'programmes'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {action},
+        success: function(data){
+            $('#programmes').html(data)
+        }
+    })
+}
 
 function  weddings(){
     let action = 'weddingsFind'
-    alert("wedingsFind")
+    
     $.ajax({
         url: '../event/event.php',
         method: 'POST',

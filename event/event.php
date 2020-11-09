@@ -395,8 +395,23 @@
             print $output;
         }
         if($_POST['action'] == 'weddingsFind'){
-            print "<h2>wedding from the database</h2>";
-            
+            $sql = mysqli_query($con, "SELECT user_account.id,wedding_tb.husband_id,user_account.username FROM user_account INNER JOIN wedding_tb WHERE user_account.id=wedding_tb.huband_id");
+            if(@mysqli_num_rows($sql)> 0){
+                while($row = mysqli_fetch_array($sql)):
+                    $output .= '<p>'.$row['username'].'</p>';
+                endwhile;
+            }else{
+                $output .= '<p class="alert alert-warning">Welcome to ERC goma</p>';
+            }
+            print $output;
+        }
+        if($_POST['action'] == 'programmes'){
+            $sql = "SELECT * FROM programmes_tb";
+            if(@mysqli_num_rows($sql)>0){
+                
+            }else{
+                $output .= '<p class="alert alert-success">Our programmes is not yet ready</p>';
+            }
         }
     }
     
