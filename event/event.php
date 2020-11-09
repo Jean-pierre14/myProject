@@ -406,12 +406,25 @@
             print $output;
         }
         if($_POST['action'] == 'programmes'){
-            $sql = "SELECT * FROM programmes_tb";
-            if(@mysqli_num_rows($sql)>0){
-                
+            $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, programmes_tb.userId, programmes_tb.context, programmes_tb.title, programmes_tb.created_at FROM user_account INNER JOIN programmes_tb WHERE user_account.id=programmes_tb.userId ORDER BY programmes_tb.id DESC LIMIT 4");
+            if(@mysqli_num_rows($sql) > 0){
+                $output .= '<h3 class="mb-4">Programmes</h3>';
+                while($row = mysqli_fetch_assoc($sql)):
+                    $output .= '
+                    <div class="shadow-lg bg-white p-3 mb-3">
+                        <div class="close">
+                            <img src="../'.$row['profile_pic'].'" alt="username" class="img-avatar">
+                        </div>
+                        <h3 class="">'.$row['title'].'</h3>
+                        <p class="p-0 m-0">
+                            '.$row['context'].'
+                        </p>
+                    </div>';
+                endwhile;
             }else{
                 $output .= '<p class="alert alert-success">Our programmes is not yet ready</p>';
             }
+            print $output;
         }
     }
     
