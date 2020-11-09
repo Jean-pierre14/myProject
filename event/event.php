@@ -410,15 +410,28 @@
             if(@mysqli_num_rows($sql) > 0){
                 $output .= '<h3 class="mb-4">Programmes</h3>';
                 while($row = mysqli_fetch_assoc($sql)):
+                    $date = date('M d, Y', strtotime($row['created_at']));
                     $output .= '
                     <div class="shadow-lg bg-white p-3 mb-3">
                         <div class="close">
-                            <img src="../'.$row['profile_pic'].'" alt="username" class="img-avatar">
+                            <a href="profile.php?profile='.$row['id'].'" class="">
+                                <img src="../'.$row['profile_pic'].'" alt="username" class="img-avatar">
+                            </a>
                         </div>
                         <h3 class="">'.$row['title'].'</h3>
                         <p class="p-0 m-0">
                             '.$row['context'].'
                         </p>
+                        <div class="footer-bd">
+                            <p class="d-flex justify-content-between align-items-center">
+                                <a href="profile.php?profile='.$row['id'].'" class="">
+                                <span class="text-primary">'.$row['username'].'</span>
+                                </a>
+                                <small class="">
+                                    '.$date.' 
+                                </small>
+                            </p>
+                        </div>
                     </div>';
                 endwhile;
             }else{

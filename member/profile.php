@@ -45,6 +45,64 @@
         </div>
     </header>
 
+    <?php if(isset($_GET['profile'])):?>
+    <?php
+            $getID = $_GET['profile'];
+            $SQLGet = mysqli_query($con, "SELECT * FROM user_account WHERE id='$getID'");
+            if(@mysqli_num_rows($SQLGet) == 1){
+                while($data = mysqli_fetch_array($SQLGet)):
+                    ?>
+    <section class="banner-area">
+        <div class="container">
+            <div class="row banner-content">
+                <div class="col-lg-12 d-flex align-items-center justify-content-between">
+                    <div class="left-part bg-white p-3">
+                        <h1>
+                            Profile/<?php print $data['name'];?>
+                        </h1>
+                        <img src="../<?php print $data['profile_pic'];?>" alt="" class="img-fluid"
+                            style="max-height: 250px">
+                        <p>
+                            <?php print $data['about'];?>
+                        </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                            <span>Username:</span>
+                            <span><?php print $data['username'];?></span>
+                        </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                            <span>Full name:</span>
+                            <span><?php print $data['name'];?></span>
+                        </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                            <span>Email:</span>
+                            <span><?php print $data['email'];?></span>
+                        </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                            <span>Status</span>
+                            <span class="badge badge-primary"><?php print $data['statu'];?></span>
+                        </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                            <span>Date of birth:</span>
+                            <span class="badge badge-primary"><?php print $data['dob'];?></span>
+                        </p>
+                    </div>
+                    <div class="right-part">
+                        <a href="index.html">home</a>
+                        <span class="fa fa-caret-right"></span>
+                        <a href="profile.php"><?php print $user_array[1];?></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <?php
+                endwhile;
+            } else{
+                $output .= '<p class="alert alert-danger">We are sorry but this persone doesn\'t exist</p>';
+            }
+        ?>
+    <?php else:?>
     <section class="banner-area">
         <div class="container">
             <div class="row banner-content">
@@ -219,6 +277,7 @@
             </div>
         </div>
     </section>
+    <?php endif;?>
 
     <footer class="footer-area section-gap">
         <div class="container">
