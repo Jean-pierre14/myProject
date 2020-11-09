@@ -59,6 +59,11 @@
                     <div class="left-part bg-white p-3">
                         <h1>
                             Profile/<?php print $data['name'];?>
+                            <?php if($data['on_off'] == 'online'):?>
+                            <small><i class="fa fa-home text-success"></i></small>
+                            <?php else:?>
+                            <small><i class="fa fa-home text-danger"></i></small>
+                            <?php endif;?>
                         </h1>
                         <img src="../<?php print $data['profile_pic'];?>" alt="" class="img-fluid"
                             style="max-height: 250px">
@@ -85,9 +90,18 @@
                             <span>Date of birth:</span>
                             <span class="badge badge-primary"><?php print $data['dob'];?></span>
                         </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                            <span>Phone</span>
+                            <span><?php print $data['phone'];?></span>
+                        </p>
+                        <br>
+                        <p>Description</p>
+                        <p>
+                            <?php print $data['about'];?>
+                        </p>
                     </div>
                     <div class="right-part">
-                        <a href="index.html">home</a>
+                        <a href="index.php">home</a>
                         <span class="fa fa-caret-right"></span>
                         <a href="profile.php"><?php print $user_array[1];?></a>
                     </div>
