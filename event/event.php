@@ -394,8 +394,9 @@
             }
             print $output;
         }
+        
         if($_POST['action'] == 'weddingsFind'){
-            $sql = mysqli_query($con, "SELECT user_account.id,wedding_tb.husband_id,user_account.username FROM user_account INNER JOIN wedding_tb WHERE user_account.id=wedding_tb.huband_id");
+            $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, wedding_tb.husband_id, wedding_tb.context, wedding_tb.title, wedding_tb.created_at FROM user_account INNER JOIN wedding_tb WHERE user_account.id=wedding_tb.husband_id ORDER BY wedding_tb.id DESC LIMIT 4");
             if(@mysqli_num_rows($sql)> 0){
                 while($row = mysqli_fetch_array($sql)):
                     $output .= '<p>'.$row['username'].'</p>';
@@ -405,6 +406,7 @@
             }
             print $output;
         }
+
         if($_POST['action'] == 'programmes'){
             $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, programmes_tb.userId, programmes_tb.context, programmes_tb.title, programmes_tb.created_at FROM user_account INNER JOIN programmes_tb WHERE user_account.id=programmes_tb.userId ORDER BY programmes_tb.id DESC LIMIT 4");
             if(@mysqli_num_rows($sql) > 0){
