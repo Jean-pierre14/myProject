@@ -14,12 +14,12 @@
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
-                <h4>Features</h4>
+                <h4>Activities</h4>
                 <ul>
-                    <li><a href="#">Jobs</a></li>
-                    <li><a href="#">Brand Assets</a></li>
-                    <li><a href="#">Investor Relations</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Goma pour Christ</a></li>
+                    <li><a href="#">Evangelisation</a></li>
+                    <li><a href="#">visite porte a porte</a></li>
+                    <li><a href="#">Gospels</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-6 single-footer-widget">
