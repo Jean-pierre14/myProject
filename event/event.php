@@ -441,6 +441,20 @@
             }
             print $output;
         }
+        // Footer elements
+        if($_POST['action'] == 'pastors-list'){
+            $limit = $_POST['limit'];
+            $sql = mysqli_query($con, "SELECT * FROM pastor_tb ORDER BY id DESC LIMIT $limit");
+            
+            if(@mysqli_num_rows($sql) > 0){
+                while($row = mysqli_fetch_array($sql)):
+                    $output .= '<li><a href="profile.php?profile='.$row['user_id'].'">'.$row['pastor_name'].'</a></li>';
+                endwhile;
+            }else{
+                $output .= '<p></p>';
+            }
+            print $output;
+        }
     }
     
     

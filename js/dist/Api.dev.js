@@ -28,7 +28,23 @@ $(document).ready(function () {
   });
   weddings();
   programmes();
+  pastorsList(5);
 });
+
+function pastorsList(limit) {
+  var action = 'pastors-list';
+  $.ajax({
+    url: '../event/event.php',
+    method: 'post',
+    data: {
+      action: action,
+      limit: limit
+    },
+    success: function success(data) {
+      $(".pastors-list").html(data);
+    }
+  });
+}
 
 function programmes() {
   var action = 'programmes';

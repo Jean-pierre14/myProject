@@ -24,7 +24,20 @@ $(document).ready(function(){
     })
     weddings()
     programmes()
+    pastorsList(5)
 })
+
+function pastorsList(limit){
+    let action = 'pastors-list'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {action, limit},
+        success: function(data){
+            $(".pastors-list").html(data)
+        }
+    })
+}
 
 function programmes(){
     let action = 'programmes'
