@@ -455,6 +455,72 @@
             }
             print $output;
         }
+        if($_POST['action'] == 'users-list-5'){
+            $limit = $_POST['limit'];
+            $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT $limit");
+            if(@mysqli_num_rows($sql) > 0){
+                $userArray = array();
+                while($row = mysqli_fetch_array($sql)):
+                    
+                    $userArray[0] = $row['id'];
+                    $userArray[1] = $row['name'];
+                    $userArray[2] = $row['username'];
+                    $userArray[3] = $row['email'];
+                    $userArray[4] = $row['department'];
+                    $userArray[5] = $row['gender'];
+                    $userArray[6] = $row['statu'];
+                    $userArray[7] = $row['locatio'];
+                    $userArray[8] = $row['phone'];
+                    $userArray[9] = $row['profile_pic'];
+                    $userArray[10] = $row['profile_pic'];
+                    $userArray[11] = $row['on_off'];
+                    $output .= '<li id="'.$row['id'].'" data-toggle="modal" data-target="#myUser"><a hre="javascript:void()">'.$row['username'].'</a></li>';
+                endwhile;
+                $output .= '
+                <div class="modal fade" id="myUser">
+                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title m-0 p-0 text-secondary">'.$userArray[2].'</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../'.$userArray[10].'" alt="" class="img-fluid" style="max-height: 150px;overflow: hidden">
+                                <hr>
+                                <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <span class="text-secondary">Full name:</span>
+                                    <span class="text-primary">'.$userArray[1].'</span>
+                                </p>
+                                <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <span class="text-secondary">Username:</span>
+                                    <span class="text-primary">'.$userArray[2].'</span>
+                                </p>
+                                <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <span class="text-secondary">Email:</span>
+                                    <span class="text-primary">'.$userArray[3].'</span>
+                                </p>
+                                <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <span class="text-secondary">Phone:</span>
+                                    <span class="text-primary">'.$userArray[8].'</span>
+                                </p>
+                                <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <span class="text-secondary">Gender:</span>
+                                    <span class="badge badge-sm badge-primary">'.$userArray[5].'</span>
+                                </p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                ';
+            }else{
+                $output .= '<p class="alert alert-warning">You are alone</p>';
+            }
+            print $output;
+        }
     }
     
     

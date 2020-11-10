@@ -29,7 +29,23 @@ $(document).ready(function () {
   weddings();
   programmes();
   pastorsList(5);
+  usersList(5);
 });
+
+function usersList(limit) {
+  var action = 'users-list-5';
+  $.ajax({
+    url: '../event/event.php',
+    method: 'post',
+    data: {
+      action: action,
+      limit: limit
+    },
+    success: function success(data) {
+      $(".users-list-5").html(data);
+    }
+  });
+}
 
 function pastorsList(limit) {
   var action = 'pastors-list';

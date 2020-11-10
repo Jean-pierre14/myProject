@@ -25,8 +25,19 @@ $(document).ready(function(){
     weddings()
     programmes()
     pastorsList(5)
+    usersList(5)
 })
-
+function usersList(limit){
+    let action = 'users-list-5'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {action, limit},
+        success: function(data){
+            $(".users-list-5").html(data)
+        }
+    })
+}
 function pastorsList(limit){
     let action = 'pastors-list'
     $.ajax({
