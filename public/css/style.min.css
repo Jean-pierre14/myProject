@@ -45,7 +45,11 @@
 }
 
 .box-black {
+    width: 100%;
     position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 10px;
     background: rgba(0, 0, 0, 0.9);
 }
 

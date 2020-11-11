@@ -14,77 +14,73 @@
 </head>
 
 <body>
-    <div class="container-fluid bg-img1" style="height: 100vh;">
+    <div class="container-fluid bg-img1 py-5" style="height: 100vh;">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card shadow text-light mt-5 transparent" style="overflow: hidden;">
-                    <div class="card-body box-black">
-                        <div class="container-fluid p-0">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h3 class="text-center">ERC</h3>
-                                    <p class="text-center">
-                                        Create your an account and join us in our website, where we make discussions in
-                                        our
-                                        blog,
-                                        the object is to be link each other in the name of jesus our lord
-                                    </p>
-                                    <a href="login.php" class="btn btn-sm btn-danger">Log In <i
-                                            class="fa fa-arrow-circle-left"></i></a>
-                                </div>
-                                <div class="col-md-8">
-                                    <h3 class="text-center text-success">Create an account</h3>
-                                    <?php require_once("./event/event.min.php");include("error.php");?>
-                                    <form action="" method="post">
-                                        <div class="form-row p-0">
-                                            <div class="form-group col-md-4">
-                                                <label for="username">Username</label>
-                                                <input type="text" value="<?php print $username; ?>" name="username"
-                                                    id="username" placeholder="Username"
-                                                    class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="name">name</label>
-                                                <input type="text" value="<?php print $name; ?>" name="name" id="name"
-                                                    placeholder="name" class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="email">Email</label>
-                                                <input type="email" value="<?php print $email; ?>" id="email"
-                                                    name="email" placeholder="Example@erc.com"
-                                                    class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="pass">Password</label>
-                                                <input type="password" value="<?php print $pass; ?>" name="pass"
-                                                    id="pass" placeholder="Password" class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="confirm">Confirm Password</label>
-                                                <input type="password" value="<?php print $cpass; ?>" id="confrim"
-                                                    name="cpass" placeholder="confrim password"
-                                                    class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="location">Location</label>
-                                                <input type="text" value="<?php print $location; ?>" id="location"
-                                                    name="location" placeholder="location"
-                                                    class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="phones">phones</label>
-                                                <input type="tel" value="<?php print $phones; ?>" id="phones"
-                                                    name="phones" placeholder="Phones" class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="dob">Date of birth</label>
-                                                <input type="date" id="dob" name="dob" class="form-control transparent">
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="status">Status</label>
-                                                <select name="status" id="status" class="form-control transparent">
-                                                    <option value="">-- select --</option>
-                                                    <?php
+                <div class="box-back">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card card-body">
+                                <h3 class="text-center">ERC</h3>
+                                <p class="text-center">
+                                    Create your an account and join us in our website, where we make discussions in
+                                    our
+                                    blog,
+                                    the object is to be link each other in the name of jesus our lord
+                                </p>
+                                <a href="login.php" class="btn btn-sm btn-danger">Log In <i
+                                        class="fa fa-arrow-circle-left"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="text-center text-success">Create an account</h3>
+                            <?php require_once("./event/event.min.php");include("error.php");?>
+                            <form action="" method="post">
+                                <div class="form-row p-0">
+                                    <div class="form-group col-md-4">
+                                        <label for="username">Username</label>
+                                        <input type="text" value="<?php print $username; ?>" name="username"
+                                            id="username" placeholder="Username" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="name">name</label>
+                                        <input type="text" value="<?php print $name; ?>" name="name" id="name"
+                                            placeholder="name" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="email">Email</label>
+                                        <input type="email" value="<?php print $email; ?>" id="email" name="email"
+                                            placeholder="Example@erc.com" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="pass">Password</label>
+                                        <input type="password" value="<?php print $pass; ?>" name="pass" id="pass"
+                                            placeholder="Password" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="confirm">Confirm Password</label>
+                                        <input type="password" value="<?php print $cpass; ?>" id="confrim" name="cpass"
+                                            placeholder="confrim password" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="location">Location</label>
+                                        <input type="text" value="<?php print $location; ?>" id="location"
+                                            name="location" placeholder="location" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="phones">phones</label>
+                                        <input type="tel" value="<?php print $phones; ?>" id="phones" name="phones"
+                                            placeholder="Phones" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="dob">Date of birth</label>
+                                        <input type="date" id="dob" name="dob" class="form-control transparent">
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="status">Status</label>
+                                        <select name="status" id="status" class="form-control transparent">
+                                            <option value="">-- select --</option>
+                                            <?php
                                                         include("./config/db.php");
                                                         $status = mysqli_query($con, "SELECT * FROM status_tb");
                                                         while($rowStatus = mysqli_fetch_array($status)){
@@ -92,44 +88,41 @@
                                                         }
                                                         print $output;
                                                     ?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="Gender">Gender</label>
-                                                <select name="gender" value="<?php print  $gender; ?>" id="Gender"
-                                                    class="form-control transparent">
-                                                    <option value="">-- select --</option>
-                                                    <option value="Male">Male</option>
-                                                    <option value="Female">Female</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-4">
-                                                <label for="status">Department</label>
-                                                <select name="depart" value="<?php print  $depart; ?>" id="depart"
-                                                    class="form-control transparent">
-                                                    <option value="">-- select --</option>
-                                                    <?php
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="Gender">Gender</label>
+                                        <select name="gender" value="<?php print  $gender; ?>" id="Gender"
+                                            class="form-control transparent">
+                                            <option value="">-- select --</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Female">Female</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label for="status">Department</label>
+                                        <select name="depart" value="<?php print  $depart; ?>" id="depart"
+                                            class="form-control transparent">
+                                            <option value="">-- select --</option>
+                                            <?php
                                                         $depart = mysqli_query($con, "SELECT * FROM department_tb");
                                                         while($rowDepart = mysqli_fetch_array($depart)){
                                                             print '<option value="'.$rowDepart['name'].'">'.$rowDepart['name'].'</option>';
                                                         }
                                                     ?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <label for="about">About</label>
-                                                <textarea name="about" value="<?php print  $about; ?>" id="about"
-                                                    placeholder="About ..." class="form-control transparent"></textarea>
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <button type="submit" name="register"
-                                                    class="btn btn-sm btn-success">Register <i
-                                                        class="fa fa-arrow-circle-right"></i></button>
-                                            </div>
-                                        </div>
-                                    </form>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="about">About</label>
+                                        <textarea name="about" value="<?php print  $about; ?>" id="about"
+                                            placeholder="About ..." class="form-control transparent"></textarea>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <button type="submit" name="register" class="btn btn-sm btn-success">Register <i
+                                                class="fa fa-arrow-circle-right"></i></button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
