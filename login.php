@@ -54,17 +54,6 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid footer bg-dark">
-        <div class="row">
-            <div class="col-md-3">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, maxime dicta? Cupiditate, commodi
-                    corporis. Tenetur iusto autem assumenda laborum voluptate modi in cumque, molestias rerum, deleniti
-                    exercitationem consectetur dolorem perferendis!
-                </p>
-            </div>
-        </div>
-    </div>
 
     <script src="./public/js/jquery-3.4.0.min.js"></script>
     <script>

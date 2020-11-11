@@ -6,7 +6,6 @@ function findAll(){
             res.json().then(data =>{
                 if(data.length > 0){
                     var blog = ''
-                    
                     data.forEach(item=>{
                         let time = new Date(item.create_at)
                         time = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()} >> ${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
