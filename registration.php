@@ -68,7 +68,7 @@
                                             name="location" placeholder="location" class="form-control transparent">
                                     </div>
                                     <div class="form-group col-md-4">
-                                        <label for="phones">phones</label>
+                                        <label for="phones">Phones</label>
                                         <input type="tel" value="<?php print $phones; ?>" id="phones" name="phones"
                                             placeholder="Phones" class="form-control transparent">
                                     </div>
