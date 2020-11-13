@@ -279,7 +279,7 @@
 	<section class="testimonials-area section-gap-top py-5">
 		<div class="container">
 			<h3 class="text-center text-warinig my-5">Members</h3>
-			<div id="testimonial">
+			<div id="user-5">
 			</div>
 		</div>
 	</section>
@@ -412,7 +412,6 @@
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
 
-	<script src="./js/Api.js"></script>
 
 	<script>
 		$(document).ready(function(){
@@ -434,7 +433,7 @@
 				$.ajax({
 					url: './event/event.php',
 					method: 'post',
-					data: {action, limit},
+					data: {action},
 					success: function(data){
 						$(".departments").html(data)
 					}

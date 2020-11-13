@@ -524,10 +524,10 @@
         }
 
         if($_POST['action'] == 'departments'){
-            $sql = mysqli_query($con, "SELECT * FROM department_tb");
+            $sql = mysqli_query($con, "SELECT * FROM department_tb WHERE id != 6");
             if(@mysqli_num_rows($sql) > 0){
                 while($row = mysqli_fetch_assoc($sql)):
-                    $output .= '<li><a href="#">'.$row['name'].'</a></li>';
+                    $output .= '<li><a href="javascript:void()">'.$row['name'].'</a></li>';
                 endwhile;
             }else{
                 $output .= '<p>Wecome to ERC/Goma</p>';
