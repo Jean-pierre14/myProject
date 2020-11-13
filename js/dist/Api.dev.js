@@ -62,6 +62,21 @@ function pastorsList(limit) {
   });
 }
 
+function departments() {
+  var action = 'departments';
+  $.ajax({
+    url: '../event/event.php',
+    method: 'post',
+    data: {
+      action: action,
+      limit: limit
+    },
+    success: function success(data) {
+      $(".pastors-list").html(data);
+    }
+  });
+}
+
 function programmes() {
   var action = 'programmes';
   $.ajax({

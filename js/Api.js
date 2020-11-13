@@ -50,6 +50,18 @@ function pastorsList(limit){
     })
 }
 
+function departments() {
+    let action = 'departments'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {action, limit},
+        success: function(data){
+            $(".pastors-list").html(data)
+        }
+    })
+}
+
 function programmes(){
     let action = 'programmes'
     $.ajax({

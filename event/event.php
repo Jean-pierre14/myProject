@@ -449,6 +449,7 @@
             if(@mysqli_num_rows($sql) > 0){
                 while($row = mysqli_fetch_array($sql)):
                     $output .= '<li><a href="javascript:void()">'.$row['pastor_name'].'</a></li>';
+                    
                 endwhile;
             }else{
                 $output .= '<p>We are caring about you  say Amen</p>';
@@ -518,6 +519,18 @@
                 ';
             }else{
                 $output .= '<p class="alert alert-warning">You are alone</p>';
+            }
+            print $output;
+        }
+
+        if($_POST['action'] == 'departments'){
+            $sql = mysqli_query($con, "SELECT * FROM department_tb");
+            if(@mysqli_num_rows($sql) > 0){
+                while($row = mysqli_fetch_assoc($sql)):
+                    $output .= '<li><a href="#">'.$row['name'].'</a></li>';
+                endwhile;
+            }else{
+                $output .= '<p>Wecome to ERC/Goma</p>';
             }
             print $output;
         }
