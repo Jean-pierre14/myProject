@@ -289,13 +289,14 @@
 			<div class="row">
 				<div class="col-lg-2 col-md-6 single-footer-widget">
 					<h4>Pastors</h4>
-					<ul id="pastors-5">
+					<ul id="pastors-5" class="pastors-list">
 						pastors....
 						<!-- Api using ajax -->
 					</ul>
 				</div>
 				<div class="col-lg-2 col-md-6 single-footer-widget">
 					<h4>Departement</h4>
+				
 					<ul id="weddings-list">
 						<li><a href="#">Security</a></li>
 						<li><a href="#">Brand Assets</a></li>
@@ -411,16 +412,25 @@
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
 
-	<script src="./public/js/jquery-Api.js"></script>
+	<script src="./js/Api.js"></script>
 
 	<script>
 		$(document).ready(function(){
-			
-
+			pastorsList(5)
+			function pastorsList(limit){
+				let action = 'pastors-listH'
+				$.ajax({
+					url: './event/event.php',
+					method: 'post',
+					data: {action, limit},
+					success: function(data){
+						$(".pastors-list").html(data)
+					}
+				})
+			}
 			$('#request-btn').click(function(){
 				let email = $("#email").val().trim()
 				let message = $("#context").val().trim()
-				
 				if(!email || !message){
 					alert("Complet all fields please")
 				}else{
