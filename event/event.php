@@ -523,15 +523,31 @@
             print $output;
         }
 
-        if($_POST['action'] == 'user-5'){
+        if($_POST['action'] == 'users-5'){
             $limit = $_POST['limit'];
             $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT $limit");
-
+            
             if(@mysqli_num_rows($sql)>0){
-
+                while($row = mysqli_fetch_array($sql)):
+                    $output .= '
+                        <div class="shadow bg-white m-3 p-2">
+                            <h3>'.$row['name'].'</h3>
+                            <img src="./'.$row['profile_pic'].'" alt="'.$row['username'].'" class="img-thumbnail">
+                            <p class=" d-flex flex-wrap justify-content-between align-items-center">
+                                <span class="">Email</span>
+                                <span class="">'.$row['email'].'</span>
+                            </p>
+                            <p class="text-center">
+                                <small class="badge badge-primary">status</small>
+                            </p>
+                            <p class="text-center">'.$row['about'].'</p>
+                        </div>
+                    ';
+                endwhile;
             }else{
                 $output .= '<p>Welcome to ERC/Goma</p>';
             }
+            print $output;
         }
         if($_POST['action'] == 'departments'){
             $sql = mysqli_query($con, "SELECT * FROM department_tb WHERE id != 6");
