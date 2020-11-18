@@ -280,7 +280,7 @@
 		<div class="container">
 			<h3 class="text-center text-warinig my-5">Members</h3>
 			<div id="user-5">
-				users
+				<!-- AJax -->
 			</div>
 		</div>
 	</section>
@@ -416,6 +416,18 @@
 
 	<script>
 		$(document).ready(function(){
+			users(5);
+			function users(limit){
+				let action = 'user-5';
+				$.ajax({
+					url: './event/event.php',
+					method: 'post',
+					data: {action,limit},
+					success: function(data){
+						$('#user-5').html(data)
+					}
+				})
+			}
 			pastorsList(5)
 			function pastorsList(limit){
 				let action = 'pastors-listH'
