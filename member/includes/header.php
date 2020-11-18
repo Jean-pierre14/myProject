@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/x-icon">
     <meta name="author" content="jean-pierre14">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="description" content="ERC/goma">
+    <meta name="keywords" content="sniper@14">
     <meta charset="UTF-8">
     <title>ERC/<?php print $user_array[1];?></title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
+    <link rel="stylesheet" href="../../assets/css/placelholder.css">
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">

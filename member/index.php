@@ -5,12 +5,12 @@
         <div class="row banner-content">
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
                 <div class="left-part">
+
                     <h1>
                         Welcome <span class="text-uppercase"><?php print $user_array[1];?></span>
                     </h1>
                     <p id="word_of_day">
-                        at this place we will display the word of the day, it can be the new of the or a word of
-                        motivation, ... everything that is
+                        <!-- AJax -->
                     </p>
                 </div>
                 <div class="right-part">

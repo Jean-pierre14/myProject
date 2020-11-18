@@ -119,7 +119,7 @@
     <?php else:?>
     <section class="banner-area">
         <div class="container">
-            <div class="row banner-content">
+            <div class="row banner-content slideanim">
                 <div class="col-lg-12 d-flex align-items-center justify-content-between">
                     <div class="left-part">
                         <h1>
@@ -203,7 +203,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 slideanim">
                     <div class="single-feature">
                         <a href="#" class="title">
                             <span class="lnr lnr-location"></span>
@@ -423,31 +423,4 @@
     </div>
     </div>
 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-        crossorigin="anonymous"></script>
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-    <script src="js/tilt.jquery.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
-    <script src="js/easing.min.js"></script>
-    <script src="js/hoverIntent.js"></script>
-    <script src="js/superfish.min.js"></script>
-    <script src="js/jquery.ajaxchimp.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/owl-carousel-thumb.min.js"></script>
-    <script src="js/hexagons.min.js"></script>
-    <script src="js/jquery.nice-select.min.js"></script>
-    <script src="js/waypoints.min.js"></script>
-    <script src="js/mail-script.js"></script>
-    <script src="js/main.js"></script>
-    <script src="../js/Api.js"></script>
-</body>
-
-</html>
+    <?php include("./includes/footer.php");?>
