@@ -523,6 +523,16 @@
             print $output;
         }
 
+        if($_POST['action'] == 'user-5'){
+            $limit = $_POST['limit'];
+            $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT $limit");
+
+            if(@mysqli_num_rows($sql)>0){
+
+            }else{
+                $output .= '<p>Welcome to ERC/Goma</p>';
+            }
+        }
         if($_POST['action'] == 'departments'){
             $sql = mysqli_query($con, "SELECT * FROM department_tb WHERE id != 6");
             if(@mysqli_num_rows($sql) > 0){
