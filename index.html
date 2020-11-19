@@ -426,6 +426,18 @@
 	<script>
 		$(document).ready(function(){
 			users(5);
+			words()
+			function words(){
+				let action = 'words'
+				$.ajax({
+					url: "./event/event.php",
+					method: 'post',
+					data: {action},
+					success: function(data){
+						$('.words').html(data)
+					}
+				})
+			}
 			function users(limit){
 				let action = 'users-5';
 				$.ajax({
