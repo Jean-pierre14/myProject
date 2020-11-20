@@ -565,7 +565,7 @@
             $sql = mysqli_query($con, "SELECT * FROM words_tb ORDER BY id DESC LIMIT 1");
             if(@mysqli_num_rows($sql)>0){
                 while($row = mysqli_fetch_array($sql)){
-                    $output .= '<h3 class="text-center text-white text-italic text-light">'.$row['context'].'</h3>';
+                    $output .= '<h3 class="text-center slideanim text-white text-italic text-light">'.$row['context'].'</h3>';
                 }
             }else{
                 $output .= '<h2>Our God is able</h2>';
