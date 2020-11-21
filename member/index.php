@@ -127,47 +127,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="navigation-area">
-                    <div class="row">
-                        <div
-                            class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                            <div class="thumb">
-                                <a href="#">
-                                    <img class="img-fluid" src="img/blog/prev.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="arrow">
-                                <a href="#">
-                                    <span class="lnr text-white lnr-arrow-left"></span>
-                                </a>
-                            </div>
-                            <div class="detials">
-                                <p>Prev Post</p>
-                                <a href="#">
-                                    <h4>Space The Final Frontier</h4>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                            <div class="detials">
-                                <p>Next Post</p>
-                                <a href="#">
-                                    <h4>Telescopes 101</h4>
-                                </a>
-                            </div>
-                            <div class="arrow">
-                                <a href="#">
-                                    <span class="lnr text-white lnr-arrow-right"></span>
-                                </a>
-                            </div>
-                            <div class="thumb">
-                                <a href="#"><img class="img-fluid" src="img/blog/next.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="comments-area">
-                    
+
                     <div class="comment-list users-5">
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
@@ -176,7 +137,8 @@
                                 </div>
                                 <div class="desc">
                                     <h5>
-                                        <a href="profile.php?profile=<?php print $user_array[0];?>"><?php print $user_array[2];?></a>
+                                        <a
+                                            href="profile.php?profile=<?php print $user_array[0];?>"><?php print $user_array[2];?></a>
                                     </h5>
                                     <p class="date"><?php print $user_array[11];?></p>
                                     <p class="comment">
@@ -185,7 +147,8 @@
                                 </div>
                             </div>
                             <div class="reply-btn">
-                                <a href="profile.php?profile=<?php print $user_array[0];?>" class="btn-reply text-uppercase">view more</a>
+                                <a href="profile.php?profile=<?php print $user_array[0];?>"
+                                    class="btn-reply text-uppercase">view more</a>
                             </div>
                         </div>
                     </div>
@@ -197,10 +160,11 @@
                                 while($data = mysqli_fetch_assoc($select)):
                         ?>
 
-                        <div class="single-comment justify-content-between d-flex">
+                        <div class="single-comment justify-content-between d-flex slideanim">
                             <div class="user justify-content-between d-flex">
                                 <div class="thumb">
-                                    <img src="../<?php print $data['profile_pic'];?>" alt="<?php print $data['name'];?>" width="60">
+                                    <img src="../<?php print $data['profile_pic'];?>" alt="<?php print $data['name'];?>"
+                                        width="60">
                                 </div>
                                 <div class="desc">
                                     <h5>
@@ -208,20 +172,32 @@
                                             <?php print $data['name'];?>
                                         </a>
                                     </h5>
-                                    <p class="date"><small><?php print $data['create_at'];?></small></p>
+                                    <p class="date">
+                                        <small>
+                                            <?php print $data['create_at'];?>
+                                        </small>
+                                    </p>
                                     <p class="comment">
+                                        <?php if(strlen($data['about']) > 20):?>
                                         <?php print $data['about'];?>
+                                        <a href="profile.php?profile=<?php print $data['id'];?>"
+                                            class="btn btn-sm btn-secondary">read
+                                            more</a>
+                                        <?php else:?>
+                                        <?php print $data['about'];?>
+                                        <?php endif;?>
                                     </p>
                                 </div>
                             </div>
                             <div class="reply-btn">
-                                <a href="" class="btn-reply text-uppercase">view</a>
+                                <a href="profile.php?profile=<?php print $data['id'];?>"
+                                    class="btn-reply text-uppercase">view</a>
                             </div>
-                        </div>                    
-                    <?php endwhile;?>
+                        </div>
+                        <?php endwhile;?>
                     </div>
                     <?php else:?>
-                        <div class="comment-list">
+                    <div class="comment-list">
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
                                 <div class="thumb">
@@ -238,7 +214,7 @@
                     </div>
                     <?php endif;?>
                 </div>
-                
+
             </div>
             <div class="col-lg-4 sidebar-widgets">
                 <div class="widget-wrap">
