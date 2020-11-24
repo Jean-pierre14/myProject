@@ -29,7 +29,7 @@
             $SQLGet = mysqli_query($con, "SELECT * FROM user_account WHERE id='$getID'");
             if(@mysqli_num_rows($SQLGet) == 1){
                 while($data = mysqli_fetch_array($SQLGet)):
-                    ?>
+?>
 <section class="banner-area">
     <div class="container">
         <div class="row banner-content">
@@ -101,7 +101,7 @@
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
                 <div class="left-part">
                     <h1>
-                        Profile
+                        Profile/<?php print $user_array[2];?>
                     </h1>
                     <p>
                         <?php print $user_array[4];?>
@@ -110,7 +110,10 @@
                 <div class="right-part">
                     <a href="index.html">home</a>
                     <span class="fa fa-caret-right"></span>
-                    <a href="profile.php"><?php print $user_array[1];?></a>
+                    <a href="../<?php print $user_array[10];?>" data-lightbox="mygallery">
+                        <img src="../<?php print $user_array[10];?>" alt="" class="img-avatar">
+                        <?php print $user_array[1];?>
+                    </a>
                 </div>
             </div>
         </div>
@@ -241,6 +244,15 @@
                     <input type="text" placeholder="Typing..." class="form-control mt-3">
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="single-feature">
+                    <a href="../<?php print $user_array[10];?>" data-lightbox="mygallery">
+                        <img src="../<?php print $user_array[10];?>" alt="" class="img-fluid">
+                    </a>
+                    <br>
+                    <a href="edit.php" class="btn btn-sm btn-primary my-3">edit photo</a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -295,7 +307,6 @@
             <div class="modal-footer">
                 <a href="profile.php" class="btn btn-sm btn-danger">Close</a>
             </div>
-
         </div>
     </div>
 </div>

@@ -69,6 +69,7 @@
 <script src="js/mail-script.js"></script>
 <script src="js/main.js"></script>
 <script src="../js/Api.js"></script>
+<script src="../../assets/lightbox.min.js"></script>
 <script>
 $(document).ready(function() {
     $(window).scroll(function() {
