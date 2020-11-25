@@ -116,21 +116,14 @@ if(isset($_POST['register'])){
 
     // check if username already exist
     $check = mysqli_query($con, "SELECT * FROM user_account");
-
     $data = mysqli_fetch_assoc($check);
     
     if ($data['username'] == $username) { array_push( $errors, "Username already used" ); }
     if ($data['name'] == $name) { array_push( $errors, "Name already exist" ); }
     if ($data['email'] == $email) { array_push( $errors, "Email used !!!" ); }
-
-    // check if passwords are match or not
-
     if( $pass != $cpass ){ array_push( $errors, "Password are not match"); }
-
-    // Zero error
     if( count($errors) == 0 ) {
 
-        // Image profile
         if($rand == 1){
             $profile_pic = "/assets/images/use/user/face-0.jpg";
         } else if($rand == 2){
