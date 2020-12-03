@@ -56,7 +56,9 @@
                         $output .="Sorry, your file was not uploaded.";
                     } else {
                         if (move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
+                            
                             $output .= "The file ". basename( $_FILES["profileImage"]["name"]). " has been uploaded.";
+                            $sql = mysqli_query($con, "UPDATE user_account SET profile_pic= '$' WHERE id = '$Id'");
                         } else {
                             $output .="Sorry, there was an error uploading your file.";
                         }

@@ -1,6 +1,6 @@
 <?php include("./includes/header.php");?>
 
-<section class="banner-area">
+<section class="banner-area mb-3">
     <div class="container">
         <div class="row banner-content">
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
@@ -9,9 +9,6 @@
                     <h1>
                         Welcome <span class="text-uppercase"><?php print $user_array[1];?></span>
                     </h1>
-                    <p id="word_of_day">
-                        <!-- AJax -->
-                    </p>
                 </div>
                 <div class="right-part">
                     <a href="index.php">
@@ -26,6 +23,13 @@
     </div>
     </div>
 </section>
+<div class="container-fluid bg-primary py-5">
+    <div class="container">
+        <p class="text-center shadow-lg" id="word_of_day">
+            <!-- AJax -->
+        </p>
+    </div>
+</div>
 <section class="post-content-area single-post-area">
     <div class="container">
         <div class="row">
