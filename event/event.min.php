@@ -62,13 +62,11 @@ if (isset($_POST['new-user'])) {
     // Zero error
     if( count($errors) == 0 ){
         $pass = 1234;
-
         if($rand == 1){
             $profile_pic = "/assets/images/use/user/face-0.jpg";
         } else if($rand == 2){
             $profile_pic = "/assets/images/use/user/face-1.jpg";
         }
-
         $about = 'My status!!! Who are you?';
         $password = md5($pass);
         $on_off = 'offline';
