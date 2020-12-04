@@ -321,4 +321,17 @@ if(isset($_POST['action'])){
         }
         print $output;
     }
+    if($_POST['action'] == 'departments'){
+        $sql = mysqli_query($con, "SELECT * FROM department_tb ORDER BY `name` WHERE id !=6");
+        if(@mysqli_num_rows($sql)>0){
+            while($row = mysqli_fetch_assoc($sql)){
+                $output .= '
+                <li><a href="#">'.$row['name'].'</a></li>
+                ';
+            }
+        }else{
+            $output .= '<p class="text-danger">No data find</p>';
+        }
+        print $output;
+    }
 }

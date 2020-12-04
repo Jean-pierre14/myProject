@@ -17,6 +17,7 @@ $(document).ready(function(){
     usersWedding();
     wordOfDay();
     newUsers4();
+    words();
 
     $('#update-username').click(function(){
         let username = $('#newUser');
@@ -37,6 +38,7 @@ $(document).ready(function(){
     programmes()
     pastorsList(5)
     usersList(5)
+    departments()
 })
 function usersList(limit){
     let action = 'users-list-5'
@@ -66,9 +68,9 @@ function departments() {
     $.ajax({
         url: '../event/event.php',
         method: 'post',
-        data: {action, limit},
+        data: {action},
         success: function(data){
-            $(".pastors-list").html(data)
+            $(".departments").html(data)
         }
     })
 }
@@ -121,6 +123,18 @@ function wordOfDay(){
         data: {action},
         success: function(data){
             $("#word_of_day").html(data)
+            $(".word_of_day").html(data)
+        }
+    })
+}
+function words(){
+    let action = 'word_of_day'
+    $.ajax({
+        url: "../event/event.php",
+        method: 'POST',
+        data: {action},
+        success: function(data){
+            $(".words").html(data)
         }
     })
 }

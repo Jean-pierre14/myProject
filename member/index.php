@@ -1,6 +1,6 @@
 <?php include("./includes/header.php");?>
 
-<section class="banner-area mb-3">
+<section class="banner-area mb-5">
     <div class="container">
         <div class="row banner-content">
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-lg-9 col-md-9">
                         <h3 class="mt-20 mb-20">Astronomy Binoculars A Great Alternative</h3>
-                        <p class="excert">
+                        <p class="excert word_of_day">
                             MCSE boot camps have its supporters and its detractors. Some people do not
                             understand why you should have to
                             spend money

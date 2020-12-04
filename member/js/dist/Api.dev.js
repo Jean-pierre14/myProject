@@ -18,6 +18,7 @@ $(document).ready(function () {
   usersWedding();
   wordOfDay();
   newUsers4();
+  words();
   $('#update-username').click(function () {
     var username = $('#newUser');
     var id = $('#userId');
@@ -40,6 +41,7 @@ $(document).ready(function () {
   programmes();
   pastorsList(5);
   usersList(5);
+  departments();
 });
 
 function usersList(limit) {
@@ -78,11 +80,10 @@ function departments() {
     url: '../event/event.php',
     method: 'post',
     data: {
-      action: action,
-      limit: limit
+      action: action
     },
     success: function success(data) {
-      $(".pastors-list").html(data);
+      $(".departments").html(data);
     }
   });
 }
@@ -143,6 +144,21 @@ function wordOfDay() {
     },
     success: function success(data) {
       $("#word_of_day").html(data);
+      $(".word_of_day").html(data);
+    }
+  });
+}
+
+function words() {
+  var action = 'word_of_day';
+  $.ajax({
+    url: "../event/event.php",
+    method: 'POST',
+    data: {
+      action: action
+    },
+    success: function success(data) {
+      $(".words").html(data);
     }
   });
 }
