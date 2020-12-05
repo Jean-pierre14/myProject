@@ -24,8 +24,7 @@ function findAll() {
 
 
 var add = document.getElementById('Add-blog');
-var errors = [];
-add.addEventListener('click', addPost);
+var errors = []; // add.addEventListener('click', addPost)
 
 function addPost(e) {
   e.preventDefault();

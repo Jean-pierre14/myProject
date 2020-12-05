@@ -139,6 +139,7 @@
                                     <div class="col-md-9 col-sm-12 p-1">
                                         <div class="body-prg">
                                             <div class="msg-prg">
+                                                <div id="programmes_APi"></div>
                                                 <div class="box-prg p-1 shadow">
                                                     <h4>username</h4>
                                                     <p>
@@ -292,5 +293,23 @@
 <script src="../assets/js/light-bootstrap-dashboard.js " type="text/javascript"></script>
 <script src="../assets/js/demo.js"></script>
 <script src="../assets/js/api.js"></script>
+
+<script>
+
+fetch('http://localhost:7000/programmes').then(res=>res.json().then(data => {
+    if(data.length > 0){
+        var programmes = ''
+        data.forEach(item => {
+            let time = new Date(item.created_at)
+            time  = `${time.getDate()}/${time.getFullYear()} >> ${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
+            programmes += `<div class="">${item.title}</div>`
+        })
+        document.getElementById('programmes_APi').innerHTML = programmes
+    }else{
+
+    }
+}))
+
+</script>
 
 </html>

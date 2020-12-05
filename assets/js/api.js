@@ -44,7 +44,7 @@ let add = document.getElementById('Add-blog')
 
 const errors = []
 
-add.addEventListener('click', addPost)
+// add.addEventListener('click', addPost)
 
 function addPost(e){
     e.preventDefault();
@@ -74,6 +74,8 @@ function addPost(e){
 
 
 // Jquery
+
+
 
 $(document).ready(function(){
     findAll()
