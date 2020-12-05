@@ -311,4 +311,20 @@ textarea{
     border: 2px solid transparent;
     border-radius: 50%;
 }
-
+.body-prg{
+    position: relative;
+    width: 100%;
+    height: 65vh;
+    /* background-color: red; */
+}
+.body-prg form{
+    position: absolute;
+    bottom: 0;
+    padding: 2.5px 0;
+    width: 100%;
+    /* background-color: #555; */
+}
+.body-prg .form-prg input{
+    position: relative;
+    width: 90%;
+}

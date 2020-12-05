@@ -113,7 +113,6 @@
                     </div>
                 </div>
             </nav>
-
             <div class="content p-0 m-0">
                 <div class="container-fluid">
                     <div class="content-not">
@@ -137,24 +136,26 @@
                         <div class="content">
                             <div class="container-fluid" style="width: 100%;">
                                 <div class="row">
-                                    <div class="col-md-7 col-sm-12 p-1">
-                                        <div class="body">
-                                            <div class="box-prg p-1 shadow">
-                                                <h4>username</h4>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, repudiandae!
-                                                </p>
+                                    <div class="col-md-9 col-sm-12 p-1">
+                                        <div class="body-prg">
+                                            <div class="msg-prg">
+                                                <div class="box-prg p-1 shadow">
+                                                    <h4>username</h4>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, repudiandae!
+                                                    </p>
+                                                </div>
                                             </div>
                                             <form action="" method="post">
-                                                <div class="form-inline">
+                                                <div class="form-inline form-prg" style="width: 100%;">
                                                     <input type="text" name="programme_content" id="prg_content"
                                                         placeholder="Programmes" class="form-control">
-                                                    <button type="submit" class="btn btn-warning">Send</button>
+                                                    <button type="submit" id="send-prg" name="send-prg" class="btn btn-warning"><i class="fa fa-paper-plane"></i></button>
                                                 </div>
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="col-md-5 col-sm-0">
+                                    <div class="col-md-3 col-sm-0">
                                         <h3>List of members</h3>
                                         <div id="users"></div>
                                     </div>
