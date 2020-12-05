@@ -109,11 +109,10 @@
                         </div>
                         <div class="row mt-30 mb-30">
                             <div class="col-6">
-                                select male last profile pic
-                                <img class="img-fluid" src="img/blog/post-img1.jpg" alt="">
+                                <?php print $outm;?>
                             </div>
                             <div class="col-6">
-                                <img class="img-fluid" src="img/blog/post-img2.jpg" alt="">
+                                <?php print $outf;?>
                             </div>
                             <div class="col-lg-12 mt-30">
                                 <p class="words">

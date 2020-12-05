@@ -26,3 +26,24 @@ if(@mysqli_num_rows($User) > 0){
 }else{
     header("Location: ../login.php");
 }
+
+$sqlm = mysqli_query($con, "SELECT * FROM user_account WHERE gender = 'Male' ORDER BY id DESC LIMIT 1");
+$sqlf = mysqli_query($con, "SELECT * FROM user_account WHERE gender = 'Female' ORDER BY id DESC LIMIT 1");
+
+$datam = @mysqli_fetch_array($sqlm);
+$dataf = @mysqli_fetch_array($sqlf);
+
+$outm = '';
+
+if(@mysqli_num_rows($sqlm)>0){
+    $outm.='
+    <a href="profile.php?profile='.$datam['id'].'" title="'.$datam['name'].'">
+        <img class="img-fluid shadow m-1" src="../'.$datam['profile_pic'].'" width="100%" height="100%">
+    </a>';
+}else{$outm.='<img class="img-fluid" src="img/blog/post-img1.jpg">';}
+if(@mysqli_num_rows($sqlf)>0){
+    $outf.='
+    <a href="profile.php?profile='.$dataf['id'].'" title="'.$dataf['name'].'">
+        <img class="img-fluid shadow m-1" src="../'.$dataf['profile_pic'].'" width="100%" height="100%">
+    </a>';
+}else{$outf.='<img class="img-fluid" src="img/blog/post-img1.jpg">';}
