@@ -456,6 +456,20 @@
             }
             print $output;
         }
+        if($_POST['action'] == 'pastors-list'){
+            $limit = $_POST['limit'];
+            $sql = mysqli_query($con, "SELECT * FROM pastor_tb ORDER BY id DESC LIMIT $limit");
+            
+            if(@mysqli_num_rows($sql) > 0){
+                while($row = mysqli_fetch_array($sql)):
+                    $output .= '<li><a href="javascript:void()">'.$row['pastor_name'].'</a></li>';
+                    
+                endwhile;
+            }else{
+                $output .= '<p>We are caring about you  say Amen</p>';
+            }
+            print $output;
+        }
         if($_POST['action'] == 'users-list-5'){
             $limit = $_POST['limit'];
             $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT $limit");

@@ -61,14 +61,9 @@
                             <p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span
                                     class="lnr lnr-eye"></span>
                             </p>
-                            <p class="comments col-lg-12 col-md-12 col-6"><a href="#">06 Comments</a> <span
-                                    class="lnr lnr-bubble"></span></p>
-                            <ul class="social-links col-lg-12 col-md-12 col-6">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul>
+                            <p class="comments col-lg-12 col-md-12 col-6">
+                                <a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span>
+                            </p>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">

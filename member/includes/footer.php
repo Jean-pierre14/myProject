@@ -31,6 +31,13 @@
                     <li><a href="#">Agencies</a></li>
                 </ul>
             </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="../../assets/images/erc/2016-12-11-PDJ-845x321.jpg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="footer-bottom row align-items-center">
             <p class="footer-text m-0 col-lg-6 col-md-12">

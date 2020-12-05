@@ -334,4 +334,5 @@ if(isset($_POST['action'])){
         }
         print $output;
     }
+    if($_POST['action'] == ''){}
 }
