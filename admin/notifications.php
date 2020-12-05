@@ -1,7 +1,6 @@
 <?php include("lock.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>ERC/Notifications</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
@@ -78,7 +77,7 @@
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-white navbar-top p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand color-hero" href="notifications.php">
                         <?php print $_SESSION['username'];?>/Notification <i class="fas fa-users"
@@ -119,7 +118,7 @@
                 <div class="container-fluid">
                     <div class="content-not">
                         <div class="header-not d-flex flex-wrap justify-content-between align-items-center">
-                            <span class="badge badge-danger">
+                            <span class="badge badge-danger small">
                                 <?php print Date('Y:'.'m:'.'d');?>
                             </span>
                             <span>
@@ -135,6 +134,34 @@
                         <?php if(isset($_GET['event'])):?>
                         <?php if($_GET['event'] == 'programme'):?>
                         <h3>Programmes</h3>
+                        <div class="content">
+                            <div class="container-fluid" style="width: 100%;">
+                                <div class="row">
+                                    <div class="col-md-7 col-sm-12 p-1">
+                                        <div class="body">
+                                            <div class="box-prg p-1 shadow">
+                                                <h4>username</h4>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, repudiandae!
+                                                </p>
+                                            </div>
+                                            <form action="" method="post">
+                                                <div class="form-inline">
+                                                    <input type="text" name="programme_content" id="prg_content"
+                                                        placeholder="Programmes" class="form-control">
+                                                    <button type="submit" class="btn btn-warning">Send</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5 col-sm-0">
+                                        <h3>List of members</h3>
+                                        <div id="users"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
                         <?php elseif($_GET['event'] == 'request'):?>
 
                         <div class="row">
@@ -143,7 +170,7 @@
                                     <div class="card card-body">
                                         <h3>Requests <span class="badge badge-danger">23</span></h3>
                                     </div>
-                                    
+
                                     <div class="card mt-2">
                                         <div class="card-header p-1">
                                             <div class="close">
@@ -203,7 +230,8 @@
                             <form action="" method="post" class="" id="form">
                                 <input type="hidden" id="user_id" value="<?php print $_SESSION['id'];?>"
                                     class="form-control">
-                                <input name="message" autocomplete="off" autofocus id="ContextMsg" placeholder="Typing...." class="form-control">
+                                <input name="message" autocomplete="off" autofocus id="ContextMsg"
+                                    placeholder="Typing...." class="form-control">
                                 <button type="button" id="Add-blog" class="btn btn-warning">
                                     <i class="fa fa-paper-plane"></i>
                                 </button>

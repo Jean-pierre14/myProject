@@ -78,7 +78,7 @@ include("lock.php");
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-white navbar-fixed-top p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="registration.php"> Registration <i class="fa fa-user-plus"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -1003,213 +1003,224 @@ include("lock.php");
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    $().ready(() => {
-        online();
-        member();
-        memberList();
-        statistic();
-        listPastor();
-        PastorNormal();
+$().ready(() => {
+    online();
+    member();
+    memberList();
+    statistic();
+    listPastor();
+    PastorNormal();
 
-        $(document).on('click', '.show-case', function () {
-            let id = $(this).data('id');
-            $('.display-' + id).toggle('slow');
-        });
-        $(document).on('click', '#btn-record-wedding', function () {
-            let husband = $('#husband').val();
-            let wife = $('#wife').val();
-            let pastor = $('#pastor').val();
-            let about = $('#about').val();
-            let date = $('#date').val();
-            let action = 'weddingRecord';
+    $(document).on('click', '.show-case', function() {
+        let id = $(this).data('id');
+        $('.display-' + id).toggle('slow');
+    });
+    $(document).on('click', '#btn-record-wedding', function() {
+        let husband = $('#husband').val();
+        let wife = $('#wife').val();
+        let pastor = $('#pastor').val();
+        let about = $('#about').val();
+        let date = $('#date').val();
+        let action = 'weddingRecord';
 
-            if (husband === '' || wife === '' || pastor === '') {
-                alert('Please fill all fields');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    data: { action, about, date, husband, wife, pastor },
-                    method: 'post',
-                    success: function (data) {
-                        alert(data);
-                        weddings();
-                    }
-                });
+        if (husband === '' || wife === '' || pastor === '') {
+            alert('Please fill all fields');
+        } else {
+            $.ajax({
+                url: './config.php',
+                data: {
+                    action,
+                    about,
+                    date,
+                    husband,
+                    wife,
+                    pastor
+                },
+                method: 'post',
+                success: function(data) {
+                    alert(data);
+                    weddings();
+                }
+            });
+        }
+    })
+    $(document).on("click", ".RecordPastor", function() {
+        let action = 'RecordPastor';
+        let pastorId = $('#pastorId').val();
+        let pastorName = $('#pastorName').val();
+
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action,
+                pastorId: pastorId,
+                pastorName: pastorName
+            },
+            success: function(data) {
+                if (data = 'success') {
+                    $('#successMsg').html(
+                        '<p class="ui message positive">Registration success!</p>');
+                } else {
+                    $('#successMsg').html(
+                        '<p class="ui message negative">Failed! Check these not an empty field</p>'
+                    );
+                }
             }
         })
-        $(document).on("click", ".RecordPastor", function () {
-            let action = 'RecordPastor';
-            let pastorId = $('#pastorId').val();
-            let pastorName = $('#pastorName').val();
+    });
+    $('#search_txt').keyup(function() {
+        let action = 'search';
+        let txt = $(this).val();
 
+        if (txt != '') {
             $.ajax({
                 url: '../event/event.php',
                 method: 'post',
                 data: {
                     action: action,
-                    pastorId: pastorId,
-                    pastorName: pastorName
+                    txt: txt
                 },
-                success: function (data) {
-                    if (data = 'success') {
-                        $('#successMsg').html(
-                            '<p class="ui message positive">Registration success!</p>');
-                    } else {
-                        $('#successMsg').html(
-                            '<p class="ui message negative">Failed! Check these not an empty field</p>'
-                        );
-                    }
+                dataType: 'text',
+                success: function(data) {
+                    $('#member-list').hide(300);
+                    $('#searchResult').html(data);
                 }
-            })
-        });
-        $('#search_txt').keyup(function () {
-            let action = 'search';
-            let txt = $(this).val();
+            });
+        } else {
+            $('#searchResult').html('');
+            $('#member-list').show(300);
+        }
+    });
+    $('#search_txt2').keyup(function() {
+        let action = 'search2';
+        let txt = $(this).val();
 
-            if (txt != '') {
-                $.ajax({
-                    url: '../event/event.php',
-                    method: 'post',
-                    data: {
-                        action: action,
-                        txt: txt
-                    },
-                    dataType: 'text',
-                    success: function (data) {
-                        $('#member-list').hide(300);
-                        $('#searchResult').html(data);
-                    }
-                });
-            } else {
-                $('#searchResult').html('');
-                $('#member-list').show(300);
-            }
-        });
-        $('#search_txt2').keyup(function () {
-            let action = 'search2';
-            let txt = $(this).val();
-
-            if (txt != '') {
-                $.ajax({
-                    url: '../event/event.php',
-                    method: 'post',
-                    data: {
-                        action: action,
-                        txt: txt
-                    },
-                    dataType: 'text',
-                    success: function (data) {
-                        $('#PastorNormal').hide(300);
-                        $('#selectPastor').html(data);
-                    }
-                });
-            } else {
-                $('#selectPastor').html('');
-                $('#PastorNormal').show(300);
-            }
-        });
-
-        weddings();
+        if (txt != '') {
+            $.ajax({
+                url: '../event/event.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    txt: txt
+                },
+                dataType: 'text',
+                success: function(data) {
+                    $('#PastorNormal').hide(300);
+                    $('#selectPastor').html(data);
+                }
+            });
+        } else {
+            $('#selectPastor').html('');
+            $('#PastorNormal').show(300);
+        }
     });
 
-    function weddings() {
-        let action = 'weddings';
-        let limit = 10;
-        let offset = 0;
-        $.ajax({
-            url: './config.php',
-            data: { action, limit, offset },
-            method: 'post',
-            success: function (data) {
-                $('#wedding_list').html(data)
-            }
-        })
-    }
+    weddings();
+});
+
+function weddings() {
+    let action = 'weddings';
+    let limit = 10;
+    let offset = 0;
+    $.ajax({
+        url: './config.php',
+        data: {
+            action,
+            limit,
+            offset
+        },
+        method: 'post',
+        success: function(data) {
+            $('#wedding_list').html(data)
+        }
+    })
+}
 
 
-    function PastorNormal() {
-        let action = 'PastorNormal';
-        $.ajax({
-            url: '../event/event.php',
-            method: 'post',
-            data: {
-                action: action
-            },
-            success: function (data) {
-                $('#PastorNormal').html(data)
-            }
-        })
-    }
+function PastorNormal() {
+    let action = 'PastorNormal';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#PastorNormal').html(data)
+        }
+    })
+}
 
-    function listPastor() {
-        let action = 'listPastor';
-        $.ajax({
-            url: '../event/event.php',
-            method: 'post',
-            data: {
-                action: action
-            },
-            success: function (data) {
-                $('#listPastor').html(data);
-            }
-        })
-    }
+function listPastor() {
+    let action = 'listPastor';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#listPastor').html(data);
+        }
+    })
+}
 
-    function online() {
-        let action = 'online';
-        $.ajax({
-            url: '../event/event.php',
-            method: 'post',
-            data: {
-                action: action
-            },
-            success: function (data) {
-                $('#online').html(data)
-            }
-        })
-    }
+function online() {
+    let action = 'online';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#online').html(data)
+        }
+    })
+}
 
-    function member() {
-        let action = 'member';
-        $.ajax({
-            url: '../event/event.php',
-            method: 'post',
-            data: {
-                action: action
-            },
-            success: function (data) {
-                $('#member').html(data)
-            }
-        })
-    }
+function member() {
+    let action = 'member';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#member').html(data)
+        }
+    })
+}
 
-    function memberList() {
-        let action = 'member-list';
-        $.ajax({
-            url: '../event/event.php',
-            method: 'post',
-            data: {
-                action: action
-            },
-            success: function (data) {
-                $('#member-list').html(data)
-            }
-        })
-    }
+function memberList() {
+    let action = 'member-list';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#member-list').html(data)
+        }
+    })
+}
 
-    function statistic() {
-        let action = 'statistic';
-        $.ajax({
-            url: '../event/event.php',
-            method: 'post',
-            data: {
-                action: action
-            },
-            success: function (data) {
-                $('#statistic').html(data)
-            }
-        })
-    }
+function statistic() {
+    let action = 'statistic';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#statistic').html(data)
+        }
+    })
+}
 </script>
 
 </html>
