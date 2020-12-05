@@ -30,6 +30,7 @@
             if(@mysqli_num_rows($SQLGet) == 1){
                 while($data = mysqli_fetch_array($SQLGet)):
 ?>
+
 <section class="banner-area">
     <div class="container">
         <div class="row banner-content">
@@ -88,6 +89,7 @@
     </div>
     </div>
 </section>
+
 <?php
                 endwhile;
             } else{

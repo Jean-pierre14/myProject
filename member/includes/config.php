@@ -34,6 +34,7 @@ $datam = @mysqli_fetch_array($sqlm);
 $dataf = @mysqli_fetch_array($sqlf);
 
 $outm = '';
+$outf = '';
 
 if(@mysqli_num_rows($sqlm)>0){
     $outm.='
