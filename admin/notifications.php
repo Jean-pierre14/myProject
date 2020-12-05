@@ -117,7 +117,7 @@
                 <div class="container-fluid">
                     <div class="content-not">
                         <div class="header-not d-flex flex-wrap justify-content-between align-items-center">
-                            <span class="badge badge-danger small">
+                            <span class="badge badge-danger small hidden-sm">
                                 <?php print Date('Y:'.'m:'.'d');?>
                             </span>
                             <span>
@@ -308,8 +308,7 @@ fetch('http://localhost:7000/programmes').then(res=>res.json().then(data => {
     }else{
 
     }
-}))
-
+}).catch(err=>{if(err) throw err}))
 </script>
 
 </html>

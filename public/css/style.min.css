@@ -328,3 +328,11 @@ textarea{
     position: relative;
     width: 90%;
 }
+
+
+@media(max-width: 700px){
+    .hidden-sm{
+        position: relative;
+        display: none; 
+    }
+}
