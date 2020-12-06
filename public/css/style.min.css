@@ -312,7 +312,34 @@ textarea{
     border-radius: 50%;
 }
 
+.form-group{
+    position: relative;
+    display: block;
+}
+.height-max{
+    position: relative;
+    overflow-y: auto;
+    max-height: 400px;
+}
 
+.prg{
+    position: relative;
+    display: block;
+    /* background-color: red; */
+}
+.prg form{
+    width: 100%;
+    background-color: rgb(138, 111, 111);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.prg form input{
+    position: relative;
+    display: block;
+}
 
 @media(max-width: 700px){
     .hidden-sm{

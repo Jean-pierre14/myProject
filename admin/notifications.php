@@ -133,11 +133,11 @@
                         <?php if(isset($_GET['event'])):?>
                         <?php if($_GET['event'] == 'programme'):?>
                         <h3>Programmes</h3>
-                        
                             <div class="container-fluid">
                                <div class="row">
-                                   <div class="col-md-5">
-                                       <form action="" method="post">
+                                   <div class="col-md-5 prg">
+                                       <div class="card card-body">
+                                           <form action="" method="post">
                                            <div class="form-group">
                                                <label for="title">Title</label>
                                                <input type="text" name="title" id="title" placeholder="Title..." class="form-control">
@@ -150,9 +150,11 @@
                                                <button type="submit" class="btn btn-sm btn-primary">New programme</button>
                                            </div>
                                        </form>
+                                       </div>
                                    </div>
                                    <div class="col-md-7">
                                         <h4>Programmes</h4>
+                                        <div id="programmes_APi" class="height-max"></div>
                                    </div>
                                </div>
                             </div>
@@ -295,7 +297,18 @@ fetch('http://localhost:7000/programmes').then(res=>res.json().then(data => {
         data.forEach(item => {
             let time = new Date(item.created_at)
             time  = `${time.getDate()}/${time.getFullYear()} >> ${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
-            programmes += `<div class="">${item.title}</div>`
+            programmes += `
+            <div class="bg-light p-1 my-3">
+                <h3>${item.title}</h3>
+                <p>${item.context}</p>
+                <p class="p-0 m-0 d-flex justify-content-between flex-wrap align-items-center">
+                    <span class="d-flex justify-content-between flex-wrap align-items-center">
+                        <img class="img-avatar" src="../${item.profile_pic}">
+                        <span>${item.username}</span>
+                    </span>
+                    <small>${time}</small>
+                    </p>
+            </div>`
         })
         document.getElementById('programmes_APi').innerHTML = programmes
     }else{
