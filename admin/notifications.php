@@ -133,37 +133,30 @@
                         <?php if(isset($_GET['event'])):?>
                         <?php if($_GET['event'] == 'programme'):?>
                         <h3>Programmes</h3>
-                        <div class="content">
-                            <div class="container-fluid" style="width: 100%;">
-                                <div class="row">
-                                    <div class="col-md-9 col-sm-12 p-1">
-                                        <div class="body-prg">
-                                            <div class="msg-prg">
-                                                <div id="programmes_APi"></div>
-                                                <div class="box-prg p-1 shadow">
-                                                    <h4>username</h4>
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, repudiandae!
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <form action="" method="post">
-                                                <div class="form-inline form-prg" style="width: 100%;">
-                                                    <input type="text" name="programme_content" id="prg_content"
-                                                        placeholder="Programmes" class="form-control">
-                                                    <button type="submit" id="send-prg" name="send-prg" class="btn btn-warning"><i class="fa fa-paper-plane"></i></button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-0">
-                                        <h3>List of members</h3>
-                                        <div id="users"></div>
-                                    </div>
-                                </div>
-                                
+                        
+                            <div class="container-fluid">
+                               <div class="row">
+                                   <div class="col-md-5">
+                                       <form action="" method="post">
+                                           <div class="form-group">
+                                               <label for="title">Title</label>
+                                               <input type="text" name="title" id="title" placeholder="Title..." class="form-control">
+                                           </div>
+                                           <div class="form-group">
+                                               <label for="content">Message</label>
+                                               <textarea name="content" id="content" placeholder="typing..." class="form-control"></textarea>
+                                           </div>
+                                           <div class="form-group">
+                                               <button type="submit" class="btn btn-sm btn-primary">New programme</button>
+                                           </div>
+                                       </form>
+                                   </div>
+                                   <div class="col-md-7">
+                                        <h4>Programmes</h4>
+                                   </div>
+                               </div>
                             </div>
-                        </div>
+                        
                         <?php elseif($_GET['event'] == 'request'):?>
 
                         <div class="row">
