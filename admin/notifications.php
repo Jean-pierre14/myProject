@@ -139,6 +139,7 @@
                                        <div class="card card-body">
                                            <form action="" method="post">
                                            <div class="form-group">
+                                               <input type="hidden" name="userid" value="<?php print $UserData[0]?>">
                                                <label for="title">Title</label>
                                                <input type="text" name="title" id="title" placeholder="Title..." class="form-control">
                                            </div>
@@ -167,7 +168,6 @@
                                     <div class="card card-body">
                                         <h3>Requests <span class="badge badge-danger">23</span></h3>
                                     </div>
-
                                     <div class="card mt-2">
                                         <div class="card-header p-1">
                                             <div class="close">
