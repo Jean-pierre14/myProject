@@ -18,7 +18,6 @@
     <div class="container-fluid" style="height: 100vh;">
         <div class="row justify-content-center">
             <div class="col-md-3 mt-5">
-
                 <h2 class="text-center text-success">Log In</h2>
                 <div class="card shadow">
                     <div class="card-body">
