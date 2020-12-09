@@ -347,3 +347,13 @@ textarea{
         display: none; 
     }
 }
+
+.content-login{
+    position: relative;
+    width: 700px;
+    margin:auto;
+}
+.form-bg{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.4);
+}
