@@ -178,60 +178,26 @@
                                         <h3>Requests <small class="badge badge-danger">23</small></h3>
                                     </div>
                                     <div id="requests_Api"></div>
-                                    <div class="card mt-2">
-                                        <div class="card-header p-1">
-                                            <div class="close">
-                                                <div class="btn-group">
-                                                    <a href="#view" class="btn btn-primary btn-sm"><i
-                                                            class="fa fa-flag-checkered"></i></a>
-                                                    <a href="#view" class="btn btn-danger btn-sm"><i
-                                                            class="fa fa-flag-checkered"></i></a>
-                                                </div>
-                                            </div>
-                                            <h2 class="m-0 p-0">Email</h2>
-                                        </div>
-                                        <div class="card-body">
-                                            <p>
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, nostrum.
-                                                Architecto tempora ad cupiditate perspiciatis nihil assumenda explicabo
-                                                ipsa
-                                                odio fugiat tenetur adipisci, eum culpa omnis neque qui saepe aliquid!
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="card mt-2">
-                                        <div class="card-header p-1">
-                                            <h2 class="m-0 p-0">Email</h2>
-                                        </div>
-                                        <div class="card-body">
-                                            <p>
-                                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, nostrum.
-                                                Architecto tempora ad cupiditate perspiciatis nihil assumenda explicabo
-                                                ipsa
-                                                odio fugiat tenetur adipisci, eum culpa omnis neque qui saepe aliquid!
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-
                                 <div class="card card-body">
-                                    <img src="../<?php print $UserData[10];?>" alt="" class="card-img-top">
-                                    <h3 class="m-0 p-0 text-uppercase">
-                                        <?php print $_SESSION['username'];?>
-                                    </h3>
+                                    <a href="user.php">
+                                        <img src="../<?php print $UserData[12];?>" alt="" class="card-img-top">
+                                    </a>
+                                    <h4 class="m-0 p-0 text-uppercase">
+                                        <?php print $UserData[1];?>
+                                    </h4>
                                     <a href="user.php" class="btn btn-block btn-primary">My profile</a>
                                 </div>
                             </div>
                         </div>
-
                         <?php endif;?>
                         <?php else:?>
                         <div class="body-not">
                             <div id="blog">
                                 <div class="bg-danger p-3 shadow m-3">
-                                    <p class="display-3 text-white">
+                                    <p class="display-4 text-white">
                                         Server is switched off
                                     </p>
                                 </div>
@@ -333,6 +299,25 @@ fetch('http://localhost:7000/programmes/all').then(res => res.json().then(data =
 }).catch(err => {
     if (err) throw err
 }))
+</script>
+<script>
+$(document).ready(function() {
+    RequestAll()
+})
+// Request 
+function RequestAll() {
+    let action = 'requests_Api'
+    $.ajax({
+        url: './event/event.php',
+        method: 'post',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('#requests_Api').html(data)
+        }
+    })
+}
 </script>
 
 </html>

@@ -1,10 +1,10 @@
 <?php
     include("../../config/db.php");
-    
-    $limit = $_POST['limit'];
-    $offset = $_POST['offset'];
+    $output = '';    
 
     if(isset($_POST['action'])){
+        // $limit = $_POST['limit'];
+        // $offset = $_POST['offset'];
         if($_POST['action'] == 'user'){
             $sql = mysqli_query($con, "SELECT * FROM user_account");
 
@@ -29,6 +29,41 @@
                 $output .= '</div>';
             }else{
                 $output .= '<p class="alert alert-warning">there is no data register in your system</p>';
+            }
+            print $output;
+        }
+        if($_POST['action'] == 'requests_Api'){
+            $sql = mysqli_query($con, "SELECT * FROM suscribe_tb ORDER BY id DESC");
+            if(@mysqli_num_rows($sql) > 0){
+                while($row = mysqli_fetch_array($sql)){
+                    $output .= '
+                    <div class="card mt-2 mr-2">
+                        <div class="card-header p-1">
+                            <div class="close">
+                                <div class="btn-group">
+                                    <a href="#view" class="btn btn-primary btn-sm"><i
+                                            class="fa fa-flag-checkered"></i></a>
+                                    <a href="#view" class="btn btn-danger btn-sm"><i
+                                            class="fa fa-flag-checkered"></i></a>
+                                </div>
+                            </div>
+                            <a href="#">
+                                <small class="m-0 p-0">
+                                    '.$row['email'].'
+                                </small>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <p class="p-0 m-0">
+                                '.$row['context'].'
+                            </p>
+                            <small>'.$row['create_at'].'</small>
+                        </div>
+                    </div>
+                    ';
+                }
+            }else{
+                $output .= '<p class="alert alert-warning">There is not request send</p>';
             }
             print $output;
         }
