@@ -55,10 +55,31 @@ function addPost(e) {
 
 $(document).ready(function () {
   findAll();
-});
+}); // Axios
+
 var newProgramme = document.getElementById('programmeEvent');
 newProgramme.addEventListener('click', ProgrammePost);
 
 function ProgrammePost() {
-  alert("Axios");
+  var userId = document.getElementById('userId').value;
+  var title = document.getElementById('title').value;
+  var content = document.getElementById('content').value;
+
+  if (!userId || !title || !content) {
+    document.getElementById('error').innerHTML = '<p class="alert alert-danger">Fields are not complete</p>';
+  } else {
+    axios({
+      method: 'POST',
+      url: 'http://localhost:7000/programmes',
+      data: {
+        userId: userId,
+        title: title,
+        content: content
+      }
+    }).then(function () {
+      location.href = 'http://localhost/erc.com/admin/notifications.php?event=programme';
+    })["catch"](function (err) {
+      return console.error(err);
+    });
+  }
 }

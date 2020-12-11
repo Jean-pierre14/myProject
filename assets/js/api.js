@@ -80,8 +80,24 @@ function addPost(e){
 $(document).ready(function(){
     findAll()
 });
+
+// Axios
 const newProgramme = document.getElementById('programmeEvent')
 newProgramme.addEventListener('click', ProgrammePost)
 function ProgrammePost() {
-    alert("Axios")
+    const userId = document.getElementById('userId').value
+    const title = document.getElementById('title').value
+    const content = document.getElementById('content').value
+    
+    if (!userId || !title || !content) {
+        document.getElementById('error').innerHTML = '<p class="alert alert-danger">Fields are not complete</p>'
+    } else {
+        axios({
+            method: 'POST',
+            url: 'http://localhost:7000/programmes',
+            data: {userId, title, content}
+        }).then(() => {
+            location.href='http://localhost/erc.com/admin/notifications.php?event=programme'
+        }).catch(err=> console.error(err))
+    }
 }

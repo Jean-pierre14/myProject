@@ -139,8 +139,10 @@
                                 <div class="col-md-5 prg">
                                     <div class="card card-body">
                                         <form action="" method="post">
+                                            <div id="error"></div>
                                             <div class="form-group">
-                                                <input type="hidden" name="userid" value="<?php print $UserData[0]?>">
+                                                <input type="hidden" name="userid" id="userId"
+                                                    value="<?php print $UserData[0]?>">
                                                 <label for="title">Title</label>
                                                 <input type="text" name="title" id="title" placeholder="Title..."
                                                     class="form-control">
@@ -151,7 +153,8 @@
                                                     class="form-control"></textarea>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-sm btn-primary">New
+                                                <button type="button" id="programmeEvent"
+                                                    class="btn btn-sm btn-primary">New
                                                     programme</button>
                                             </div>
                                         </form>
