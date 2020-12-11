@@ -175,7 +175,7 @@
                             <div class="col-md-8 p-2">
                                 <div id="requests">
                                     <div class="card card-body">
-                                        <h3>Requests <small class="badge badge-danger">23</small></h3>
+                                        <h3>Requests</h3>
                                     </div>
                                     <div id="requests_Api"></div>
                                 </div>

@@ -79,7 +79,7 @@ include("lock.php");
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-white p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="registration.php"> Pastors <i class="fa fa-users"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -103,21 +103,6 @@ include("lock.php");
                                     <span class="no-icon">Account</span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com"
-                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <span class="no-icon">Dropdown</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#pablo">
                                     <span class="no-icon">Log out</span>
@@ -130,10 +115,10 @@ include("lock.php");
             <div class="content m-0">
                 <div class="container-fluid p-0 m-0">
                     <div class="row">
-                        <div class="col-md-6 p-2">
+                        <div class="col-md-5 p-2">
                             <h2>Pastors</h2>
                         </div>
-                        <div class="col-md-6 p-2">
+                        <div class="col-md-7 p-2">
                             <form action="" method="post">
                                 <input type="search" name="search" id="search" class="form-control"
                                     placeholder="Search...">

@@ -79,12 +79,12 @@
                             <p>Notifications</p>
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
         <div class="main-panel">
-            <nav class="navbar navbar-expand-lg bg-light p-0" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-white p-0" color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand color-hero" href="index.php"> Dashboard <i class="fas fa-home"
                             aria-hidden="true"></i></a>
@@ -122,14 +122,14 @@
             <div class="content">
                 <div class="container-fluid p-0">
                     <div class="main-content">
-                        <nav class="show-lg">
+                        <nav class="show-lg bg-white">
                             <span>
                                 <img src="../assets/images/gun.png" alt="">
                             </span>
                             <ul>
                                 <li>
-                                    <a href="#" class="bg-danger shadow">
-                                        <i class="fa fa-database"></i> 
+                                    <a href="notifications.php?event=request" class="bg-danger shadow">
+                                        <i class="fa fa-database"></i>
                                         <span id="requestCount">23</span>
                                     </a>
                                 </li>
@@ -272,7 +272,7 @@
                                         <a href="./registration.php?registration=pastor" class="btn btn-sm btn-danger">
                                             <i class="fa fa-database"></i>
                                             Add Pastor
-                                        </a>                                        
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-md-4 col-lg-4 col-sm-12">
@@ -284,7 +284,7 @@
                                         <div class="users">
                                             <!-- API -->
                                             <ul class="list-group list-group-flush">
-                                               <li
+                                                <li
                                                     class="list-group-item d-flex justify-content-between align-items-center list-group-item-action">
                                                     <span>
                                                         <img src="../assets/images/gun.png" alt="" style="width: 20px;">
@@ -441,125 +441,158 @@ $(document).ready(() => {
     tablePastor();
     users();
 });
-function users(){
+
+function users() {
     let action = 'users';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.users').html(data)
         }
     })
     setTimeout('users()', 2000)
 }
-function tablePastor(){
+
+function tablePastor() {
     let action = 'tablePastor';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('#tablePastor').html(data)
         }
     })
 }
-function requestCount(){
+
+function requestCount() {
     let action = 'requestCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('#requestCount').html(data)
         }
     })
     setTimeout('requestCount()', 1000)
 }
-function pastorCount(){
+
+function pastorCount() {
     let action = 'pastorCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.pastorCount').html(data)
         }
     })
 }
-function weddingsCount(){
+
+function weddingsCount() {
     let action = 'weddingCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.weddingCount').html(data)
         }
     })
 }
-function usersCount(){
+
+function usersCount() {
     let action = 'usersCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.usersCount').html(data)
         }
     })
 }
-function singleCount(){
+
+function singleCount() {
     let action = 'singleCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.singleCount').html(data)
         }
     })
 }
-function fianceCount(){
+
+function fianceCount() {
     let action = 'fianceCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.fianceCount').html(data)
         }
     })
 }
-function divorceCount(){
+
+function divorceCount() {
     let action = 'divorceCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.divorceCount').html(data)
         }
     })
 }
-function maleCount(){
+
+function maleCount() {
     let action = 'maleCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.maleCount').html(data)
         }
     })
 }
-function femaleCount(){
+
+function femaleCount() {
     let action = 'femaleCount';
     $.ajax({
         url: './config.php',
         method: 'post',
-        data: {action},
-        success: function(data){
+        data: {
+            action
+        },
+        success: function(data) {
             $('.femaleCount').html(data)
         }
     })
