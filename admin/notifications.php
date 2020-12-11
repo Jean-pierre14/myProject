@@ -170,15 +170,14 @@
                                 </div>
                             </div>
                         </div>
-
                         <?php elseif($_GET['event'] == 'request'):?>
-
                         <div class="row">
                             <div class="col-md-8 p-2">
                                 <div id="requests">
                                     <div class="card card-body">
-                                        <h3>Requests <span class="badge badge-danger">23</span></h3>
+                                        <h3>Requests <small class="badge badge-danger">23</small></h3>
                                     </div>
+                                    <div id="requests_Api"></div>
                                     <div class="card mt-2">
                                         <div class="card-header p-1">
                                             <div class="close">
