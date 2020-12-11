@@ -83,3 +83,18 @@ function ProgrammePost() {
     });
   }
 }
+
+function CountProgrammes() {
+  axios({
+    method: 'get',
+    url: 'http://localhost:7000/programmes/count'
+  }).then(function (res) {
+    return countPr(res);
+  })["catch"](function (err) {
+    return console.error('Error is ' + err);
+  });
+}
+
+function countPr(res) {
+  document.getElementById('CountProgrammes').innerHTML = "<small class=\"badge badge-sm badge-danger shadow-sm\">Programmes ".concat(res, "</small>");
+}

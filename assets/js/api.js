@@ -101,3 +101,15 @@ function ProgrammePost() {
         }).catch(err=> console.error(err))
     }
 }
+
+function CountProgrammes() {
+    axios({
+        method: 'get',
+        url: 'http://localhost:7000/programmes/count'
+    })
+        .then(res=> countPr(res))
+        .catch(err => console.error('Error is ' + err))
+}
+function countPr(res) {
+    document.getElementById('CountProgrammes').innerHTML = `<small class="badge badge-sm badge-danger shadow-sm">Programmes ${res}</small>`
+}

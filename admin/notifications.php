@@ -159,10 +159,14 @@
                                             </div>
                                         </form>
                                     </div>
+                                    <div id="CountProgrammes"></div>
                                 </div>
                                 <div class="col-md-7">
                                     <h4>Programmes</h4>
-                                    <div id="programmes_APi" class="height-max"></div>
+                                    <div class="hidden-lg">
+                                        <p class="alert alert-warning">This can't open in smart phone</p>
+                                    </div>
+                                    <div id="programmes_APi" class="hidden-sm height-max"></div>
                                 </div>
                             </div>
                         </div>
@@ -320,7 +324,8 @@ fetch('http://localhost:7000/programmes/all').then(res => res.json().then(data =
         })
         document.getElementById('programmes_APi').innerHTML = programmes
     } else {
-
+        document.getElementById('programmes_APi').innerHTML =
+            '<p class="alert alert-warning">Programmes are not available right now</p>'
     }
 }).catch(err => {
     if (err) throw err
