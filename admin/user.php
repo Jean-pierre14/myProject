@@ -144,7 +144,7 @@
                                     </a>
                                 </div>
                                 <?php else:?>
-                                <img src="../<?php print $UserData[12]?>" alt="" class="img-fluid">
+                                <img src="../<?php print $UserData[12];?>" alt="" class="img-fluid">
                                 <?php endif;?>
                                 <p class="d-flex justify-content-between align-items-center mt-2">
                                     <span>

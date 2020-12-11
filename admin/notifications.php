@@ -215,8 +215,12 @@
                                 </div>
                             </div>
                             <div class="col-md-4">
+
                                 <div class="card card-body">
-                                    <h3 class="m-0 p-0"><?php print $_SESSION['username'];?></h3>
+                                    <img src="../<?php print $UserData[10];?>" alt="" class="card-img-top">
+                                    <h3 class="m-0 p-0 text-uppercase">
+                                        <?php print $_SESSION['username'];?>
+                                    </h3>
                                     <a href="user.php" class="btn btn-block btn-primary">My profile</a>
                                 </div>
                             </div>
