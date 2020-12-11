@@ -56,3 +56,9 @@ function addPost(e) {
 $(document).ready(function () {
   findAll();
 });
+var newProgramme = document.getElementById('programmeEvent');
+newProgramme.addEventListener('click', ProgrammePost);
+
+function ProgrammePost() {
+  alert("Axios");
+}

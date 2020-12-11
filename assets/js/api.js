@@ -79,4 +79,9 @@ function addPost(e){
 
 $(document).ready(function(){
     findAll()
-});    
+});
+const newProgramme = document.getElementById('programmeEvent')
+newProgramme.addEventListener('click', ProgrammePost)
+function ProgrammePost() {
+    alert("Axios")
+}

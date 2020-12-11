@@ -1,6 +1,7 @@
 <?php include("lock.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>ERC/Notifications</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
@@ -133,33 +134,36 @@
                         <?php if(isset($_GET['event'])):?>
                         <?php if($_GET['event'] == 'programme'):?>
                         <h3>Programmes</h3>
-                            <div class="container-fluid">
-                               <div class="row">
-                                   <div class="col-md-5 prg">
-                                       <div class="card card-body">
-                                           <form action="" method="post">
-                                           <div class="form-group">
-                                               <input type="hidden" name="userid" value="<?php print $UserData[0]?>">
-                                               <label for="title">Title</label>
-                                               <input type="text" name="title" id="title" placeholder="Title..." class="form-control">
-                                           </div>
-                                           <div class="form-group">
-                                               <label for="content">Message</label>
-                                               <textarea name="content" id="content" placeholder="typing..." class="form-control"></textarea>
-                                           </div>
-                                           <div class="form-group">
-                                               <button type="submit" class="btn btn-sm btn-primary">New programme</button>
-                                           </div>
-                                       </form>
-                                       </div>
-                                   </div>
-                                   <div class="col-md-7">
-                                        <h4>Programmes</h4>
-                                        <div id="programmes_APi" class="height-max"></div>
-                                   </div>
-                               </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-5 prg">
+                                    <div class="card card-body">
+                                        <form action="" method="post">
+                                            <div class="form-group">
+                                                <input type="hidden" name="userid" value="<?php print $UserData[0]?>">
+                                                <label for="title">Title</label>
+                                                <input type="text" name="title" id="title" placeholder="Title..."
+                                                    class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="content">Message</label>
+                                                <textarea name="content" id="content" placeholder="typing..."
+                                                    class="form-control"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-sm btn-primary">New
+                                                    programme</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <h4>Programmes</h4>
+                                    <div id="programmes_APi" class="height-max"></div>
+                                </div>
                             </div>
-                        
+                        </div>
+
                         <?php elseif($_GET['event'] == 'request'):?>
 
                         <div class="row">
@@ -277,6 +281,7 @@
         </div>
     </div>
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
 <script src="../public/bootstrap/jquery.min.js" type="text/javascript"></script>
 <script src="../public/bootstrap/popper.min.js" type="text/javascript"></script>
 <script src="../public/js/bootstrap-notify.js" type="text/javascript"></script>
@@ -290,15 +295,15 @@
 <script src="../assets/js/api.js"></script>
 
 <script>
-
-fetch('http://localhost:7000/programmes').then(res=>res.json().then(data => {
-    if(data.length > 0){
+fetch('http://localhost:7000/programmes/all').then(res => res.json().then(data => {
+    if (data.length > 0) {
         var programmes = ''
         data.forEach(item => {
             let time = new Date(item.created_at)
-            time  = `${time.getDate()}/${time.getFullYear()} >> ${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
+            time =
+                `${time.getDate()}/${time.getFullYear()} >> ${time.getHours() < 10 ? '0' : ''}${time.getHours()}:${time.getMinutes() < 10 ? '0' : ''}${time.getMinutes()}`
             programmes += `
-            <div class="bg-light p-1 my-3">
+            <div class="bg-light p-1 m-3 border-3 border-left border-danger">
                 <h3>${item.title}</h3>
                 <p>${item.context}</p>
                 <p class="p-0 m-0 d-flex justify-content-between flex-wrap align-items-center">
@@ -311,10 +316,12 @@ fetch('http://localhost:7000/programmes').then(res=>res.json().then(data => {
             </div>`
         })
         document.getElementById('programmes_APi').innerHTML = programmes
-    }else{
+    } else {
 
     }
-}).catch(err=>{if(err) throw err}))
+}).catch(err => {
+    if (err) throw err
+}))
 </script>
 
 </html>
