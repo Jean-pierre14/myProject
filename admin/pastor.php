@@ -119,10 +119,15 @@ include("lock.php");
                             <h2>Pastors</h2>
                         </div>
                         <div class="col-md-7 p-2">
-                            <form action="" method="post">
-                                <input type="search" name="search" id="search" class="form-control"
-                                    placeholder="Search...">
-                            </form>
+                            <div class="input-group mb-3">
+                                <input type="search" class="form-control" placeholder="Search" id="demo" name="email">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">Search</span>
+                                </div>
+                            </div>
+                            <div id="Pastors">
+                                <!-- Ajax url -->
+                            </div>
                         </div>
                     </div>
                 </div>
