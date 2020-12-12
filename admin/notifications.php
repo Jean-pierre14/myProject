@@ -117,9 +117,9 @@
             <div class="content p-0 m-0">
                 <div class="container-fluid">
                     <div class="content-not">
-                        <div class="header-not d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="">
                             <span class="badge badge-danger small hidden-sm">
-                                <?php print Date('Y:'.'m:'.'d');?>
+                                <?php print Date('d/'.'m/'.'Y');?>
                             </span>
                             <span>
                                 <a href="notifications.php?event=programme" class="btn btn-primary">Programmes</a>
@@ -249,7 +249,7 @@
                             <script>
                             document.write(new Date().getFullYear());
                             </script>
-                            <a href="#">Genuis Team</a>, Put God first
+                            <a href="github.com/Jean-pierre14">Genuis Team</a>, Put God first
                         </p>
                     </nav>
                 </div>
