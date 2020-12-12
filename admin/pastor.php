@@ -9,7 +9,7 @@ include("lock.php");
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Registration</title>
+    <title>Pastors</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
@@ -25,7 +25,6 @@ include("lock.php");
     <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
@@ -117,6 +116,7 @@ include("lock.php");
                     <div class="row">
                         <div class="col-md-5 p-2">
                             <h2>Pastors</h2>
+                            <img src="" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-7 p-2">
                             <div class="input-group mb-3">
@@ -184,6 +184,26 @@ include("lock.php");
 <script src="../assets/js/demo.js"></script>
 <script src="../public/js/myJquery.js"></script>
 
+<script>
+let OutPut = ''
+fetch('http://localhost:7000/pastors')
+    .then(res => res.json().then(data => {
+        if (data.length > 0) {
+            data.forEach(item => {
+                OutPut += `    
+                <div class="box-p">
+                        <span>${item.pastor_name}</span>
+                        <img class="avatar" src="../${item.profile_pic}">
+                </div>
+                `
+            })
+            document.getElementById('Pastors').innerHTML = OutPut
+        } else {
+            document.getElementById('Pastors').innerHTML = '<p>There is no Pastor registered</p>'
+        }
+    }))
+    .catch(err => console.log(err))
+</script>
 <script>
 $(document).ready(function() {
     let flag = 0;
