@@ -116,7 +116,7 @@ include("lock.php");
                     <div class="row">
                         <div class="col-md-5 p-2">
                             <h2>Pastors</h2>
-                            <img src="" alt="" class="img-fluid">
+                            <img src="../assets/images/erc/logo.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-7 p-2">
                             <div class="input-group mb-3">
@@ -125,8 +125,10 @@ include("lock.php");
                                     <span class="input-group-text">Search</span>
                                 </div>
                             </div>
-                            <div id="Pastors">
-                                <!-- Ajax url -->
+                            <div class="min-height">
+                                <div id="Pastors">
+                                    <!-- Ajax url -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -191,7 +193,7 @@ fetch('http://localhost:7000/pastors')
         if (data.length > 0) {
             data.forEach(item => {
                 OutPut += `    
-                <div class="box-p">
+                <div class="box-p shadow-sm">
                         <span>${item.pastor_name}</span>
                         <img class="avatar" src="../${item.profile_pic}">
                 </div>
