@@ -365,3 +365,23 @@ textarea{
     background-color: rgba(255, 255, 255, 0.4);
 }
 
+
+.box-p{
+    position: relative;
+    background-color: rgba(255,255,255,1);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+.box-p img{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+

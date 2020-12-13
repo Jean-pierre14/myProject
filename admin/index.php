@@ -105,9 +105,13 @@
                                     <span id="requestCount">23</span>
                                 </a>
                             </li>
-                            <li><a href="#" class="bg-primary">Members</a></li>
-                            <li><a href="#" class="bg-hero">Pastors</a></li>
-                            <li><a href="#" class="bg-pink">Weddings</a></li>
+                            <li>
+                                <a href="users.php" class="bg-primary">
+                                    Members
+                                </a>
+                            </li>
+                            <li><a href="pastor.php" class="bg-hero">Pastors</a></li>
+                            <li><a href="wedding.php" class="bg-pink">Weddings</a></li>
                         </ul>
                     </nav>
                     <div class="dashboard">
@@ -161,7 +165,7 @@
                                             <i class="fa fa-arrow-right color-hero"></i>
                                         </a>
                                     </div>
-                                    <div id="tablePastor">
+                                    <div id="tablePastor" class="table-responsive">
                                         <!-- URL API pastor -->
                                         <table class="table table-sm table-hover table-striped">
                                             <thead>
@@ -347,7 +351,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
