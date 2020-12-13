@@ -58,7 +58,7 @@
     <div class="main-panel">
         <nav class="navbar navbar-expand-lg bg-white p-0" color-on-scroll="500">
             <div class="container-fluid">
-                <a class="navbar-brand color-hero" href="index.php"> Dashboard <i class="fa fa-"
+                <a class="navbar-brand color-hero" href="index.php"> Dashboard <i class="fa fa-band-aid"
                         aria-hidden="true"></i></a>
                 <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
