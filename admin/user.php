@@ -781,7 +781,7 @@
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-$().ready(() => {
+    $().ready(() => {
     $('#btn-Edit-Username').click(function() {
         let action = 'editUsername';
         const id = $('#id_up').val();
