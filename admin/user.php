@@ -18,12 +18,15 @@
     <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet">
     <link rel="stylesheet" href="../public/sass/index.style.min.css">
     <link href="../assets/css/demo.css" rel="stylesheet">
+    <link href="../assets/css/croppie.css" rel="stylesheet">
+    <script src="../assets/css/croppie.js"></script>
     <script src="../public/bootstrap/jquery.min.js"></script>
     <script src="../public/bootstrap/popper.min.js"></script>
     <script src="../public/bootstrap/bootstrap.min.js"></script>
     <script src="../public/js/all.min.js"></script>
     <script src="../public/semantic/semantic.min.js"></script>
     <script src="../public/semantic/themes/default/assets/fonts/brand-icons.eot"></script>
+
 </head>
 
 <body>
@@ -147,7 +150,7 @@
                                 <img src="../<?php print $UserData[12];?>" alt="" class="img-fluid">
                                 <?php endif;?>
 
-                                <p class="mt-5 d-flex justify-content-between align-items-center mt-2">
+                                <p class="d-flex justify-content-between align-items-center mt-2">
                                     <span>
                                         <b>Profile image: </b>
                                     </span>
@@ -239,8 +242,8 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 mt-5 bg-white">
-                            <div class="shadow box-dashboard">
+                        <div class="col-md-4 mt-5">
+                            <div class="shadow box-dashboard bg-white">
                                 <span class="top-icon bg-danger">
                                     <i class="fa fa-gift fa-2x"></i>
                                 </span>
