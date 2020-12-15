@@ -10,6 +10,7 @@
     <title>My account</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport' />
+    <link rel="stylesheet" href="./includes/imageUpload/main.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
@@ -934,6 +935,22 @@
         }
     });
 });
+</script>
+
+<script>
+    function triggerClick(e) {
+        document.querySelector('#profileImage').click();
+        }
+        alert("Javascript")
+        function displayImage(e) {
+        if (e.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e){
+            document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
+            }
+            reader.readAsDataURL(e.files[0]);
+        }
+    }
 </script>
 
 
