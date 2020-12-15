@@ -385,3 +385,8 @@ textarea{
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+.img-obj{
+    position: relative;
+    object-fit: cover;
+}
+

@@ -106,7 +106,6 @@
             </nav>
             <div class="content m-0 p-0">
                 <div class="container-fluid">
-
                     <?php if (isset($_GET['registration'])) : ?>
                     <?php if ($_GET['registration'] == 'pastor') : ?>
                     <ul class="nav nav-tabs nav-justified m-0">
@@ -436,11 +435,14 @@
                                     </div>
                                 </div>
                             </form>
-                            <div id="searchResult">
-                                <!-- Ajax -->
-                            </div>
-                            <div id="member-list">
-                                <!-- Ajax -->
+
+                            <div class="height" style="overflow-y: auto; height: 450px">
+                                <div id="searchResult">
+                                    <!-- Ajax -->
+                                </div>
+                                <div id="member-list">
+                                    <!-- Ajax -->
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-9">
@@ -981,7 +983,7 @@
     <script src="../public/js/myJquery.js"></script>
 
     <script>
-$().ready(() => {
+$(document).ready(function() {
     online();
     member();
     memberList();
@@ -1021,7 +1023,7 @@ $().ready(() => {
                 }
             });
         }
-    })
+    });
     $(document).on("click", ".RecordPastor", function() {
         let action = 'RecordPastor';
         let pastorId = $('#pastorId').val();
@@ -1093,7 +1095,6 @@ $().ready(() => {
             $('#PastorNormal').show(300);
         }
     });
-
     weddings();
 });
 

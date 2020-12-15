@@ -43,7 +43,7 @@
                         <a href="registration.php?member='.$row['id'].'" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center list-group-item-success">
                             '.$row['name'].'
                             <span class="badge badge-pill">
-                                <img class="ui image avatar" src="'.$row['profile_pic'].'">
+                                <img class="ui image avatar" src="../'.$row['profile_pic'].'"  style="width: 30px;height: 30px;obejct-fit: cover;border-radius: 50%">
                             </span>
                         </a>
                     ';
@@ -67,7 +67,7 @@
                         <a href="registration.php?member='.$row['id'].'" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center list-group-item-success">
                             '.$row['name'].'
                             <span class="badge badge-pill">
-                                <img class="ui image avatar" src="'.$row['profile_pic'].'">
+                                <img class="ui image avatar" src="../'.$row['profile_pic'].'" style="width: 30px;height: 30px;obejct-fit: cover;border-radius: 50%">
                             </span>
                         </a>
                     ';
@@ -90,7 +90,7 @@
                         <a href="registration.php?member='.$row['id'].'" class="list-group-item d-flex justify-content-between list-group-item-action align-items-center list-group-item-success">
                             '.$row['name'].'
                             <span class="badge badge-pill">
-                                <img class="ui image avatar" src="'.$row['profile_pic'].'">
+                                <img class="ui image avatar" src="../'.$row['profile_pic'].'" style="width: 30px;height: 30px;obejct-fit: cover;border-radius: 50%">
                             </span>
                         </a>
                     ';
@@ -146,7 +146,7 @@
                     <a href="registration.php?member='.$row['id'].'" class="list-group-item d-flex align-items-center list-group-item-action list-group-item-primary justify-content-between">
                         '.$row['name'].'
                         <span class="badge badge-pill">
-                            <img class="ui image avatar" src="'.$row['profile_pic'].'">
+                            <img class="ui image avatar" src="../'.$row['profile_pic'].'" class="img-avatar img-obj" style="width: 30px; height: 30px;object-fit: cover;">
                         </span>
                     </a>';
                 }
