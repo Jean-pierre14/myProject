@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-4 col-md-4 shadow-sm my-5 offset-md-4 form-div py-3">
-            <form action="form.php" method="post" enctype="multipart/form-data">
+            <form action="./includes/imageUpload/form.php" method="post" enctype="multipart/form-data">
                 <?php if (!empty($msg)): ?>
                 <div class="alert <?php echo $msg_class ?>" role="alert">
                     <?php echo $msg; ?>
@@ -10,6 +10,7 @@
                 <?php endif; ?>
                 <div class="form-group text-center" style="position: relative;">
                     <span class="img-div">
+                        <input type="text" name="userId" value="<?php print $_SESSION['id'];?>" class="form-control">
                         <div class="text-center img-placeholder shadow" onClick="triggerClick()">
                             <h4>Update image</h4>
                         </div>
