@@ -10,7 +10,7 @@
                 <?php endif; ?>
                 <div class="form-group text-center" style="position: relative;">
                     <span class="img-div">
-                        <input type="text" name="userId" value="<?php print $_SESSION['id'];?>" class="form-control">
+                        <input type="hidden" name="userId" value="<?php print $_SESSION['id'];?>" class="form-control">
                         <div class="text-center img-placeholder shadow" onClick="triggerClick()">
                             <h4>Update image</h4>
                         </div>

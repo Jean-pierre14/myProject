@@ -14,14 +14,11 @@
     // VALIDATION
     // validate image size. Size is calculated in Bytes
     if($_FILES['profileImage']['size'] > 500000) {
-      $msg = "Image size should not be greated than 500Kb";
-      $msg_class = "alert-danger";
-    }
-
-    // check if file exists
-    if(file_exists($target_file)) {
-      $msg = "File already exists";
-      $msg_class = "alert-danger";
+      ?>
+<script>
+location.href = "http://localhost/erc.com/admin/user.php?imgProfile"
+</script>
+<?php
     }
 
     // Upload image only if no errors
@@ -29,15 +26,24 @@
       if(move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
         $sql = "UPDATE user_account SET profile_pic='/assets/images/use/user/$profileImageName' WHERE id = '$Id'";
         if(mysqli_query($con, $sql)){
-          $msg = "Image uploaded and saved in the Database";
-          $msg_class = "alert-success";
+          ?>
+<script>
+location.href = "http://localhost/erc.com/admin/user.php"
+</script>
+<?php
         } else {
-          $msg = "There was an error in the database";
-          $msg_class = "alert-danger";
+          ?>
+<script>
+location.href = "http://localhost/erc.com/admin/user.php?imgProfile"
+</script>
+<?php
         }
       } else {
-        $error = "There was an erro uploading the file";
-        $msg = "alert-danger";
+         ?>
+<script>
+location.href = "http://localhost/erc.com/admin/user.php?imgProfile"
+</script>
+<?php
       }
     }
   }
