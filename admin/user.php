@@ -26,7 +26,6 @@
     <script src="../public/js/all.min.js"></script>
     <script src="../public/semantic/semantic.min.js"></script>
     <script src="../public/semantic/themes/default/assets/fonts/brand-icons.eot"></script>
-
 </head>
 
 <body>
@@ -133,6 +132,9 @@
                             </p>
                         </div> -->
                     </div>
+                    <?php if(isset($_GET['imgProfile'])):?>
+                        <?php include("./includes/imageUpload/form.php");?>
+                    <?php else:?>
                     <div class="row p-0">
                         <div class="col-md-4 mt-5">
                             <div class="shadow box-dashboard bg-white">
@@ -303,9 +305,10 @@
                             </div>
                         </div>
                     </div>
+                    <?php endif;?>
                     <div class="row p-0 mt-4">
                         <div class="col-lg-12 col-md-8 col-sm-12">
-                            <div class="shadow box-dashboard">
+                            <div class="shadow-sm box-dashboard bg-white">
                                 <span class="top-icon bg-pink">
                                     <i class="fa fa-book fa-2x"></i>
                                 </span>
