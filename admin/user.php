@@ -155,12 +155,16 @@
                                         <b>Profile image: </b>
                                     </span>
                                     <span>
-                                        <button type="button" data-target="#editName" data-toggle="modal"
+                                        <button type="button"
                                             class="btn  border-0 p-2 shadow color-hero">
-                                            <i class="fa fa-edit"></i>
+                                            <label for="upload_image" class="p-0 m-0">
+                                                <i class="fa fa-edit"></i>
+                                            </label>
                                         </button>
                                     </span>
                                 </p>
+                                <input type="file" style="display: none;" name="upload_image" id="upload_image" />
+                                <div id="uploaded_image"></div>
                                 <p class="d-flex justify-content-between align-items-center mt-2">
                                     <span>
                                         <b>Name: </b>
@@ -693,6 +697,35 @@
             </div>
         </div>
     </div>
+
+    <!-- Upload image profile -->
+    <div id="uploadimageModal" class="modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Upload & Crop Image</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                          <div class="col-md-8 text-center">
+                              <div id="image_demo" style="width:100%; margin-top:30px"></div>
+                          </div>
+                          <div class="col-md-4" style="padding-top:30px;">
+                              <br/>
+                              <br/>
+                              <br/>
+                            <button class="btn btn-success crop_image">Crop & Upload Image</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <!-- Upload image profile -->
 </body>
 <script src="../public/bootstrap/jquery.min.js"></script>
 <script src="../public/bootstrap/popper.min.js"></script>
