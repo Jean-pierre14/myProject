@@ -1,4 +1,36 @@
-    <?php include("./includes/header.php");?>
+<?php $errors = [];include("lock.php");?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Registration</title>
+    <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/png">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <link rel="stylesheet" href="./includes/imageUpload/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../public/css/all.min.css">
+    <link rel="stylesheet" href="../public/semantic/semantic.min.css">
+    <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../public/css/style.min.css">
+    <link rel="stylesheet" href="../public/sass/index.style.min.css">
+    <link href="../assets/css/demo.css" rel="stylesheet">
+    <link href="../assets/css/croppie.css" rel="stylesheet">
+    <script src="../assets/css/croppie.js"></script>
+    <script src="../public/bootstrap/jquery.min.js"></script>
+    <script src="../public/bootstrap/popper.min.js"></script>
+    <script src="../public/bootstrap/bootstrap.min.js"></script>
+    <script src="../public/js/all.min.js"></script>
+    <script src="../public/semantic/semantic.min.js"></script>
+    <script src="../public/semantic/themes/default/assets/fonts/brand-icons.eot"></script>
+</head>
+
+<body>
     <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
@@ -123,6 +155,10 @@
                         <div class="row bg-white">
                             <div class="col-md-6 p-2">
                                 <div id="listPastor">
+                                </div>
+                                <div id="Pastors">
+                                    <!-- Fetch using javascript -->
+                                    <!-- Fetch using javascript -->
                                 </div>
                                 <div class="container-fluid p-0 m-0">
                                     <div class="row mt-4">
@@ -471,75 +507,32 @@
                                                 }
                                                 ?>
                                         <div class="container-fluid m-0 p-0">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="card">
-                                                        <img class="img-fluid ui image"
-                                                            src="<?php print $memberArray[4]; ?>"
-                                                            alt="Profile <?php print $memberArray[0]; ?>"
-                                                            style="width: 100%;">
-                                                        <div class="card-body">
-                                                            <p class="text-center text-success text-uppercase small">
-                                                                <?php print $memberArray[1]; ?>
-                                                                <small><?php print $memberArray[0]; ?></small>
-                                                            </p>
-                                                        </div>
-                                                        <div class="card-footer p-1 text-center">
-                                                            <div class="btn-group">
-                                                                <a href="#" class="btn btn-sm btn-fill btn-info"
-                                                                    rel="tooltip" title="Edit"><i
-                                                                        class="fa fa-edit"></i></a>
-                                                                <a href="#" class="btn btn-sm btn-fill btn-danger"
-                                                                    rel="tooltip" title="Delete"><i
-                                                                        class="fa fa-trash"></i></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="card">
+                                            <div class="row justify-content-center">
+                                                <div class="col-md-12">
+                                                    <div class="card shadow-sm">
+                                                        <a href="#lightbox">
+                                                            <img src="../<?php print $memberArray[4]; ?>" alt=""
+                                                                class="card-img-top img-overflow">
+                                                        </a>
                                                         <div class="card-body">
                                                             <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <span>Name : </span>
-                                                                <?php print $memberArray[1]; ?>
+                                                                class="d-flex flex-wrap justify-content-between align-items-center">
+                                                                <span>
+                                                                    Name:
+                                                                </span>
+                                                                <span>
+                                                                    <?php print $memberArray[1];?>
+                                                                </span>
                                                             </p>
                                                             <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <span>Username : </span>
-                                                                <?php print $memberArray[0]; ?>
+                                                                class="d-flex flex-wrap justify-content-between align-items-center">
+                                                                <span>
+                                                                    Username:
+                                                                </span>
+                                                                <span>
+                                                                    <?php print $memberArray[0];?>
+                                                                </span>
                                                             </p>
-                                                            <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <span>Department : </span>
-                                                                <?php print $memberArray[7]; ?>
-                                                            </p>
-                                                            <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <span>Gender : </span>
-                                                                <?php print $memberArray[8]; ?>
-                                                            </p>
-                                                            <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <span>Status : </span>
-                                                                <?php print $memberArray[9]; ?>
-                                                            </p>
-                                                            <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <small>Date of birth : </small>
-                                                                <?php print $memberArray[11]; ?>
-                                                            </p>
-                                                            <p
-                                                                class="d-flex justify-content-between align-items-center">
-                                                                <small>Email : </small>
-                                                                <small
-                                                                    class="text-success"><?php print $memberArray[2]; ?></small>
-                                                            </p>
-                                                        </div>
-                                                        <div class="card-footer p-1">
-                                                            <a href="registration.php"
-                                                                class="btn btn-sm btn-danger btn-fill"><i
-                                                                    class="fa fa-arrow-circle-left"></i> Back</a>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -554,16 +547,15 @@
                                             <div class="container-fluid m-0 p-0">
                                                 <p class="ui message positive d-flex justify-content-between">
                                                     We are waiting for you to show us you belove
-                                                    <span><img src="../assets/images/loading.gif" alt="Loading..."
+                                                    <span>
+                                                        <img src="../assets/images/loading.gif" alt="Loading..."
                                                             class="ui mini avatar"
                                                             style="width: 20px;height: 20px"></span>
                                                 </p>
                                             </div>
                                             <?php elseif ($memberArray[9] == 'married') : ?>
-
                                             <div class="container-fluid">
                                                 <div class="row">
-
                                                     <?php
                                                                 if ($memberArray[8] == 'Male') {
                                                                     $myWedding = mysqli_query($con, "SELECT * FROM wedding_tb WHERE husband_id = '" . $memberArray[12] . "'");
@@ -968,21 +960,21 @@
             </div>
         </div>
     </div>
-    </body>
+</body>
 
-    <script src="../public/bootstrap/jquery.min.js"></script>
-    <script src="../public/bootstrap/popper.min.js"></script>
-    <script src="../public/bootstrap/bootstrap.min.js"></script>
-    <script src="../public/js/all.min.js"></script>
-    <script src="../public/semantic/semantic.min.js"></script>
-    <script src="../assets/js/plugins/bootstrap-switch.js"></script>
-    <script src="../assets/js/plugins/chartist.min.js"></script>
-    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
-    <script src="../assets/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
-    <script src="../assets/js/demo.js"></script>
-    <script src="../public/js/myJquery.js"></script>
+<script src="../public/bootstrap/jquery.min.js"></script>
+<script src="../public/bootstrap/popper.min.js"></script>
+<script src="../public/bootstrap/bootstrap.min.js"></script>
+<script src="../public/js/all.min.js"></script>
+<script src="../public/semantic/semantic.min.js"></script>
+<script src="../assets/js/plugins/bootstrap-switch.js"></script>
+<script src="../assets/js/plugins/chartist.min.js"></script>
+<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<script src="../assets/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
+<script src="../assets/js/demo.js"></script>
+<script src="../public/js/myJquery.js"></script>
 
-    <script>
+<script>
 $(document).ready(function() {
     online();
     member();
@@ -1200,6 +1192,31 @@ function statistic() {
         }
     })
 }
-    </script>
+</script>
 
-    </html>
+
+
+<!-- FETCH javascript -->
+<script>
+let OutPut = ''
+fetch('http://localhost:7000/pastors')
+    .then(res => res.json().then(data => {
+        if (data.length > 0) {
+            data.forEach(item => {
+                OutPut += `    
+                    <div class="box-p shadow-sm my-1">
+                            <span>${item.pastor_name}</span>
+                            <img class="avatar" src="../${item.profile_pic}">
+                    </div>
+                    `
+            })
+            document.getElementById('Pastors').innerHTML = OutPut
+        } else {
+            document.getElementById('Pastors').innerHTML = '<p>There is no Pastor registered</p>'
+        }
+    }))
+    .catch(err => console.log(err))
+</script>
+<!-- FETCH javascript -->
+
+</html>

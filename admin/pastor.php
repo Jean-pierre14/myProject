@@ -190,24 +190,24 @@
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-let OutPut = ''
-fetch('http://localhost:7000/pastors')
-    .then(res => res.json().then(data => {
-        if (data.length > 0) {
-            data.forEach(item => {
-                OutPut += `    
-                <div class="box-p shadow-sm my-1">
-                        <span>${item.pastor_name}</span>
-                        <img class="avatar" src="../${item.profile_pic}">
-                </div>
-                `
-            })
-            document.getElementById('Pastors').innerHTML = OutPut
-        } else {
-            document.getElementById('Pastors').innerHTML = '<p>There is no Pastor registered</p>'
-        }
-    }))
-    .catch(err => console.log(err))
+    let OutPut = ''
+    fetch('http://localhost:7000/pastors')
+        .then(res => res.json().then(data => {
+            if (data.length > 0) {
+                data.forEach(item => {
+                    OutPut += `    
+                    <div class="box-p shadow-sm my-1">
+                            <span>${item.pastor_name}</span>
+                            <img class="avatar" src="../${item.profile_pic}">
+                    </div>
+                    `
+                })
+                document.getElementById('Pastors').innerHTML = OutPut
+            } else {
+                document.getElementById('Pastors').innerHTML = '<p>There is no Pastor registered</p>'
+            }
+        }))
+        .catch(err => console.log(err))
 </script>
 <script>
 $(document).ready(function() {
