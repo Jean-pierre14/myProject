@@ -85,7 +85,7 @@
         </div>
         <div class="main-panel">
 
-            <nav class="navbar navbar-expand-lg bg-light p-0 m-0" color-on-scroll="500">
+            <nav class="navbar navbar-expand-lg bg-white p-0 m-0" color-on-scroll="500">
                 <div class="container-fluid">
                     <a class="navbar-brand color-hero" href="user.php"> User <i class="fa fa-user"></i></a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
@@ -122,17 +122,17 @@
             <div class="content">
                 <div class="container-fluid m-0">
                     <div class="row">
-                        <div class="shadow box-dashboard p-3 col-lg-12">
+                        <!-- <div class="shadow box-dashboard p-3 col-lg-12">
                             <button class="close shadow btn px-3 py-2">&times;</button>
                             <p>
                                 You are the admin of your account, you can delete or edit your account anytime you want.
                                 buy choose what you want to edit in order to update it.
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="row p-0">
                         <div class="col-md-4 mt-5">
-                            <div class="shadow box-dashboard">
+                            <div class="shadow box-dashboard bg-white">
                                 <span class="top-icon bg-primary">
                                     <i class="fa fa-user fa-2x"></i>
                                 </span>
@@ -146,6 +146,19 @@
                                 <?php else:?>
                                 <img src="../<?php print $UserData[12];?>" alt="" class="img-fluid">
                                 <?php endif;?>
+
+                                <p class="mt-5 d-flex justify-content-between align-items-center mt-2">
+                                    <span>
+                                        <b>Profile image: </b>
+                                    </span>
+
+                                    <span>
+                                        <button type="button" data-target="#editName" data-toggle="modal"
+                                            class="btn  border-0 p-2 shadow color-hero">
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </span>
+                                </p>
                                 <p class="d-flex justify-content-between align-items-center mt-2">
                                     <span>
                                         <b>Name: </b>
@@ -163,7 +176,7 @@
                             </div>
                         </div>
                         <div class="col-md-4 mt-5">
-                            <div class="shadow box-dashboard">
+                            <div class="shadow box-dashboard bg-white">
                                 <span class="top-icon bg-hero">
                                     <i class="fa fa-users fa-2x"></i>
                                 </span>
@@ -226,7 +239,7 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="col-md-4 mt-5">
+                        <div class="col-md-4 mt-5 bg-white">
                             <div class="shadow box-dashboard">
                                 <span class="top-icon bg-danger">
                                     <i class="fa fa-gift fa-2x"></i>
