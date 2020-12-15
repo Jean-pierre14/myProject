@@ -119,7 +119,6 @@
                 <div class="container-fluid p-0 m-0">
                     <div class="row">
                         <div class="col-md-5 p-2">
-                            <h2>Pastors</h2>
                             <img src="../assets/images/erc/logo.png" alt="" class="img-fluid">
                         </div>
                         <div class="col-md-7 p-2">

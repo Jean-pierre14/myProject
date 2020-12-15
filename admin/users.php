@@ -5,19 +5,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>Registration</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../public/css/all.min.css"/>
-    <link rel="stylesheet" href="../public/semantic/semantic.min.css"/>
-    <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-    <link href="../assets/css/demo.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../public/sass/index.style.min.css"/>
-    <link rel="stylesheet" href="../public/sass/style.css"/>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
+        name='viewport' />
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../public/css/all.min.css" />
+    <link rel="stylesheet" href="../public/semantic/semantic.min.css" />
+    <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet" />
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../public/sass/index.style.min.css" />
+    <link rel="stylesheet" href="../public/sass/style.css" />
 </head>
 
 <body>
@@ -130,12 +131,12 @@
                 <div class="container-fluid m-0 p-0">
                     <div class="row">
                         <?php if(isset($_GET['user'])):?>
-                            <?php $id_Get = $_GET['user'];?>
-                            <div class="col-md-7 col-sm-12">
-                                <div class="container-fluid m-0 p-0">
-                                    <div class="row">
+                        <?php $id_Get = $_GET['user'];?>
+                        <div class="col-md-7 col-sm-12">
+                            <div class="container-fluid m-0 p-0">
+                                <div class="row">
 
-                                        <?php
+                                    <?php
                                             $getUser = '';
                                             $ArrGet = [];
                                     
@@ -172,7 +173,6 @@
                                                         <span class="top-icon bg-primary">
                                                             <i class="fa fa-user fa-2x"></i>
                                                         </span>';
-                                                        
                                                         if( $row['profile_pic']== ''){
                                                         $getUser .='
                                                         <div class="text-center">
@@ -353,10 +353,10 @@
                                             }
                                             print $getUser;
                                         ?>
-                                    </div>
                                 </div>
-
                             </div>
+
+                        </div>
                         <?php else:?>
                         <div class="col-md-7 col-sm-12 col-lg-7">
                             <div class="container-fluid m-0 p-0">
@@ -446,7 +446,8 @@
                         <div class="col-md-5 col-sm-12 col-lg-5">
                             <form action="" method="post">
                                 <div class="form-inline">
-                                    <input type="search" name="search" id="search" class="form-control" placeholder="Search....">
+                                    <input type="search" name="search" id="search" class="form-control"
+                                        placeholder="Search....">
                                     <button type="submit" class="btn btn-fill btn-success">Search</button>
                                 </div>
                             </form>
@@ -501,8 +502,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit <?php print $thisArr[2]?></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -515,7 +516,8 @@
                                 class="form-control">
                         </div>
                         <div class="form-group">
-                            <button type="button" id="btn-Edit-Username" class="btn btn-sm btn-warning btn-fill about_btn">
+                            <button type="button" id="btn-Edit-Username"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
                                 <i class="fa fa-arrow-circle-right"></i>
                                 Update Username
                             </button>
@@ -534,8 +536,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit <?php print $thisArr[1]?></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -567,8 +569,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">About me</h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -599,8 +601,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Name</h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -632,8 +634,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Email <i class="fa fa-envelopp"></i></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -665,8 +667,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Location</h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -699,8 +701,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Phone <i class="fa fa-phone"></i></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -732,8 +734,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Department <i class="fa fa-gift"></i></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -776,8 +778,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Status <i class="fa fa-gift"></i></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -821,8 +823,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Gender <i class="fa fa-gift"></i></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -858,8 +860,8 @@
             <div class="modal-content">
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Date of birth <i class="fa fa-gift"></i></h4>
-                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm border-0 shadow text-danger close m-1"
-                        style="outline: none;font-size: 20px;">
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow text-danger close m-1" style="outline: none;font-size: 20px;">
                         &times;
                     </a>
                 </div>
@@ -900,198 +902,242 @@
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    $(document).ready(function(){
-        let flag = 0;
-        $.ajax({
-            url: './config.php',
-            data: {action: 'usersList', limit: 9, offset: 0},
-            method: 'post',
-            success: function(data){
-                $('#usersDisplay').html(data)
-                flag += 3;
-            } 
-        });
-        $('#btn-Edit-Username').click(function () {
-            let action = 'editUsername';
-            const id = $('#id_up').val();
-            let username = $('#username').val();
-            if (username.lenght <= 4 || username === undefined || username === '') {
-                alert('Username is empty and should have at least 4 caracters');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action: action, id: id, username: username },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#username').val('');
-            }
-        });
-        $('#btn-Edit-Email').click(function () {
-            const action = 'editEmail';
-            const id = $('#id_up').val();
-            const email = $('#email').val();
-            if (email.lenght <= 2 || email === undefined || email === '') {
-                alert('Email is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action: action, id: id, email: email },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#email').val('');
-            }
-        });
-        $('#btn-Edit-Name').click(function () {
-            const action = 'editName';
-            const id = $('#id_up').val();
-            const name = $('#name').val();
-            if (name.lenght < 4 || name === undefined || name === '') {
-                alert('name is empty and it shouds have at least 4 caracters');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, name },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#name').val('');
-            }
-        });
-        $('#btn-Edit-Location').click(function () {
-            const action = 'editLocation';
-            const id = $('#id_up').val();
-            const location = $('#location').val();
-            if (location.lenght < 4 || location === undefined || location === '') {
-                alert('Location is empty and it shouds have at least 4 caracters');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, location: location },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#location').val('');
-            }
-        });
-        $('#btn-Edit-Status').click(function () {
-            const action = 'editStatus';
-            const id = $('#id_up').val();
-            const status = $('#status_up').val();
-            if (status === '') {
-                alert('status is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, status },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#status').val('');
-            }
-        });
-        $('#btn-Edit-Gender').click(function () {
-            const action = 'editGender';
-            const id = $('#id_up').val();
-            const gender = $('#gender').val();
-            if (gender === '') {
-                alert('gender is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, gender },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#gender').val('');
-            }
-        });
-        $('#btn-Edit-Phone').click(function () {
-            const action = 'editPhone';
-            const id = $('#id_up').val();
-            const phone = $('#phone').val();
-            if (phone.lenght < 4 || phone === undefined || phone === '') {
-                alert('phone is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, phone },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#phone').val('');
-            }
-        });
-        $('#btn-Edit-Department').click(function () {
-            const action = 'editDepartment';
-            const id = $('#id_up').val();
-            const department = $('#department_up').val();
-            if (department === '') {
-                alert('department is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, department: department },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#department').val('');
-            }
-        });
-        $('#btn-Edit-Dob').click(function () {
-            const action = 'editDob';
-            const id = $('#id_up').val();
-            const dob = $('#dob').val();
-            if (dob.lenght < 6 || dob === undefined || dob === '') {
-                alert('Date  of birth is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, dob },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#dob').val('');
-            }
-        });
-        $('#btn-Edit-About').click(function () {
-            const action = 'editAbout';
-            const id = $('#id_up').val();
-            let about = $('#about').val();
-            if (about.lenght < 4 || about === undefined || about === '') {
-                alert('Description is empty');
-            } else {
-                $.ajax({
-                    url: './config.php',
-                    method: 'post',
-                    data: { action, id, about },
-                    success: function (data) {
-                        alert(data)
-                    }
-                })
-                $('#about').val('');
-            }
-        });
+$(document).ready(function() {
+    let flag = 0;
+    $.ajax({
+        url: './config.php',
+        data: {
+            action: 'usersList',
+            limit: 9,
+            offset: 0
+        },
+        method: 'post',
+        success: function(data) {
+            $('#usersDisplay').html(data)
+            flag += 3;
+        }
     });
+    $('#btn-Edit-Username').click(function() {
+        let action = 'editUsername';
+        const id = $('#id_up').val();
+        let username = $('#username').val();
+        if (username.lenght <= 4 || username === undefined || username === '') {
+            alert('Username is empty and should have at least 4 caracters');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    id: id,
+                    username: username
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#username').val('');
+        }
+    });
+    $('#btn-Edit-Email').click(function() {
+        const action = 'editEmail';
+        const id = $('#id_up').val();
+        const email = $('#email').val();
+        if (email.lenght <= 2 || email === undefined || email === '') {
+            alert('Email is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    id: id,
+                    email: email
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#email').val('');
+        }
+    });
+    $('#btn-Edit-Name').click(function() {
+        const action = 'editName';
+        const id = $('#id_up').val();
+        const name = $('#name').val();
+        if (name.lenght < 4 || name === undefined || name === '') {
+            alert('name is empty and it shouds have at least 4 caracters');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    name
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#name').val('');
+        }
+    });
+    $('#btn-Edit-Location').click(function() {
+        const action = 'editLocation';
+        const id = $('#id_up').val();
+        const location = $('#location').val();
+        if (location.lenght < 4 || location === undefined || location === '') {
+            alert('Location is empty and it shouds have at least 4 caracters');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    location: location
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#location').val('');
+        }
+    });
+    $('#btn-Edit-Status').click(function() {
+        const action = 'editStatus';
+        const id = $('#id_up').val();
+        const status = $('#status_up').val();
+        if (status === '') {
+            alert('status is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    status
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#status').val('');
+        }
+    });
+    $('#btn-Edit-Gender').click(function() {
+        const action = 'editGender';
+        const id = $('#id_up').val();
+        const gender = $('#gender').val();
+        if (gender === '') {
+            alert('gender is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    gender
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#gender').val('');
+        }
+    });
+    $('#btn-Edit-Phone').click(function() {
+        const action = 'editPhone';
+        const id = $('#id_up').val();
+        const phone = $('#phone').val();
+        if (phone.lenght < 4 || phone === undefined || phone === '') {
+            alert('phone is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    phone
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#phone').val('');
+        }
+    });
+    $('#btn-Edit-Department').click(function() {
+        const action = 'editDepartment';
+        const id = $('#id_up').val();
+        const department = $('#department_up').val();
+        if (department === '') {
+            alert('department is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    department: department
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#department').val('');
+        }
+    });
+    $('#btn-Edit-Dob').click(function() {
+        const action = 'editDob';
+        const id = $('#id_up').val();
+        const dob = $('#dob').val();
+        if (dob.lenght < 6 || dob === undefined || dob === '') {
+            alert('Date  of birth is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    dob
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#dob').val('');
+        }
+    });
+    $('#btn-Edit-About').click(function() {
+        const action = 'editAbout';
+        const id = $('#id_up').val();
+        let about = $('#about').val();
+        if (about.lenght < 4 || about === undefined || about === '') {
+            alert('Description is empty');
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    about
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#about').val('');
+        }
+    });
+});
 </script>
 
 
