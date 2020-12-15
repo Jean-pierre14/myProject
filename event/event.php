@@ -136,7 +136,7 @@
                 <img src="../assets/images/loading.gif" class="ui image mini avatar" style="width: 15px;height: 15px">
             </p>';
 
-            $sql = "SELECT `id`,`name`,`username`,`profile_pic` FROM user_account WHERE `name` LIKE '%".$txt."%'";
+            $sql = "SELECT `id`,`name`,`username`,`profile_pic` FROM user_account WHERE (`name` or `username` LIKE '%".$txt."%' )";
             $result = mysqli_query($con, $sql);
 
             if(@mysqli_num_rows($result) > 0) {
