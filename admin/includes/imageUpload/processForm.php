@@ -1,7 +1,8 @@
 <?php
   $msg = "";
   $msg_class = "";
-  $conn = mysqli_connect("localhost", "root", "", "test");
+  
+$con = mysqli_connect("localhost", "root", "", "erc_db") OR die("Cannot be connect to this DB");
   if (isset($_POST['save_profile'])) {
     // for the database
     $bio = stripslashes($_POST['bio']);
@@ -11,8 +12,8 @@
     $target_file = $target_dir . basename($profileImageName);
     // VALIDATION
     // validate image size. Size is calculated in Bytes
-    if($_FILES['profileImage']['size'] > 200000) {
-      $msg = "Image size should not be greated than 200Kb";
+    if($_FILES['profileImage']['size'] > 500000) {
+      $msg = "Image size should not be greated than 500Kb";
       $msg_class = "alert-danger";
     }
     // check if file exists
@@ -23,8 +24,8 @@
     // Upload image only if no errors
     if (empty($error)) {
       if(move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
-        $sql = "INSERT INTO users SET profile_image='$profileImageName', bio='$bio'";
-        if(mysqli_query($conn, $sql)){
+        $sql = "UPDATE user_account SET profile_pic='$profileImageName' WHERE id = '$UserData[0]'";
+        if(mysqli_query($con, $sql)){
           $msg = "Image uploaded and saved in the Database";
           $msg_class = "alert-success";
         } else {
