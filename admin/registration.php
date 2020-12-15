@@ -1,26 +1,4 @@
-<?php
-include("lock.php");
-?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Registration</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-        name='viewport' />
-    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/css/all.min.css">
-    <link rel="stylesheet" href="../public/semantic/semantic.min.css">
-    <link href="../assets/css/light-bootstrap-dashboard.css" rel="stylesheet">
-    <link href="../assets/css/demo.css" rel="stylesheet">
-    <link rel="stylesheet" href="../public/sass/index.style.min.css">
-</head>
-
-<body>
+    <?php include("./includes/header.php");?>
     <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
@@ -988,21 +966,21 @@ include("lock.php");
             </div>
         </div>
     </div>
-</body>
+    </body>
 
-<script src="../public/bootstrap/jquery.min.js"></script>
-<script src="../public/bootstrap/popper.min.js"></script>
-<script src="../public/bootstrap/bootstrap.min.js"></script>
-<script src="../public/js/all.min.js"></script>
-<script src="../public/semantic/semantic.min.js"></script>
-<script src="../assets/js/plugins/bootstrap-switch.js"></script>
-<script src="../assets/js/plugins/chartist.min.js"></script>
-<script src="../assets/js/plugins/bootstrap-notify.js"></script>
-<script src="../assets/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
-<script src="../assets/js/demo.js"></script>
-<script src="../public/js/myJquery.js"></script>
+    <script src="../public/bootstrap/jquery.min.js"></script>
+    <script src="../public/bootstrap/popper.min.js"></script>
+    <script src="../public/bootstrap/bootstrap.min.js"></script>
+    <script src="../public/js/all.min.js"></script>
+    <script src="../public/semantic/semantic.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap-switch.js"></script>
+    <script src="../assets/js/plugins/chartist.min.js"></script>
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <script src="../assets/js/light-bootstrap-dashboard.js" type="text/javascript"></script>
+    <script src="../assets/js/demo.js"></script>
+    <script src="../public/js/myJquery.js"></script>
 
-<script>
+    <script>
 $().ready(() => {
     online();
     member();
@@ -1221,6 +1199,6 @@ function statistic() {
         }
     })
 }
-</script>
+    </script>
 
-</html>
+    </html>
