@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../public/css/style.min.css">
     <link href="../public/bootstrap/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../public/sass/index.style.min.css">
+    <link rel="stylesheet" href="../public/semantic/semantic.min.css">
 </head>
 
 <body>
@@ -257,7 +258,9 @@
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.0/axios.min.js"></script> -->
+
+<script src="../public/js/axios.js"></script>
 
 <script src="../public/bootstrap/jquery.min.js" type="text/javascript"></script>
 <script src="../public/bootstrap/popper.min.js" type="text/javascript"></script>

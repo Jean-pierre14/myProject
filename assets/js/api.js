@@ -72,16 +72,12 @@ function addPost(e){
 }
 // End blog
 
-
 // Jquery
-
 
 
 $(document).ready(function(){
     findAll()
 });
-
-
 
 // Axios
 const newProgramme = document.getElementById('programmeEvent')
