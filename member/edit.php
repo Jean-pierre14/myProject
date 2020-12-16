@@ -23,9 +23,11 @@
         <div class="col-md-6">
             <?php
                 if(isset($_POST['profileImage'])):
-                    $target_dir = "../assets/images/";
+                    $target_dir = "../assets/images/use/user/";
                     $target_file = $target_dir . basename($_FILES["profileImage"]["name"]);
                     $uploadOk = 1;
+                    $profile = basename($_FILES['profileImage']['name']);
+                    
                     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                     
                     if(isset($_POST["submit"])) {
@@ -58,7 +60,7 @@
                         if (move_uploaded_file($_FILES["profileImage"]["tmp_name"], $target_file)) {
                             
                             $output .= "The file ". basename( $_FILES["profileImage"]["name"]). " has been uploaded.";
-                            $sql = mysqli_query($con, "UPDATE user_account SET profile_pic= '$' WHERE id = '$Id'");
+                            $sql = mysqli_query($con, "UPDATE user_account SET profile_pic= '/assets/images/use/user/$profile' WHERE id = '$Id'");
                         } else {
                             $output .="Sorry, there was an error uploading your file.";
                         }
