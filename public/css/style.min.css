@@ -390,3 +390,9 @@ textarea{
     object-fit: cover;
 }
 
+.height{
+    position: relative;
+    overflow-y: auto;
+    height: 450px;
+}
+

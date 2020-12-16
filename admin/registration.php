@@ -154,153 +154,18 @@
                     <div class="container-fluid p-0 m-0">
                         <div class="row bg-white">
                             <div class="col-md-6 p-2">
-                                <div id="listPastor">
-                                </div>
-                                <div id="Pastors">
-                                    <!-- Fetch using javascript -->
-                                    <!-- Fetch using javascript -->
-                                </div>
-                                <div class="container-fluid p-0 m-0">
-                                    <div class="row mt-4">
-                                        <div class="col-md-6">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <img src="../assets/images/erc/pastor.jpg" alt="Pastor"
-                                                        class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <img src="../assets/images/erc/marcelo.jfif" alt="Pastor"
-                                                        class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <table class="table table-dark table-hover table-striped">
-                                                <thead>
-                                                    <tr>
-                                                        <th> Pastor </th>
-                                                        <th> Theme </th>
-                                                        <th> Moderator </th>
-                                                        <th> Reaction </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td> Pastor ndaye </td>
-                                                        <td> La vie d'un chretien </td>
-                                                        <td> Chiruza bisimwa </td>
-                                                        <td>
-                                                            <a href=""><i class="fa fa-like"></i></a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="col-md-12">
-                                            <p class="text-justify">
-                                                Children, obey your parents in the Lord: for this is right.
-                                                Honour thy father and mother; which is the first commandment with
-                                                promise;
-                                                That is may be well with thee, and thou mayest live long on the earth.
-                                                And, ye fathers, provoke not your children to wrath: but bring them
-                                                up in the nurture and admonition of the Lord
-                                            </p>
-                                            <marquee behavior="" direction=""><small
-                                                    class="text-danger">Ephesians</small></marquee>
-                                        </div>
+                                <div class="height">
+                                    <div id="Pastors">
+                                        <!-- Fetch using javascript -->
+                                        <!-- Fetch using javascript -->
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mt-2">
-                                <div class="container-fluid m-0 p-0">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <form action="" method="post">
-                                                <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text">Search</span>
-                                                    </div>
-                                                    <input type="search" name="search" id="search_txt2"
-                                                        class="form-control" placeholder="Typing...">
-                                                </div>
-                                            </form>
-                                            <div id="selectPastor">
-                                                <!-- Ajax -->
-                                            </div>
-                                            <div id="PastorNormal">
-                                                <!-- Ajax -->
-                                            </div>
-                                        </div>
-                                        <div class="col-md-7 m-0">
-                                            <div class="card">
-                                                <div class="card-header p-1">
-                                                    <p class="text-danger">Who to choose?</p>
-                                                </div>
-                                                <div class="card-body">
-                                                    <p>
-                                                        He/Her should be married, divorce, and widowed
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <p>
-                                                        Make it good, and you will change people you will change
-                                                        the wolrd
-                                                    </p>
-                                                </div>
-                                                <div class="card-footer p-1">
-                                                    <p class="text-danger">
-                                                        Put God first
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header p-1">
-                                        <p class="text-danger">About this week</p>
-                                    </div>
-                                    <div class="card-body">
-                                        <form action="" method="post">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6 p-0">
-                                                    <select name="pastor" id="pastor" class="custom-select">
-                                                        <option value="">-- Pastor --</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6 p-0">
-                                                    <select name="pastor" id="pastor" class="custom-select">
-                                                        <option value="">-- Moderator --</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-5 p-0">
-                                                    <div class="input-group mb-3">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Date</span>
-                                                        </div>
-                                                        <input type="date" class="form-control" name="date" id="date"
-                                                            placeholder="Date">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-7 p-0">
-                                                    <div class="input-group mb-3">
-                                                        <input type="text" class="form-control" name="theme" id="theme"
-                                                            placeholder="Date">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Theme</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                <button type="button" data-toggle="modal" data-target="#myModal"
+                                    class="btn btn-sm btn-warning btn-fill">Add new
+                                    Pastor</button>
+                                <img src="../assets/images/erc/logo.png" alt="LogoERC" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -909,7 +774,7 @@
         </div>
     </div>
 
-    <div class="modal" id="myModal">
+    <div class="modal fade" id="myModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
