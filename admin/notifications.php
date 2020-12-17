@@ -288,7 +288,7 @@ fetch('http://localhost:7000/programmes/all').then(res => res.json().then(data =
                 <p>${item.context}</p>
                 <p class="p-0 m-0 d-flex justify-content-between flex-wrap align-items-center">
                     <span class="d-flex justify-content-between flex-wrap align-items-center">
-                        <img class="img-avatar" src="../${item.profile_pic}">
+                        <img class="img-box" style="width: 30px;height: 30px;object-fit: cover;overflow: hidden;border-raduis:50px" src="../${item.profile_pic}">
                         <span>${item.username}</span>
                     </span>
                     <small>${time}</small>

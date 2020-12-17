@@ -25,7 +25,6 @@
     <?php include('../includes/loading.php'); ?>
     <div class="wrapper">
         <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
-
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="#" class="simple-text">
