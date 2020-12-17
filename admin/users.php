@@ -102,23 +102,9 @@
                                     <span class="no-icon">Account</span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com"
-                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <span class="no-icon">Dropdown</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
+
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
+                                <a class="nav-link" href="../logout.php">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>
@@ -127,6 +113,12 @@
                 </div>
             </nav>
             <div class="content m-0">
+                <div class="container-fluid">
+                    <a href="registration.php" class="btn btn-sm btn-fill btn-info">Add member</a>
+                    <div class="table-responsive">
+                        <table class="table table-sm table-bordered"></table>
+                    </div>
+                </div>
                 <div class="container-fluid m-0 p-0">
                     <div class="row">
                         <?php if(isset($_GET['user'])):?>
@@ -134,11 +126,9 @@
                         <div class="col-md-7 col-sm-12">
                             <div class="container-fluid m-0 p-0">
                                 <div class="row">
-
                                     <?php
                                             $getUser = '';
                                             $ArrGet = [];
-                                    
                                             $sql = mysqli_query($con, "SELECT * FROM user_account WHERE id = '$id_Get'");
                                             while($row = mysqli_fetch_assoc($sql)){
                                                 $thisArr = [];
@@ -354,7 +344,6 @@
                                         ?>
                                 </div>
                             </div>
-
                         </div>
                         <?php else:?>
                         <div class="col-md-7 col-sm-12 col-lg-7">
