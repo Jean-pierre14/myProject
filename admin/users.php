@@ -152,12 +152,12 @@
                                                     <h3 class="text-left text-uppercase text-primary">
                                                         '.$row['username'].'
                                                     </h3>
-                                                    <a href="users.php" class="border-0 btn btn-sm shadow-sm-sm">
+                                                    <a href="users.php" class="border-0 btn btn-sm shadow-sm-sm-sm-sm">
                                                         <i class="fa fa-arrow-left"></i>
                                                     </a>
                                                 </div>
                                                 <div class="col-md-5 col-sm-12">
-                                                    <div class="shadow-sm-sm box-dashboard bg-white">
+                                                    <div class="shadow-sm-sm-sm-sm box-dashboard bg-white">
                                                         <span class="top-icon bg-primary">
                                                             <i class="fa fa-user fa-2x"></i>
                                                         </span>';
@@ -176,7 +176,7 @@
                                                         $getUser .= '
                                                         
                                                     </div>
-                                                    <div class="shadow-sm box-dashboard mt-4 bg-white">
+                                                    <div class="shadow-sm-sm-sm box-dashboard mt-4 bg-white">
                                                         <div class="top-icon bg-pink">
                                                             <i class="fa fa-home fa-2x"></i>
                                                         </div>
@@ -190,13 +190,13 @@
                                                                 </span>
                                                             </p>
                                                             <button type="button" data-target="#editLocation" data-toggle="modal"
-                                                                class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                 <i class="fa fa-edit"></i>
                                                                 Edit
                                                             </button>
                                                         </div>
                                                     </div>
-                                                    <div class="shadow-sm box-dashboard mt-4 bg-white">
+                                                    <div class="shadow-sm-sm-sm box-dashboard mt-4 bg-white">
                                                         <div class="top-icon bg-danger">
                                                             <i class="fa fa-gift fa-2x"></i>
                                                         </div>
@@ -215,7 +215,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7 col-sm-12">
-                                                    <div class="shadow-sm box-dashboard bg-white">
+                                                    <div class="shadow-sm-sm-sm box-dashboard bg-white">
                                                         <span class="top-icon bg-hero">
                                                             <i class="fa fa-gift fa-2x"></i>
                                                         </span>
@@ -229,7 +229,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editName" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -243,7 +243,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editUsername" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -257,7 +257,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editEmail" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -271,7 +271,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editPhone" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -285,7 +285,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editDepartment" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -299,7 +299,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editGender" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -313,7 +313,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editStatus" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -329,7 +329,7 @@
                                                                 </span>
                                                                 <span>
                                                                     <button type="button" data-target="#editDob" data-toggle="modal"
-                                                                        class="btn  border-0 p-2 shadow-sm color-hero">
+                                                                        class="btn  border-0 p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-edit"></i>
                                                                     </button>
                                                                 </span>
@@ -349,7 +349,7 @@
                             <div class="container-fluid m-0 p-0">
                                 <div class="row">
                                     <div class="col-md-4 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm">
+                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
                                             <p class="d-flex justify-content-between align-items-center">
                                                 <span>
                                                     <b>Single</b>
@@ -364,7 +364,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm">
+                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
                                             <p class="d-flex justify-content-between align-items-center">
                                                 <span>
                                                     <b>Fiance</b>
@@ -379,7 +379,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm">
+                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
                                             <p class="d-flex justify-content-between align-items-center">
                                                 <span>
                                                     <b>Divorce</b>
@@ -394,7 +394,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm">
+                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
                                             <p class="d-flex justify-content-between align-items-center">
                                                 <span>
                                                     <b>Male</b>
@@ -409,7 +409,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm">
+                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
                                             <p class="d-flex justify-content-between align-items-center">
                                                 <span>
                                                     <b>Female</b>
@@ -490,7 +490,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit <?php print $thisArr[2]?></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -525,7 +525,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit <?php print $thisArr[1]?></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -559,7 +559,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">About me</h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -592,7 +592,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Name</h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -626,7 +626,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Email <i class="fa fa-envelopp"></i></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -660,7 +660,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Location</h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -695,7 +695,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Phone <i class="fa fa-phone"></i></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -729,7 +729,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Department <i class="fa fa-gift"></i></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -774,7 +774,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Status <i class="fa fa-gift"></i></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -820,7 +820,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Gender <i class="fa fa-gift"></i></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>
@@ -858,7 +858,7 @@
                 <div class="modal-header p-1">
                     <h4 class="modal-title text-info m-1 ml-1 mt-2">Edit Date of birth <i class="fa fa-gift"></i></h4>
                     <a href="users.php?user=<?php print $thisArr[0];?>"
-                        class="btn btn-sm border-0 shadow-sm text-danger close m-1"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
                         style="outline: none;font-size: 20px;">
                         &times;
                     </a>

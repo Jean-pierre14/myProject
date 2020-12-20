@@ -36,48 +36,14 @@
         <div class="row banner-content">
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
                 <div class="left-part bg-white p-3">
-                    <h1>
+                    <h3>
                         Profile/<?php print $data['name'];?>
                         <?php if($data['on_off'] == 'online'):?>
                         <small><i class="fa fa-home text-success"></i></small>
                         <?php else:?>
                         <small><i class="fa fa-home text-danger"></i></small>
                         <?php endif;?>
-                    </h1>
-                    <img src="../<?php print $data['profile_pic'];?>" alt="" class="img-fluid"
-                        style="max-height: 250px">
-                    <p>
-                        <?php print $data['about'];?>
-                    </p>
-                    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-                        <span>Username:</span>
-                        <span><?php print $data['username'];?></span>
-                    </p>
-                    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-                        <span>Full name:</span>
-                        <span><?php print $data['name'];?></span>
-                    </p>
-                    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-                        <span>Email:</span>
-                        <span><?php print $data['email'];?></span>
-                    </p>
-                    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-                        <span>Status</span>
-                        <span class="badge badge-primary"><?php print $data['statu'];?></span>
-                    </p>
-                    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-                        <span>Date of birth:</span>
-                        <span class="badge badge-primary"><?php print $data['dob'];?></span>
-                    </p>
-                    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-                        <span>Phone</span>
-                        <span><?php print $data['phone'];?></span>
-                    </p>
-                    <br>
-                    <p>Description</p>
-                    <p>
-                        <?php print $data['about'];?>
-                    </p>
+                    </h3>
                 </div>
                 <div class="right-part">
                     <a href="index.php">home</a>
@@ -90,6 +56,41 @@
     </div>
 </section>
 
+<section class="container">
+    <img src="../<?php print $data['profile_pic'];?>" alt="" class="img-fluid" style="max-height: 250px">
+    <p>
+        <?php print $data['about'];?>
+    </p>
+    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+        <span>Username:</span>
+        <span><?php print $data['username'];?></span>
+    </p>
+    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+        <span>Full name:</span>
+        <span><?php print $data['name'];?></span>
+    </p>
+    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+        <span>Email:</span>
+        <span><?php print $data['email'];?></span>
+    </p>
+    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+        <span>Status</span>
+        <span class="badge badge-primary"><?php print $data['statu'];?></span>
+    </p>
+    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+        <span>Date of birth:</span>
+        <span class="badge badge-primary"><?php print $data['dob'];?></span>
+    </p>
+    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+        <span>Phone</span>
+        <span><?php print $data['phone'];?></span>
+    </p>
+    <br>
+    <p>Description</p>
+    <p>
+        <?php print $data['about'];?>
+    </p>
+</section>
 <?php
                 endwhile;
             } else{
@@ -292,7 +293,6 @@
                 </h4>
                 <a href="profile.php" class="close">&times;</a>
             </div>
-
             <!-- Modal body -->
             <div class="modal-body">
                 <form action="" method="post">
