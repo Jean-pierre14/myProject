@@ -1,11 +1,4 @@
-/*--------------------------- Color variations ----------------------*/
-/* Medium Layout: 1280px */
-/* Tablet Layout: 768px */
-/* Mobile Layout: 320px */
-/* Wide Mobile Layout: 480px */
-/* =================================== */
-/*  Basic Style 
-/* =================================== */
+
 ::-moz-selection {
   /* Code for Firefox */
   background-color: #46dbf9;
@@ -3271,3 +3264,9 @@ body.mobile-nav-active #mobile-nav-toggle {
         font-size: 18px; }
 
 /*# sourceMappingURL=main.css.map */
+
+.box-50{
+  position: relative;
+  border: none;
+  border-radius: 20px;
+}

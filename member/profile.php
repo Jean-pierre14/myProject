@@ -57,39 +57,47 @@
 </section>
 
 <section class="container">
-    <img src="../<?php print $data['profile_pic'];?>" alt="" class="img-fluid" style="max-height: 250px">
-    <p>
-        <?php print $data['about'];?>
-    </p>
-    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-        <span>Username:</span>
-        <span><?php print $data['username'];?></span>
-    </p>
-    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-        <span>Full name:</span>
-        <span><?php print $data['name'];?></span>
-    </p>
-    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-        <span>Email:</span>
-        <span><?php print $data['email'];?></span>
-    </p>
-    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-        <span>Status</span>
-        <span class="badge badge-primary"><?php print $data['statu'];?></span>
-    </p>
-    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-        <span>Date of birth:</span>
-        <span class="badge badge-primary"><?php print $data['dob'];?></span>
-    </p>
-    <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
-        <span>Phone</span>
-        <span><?php print $data['phone'];?></span>
-    </p>
-    <br>
-    <p>Description</p>
-    <p>
-        <?php print $data['about'];?>
-    </p>
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <img src="../<?php print $data['profile_pic'];?>" alt="" class="img-fluid">
+            <p>
+                <?php print $data['about'];?>
+            </p>
+            <div class="box-50 shadow p-2 m-1">
+                <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                    <span>Username:</span>
+                    <span><?php print $data['username'];?></span>
+                </p>
+                <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                    <span>Full name:</span>
+                    <span><?php print $data['name'];?></span>
+                </p>
+                <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                    <span>Email:</span>
+                    <span><?php print $data['email'];?></span>
+                </p>
+                <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                    <span>Status</span>
+                    <span class="badge badge-primary"><?php print $data['statu'];?></span>
+                </p>
+                <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                    <span>Date of birth:</span>
+                    <span class="badge badge-primary"><?php print $data['dob'];?></span>
+                </p>
+                <p class="d-flex flex-wrap justify-content-between align-items-center p-0 m-0">
+                    <span>Phone</span>
+                    <span><?php print $data['phone'];?></span>
+                </p>
+            </div>
+            <br>
+            <div class="box-50 p-2 mb-5 bg-white shadow-sm">
+                <p>Description</p>
+                <p>
+                    <?php print $data['about'];?>
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 <?php
                 endwhile;
