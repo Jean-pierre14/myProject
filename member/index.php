@@ -223,7 +223,13 @@
                             <h4><?php print $user_array[2];?></h4>
                         </a>
                         <p>
+                            <?php if($user_array[5] == 'none'):?>
+                            <span>
+                                ERC/Goma
+                            </span>
+                            <?php else:?>
                             <?php print $user_array[5];?>
+                            <?php endif;?>
                         </p>
 
                         <p>
