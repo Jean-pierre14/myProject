@@ -86,13 +86,7 @@
                             self-imposed
                         </p>
                         <p>
-                            Boot camps have its supporters and its detractors. Some people do not understand why
-                            you should have to spend
-                            money on boot
-                            camp when you can get the MCSE study materials yourself at a fraction of the camp
-                            price. However, who has the
-                            willpower
-                            to actually sit through a self-imposed MCSE training. who has the willpower to
+                            Good job can make lorem to actually sit through a self-imposed MCSE training. who has the willpower to
                             actually sit through a
                             self-imposed
                         </p>
@@ -224,7 +218,7 @@
                         </form>
                     </div>
                     <div class="single-sidebar-widget user-info-widget">
-                        <img src="../<?php print $user_array[10];?>" alt="" style="border-radius: 50%">
+                        <img src="../<?php print $user_array[10];?>" alt="" class="img-fluid" style="border-radius: 50%">
                         <a href="#">
                             <h4><?php print $user_array[2];?></h4>
                         </a>
