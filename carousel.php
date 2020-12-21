@@ -35,65 +35,49 @@
                     $output = '';
                     $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC");
                     if(@mysqli_num_rows($sql) > 0){
-                        $output .= '<div id="demo" class="carousel slide" data-ride="carousel">';
+                        $output .= '
+                        <div id="demo" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                        ';
+                        $active = 1;
                         while($row = mysqli_fetch_array($sql)){
-                            $output .= '
-                            <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-                            ';
-                            $output .= '
-                            <div class="item">
-                                <img class="img-fluid" src="./'.$row['profile_pic'].'">
-                            </div>
-                            ';
+                            // $output .= '
+                            // <ul class="carousel-indicators">
+                            //     <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            //     <li data-target="#demo" data-slide-to="1"></li>
+                            //     <li data-target="#demo" data-slide-to="2"></li>
+                            // </ul>
+                            // ';
+
+                            if($active == 1):
+                                $output .= '
+                                <div class="carousel-item active">
+                                    <img src="./'.$row['profile_pic'].'" class="img-fluid" alt="'.$row['username'].'">
+                                </div>
+                                ';
+                            else:
+                                $output .= '
+                                <div class="carousel-item">
+                                    <img src="./'.$row['profile_pic'].'" class="img-fluid" alt="'.$row['username'].'">
+                                </div>
+                                ';
+                            endif;
                         }
+                        $active.= +1;
                         $output .= '</div>';
                     }else{
                         $output .= '<p class="alert alert-warning">there no user registrated</p>';
                     }
                 ?>
                 <h3>Carousel</h3>
-                <div class="">
-                    <?php print $output;?>
-                </div>
+
+                <?php print $output;?>
+
             </div>
         </div>
     </div>
 
-    <div id="demo" class="carousel slide" data-ride="carousel">
 
-        <!-- Indicators -->
-        <ul class="carousel-indicators">
-            <li data-target="#demo" data-slide-to="0" class="active"></li>
-            <li data-target="#demo" data-slide-to="1"></li>
-            <li data-target="#demo" data-slide-to="2"></li>
-        </ul>
-
-        <!-- The slideshow -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="la.jpg" alt="Los Angeles">
-            </div>
-            <div class="carousel-item">
-                <img src="chicago.jpg" alt="Chicago">
-            </div>
-            <div class="carousel-item">
-                <img src="ny.jpg" alt="New York">
-            </div>
-        </div>
-
-        <!-- Left and right controls -->
-        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-            <span class="carousel-control-prev-icon"></span>
-        </a>
-        <a class="carousel-control-next" href="#demo" data-slide="next">
-            <span class="carousel-control-next-icon"></span>
-        </a>
-
-    </div>
 </body>
 
 <!-- Carousel -->
