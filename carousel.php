@@ -23,8 +23,21 @@
         $o = '';
         $select = mysqli_query($con, "SELECT * FROM user_account LIMIT 5");
         if(mysqli_num_rows($select) > 0):
+            $active = 1;
             foreach($select as $row):
-                $o .= '
+                if($active = 1):
+                    $o .= '
+                <div class="carousel-item active">
+                    <img src="./'.$row['profile_pic'].'" alt="Chicago"
+                        width="1100" height="500">
+                    <div class="carousel-caption">
+                        <h3>'.$row['username'].'</h3>
+                        <p>'.$row['about'].'</p>
+                    </div>
+                </div>
+                ';
+                else:
+                    $o .= '
                 <div class="carousel-item">
                     <img src="./'.$row['profile_pic'].'" alt="Chicago"
                         width="1100" height="500">
@@ -34,17 +47,15 @@
                     </div>
                 </div>
                 ';
+                endif;
             endforeach;
+            $active += 1;
         else:
             $o .= '<p class="alert alert-danger">There is no data</p>';
         endif;
         ?>
         <div id="demo" class="carousel slide" data-ride="carousel">
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
+
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./assets/images/erc/choir.jpg" alt="Los Angeles" width="1100" height="500">
@@ -69,10 +80,10 @@
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <a class="carousel-control-prev shadow-sm" href="#demo" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
+            <a class="carousel-control-next shadow-sm" href="#demo" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
