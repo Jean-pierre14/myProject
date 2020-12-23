@@ -25,19 +25,7 @@
         if(mysqli_num_rows($select) > 0):
             $active = 1;
             foreach($select as $row):
-                if($active = 1):
-                    $o .= '
-                <div class="carousel-item active">
-                    <img src="./'.$row['profile_pic'].'" alt="Chicago"
-                        width="1100" height="500">
-                    <div class="carousel-caption">
-                        <h3>'.$row['username'].'</h3>
-                        <p>'.$row['about'].'</p>
-                    </div>
-                </div>
-                ';
-                else:
-                    $o .= '
+                $o .= '
                 <div class="carousel-item">
                     <img src="./'.$row['profile_pic'].'" alt="Chicago"
                         width="1100" height="500">
@@ -47,7 +35,6 @@
                     </div>
                 </div>
                 ';
-                endif;
             endforeach;
             $active += 1;
         else:
