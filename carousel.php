@@ -51,26 +51,11 @@
                     </div>
                 </div>
                 <?= $o; ?>
-                <div class="carousel-item">
-                    <img src="./assets/images/erc/cyberpunk_egypt_by_kerko_ddxalej-fullview.jpg" alt="Chicago"
-                        width="1100" height="500">
-                    <div class="carousel-caption">
-                        <h3>Chicago</h3>
-                        <p>Thank you, Chicago!</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="./assets/images/erc/yvan_profile.jpg" alt="New York" width="1100" height="500">
-                    <div class="carousel-caption">
-                        <h3>New York</h3>
-                        <p>We love the Big Apple!</p>
-                    </div>
-                </div>
             </div>
-            <a class="carousel-control-prev shadow-sm" href="#demo" data-slide="prev">
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </a>
-            <a class="carousel-control-next shadow-sm" href="#demo" data-slide="next">
+            <a class="carousel-control-next" href="#demo" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
         </div>
