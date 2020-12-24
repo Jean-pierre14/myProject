@@ -17,8 +17,9 @@
         <h2 class="p-2 mt-1 text-center bg-primary text-white">
             Carousel
         </h2>
-
-        <?php
+        <div class="row justify-content-center">
+            <div class="col-md-3">
+                <?php
         include './config/db.php';
         $o = '';
         $select = mysqli_query($con, "SELECT * FROM user_account LIMIT 5");
@@ -27,8 +28,8 @@
             foreach($select as $row):
                 $o .= '
                 <div class="carousel-item">
-                    <img src="./'.$row['profile_pic'].'" alt="Chicago"
-                        width="1100" height="500">
+                    <img src="./'.$row['profile_pic'].'" alt="'.$row['username'].'"
+                        class="img-fluid">
                     <div class="carousel-caption">
                         <h3>'.$row['username'].'</h3>
                         <p>'.$row['about'].'</p>
@@ -41,23 +42,25 @@
             $o .= '<p class="alert alert-danger">There is no data</p>';
         endif;
         ?>
-        <div id="demo" class="carousel slide" data-ride="carousel">
+                <div id="demo" class="carousel slide" data-ride="carousel">
 
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/images/erc/choir.jpg" alt="Los Angeles" width="1100" height="500">
-                    <div class="carousel-caption">
-                        <h3>Los Angeles</h3>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="./assets/images/erc/choir.jpg" alt="Los Angeles" class="img-fluid">
+                            <div class="carousel-caption">
+                                <h3>Los Angeles</h3>
+                            </div>
+                        </div>
+                        <?= $o; ?>
                     </div>
+                    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#demo" data-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </a>
                 </div>
-                <?= $o; ?>
             </div>
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
         </div>
     </div>
 </body>
