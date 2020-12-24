@@ -129,49 +129,46 @@ include("lock.php");
             </nav>
             <div class="content m-0">
                 <div class="container-fluid p-0">
+
+                    <?php if(isset($_GET['get'])):?>
+                    <div class="btn-group btn-sm">
+                        <a href="registration.php?registration=wedding" class="btn my-3 btn-fill btn-sm btn-info">Add
+                            new</a>
+                        <a href="wedding.php" class="btn my-3 btn-fill btn-sm btn-primary">Back</a>
+                    </div>
+                    <?php else:?>
+                    <a href="registration.php?registration=wedding" class="btn my-3 btn-fill btn-sm btn-info">Add
+                        new</a>
+                    <form action="" method="post" class="mb-5">
+                        <input type="search" class="form-control">
+                    </form>
+                    <?php endif;?>
                     <div class="row">
-                        <div class="col-md-8 col-sm-12">
+                        <div class="col-md-12 col-sm-12">
                             <!-- <h1 class="display-1">List of weddings</h1> -->
                             <?php if(isset($_GET['get'])):?>
-                                
-                                <?php $id_get = $_GET['get'];?>
-                                <!-- Get the ID -->
-                                <input type="text" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
-                                
-                                <!-- <h1 class="display-4 text-danger">Get me</h1> -->
-                                <div id="getMe">
-                                    <!-- Url Api -->
-                                </div>
-                            <?php else: ?>
-                                <div class="shadow box-dashboard bg-white">
-                                    <span class="top-icon bg-primary">
-                                        <i class="fa fa-user fa-2x"></i>
-                                    </span>
-                                    <h2 class="top-text-left">Weddings</h2>
-                                    <div class="container-fluid m-0 p-0">
-                                        <div id="demo" class="carousel slide" data-ride="carousel">
-                                            <div class="carousel-inner">
-                                                <!-- PhotoShop -->
-                                                <div class="carousel-item active">
-                                                    <img src="../assets/images/use/user/happywedding.png" alt="" class="img-fluid"/>
-                                                </div>
-                                                <!-- PS -->
-                                                <div class="carousel-item">
-                                                    <img src="../assets/images/use/user/great.png" alt="" class="img-fluid">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            <?php endif;?>
-                        </div>
-                        <div class="col-md-4 col-sm-0 pt-2">
-                            <form action="" method="post">
-                                <input type="search" name="search" id="search" placeholder="Search..." class="form-control">
-                            </form>
-                            <div id="wedding_list" class="mt-2" style="font-size: 12px;">
+
+                            <?php $id_get = $_GET['get'];?>
+                            <!-- Get the ID -->
+                            <input type="hidden" value="<?php print $id_get;?>" id="id_wedding" class="form-control">
+
+                            <!-- <h1 class="display-4 text-danger">Get me</h1> -->
+                            <div id="getMe">
                                 <!-- Url Api -->
                             </div>
+                            <?php else: ?>
+                            <div class="shadow box-dashboard bg-white">
+                                <span class="top-icon bg-primary">
+                                    <i class="fa fa-user fa-2x"></i>
+                                </span>
+                                <h2 class="top-text-left">Weddings</h2>
+                                <div class="container-fluid m-0 p-0">
+                                    <div id="wedding_list" class="mt-2" style="font-size: 12px;">
+                                        <!-- Url Api -->
+                                    </div>
+                                </div>
+                            </div>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
@@ -233,7 +230,8 @@ include("lock.php");
                                 class="form-control">
                         </div>
                         <div class="form-group">
-                            <button type="button" id="btn-Edit-Username" class="btn btn-sm btn-warning btn-fill about_btn">
+                            <button type="button" id="btn-Edit-Username"
+                                class="btn btn-sm btn-warning btn-fill about_btn">
                                 <i class="fa fa-arrow-circle-right"></i>
                                 Update Username
                             </button>
@@ -266,70 +264,79 @@ include("lock.php");
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    $(document).ready(function(){
-        $(document).on("click", "#getMeH", function(){
-            let action = 'getMe';
-            let id_wedding = $('#id_wedding');
-            let id = $(this).data('id');
-        
-            $.ajax({
-                url: './config.php',
-                method: 'post',
-                data: {action, id, id_wedding},
-                success: function(data){
-                    $('#meGt').html(data);
-                }
-            })
-        });
-        let flag = 0;
-        let action = 'Weddings';
+$(document).ready(function() {
+    $(document).on("click", "#getMeH", function() {
+        let action = 'getMe';
+        let id_wedding = $('#id_wedding');
+        let id = $(this).data('id');
+
         $.ajax({
             url: './config.php',
+            method: 'post',
             data: {
                 action,
-                limit: 3,
-                offset: 0
+                id,
+                id_wedding
             },
-            method: 'post',
             success: function(data) {
-                $('#wedding_list').html(data);
-                flag += 5;
-            }
-        });
-        $(window).scroll( function(){
-            if($(window).scrollTop() >= $(document).height() - $(window).height()){
-                let action = 'Weddings';
-                let limit = 10;
-                let offset = flag;
-                $.ajax({
-                    url: './config.php',
-                    data: {
-                        action,
-                        limit,
-                        offset
-                    },
-                    method: 'post',
-                    success: function(data) {
-                        $('#wedding_list').html(data);
-                        flag += 3;
-                    }
-                })
+                $('#meGt').html(data);
             }
         })
-        getWedding();
     });
-    function getWedding(){
-        let action = 'id_wedding';
-        let id = $('#id_wedding').val();
-        
-        $.ajax({
-            url: './config.php',
-            data: {action, id},
-            method: 'post',
-            success: function(data){
-                $('#getMe').html(data)
-            }
-        })
-    }
+    let flag = 0;
+    let action = 'Weddings';
+    $.ajax({
+        url: './config.php',
+        data: {
+            action,
+            limit: 3,
+            offset: 0
+        },
+        method: 'post',
+        success: function(data) {
+            $('#wedding_list').html(data);
+            flag += 5;
+        }
+    });
+    $(window).scroll(function() {
+        if ($(window).scrollTop() >= $(document).height() - $(window).height()) {
+            let action = 'Weddings';
+            let limit = 10;
+            let offset = flag;
+            $.ajax({
+                url: './config.php',
+                data: {
+                    action,
+                    limit,
+                    offset
+                },
+                method: 'post',
+                success: function(data) {
+                    $('#wedding_list').html(data);
+                    flag += 3;
+                }
+            })
+        }
+    })
+    getWedding();
+});
+
+function getWedding() {
+    let action = 'id_wedding';
+    let id = $('#id_wedding').val();
+
+    $.ajax({
+        url: './config.php',
+        data: {
+            action,
+            id
+        },
+        method: 'post',
+        success: function(data) {
+            $('#getMe').html(data)
+        }
+    })
+}
 </script>
+
 </html>

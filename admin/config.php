@@ -441,12 +441,12 @@ if (isset($_POST['action'])) {
                             <b>Husband name: </b>
                         </span>
                         <span>
-                            '.$arraryH[1].'OOOOO
+                            '.$arraryH[1].'
                         </span>
                         <span>
-                            <button type="button" id="getMeH" data-id="'.$arraryH[0].'" class="btn border-0 p-2 shadow color-hero">
+                            <a id="getMeH" href="users.php?user='.$arraryH[0].'" class="btn border-0 p-2 shadow color-hero">
                                 <i class="fa fa-chevron-left"></i>
-                            </button>
+                            </a>
                         </span>
                     </p>
                     <p class="d-flex justify-content-between align-items-center mt-2">
@@ -457,10 +457,10 @@ if (isset($_POST['action'])) {
                             '.$arraryW[1].'
                         </span>
                         <span>
-                            <button type="button" data-target="#editPastor" data-id="'.$arraryW[0].'" data-toggle="modal"
+                            <a href="/users.php?user='.$arraryW[0].'" data-id="'.$arraryW[0].'" data-toggle="modal"
                                 class="btn  border-0 p-2 shadow color-hero">
                                 <i class="fa fa-chevron-left"></i>
-                            </button>
+                            </a>
                         </span>
                     </p>
                     <p class="d-flex justify-content-between align-items-center mt-2">
@@ -579,7 +579,7 @@ if (isset($_POST['action'])) {
                                 <div class="row">
                                     <div class="col-md-6 col-lg-6 col-sm-12">
                                         <div class="card">
-                                            <img src="../../'.$row['profile_pic'].'" alt="" class="img-fluid card-img-top">
+                                            <img src="../'.$row['profile_pic'].'" alt="" class="img-fluid card-img-top">
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-lg-6 col-sm-12">

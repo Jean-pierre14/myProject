@@ -182,10 +182,12 @@
                         </li>
                     </ul>
                     <div class="container-fluid m-0 bg-white" style="min-height: 80vh;">
-                        <div class="row">
-                            <div class="col-md-5 p-1">
-                                <div class="card">
+                        <a href="wedding.php" class="my-3 btn btn-fill btn-sm btn-info">Wiew the list</a>
+                        <div class="row justify-content-center">
+                            <div class="col-md-8 p-1">
+                                <div class="card shadow-lg">
                                     <div class="card-body">
+                                        <div id="error"></div>
                                         <form action="" method="post">
                                             <div class="form-group">
                                                 <label for="husband">Husband</label>
@@ -212,7 +214,7 @@
                                                 <select name="wife" id="wife" class=" form-control">
                                                     <option value="">Wife</option>
                                                     <?php
-                                                        $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE (gender = 'Female' AND statu != 'married')");
+                                                        $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE (gender = 'Female' AND statu != 'married') ORDER BY `name`");
                                                         if(mysqli_num_rows($sqlWife) > 0){
                                                             while($dW = mysqli_fetch_assoc($sqlWife)){
                                                                 $outWife .= '
@@ -269,25 +271,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-7 p-1">
+                            <!-- <div class="col-md-7 p-1">
                                 <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="card">
-                                            <div class="p-1 card-header">
-                                                <h1>How it works</h1>
-                                                <!-- <button class="btn border-0 shadow" style="float: right;">&times;</button> -->
-                                            </div>
-                                            <div class="card-body">
-                                                <p>
-                                                    First those who want to be register their wedding should be register
-                                                    as
-                                                    member, then once it done. you search them here. husband to husband
-                                                    place
-                                                    the same to wife
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="col-md-12">
                                         <div class="card mt-1">
                                             <div class="card-header p-1">
@@ -301,15 +287,13 @@
                                                 </form>
                                             </div>
                                             <div class="card-body">
-                                                <!-- <h1 class="display-1">List wedding</h1> -->
                                                 <div id="wedding_list">
-                                                    <!-- Ajax APIs -->
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <?php endif; ?>
@@ -861,7 +845,9 @@ $(document).ready(function() {
         let action = 'weddingRecord';
 
         if (husband === '' || wife === '' || pastor === '') {
-            alert('Please fill all fields');
+            // alert('Please fill all fields');
+            document.getElementById('error').innerHTML =
+                '<p class="alert alert-danger">Please fill all fields</p>'
         } else {
             $.ajax({
                 url: './config.php',
@@ -877,6 +863,7 @@ $(document).ready(function() {
                 success: function(data) {
                     alert(data);
                     weddings();
+                    document.getElementById('error').innerHTML = ''
                 }
             });
         }
