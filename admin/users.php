@@ -345,6 +345,25 @@
                             </div>
                         </div>
                         <?php else:?>
+                        <div class="col-md-3">
+                            <form action="" autocomplete="off" method="post">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="search_txt" name="search"
+                                        placeholder="Your Email">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Search</span>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="height" style="overflow-y: auto; height: 450px">
+                                <div id="searchResult">
+                                    <!-- Ajax -->
+                                </div>
+                                <div id="member-list">
+                                    <!-- Ajax -->
+                                </div>
+                            </div>
+                        </div>
                         <div class="col-md-7 col-sm-12 col-lg-7">
                             <div class="container-fluid m-0 p-0">
                                 <div class="row">

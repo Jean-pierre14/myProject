@@ -184,16 +184,20 @@
                     <div class="container-fluid m-0 bg-white" style="min-height: 80vh;">
                         <a href="wedding.php" class="my-3 btn btn-fill btn-sm btn-info">view the list</a>
                         <div class="row justify-content-center">
-                            <div class="col-md-8 p-1">
-                                <div class="card shadow-lg">
+                            <div class="col-md-10 p-1">
+                                <div class="box-dashboard shadow-lg">
+                                    <span class="top-icon bg-primary">
+                                        <i class="fa fa-user fa-2x"></i>
+                                    </span>
                                     <div class="card-body">
                                         <div id="error"></div>
                                         <form action="" method="post">
-                                            <div class="form-group">
-                                                <label for="husband">Husband</label>
-                                                <select name="husband" id="husband" class=" form-control">
-                                                    <option value="">Husband</option>
-                                                    <?php
+                                            <div class="form-row">
+                                                <div class="form-group  col-md-6">
+                                                    <label for="husband">Husband</label>
+                                                    <select name="husband" id="husband" class=" form-control">
+                                                        <option value="">Husband</option>
+                                                        <?php
                                                         $sqlHusband = mysqli_query($con, "SELECT * FROM user_account WHERE (gender = 'Male' AND statu != 'married')");
                                                         if(mysqli_num_rows($sqlHusband) > 0){
                                                             while($dH = mysqli_fetch_assoc($sqlHusband)){
@@ -207,13 +211,13 @@
                                                         }
                                                         print $output;
                                                     ?>
-                                                </select>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="wife">wife</label>
-                                                <select name="wife" id="wife" class=" form-control">
-                                                    <option value="">Wife</option>
-                                                    <?php
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="wife">wife</label>
+                                                    <select name="wife" id="wife" class=" form-control">
+                                                        <option value="">Wife</option>
+                                                        <?php
                                                         $sqlWife = mysqli_query($con, "SELECT * FROM user_account WHERE (gender = 'Female' AND statu != 'married') ORDER BY `name`");
                                                         if(mysqli_num_rows($sqlWife) > 0){
                                                             while($dW = mysqli_fetch_assoc($sqlWife)){
@@ -227,7 +231,8 @@
                                                         }
                                                         print $outWife;
                                                     ?>
-                                                </select>
+                                                    </select>
+                                                </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="pastor">Pastor</label>
@@ -309,33 +314,19 @@
                             <a class="nav-link" href="?registration=wedding">Wedding</a>
                         </li>
                     </ul>
-                    <div class="row pt-2 bg-white">
-                        <div class="col-md-3">
-                            <form action="" autocomplete="off" method="post">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" id="search_txt" name="search"
-                                        placeholder="Your Email">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Search</span>
-                                    </div>
-                                </div>
-                            </form>
-
-                            <div class="height" style="overflow-y: auto; height: 450px">
-                                <div id="searchResult">
-                                    <!-- Ajax -->
-                                </div>
-                                <div id="member-list">
-                                    <!-- Ajax -->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="container-fluid m-0 p-0">
-                                <div class="row">
-                                    <div class="col-md-8">
-                                        <?php if (isset($_GET['member'])) : ?>
-                                        <?php
+                    <div class="container-fluid p-1 m-0 bg-white">
+                        <a href="users.php" class="btn btn-fill btn-sm btn-info mt-3">View list</a>
+                        <div class="row pt-2">
+                            <div class="col-md-12">
+                                <div class="container-fluid m-0 p-0">
+                                    <div class="row">
+                                        <div class="shadow box-dashboard m-5 p-5 bg-white">
+                                            <span class="top-icon bg-primary">
+                                                <i class="fa fa-users fa-2x"></i>
+                                            </span>
+                                            <div class="col-md-12">
+                                                <?php if (isset($_GET['member'])) : ?>
+                                                <?php
                                                 $IdMember = $_GET['member'];
                                                 $MemberGet = mysqli_query($con, "SELECT * FROM user_account WHERE id = '$IdMember' ");
                                                 $memberArray = [];
@@ -355,119 +346,124 @@
                                                     $memberArray[12] = $rowM['id'];
                                                 }
                                                 ?>
-                                        <div class="container-fluid m-0 p-0">
-                                            <div class="row justify-content-center">
-                                                <div class="col-md-12">
-                                                    <div class="card shadow-sm">
-                                                        <a href="#lightbox">
-                                                            <img src="../<?php print $memberArray[4]; ?>" alt=""
-                                                                class="card-img-top img-overflow">
-                                                        </a>
-                                                        <div class="card-body">
-                                                            <p
-                                                                class="d-flex flex-wrap justify-content-between align-items-center">
-                                                                <span>
-                                                                    Name:
-                                                                </span>
-                                                                <span>
-                                                                    <?php print $memberArray[1];?>
-                                                                </span>
-                                                            </p>
-                                                            <p
-                                                                class="d-flex flex-wrap justify-content-between align-items-center">
-                                                                <span>
-                                                                    Username:
-                                                                </span>
-                                                                <span>
-                                                                    <?php print $memberArray[0];?>
-                                                                </span>
-                                                            </p>
+                                                <div class="container-fluid m-0 p-0">
+                                                    <div class="row justify-content-center">
+                                                        <div class="col-md-12">
+                                                            <div class="card shadow-sm">
+                                                                <a href="#lightbox">
+                                                                    <img src="../<?php print $memberArray[4]; ?>" alt=""
+                                                                        class="card-img-top img-overflow">
+                                                                </a>
+                                                                <div class="card-body">
+                                                                    <p
+                                                                        class="d-flex flex-wrap justify-content-between align-items-center">
+                                                                        <span>
+                                                                            Name:
+                                                                        </span>
+                                                                        <span>
+                                                                            <?php print $memberArray[1];?>
+                                                                        </span>
+                                                                    </p>
+                                                                    <p
+                                                                        class="d-flex flex-wrap justify-content-between align-items-center">
+                                                                        <span>
+                                                                            Username:
+                                                                        </span>
+                                                                        <span>
+                                                                            <?php print $memberArray[0];?>
+                                                                        </span>
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            <?php if ($memberArray[9] == 'single') : ?>
-                                            <div class="container-fluid m-0 p-0">
-                                                <p class="ui message positive">
-                                                    It's not bad to staying alone, but thing how to get someone
-                                                </p>
-                                            </div>
-                                            <?php elseif ($memberArray[9] == 'fiance') : ?>
-                                            <div class="container-fluid m-0 p-0">
-                                                <p class="ui message positive d-flex justify-content-between">
-                                                    We are waiting for you to show us you belove
-                                                    <span>
-                                                        <img src="../assets/images/loading.gif" alt="Loading..."
-                                                            class="ui mini avatar"
-                                                            style="width: 20px;height: 20px"></span>
-                                                </p>
-                                            </div>
-                                            <?php elseif ($memberArray[9] == 'married') : ?>
-                                            <div class="container-fluid">
-                                                <div class="row">
-                                                    <?php
+                                                    <?php if ($memberArray[9] == 'single') : ?>
+                                                    <div class="container-fluid m-0 p-0">
+                                                        <p class="ui message positive">
+                                                            It's not bad to staying alone, but thing how to get someone
+                                                        </p>
+                                                    </div>
+                                                    <?php elseif ($memberArray[9] == 'fiance') : ?>
+                                                    <div class="container-fluid m-0 p-0">
+                                                        <p class="ui message positive d-flex justify-content-between">
+                                                            We are waiting for you to show us you belove
+                                                            <span>
+                                                                <img src="../assets/images/loading.gif" alt="Loading..."
+                                                                    class="ui mini avatar"
+                                                                    style="width: 20px;height: 20px"></span>
+                                                        </p>
+                                                    </div>
+                                                    <?php elseif ($memberArray[9] == 'married') : ?>
+                                                    <div class="container-fluid">
+                                                        <div class="row">
+                                                            <?php
                                                                 if ($memberArray[8] == 'Male') {
                                                                     $myWedding = mysqli_query($con, "SELECT * FROM wedding_tb WHERE husband_id = '" . $memberArray[12] . "'");
                                                                 } else {
                                                                     $myWedding = mysqli_query($con, "SELECT * FROM wedding_tb WHERE wife_id = '" . $memberArray[12] . "'");
                                                                 }
                                                                 ?>
-                                                    <?php if (@mysqli_num_rows($myWedding) > 0) : ?>
-                                                    <div class="col-md-6">
-                                                        <div class="card">
-                                                            <div class="card-header p-1">
-                                                                <?php if ($memberArray[8] == 'Male') : ?>
-                                                                <p class="text-primary">His wife info</p>
-                                                                <?php else : ?>
-                                                                <p class="text-info">Her Husband info</p>
-                                                                <?php endif; ?>
+                                                            <?php if (@mysqli_num_rows($myWedding) > 0) : ?>
+                                                            <div class="col-md-6">
+                                                                <div class="card">
+                                                                    <div class="card-header p-1">
+                                                                        <?php if ($memberArray[8] == 'Male') : ?>
+                                                                        <p class="text-primary">His wife info</p>
+                                                                        <?php else : ?>
+                                                                        <p class="text-info">Her Husband info</p>
+                                                                        <?php endif; ?>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6"></div>
-                                                    <?php else : ?>
-                                                    <div class="col-md-12 p-0">
-                                                        <div class="card">
-                                                            <div class="card-header p-1">
-                                                                <p class="text-danger">Record wedding</p>
-                                                            </div>
-                                                            <div class="card-body">
-                                                                <form action="" method="post">
-                                                                    <div class="form-row">
-                                                                        <div class="form-group col-md-6">
-                                                                            <select name="patner" id="patener"
-                                                                                class="custom-select">
-                                                                                <?php if ($memberArray[8] == 'Male') : ?>
-                                                                                <option value=""> -- Choose a wife --
-                                                                                </option>
-                                                                                <?php
+                                                            <div class="col-md-6"></div>
+                                                            <?php else : ?>
+                                                            <div class="col-md-12 p-0">
+                                                                <div class="card">
+                                                                    <div class="card-header p-1">
+                                                                        <p class="text-danger">Record wedding</p>
+                                                                    </div>
+                                                                    <div class="card-body">
+                                                                        <form action="" method="post">
+                                                                            <div class="form-row">
+                                                                                <div class="form-group col-md-6">
+                                                                                    <select name="patner" id="patener"
+                                                                                        class="custom-select">
+                                                                                        <?php if ($memberArray[8] == 'Male') : ?>
+                                                                                        <option value=""> -- Choose a
+                                                                                            wife
+                                                                                            --
+                                                                                        </option>
+                                                                                        <?php
                                                                                                     $selectPatner = mysqli_query($con, "SELECT * FROM user_account WHERE gender LIKE 'female' AND statu = 'fiance'");
                                                                                                     ?>
-                                                                                <?php else : ?>
-                                                                                <option value=""> -- Choose a Husband --
-                                                                                </option>
-                                                                                <?php
+                                                                                        <?php else : ?>
+                                                                                        <option value=""> -- Choose a
+                                                                                            Husband --
+                                                                                        </option>
+                                                                                        <?php
                                                                                                     $selectPatner = mysqli_query($con, "SELECT * FROM user_account WHERE gender LIKE 'male' AND statu = 'fiance'");
                                                                                                     ?>
-                                                                                <?php endif; ?>
-                                                                                <?php if (@mysqli_num_rows($selectPatner) > 0) : ?>
-                                                                                <?php while ($rowPatner = mysqli_fetch_array($selectPatner)) : ?>
-                                                                                <option
-                                                                                    value="<?php print $rowPatner['id']; ?>">
-                                                                                    <?php print $rowPatner['name']; ?>
-                                                                                </option>
-                                                                                <?php endwhile; ?>
-                                                                                <?php else : ?>
-                                                                                <option value="" class="text-danger">
-                                                                                    There no Data</option>
-                                                                                <?php endif; ?>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="form-group col-md-6">
-                                                                            <select name="patner" id="patener"
-                                                                                class="custom-select">
-                                                                                <option value="">-- Pastor --</option>
-                                                                                <?php
+                                                                                        <?php endif; ?>
+                                                                                        <?php if (@mysqli_num_rows($selectPatner) > 0) : ?>
+                                                                                        <?php while ($rowPatner = mysqli_fetch_array($selectPatner)) : ?>
+                                                                                        <option
+                                                                                            value="<?php print $rowPatner['id']; ?>">
+                                                                                            <?php print $rowPatner['name']; ?>
+                                                                                        </option>
+                                                                                        <?php endwhile; ?>
+                                                                                        <?php else : ?>
+                                                                                        <option value=""
+                                                                                            class="text-danger">
+                                                                                            There no Data</option>
+                                                                                        <?php endif; ?>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group col-md-6">
+                                                                                    <select name="patner" id="patener"
+                                                                                        class="custom-select">
+                                                                                        <option value="">-- Pastor --
+                                                                                        </option>
+                                                                                        <?php
                                                                                                 $SelectPastor = mysqli_query($con, "SELECT * FROM pastor_tb");
                                                                                                 if (@mysqli_num_rows($SelectPastor) > 0) {
                                                                                                     while ($rowPastor = mysqli_fetch_array($SelectPastor)) {
@@ -477,85 +473,87 @@
                                                                                                     print '<option class="text-center text-danger">There no Pastor</option>';
                                                                                                 }
                                                                                                 ?>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="form-group col-md-12">
-                                                                            <div class="input-group mb-3">
-                                                                                <input type="date" class="form-control"
-                                                                                    placeholder="Your Email">
-                                                                                <div class="input-group-append">
-                                                                                    <span class="input-group-text">Date
-                                                                                        of the wedding</span>
+                                                                                    </select>
+                                                                                </div>
+                                                                                <div class="form-group col-md-12">
+                                                                                    <div class="input-group mb-3">
+                                                                                        <input type="date"
+                                                                                            class="form-control"
+                                                                                            placeholder="Your Email">
+                                                                                        <div class="input-group-append">
+                                                                                            <span
+                                                                                                class="input-group-text">Date
+                                                                                                of the wedding</span>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
-                                                                        </div>
+                                                                            <div class="form-group">
+                                                                                <button type="submit"
+                                                                                    class="btn btn-fill btn-success btn-md">Record
+                                                                                    now <i
+                                                                                        class="fa fa-arrow-circle-right"></i></button>
+                                                                            </div>
+                                                                        </form>
+                                                                        <?php endif; ?>
                                                                     </div>
-                                                                    <div class="form-group">
-                                                                        <button type="submit"
-                                                                            class="btn btn-fill btn-success btn-md">Record
-                                                                            now <i
-                                                                                class="fa fa-arrow-circle-right"></i></button>
-                                                                    </div>
-                                                                </form>
-                                                                <?php endif; ?>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <?php elseif ($memberArray[9] == 'divorce') : ?>
+                                                    <?php endif; ?>
                                                 </div>
-                                            </div>
-                                            <?php elseif ($memberArray[9] == 'divorce') : ?>
-                                            <?php endif; ?>
-                                        </div>
-                                        <?php else : ?>
-                                        <?php require_once("../event/event.min.php");
+                                                <?php else : ?>
+                                                <?php require_once("../event/event.min.php");
                                                 include("../error.php"); ?>
-                                        <form action="" method="post">
-                                            <div class="form-row">
-                                                <div class="form-group col-md-6">
-                                                    <div class="input-group mb-3 input-group-md">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Username</span>
+                                                <form action="" method="post">
+                                                    <div class="form-row">
+                                                        <div class="form-group col-md-6">
+                                                            <div class="input-group mb-3 input-group-md">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Username</span>
+                                                                </div>
+                                                                <input type="text" class="form-control"
+                                                                    value="<?php print $username; ?>" name="username"
+                                                                    id="username" placeholder="Username">
+                                                            </div>
                                                         </div>
-                                                        <input type="text" class="form-control"
-                                                            value="<?php print $username; ?>" name="username"
-                                                            id="username" placeholder="Username">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <div class="input-group mb-3 input-group-md">
-                                                        <input type="text" name="name" id="name"
-                                                            value="<?php print $name; ?>" class="form-control"
-                                                            placeholder="Name">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Name</span>
+                                                        <div class="form-group col-md-6">
+                                                            <div class="input-group mb-3 input-group-md">
+                                                                <input type="text" name="name" id="name"
+                                                                    value="<?php print $name; ?>" class="form-control"
+                                                                    placeholder="Name">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">Name</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-12">
-                                                    <div class="input-group mb-3 input-group-md">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Email</span>
+                                                        <div class="form-group col-md-12">
+                                                            <div class="input-group mb-3 input-group-md">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Email</span>
+                                                                </div>
+                                                                <input type="email" name="email" id="email"
+                                                                    value="<?php print $email; ?>" class="form-control"
+                                                                    placeholder="Email@gmail.com">
+                                                            </div>
                                                         </div>
-                                                        <input type="email" name="email" id="email"
-                                                            value="<?php print $email; ?>" class="form-control"
-                                                            placeholder="Email@gmail.com">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-7">
-                                                    <div class="input-group mb-3 input-group-md">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Location</span>
+                                                        <div class="form-group col-md-7">
+                                                            <div class="input-group mb-3 input-group-md">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Location</span>
+                                                                </div>
+                                                                <input type="text" value="<?php print $location; ?>"
+                                                                    name="location" placeholder="Location" id="location"
+                                                                    class="form-control">
+                                                            </div>
                                                         </div>
-                                                        <input type="text" value="<?php print $location; ?>"
-                                                            name="location" placeholder="Location" id="location"
-                                                            class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-5">
-                                                    <select name="depart" id="department"
-                                                        class="custom-select text-center">
-                                                        <option value="">-- Department --</option>
-                                                        <?php
+                                                        <div class="form-group col-md-5">
+                                                            <select name="depart" id="department"
+                                                                class="custom-select text-center">
+                                                                <option value="">-- Department --</option>
+                                                                <?php
                                                                 $out = '';
                                                                 include("./config/db.php");
                                                                 $status = mysqli_query($con, "SELECT * FROM department_tb");
@@ -564,71 +562,77 @@
                                                                 }
                                                                 print $out;
                                                                 ?>
-                                                    </select>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <select name="status" id="status" class="custom-select text-center">
-                                                        <option value="">-- Status --</option>
-                                                        <?php
+                                                            </select>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <select name="status" id="status"
+                                                                class="custom-select text-center">
+                                                                <option value="">-- Status --</option>
+                                                                <?php
                                                                 $status = mysqli_query($con, "SELECT * FROM status_tb");
                                                                 while ($rowStatus = mysqli_fetch_array($status)) {
                                                                     $output .= '<option value="' . $rowStatus['name'] . '">' . $rowStatus['name'] . '</option>';
                                                                 }
                                                                 print $output;
                                                                 ?>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <select name="gender" id="gender" class="custom-select text-center">
-                                                        <option value="">-- Gender --</option>
-                                                        <option value="Male" class="text-danger">Male</option>
-                                                        <option value="Female" class="text-success">Female</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <div class="input-group mb-3 input-group-md">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">Date of Birth</span>
+                                                            </select>
                                                         </div>
-                                                        <input type="date" name="dob" id="dob"
-                                                            value="<?php print $dob; ?>" placeholder="Date of birth"
-                                                            class="form-control">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <div class="input-group mb-3 input-group-md">
-                                                        <input type="tel" name="phone" id="phone"
-                                                            value="<?php print $phones; ?>" placeholder="phone numbers"
-                                                            class="form-control">
-                                                        <div class="input-group-append">
-                                                            <span class="input-group-text">Phone</span>
+                                                        <div class="form-group col-md-6">
+                                                            <select name="gender" id="gender"
+                                                                class="custom-select text-center">
+                                                                <option value="">-- Gender --</option>
+                                                                <option value="Male" class="text-danger">Male</option>
+                                                                <option value="Female" class="text-success">Female
+                                                                </option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <div class="input-group mb-3 input-group-md">
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">Date of Birth</span>
+                                                                </div>
+                                                                <input type="date" name="dob" id="dob"
+                                                                    value="<?php print $dob; ?>"
+                                                                    placeholder="Date of birth" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <div class="input-group mb-3 input-group-md">
+                                                                <input type="tel" name="phone" id="phone"
+                                                                    value="<?php print $phones; ?>"
+                                                                    placeholder="phone numbers" class="form-control">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">Phone</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group col-md-12">
+                                                            <textarea name="about" disabled value="Status" rows="3"
+                                                                placeholder="About user"
+                                                                class="form-control"></textarea>
+                                                        </div>
+                                                        <div class="form-group col-md-6">
+                                                            <button class="btn btn-md btn-success" name="new-user"
+                                                                type="submit">Register <i
+                                                                    class="fa fa-arrow-circle-right"></i></button>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group col-md-12">
-                                                    <textarea name="about" disabled value="Status" rows="3"
-                                                        placeholder="About user" class="form-control"></textarea>
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <button class="btn btn-md btn-success" name="new-user"
-                                                        type="submit">Register <i
-                                                            class="fa fa-arrow-circle-right"></i></button>
-                                                </div>
+                                                </form>
+                                                <?php endif; ?>
                                             </div>
-                                        </form>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div id="online">
-                                            <!-- Ajax -->
                                         </div>
-                                        <div id="member" class="mt-2">
-                                            <!-- Ajax -->
-                                        </div>
-                                        <div id="statistic" class="mt-2">
-                                            <!-- Ajax -->
-                                        </div>
+                                        <!-- <div class="col-md-4">
+                                            <div id="online">
+                                                
+                                            </div>
+                                            <div id="member" class="mt-2">
+                                                
+                                            </div>
+                                            <div id="statistic" class="mt-2">
+                                                
+                                            </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -676,7 +680,7 @@
         </div>
     </div>
 
-    <div class="fixed-plugin">
+    <!-- <div class="fixed-plugin">
         <div class="dropdown show-dropdown">
             <a href="#" data-toggle="dropdown">
                 <i class="fa fa-cog fa-2x"> </i>
@@ -756,7 +760,7 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
     <div class="modal fade" id="myModal">
         <div class="modal-dialog">
