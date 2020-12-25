@@ -151,25 +151,57 @@
                             <a class="nav-link" href="?registration=wedding">Wedding</a>
                         </li>
                     </ul>
-                    <div class="container-fluid p-0 m-0">
-                        <div class="row bg-white">
-                            <div class="col-md-6 p-2">
-                                <div class="height">
-                                    <div id="Pastors">
-                                        <!-- Fetch using javascript -->
-                                        <!-- Fetch using javascript -->
+                    <div class="container-fluid p-0 m-0 bg-white py-5">
+                        <a href="pastor.php" class="btn btn-fill btn-info btn-sm ml-1 my-2">View list</a>
+                        <div class="box-dashboard shadow-lg bg-white m-5 p-5">
+                            <span class="top-icon bg-primary">
+                                <i class="fa fa-user fa-2x"></i>
+                            </span>
+                            <h3>Pastors</h3>
+                            <div class="modal-body">
+                                <div id="successMsg"></div>
+                                <form action="" method="post">
+                                    <div class="form-group">
+                                        <select name="pastorId" id="pastorId" class="custom-select">
+                                            <option value="">-- Select Pastor ---</option>
+                                            <?php
+                                $item = '';
+                                $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
+                                if (@mysqli_num_rows($recordPastor) > 0) {
+                                    while ($rowrecord = mysqli_fetch_array($recordPastor)) {
+                                        $pastorId = $rowrecord['id'];
+                                        $pastorname = $rowrecord['name'];
+                                        print '<option value="' . $pastorId . '">' . $pastorname . '</option>';
+                                    }
+                                } else {
+                                    $item .= '<option class="text-danger">There no data</option>';
+                                }
+                                ?>
+                                        </select>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <button type="button" data-toggle="modal" data-target="#myModal"
-                                    class="btn btn-sm btn-warning btn-fill">Add new
-                                    Pastor</button>
-                                <img src="../assets/images/erc/logo.png" alt="LogoERC" class="img-fluid">
+                                    <div class="form-group">
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control" id="pastorName"
+                                                placeholder="Your Pastor">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">Pastor name</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="button"
+                                            class="btn btn-fill btn-sm btn-success RecordPastor">Register <i
+                                                class="fa fa-arrow-circle-right"></i></button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
+
+
                     <?php elseif ($_GET['registration'] == 'wedding') : ?>
+
+
                     <ul class="nav nav-tabs nav-justified m-0">
                         <li class="nav-item">
                             <a class="nav-link" href="registration.php">Registration</a>
@@ -181,6 +213,8 @@
                             <a class="nav-link active" href="?registration=wedding">Wedding</a>
                         </li>
                     </ul>
+
+
                     <div class="container-fluid m-0 bg-white" style="min-height: 80vh;">
                         <a href="wedding.php" class="my-3 btn btn-fill btn-sm btn-info">view the list</a>
                         <div class="row justify-content-center">
@@ -680,139 +714,6 @@
         </div>
     </div>
 
-    <!-- <div class="fixed-plugin">
-        <div class="dropdown show-dropdown">
-            <a href="#" data-toggle="dropdown">
-                <i class="fa fa-cog fa-2x"> </i>
-            </a>
-
-            <ul class="dropdown-menu">
-                <li class="header-title"> Sidebar Style</li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger">
-                        <p>Background Image</p>
-                        <label class="switch">
-                            <input type="checkbox" data-toggle="switch" checked="" data-on-color="primary"
-                                data-off-color="primary"><span class="toggle"></span>
-                        </label>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger background-color">
-                        <p>Filters</p>
-                        <div class="pull-right">
-                            <span class="badge filter badge-black" data-color="black"></span>
-                            <span class="badge filter badge-azure" data-color="azure"></span>
-                            <span class="badge filter badge-green" data-color="green"></span>
-                            <span class="badge filter badge-orange" data-color="orange"></span>
-                            <span class="badge filter badge-red" data-color="red"></span>
-                            <span class="badge filter badge-purple active" data-color="purple"></span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="header-title">Sidebar Images</li>
-
-                <li class="active">
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-1.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-3.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="..//assets/img/sidebar-4.jpg" alt="" />
-                    </a>
-                </li>
-                <li>
-                    <a class="img-holder switch-trigger" href="javascript:void(0)">
-                        <img src="../assets/img/sidebar-5.jpg" alt="" />
-                    </a>
-                </li>
-
-                <li class="button-container">
-                    <div class="">
-                        <a href="http://www.creative-tim.com/product/light-bootstrap-dashboard" target="_blank"
-                            class="btn btn-info btn-block btn-fill">Download, it's free!</a>
-                    </div>
-                </li>
-
-                <li class="header-title pro-title text-center">Want more components?</li>
-
-                <li class="button-container">
-                    <div class="">
-                        <a href="#" class="btn btn-warning btn-block btn-fill">Get The PRO Version!</a>
-                    </div>
-                </li>
-
-                <li class="header-title" id="sharrreTitle">Thank you for sharing!</li>
-
-                <li class="button-container">
-                    <button id="twitter" class="btn btn-social btn-outline btn-twitter btn-round sharrre"><i
-                            class="fa fa-twitter"></i> · 256</button>
-                    <button id="facebook" class="btn btn-social btn-outline btn-facebook btn-round sharrre"><i
-                            class="fa fa-facebook-square"></i> · 426</button>
-                </li>
-            </ul>
-        </div>
-    </div> -->
-
-    <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title text-success">Add New Pastor</h4>
-                    <button type="button" class="btn close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <div id="successMsg"></div>
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <select name="pastorId" id="pastorId" class="custom-select">
-                                <option value="">-- Select Pastor ---</option>
-                                <?php
-                                $item = '';
-                                $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
-                                if (@mysqli_num_rows($recordPastor) > 0) {
-                                    while ($rowrecord = mysqli_fetch_array($recordPastor)) {
-                                        $pastorId = $rowrecord['id'];
-                                        $pastorname = $rowrecord['name'];
-                                        print '<option value="' . $pastorId . '">' . $pastorname . '</option>';
-                                    }
-                                } else {
-                                    $item .= '<option class="text-danger">There no data</option>';
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" id="pastorName" placeholder="Your Pastor">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Pastor name</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <button type="button" class="btn btn-fill btn-sm btn-success RecordPastor">Record <i
-                                    class="fa fa-arrow-circle-right"></i></button>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
 </body>
 
 <script src="../public/bootstrap/jquery.min.js"></script>
