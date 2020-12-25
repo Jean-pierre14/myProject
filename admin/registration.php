@@ -112,23 +112,8 @@
                                     <span class="no-icon">Account</span>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com"
-                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <span class="no-icon">Dropdown</span>
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                    <div class="divider"></div>
-                                    <a class="dropdown-item" href="#">Separated link</a>
-                                </div>
-                            </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#pablo">
+                                <a class="nav-link" href="../logout.php">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>
@@ -158,43 +143,7 @@
                                 <i class="fa fa-user fa-2x"></i>
                             </span>
                             <h3>Pastors</h3>
-                            <div class="modal-body">
-                                <div id="successMsg"></div>
-                                <form action="" method="post">
-                                    <div class="form-group">
-                                        <select name="pastorId" id="pastorId" class="custom-select">
-                                            <option value="">-- Select Pastor ---</option>
-                                            <?php
-                                $item = '';
-                                $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
-                                if (@mysqli_num_rows($recordPastor) > 0) {
-                                    while ($rowrecord = mysqli_fetch_array($recordPastor)) {
-                                        $pastorId = $rowrecord['id'];
-                                        $pastorname = $rowrecord['name'];
-                                        print '<option value="' . $pastorId . '">' . $pastorname . '</option>';
-                                    }
-                                } else {
-                                    $item .= '<option class="text-danger">There no data</option>';
-                                }
-                                ?>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" id="pastorName"
-                                                placeholder="Your Pastor">
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">Pastor name</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <button type="button"
-                                            class="btn btn-fill btn-sm btn-success RecordPastor">Register <i
-                                                class="fa fa-arrow-circle-right"></i></button>
-                                    </div>
-                                </form>
-                            </div>
+                            <?php include './includes/rpastor.php';?>
                         </div>
                     </div>
 
@@ -273,7 +222,7 @@
                                                 <select name="pastor" id="pastor" class=" form-control">
                                                     <option value="">Pastor Name</option>
                                                     <?php
-                                                        $sqlP = mysqli_query($con, "SELECT * FROM pastor_tb");
+                                                        $sqlP = mysqli_query($con, "SELECT * FROM pastor_tb order by `name`");
                                                         if(mysqli_num_rows($sqlP) > 0){
                                                             while($dP = mysqli_fetch_assoc($sqlP)){
                                                                 $outP .= '
@@ -778,6 +727,7 @@ $(document).ready(function() {
         let pastorId = $('#pastorId').val();
         let pastorName = $('#pastorName').val();
 
+
         $.ajax({
             url: '../event/event.php',
             method: 'post',
@@ -789,7 +739,7 @@ $(document).ready(function() {
             success: function(data) {
                 if (data = 'success') {
                     $('#successMsg').html(
-                        '<p class="ui message positive">Registration success!</p>');
+                        '<p class="ui message positive my-2">Registration success!</p>');
                 } else {
                     $('#successMsg').html(
                         '<p class="ui message negative">Failed! Check these not an empty field</p>'
@@ -798,6 +748,8 @@ $(document).ready(function() {
             }
         })
     });
+
+    //search
     $('#search_txt').keyup(function() {
         let action = 'search';
         let txt = $(this).val();
