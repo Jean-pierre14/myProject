@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="../public/css/light-bootstrap-dashboard.css">
     <link rel="stylesheet" href="../assets/css/animate.min.css">
     <link rel="stylesheet" href="../assets/css/pe-icon-7-stroke.css">
+
+    <link rel="stylesheet" href="../public/semantic/semantic.min.css">
     <link rel="stylesheet" href="../public/css/demo.css">
     <link rel="stylesheet" href="../public/css/style.min.css">
     <link href="../public/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -117,20 +119,20 @@
             </nav>
             <div class="content m-0">
                 <div class="container-fluid p-0 m-0">
-                    <div class="row">
-                        <div class="col-md-5 p-2">
-                            <img src="../assets/images/erc/logo.png" alt="" class="img-fluid">
-                        </div>
-                        <div class="col-md-7 p-2">
-                            <div class="input-group mb-3">
-                                <input type="search" class="form-control" placeholder="Search" id="demo" name="email">
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Search</span>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 p-2">
+                            <div class="box-dashboard bg-white shadow-lg p-5">
+                                <div class="input-group mb-3">
+                                    <input type="search" class="form-control" placeholder="Search" id="demo"
+                                        name="email">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Search</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="min-height">
-                                <div id="Pastors">
-                                    <!-- Ajax url -->
+                                <div class="min-height">
+                                    <div id="Pastors">
+                                        <!-- Ajax url -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -190,27 +192,39 @@
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    let OutPut = ''
-    fetch('http://localhost:7000/pastors')
-        .then(res => res.json().then(data => {
-            if (data.length > 0) {
-                data.forEach(item => {
-                    OutPut += `    
+let OutPut = ''
+fetch('http://localhost:7000/pastors')
+    .then(res => res.json().then(data => {
+        if (data.length > 0) {
+            data.forEach(item => {
+                OutPut += `    
                     <div class="box-p shadow-sm my-1">
                             <span>${item.pastor_name}</span>
                             <img class="avatar" src="../${item.profile_pic}">
+                            <span>
+                                <div class="btn-group">
+                                    <a href="pastor.php?get=${item.id}">
+                                        <i class="fa fa-eye"></i>
+                                    </a>
+                                </div>
+                            </span>
                     </div>
                     `
-                })
-                document.getElementById('Pastors').innerHTML = OutPut
-            } else {
-                document.getElementById('Pastors').innerHTML = '<p>There is no Pastor registered</p>'
-            }
-        }))
-        .catch(err => console.log(err))
+            })
+            document.getElementById('Pastors').innerHTML = OutPut
+        } else {
+            document.getElementById('Pastors').innerHTML = '<p>There is no Pastor registered</p>'
+        }
+    }))
+    .catch(err => console.log(err))
 </script>
 <script>
 $(document).ready(function() {
+
+    $('[data-toggle="popover"]').popover();
+
+    // Select a specified element
+    $('#myPopover').popover();
     let flag = 0;
     let action = 'weddings';
     $.ajax({

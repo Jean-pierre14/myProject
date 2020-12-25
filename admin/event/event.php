@@ -67,4 +67,53 @@
             }
             print $output;
         }
+        if($_POST['action'] == 'userTables'){
+            $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT 13");
+            if(@mysqli_num_rows($sql) > 0){
+                $count = mysqli_num_rows($sql);
+                $output .= '
+                <table class="table table-sm table-striped m-0 p-0">
+                    <thead style="border: none !important">
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                ';
+
+                while($row = mysqli_fetch_array($sql)){
+                    $output .= '
+                    <tr class="p-0">
+                        <td class="">'.$row['username'].'</td>
+                        <td class=" ">'.$row['name'].'</td>
+                        <td class="">'.$row['gender'].'</td>
+                        <td class=" ">'.$row['statu'].'</td>
+                        <td class="py-0 text-center">
+                            <div class="btn-group hover-action">
+                            
+                            <a href="users.php?user='.$row['id'].'" class="btn p-1 btn-fill btn-sm btn-info">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a href="" class="btn p-1 btn-fill btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+
+                            </div>
+                        </td>
+                    </tr>
+                    ';
+                }
+
+                $output .= '
+                        </tbody>
+                    </table>
+                ';
+
+            }else{
+                $output .= '<tr class="text-danger">There no data registered</tr>';
+            }
+            print $output;
+        }
     }

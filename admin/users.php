@@ -113,11 +113,8 @@
                 </div>
             </nav>
             <div class="content m-0">
-                <div class="container-fluid">
-                    <a href="registration.php" class="btn btn-sm btn-fill btn-info">Add member</a>
-                    <div class="table-responsive">
-                        <table class="table table-sm table-bordered"></table>
-                    </div>
+                <div class="container-fluid m-0 p-0">
+                    <a href="registration.php" class="btn btn-sm btn-fill btn-info mb-1">Add member</a>
                 </div>
                 <div class="container-fluid m-0 p-0">
                     <div class="row">
@@ -345,121 +342,41 @@
                             </div>
                         </div>
                         <?php else:?>
-                        <div class="col-md-3">
-                            <form action="" autocomplete="off" method="post">
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" id="search_txt" name="search"
-                                        placeholder="Your Email">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Search</span>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="height" style="overflow-y: auto; height: 450px">
-                                <div id="searchResult">
-                                    <!-- Ajax -->
-                                </div>
-                                <div id="member-list">
-                                    <!-- Ajax -->
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-7 col-sm-12 col-lg-7">
-                            <div class="container-fluid m-0 p-0">
-                                <div class="row">
-                                    <div class="col-md-4 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
-                                            <p class="d-flex justify-content-between align-items-center">
-                                                <span>
-                                                    <b>Single</b>
-                                                </span>
-                                                <span>
-                                                    3444
-                                                </span>
-                                            </p>
-                                            <span class="icon-left-center bg-hero">
-                                                <i class="fa fa-users fa-2x"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
-                                            <p class="d-flex justify-content-between align-items-center">
-                                                <span>
-                                                    <b>Fiance</b>
-                                                </span>
-                                                <span>
-                                                    20
-                                                </span>
-                                            </p>
-                                            <span class="icon-left-center bg-warning text-light">
-                                                <i class="fa fa-users fa-2x"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
-                                            <p class="d-flex justify-content-between align-items-center">
-                                                <span>
-                                                    <b>Divorce</b>
-                                                </span>
-                                                <span>
-                                                    20
-                                                </span>
-                                            </p>
-                                            <span class="icon-left-center bg-danger text-light">
-                                                <i class="fa fa-users fa-2x"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
-                                            <p class="d-flex justify-content-between align-items-center">
-                                                <span>
-                                                    <b>Male</b>
-                                                </span>
-                                                <span>
-                                                    20
-                                                </span>
-                                            </p>
-                                            <span class="icon-left-center bg-warning text-light">
-                                                <i class="fa fa-users fa-2x"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 p-2">
-                                        <div class="box-dashboard bg-white shadow-sm-sm-sm">
-                                            <p class="d-flex justify-content-between align-items-center">
-                                                <span>
-                                                    <b>Female</b>
-                                                </span>
-                                                <span>
-                                                    20
-                                                </span>
-                                            </p>
-                                            <span class="icon-left-center bg-pink text-light">
-                                                <i class="fa fa-users fa-2x"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 p-2">
-                                        <img src="../assets/images/share-img.svg" alt="" class="img-fluid">
-                                    </div>
+
+                            <div class="box-dashboard shadow-sm bg-white pt-3">
+                                <span class="top-icon bg-primary">
+                                    <i class="fa fa-users fa-2x"></i>
+                                </span>
+                                <div class="table-responsive m-0 p-0">
+
+                                    <div id="userTables"></div>
+
                                 </div>
                             </div>
                         </div>
                         <?php endif;?>
                         <div class="col-md-5 col-sm-12 col-lg-5">
-                            <form action="" method="post">
-                                <div class="form-inline">
-                                    <input type="search" name="search" id="search" class="form-control"
-                                        placeholder="Search....">
-                                    <button type="submit" class="btn btn-fill btn-success">Search</button>
+                            <div class="col-md-12">
+                                <form action="" autocomplete="off" method="post">
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control" id="search_txt" name="search"
+                                            placeholder="Your Email">
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Search</span>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="height" style="overflow-y: auto; height: 400px">
+                                    <div id="searchResult">
+                                        <!-- Ajax -->
+                                    </div>
+                                    <div id="member-list">
+                                        <!-- Ajax -->
+                                    </div>
                                 </div>
-                            </form>
-                            <div id="usersDisplay">
-                                <?php include("../includes/members.php");?>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -920,6 +837,66 @@
 
 <script>
 $(document).ready(function() {
+    memberList()
+
+    userTables()
+
+    $(document).on('onchange', '#gender', function() {
+        alert("changed")
+    })
+
+    function userTables() {
+        let action = 'userTables'
+
+        $.ajax({
+            url: './event/event.php',
+            method: 'post',
+            data: {
+                action
+            },
+            success: function(data) {
+                $('#userTables').html(data)
+            }
+        })
+    }
+
+    function memberList() {
+        let action = 'member-list';
+        $.ajax({
+            url: '../event/event.php',
+            method: 'post',
+            data: {
+                action: action
+            },
+            success: function(data) {
+                $('#member-list').html(data)
+            }
+        })
+    }
+    $('#search_txt').keyup(function() {
+        let action = 'search';
+        let txt = $(this).val();
+
+        if (txt != '') {
+            $.ajax({
+                url: '../event/event.php',
+                method: 'post',
+                data: {
+                    action: action,
+                    txt: txt
+                },
+                dataType: 'text',
+                success: function(data) {
+                    $('#member-list').hide(300);
+                    $('#searchResult').html(data);
+                }
+            });
+        } else {
+            $('#searchResult').html('');
+            $('#member-list').show(300);
+        }
+    });
+    online();
     let flag = 0;
     $.ajax({
         url: './config.php',
@@ -1154,7 +1131,22 @@ $(document).ready(function() {
             $('#about').val('');
         }
     });
+
 });
+
+function online() {
+    let action = 'online';
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action: action
+        },
+        success: function(data) {
+            $('#online').html(data)
+        }
+    })
+}
 </script>
 
 

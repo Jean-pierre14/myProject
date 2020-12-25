@@ -136,6 +136,7 @@
                             <a class="nav-link" href="?registration=wedding">Wedding</a>
                         </li>
                     </ul>
+
                     <div class="container-fluid p-0 m-0 bg-white py-5">
                         <a href="pastor.php" class="btn btn-fill btn-info btn-sm ml-1 my-2">View list</a>
                         <div class="box-dashboard shadow-lg bg-white m-5 p-5">
@@ -167,10 +168,10 @@
                     <div class="container-fluid m-0 bg-white" style="min-height: 80vh;">
                         <a href="wedding.php" class="my-3 btn btn-fill btn-sm btn-info">view the list</a>
                         <div class="row justify-content-center">
-                            <div class="col-md-10 p-1">
-                                <div class="box-dashboard shadow-lg">
+                            <div class="col-md-12 p-1">
+                                <div class="box-dashboard m-5 shadow-lg pt-5">
                                     <span class="top-icon bg-primary">
-                                        <i class="fa fa-user fa-2x"></i>
+                                        <i class="fa fa-users fa-2x"></i>
                                     </span>
                                     <div class="card-body">
                                         <div id="error"></div>
@@ -305,7 +306,7 @@
                                     <div class="row">
                                         <div class="shadow box-dashboard m-5 p-5 bg-white">
                                             <span class="top-icon bg-primary">
-                                                <i class="fa fa-users fa-2x"></i>
+                                                <i class="fa fa-user fa-2x"></i>
                                             </span>
                                             <div class="col-md-12">
                                                 <?php if (isset($_GET['member'])) : ?>
