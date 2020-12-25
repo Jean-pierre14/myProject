@@ -182,7 +182,7 @@
                         </li>
                     </ul>
                     <div class="container-fluid m-0 bg-white" style="min-height: 80vh;">
-                        <a href="wedding.php" class="my-3 btn btn-fill btn-sm btn-info">Wiew the list</a>
+                        <a href="wedding.php" class="my-3 btn btn-fill btn-sm btn-info">view the list</a>
                         <div class="row justify-content-center">
                             <div class="col-md-8 p-1">
                                 <div class="card shadow-lg">
