@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>ERC/
+    <title>
+        ERC/
         <?php print $UserData[1]; ?>
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
@@ -204,6 +204,9 @@ fetch('http://localhost:7000/pastors')
                                 <div class="btn-group">
                                     <a href="users.php?user=${item.user_id}" class="btn btn-sm btn-fill btn-info">
                                         <i class="fa fa-eye"></i>
+                                    </a>
+                                    <a href="users.php?user=${item.user_id}" class="btn btn-sm btn-fill btn-danger">
+                                        <i class="fa fa-trash"></i>
                                     </a>
                                 </div>
                             </span>

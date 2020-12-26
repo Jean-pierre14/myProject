@@ -4,8 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.ico">
+    <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>My account</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
@@ -47,7 +46,7 @@
                         </a>
                     </li>
                     <li class="active">
-                        <a class="nav-link" href="./user.html">
+                        <a class="nav-link" href="./user.php">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>User Profile</p>
                         </a>
@@ -134,7 +133,7 @@
                         </div> -->
                     </div>
                     <?php if(isset($_GET['imgProfile'])):?>
-                        <?php include("./includes/imageUpload/form.php");?>
+                    <?php include("./includes/imageUpload/form.php");?>
                     <?php else:?>
                     <div class="row p-0">
                         <div class="col-md-4 mt-5">
@@ -157,9 +156,8 @@
                                         <b>Profile image: </b>
                                     </span>
                                     <span>
-                                        <a href="user.php?imgProfile"
-                                            class="btn  border-0 p-2 shadow color-hero">
-                                                <i class="fa fa-edit"></i>
+                                        <a href="user.php?imgProfile" class="btn  border-0 p-2 shadow color-hero">
+                                            <i class="fa fa-edit"></i>
                                         </a>
                                     </span>
                                 </p>
@@ -713,7 +711,7 @@
 <script src="../public/js/myJquery.js"></script>
 
 <script>
-    $().ready(() => {
+$().ready(() => {
     $('#btn-Edit-Username').click(function() {
         let action = 'editUsername';
         const id = $('#id_up').val();
@@ -938,18 +936,19 @@
 </script>
 
 <script>
-    function triggerClick(e) {
-        document.querySelector('#profileImage').click();
-        }
-        function displayImage(e) {
-        if (e.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function(e){
+function triggerClick(e) {
+    document.querySelector('#profileImage').click();
+}
+
+function displayImage(e) {
+    if (e.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e) {
             document.querySelector('#profileDisplay').setAttribute('src', e.target.result);
-            }
-            reader.readAsDataURL(e.files[0]);
         }
+        reader.readAsDataURL(e.files[0]);
     }
+}
 </script>
 
 
