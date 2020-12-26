@@ -200,14 +200,14 @@ fetch('http://localhost:7000/pastors')
                 OutPut += `    
                     <div class="box-p shadow-sm my-1">
                             <span>${item.pastor_name}</span>
-                            <img class="avatar" src="../${item.profile_pic}">
                             <span>
                                 <div class="btn-group">
-                                    <a href="pastor.php?get=${item.id}">
+                                    <a href="users.php?user=${item.user_id}" class="btn btn-sm btn-fill btn-info">
                                         <i class="fa fa-eye"></i>
                                     </a>
                                 </div>
                             </span>
+                            <img class="avatar" src="../${item.profile_pic}">  
                     </div>
                     `
             })
