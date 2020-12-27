@@ -48,6 +48,7 @@
         $(document).on('click', '.pageBtn', function() {
             let page = $(this).attr('id')
             // console.log(page)
+            $(this).addClass('btn-primary')
             Results(page)
         })
     })

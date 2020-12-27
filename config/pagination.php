@@ -27,7 +27,7 @@ if(isset($_POST['action'])){
 
         if(@mysqli_num_rows($sql) > 0){
             $o .= '
-            <table class="table table-sm table-action table-striped">
+            <table class="table table-sm table-action table-striped table-bordered">
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -63,12 +63,12 @@ if(isset($_POST['action'])){
             // for($i=1;$i<=$pages;$i++){
             //     $o .= '<span> '.$i.' Page</span>';
             // }
-            $o .= '<div class="pagination">
+            $o .= '<div class="btn-group">
             ';
             for($i = 1; $i <= $totalPages; $i ++ ){
                 
                 $o .= '
-                    <button type="button" class="page-link pagination-link shadow-sm pageBtn" id="'.$i.'">'.$i.'</button>
+                    <button type="button" class="btn btn-sm btn-info shadow-sm pageBtn" id="'.$i.'">'.$i.'</button>
                 ';
 
             }
