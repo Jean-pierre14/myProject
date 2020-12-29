@@ -17,7 +17,7 @@ function findAll(){
                                 <div class="footer-blog">
                                     <p class="d-flex p-0 m-0 justify-content-between align-items-center">
                                         <span>
-                                            <img src="../${item.profile_pic}" alt="UserImg" class="img-fluid boule">
+                                            <img src="../${item.profile_pic}" alt="UserImg" width="20" height=20" style="object-fit: cover" class="boule">
                                             <span>
                                                 ${item.username}
                                             </span>
@@ -32,11 +32,12 @@ function findAll(){
                         `
                     })
                     document.getElementById('blog').innerHTML = blog
-                    $('.body-not').animate({scrollTop: $('.body-not')[0].scrollHeight}, 1000);
+                    $('.body-not').animate({scrollTop: $('.body-not')[0].scrollHeight},1);
                 }
             }).catch(err=>{if(err) throw err})
         }
     )
+    // setTimeout('findAll()', 1000)
 }
 
 // Add blog
@@ -55,7 +56,6 @@ function addPost(e){
     // Validation
     if(!user_id || !context){
         alert("Message is empty")
-        
     }else{
         
         fetch('http://localhost:7000/blog', {
@@ -77,6 +77,25 @@ function addPost(e){
 
 $(document).ready(function(){
     findAll()
+    $(document).on('click', '#Add-blogN', function(){
+        let user_id = $('#user_id').val()
+        let context = $('#ContextMsg').val().trim()
+
+        if(context == '' || user_id == ''){
+            alert("Message is empty")
+        }else{
+            fetch('http://localhost:7000/blog', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-type': 'application/json'
+                },body: JSON.stringify({user_id: user_id, context: context})
+            })
+            $('#ContextMsg').val('')
+            window.location.href = 'notifications.php'
+        }
+        
+    })
 });
 
 // Axios

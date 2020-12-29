@@ -205,12 +205,13 @@
                             </div>
                         </div>
                         <div class="footer-not">
+                            
                             <form action="" method="post" class="" id="form">
                                 <input type="hidden" id="user_id" value="<?php print $_SESSION['id'];?>"
                                     class="form-control">
                                 <input name="message" autocomplete="off" autofocus id="ContextMsg"
                                     placeholder="Typing...." class="form-control">
-                                <button type="button" id="Add-blog" class="btn btn-warning">
+                                <button type="button" id="Add-blogN" class="btn btn-warning">
                                     <i class="fa fa-paper-plane"></i>
                                 </button>
                             </form>

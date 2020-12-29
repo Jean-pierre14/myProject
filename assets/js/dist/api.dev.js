@@ -9,17 +9,17 @@ function findAll() {
         data.forEach(function (item) {
           var time = new Date(item.create_at);
           time = "".concat(time.getDate(), "/").concat(time.getMonth(), "/").concat(time.getFullYear(), " >> ").concat(time.getHours() < 10 ? '0' : '').concat(time.getHours(), ":").concat(time.getMinutes() < 10 ? '0' : '').concat(time.getMinutes());
-          blog += "\n                            <div class=\"bg-white p-3 shadow m-3\">\n                                <p class=\"text-blog p-0 m-0\">\n                                    ".concat(item.context, "\n                                </p>\n                                <div class=\"footer-blog\">\n                                    <p class=\"d-flex p-0 m-0 justify-content-between align-items-center\">\n                                        <span>\n                                            <img src=\"../").concat(item.profile_pic, "\" alt=\"UserImg\" class=\"img-fluid boule\">\n                                            <span>\n                                                ").concat(item.username, "\n                                            </span>\n                                        </span>\n                                        \n                                        <small>\n                                            ").concat(time, "\n                                        </small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
+          blog += "\n                            <div class=\"bg-white p-3 shadow m-3\">\n                                <p class=\"text-blog p-0 m-0\">\n                                    ".concat(item.context, "\n                                </p>\n                                <div class=\"footer-blog\">\n                                    <p class=\"d-flex p-0 m-0 justify-content-between align-items-center\">\n                                        <span>\n                                            <img src=\"../").concat(item.profile_pic, "\" alt=\"UserImg\" width=\"20\" height=20\" style=\"object-fit: cover\" class=\"boule\">\n                                            <span>\n                                                ").concat(item.username, "\n                                            </span>\n                                        </span>\n                                        \n                                        <small>\n                                            ").concat(time, "\n                                        </small>\n                                    </p>\n                                </div>\n                            </div>\n                        ");
         });
         document.getElementById('blog').innerHTML = blog;
         $('.body-not').animate({
           scrollTop: $('.body-not')[0].scrollHeight
-        }, 1000);
+        }, 1);
       }
     })["catch"](function (err) {
       if (err) throw err;
     });
-  });
+  }); // setTimeout('findAll()', 1000)
 } // Add blog
 
 
@@ -55,6 +55,28 @@ function addPost(e) {
 
 $(document).ready(function () {
   findAll();
+  $(document).on('click', '#Add-blogN', function () {
+    var user_id = $('#user_id').val();
+    var context = $('#ContextMsg').val().trim();
+
+    if (context == '' || user_id == '') {
+      alert("Message is empty");
+    } else {
+      fetch('http://localhost:7000/blog', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          user_id: user_id,
+          context: context
+        })
+      });
+      $('#ContextMsg').val('');
+      window.location.href = 'notifications.php';
+    }
+  });
 }); // Axios
 
 var newProgramme = document.getElementById('programmeEvent');
