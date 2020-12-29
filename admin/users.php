@@ -844,14 +844,15 @@ $(document).ready(function() {
         alert("changed")
     })
 
-    function userTables() {
+    function userTables(page) {
         let action = 'userTables'
 
         $.ajax({
             url: './event/event.php',
             method: 'post',
             data: {
-                action
+                action,
+                page
             },
             success: function(data) {
                 $('#userTables').html(data)

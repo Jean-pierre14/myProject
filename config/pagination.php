@@ -64,18 +64,18 @@ if(isset($_POST['action'])){
             //     $o .= '<span> '.$i.' Page</span>';
             // }
             $o .= '<div class="btn-group">
+            <button type="button" class="btn btn-sm btn-info shadow-sm disabled" id="">Previous</button>
             ';
             for($i = 1; $i <= $totalPages; $i ++ ){
                 
                 $o .= '
                     <button type="button" class="btn btn-sm btn-info shadow-sm pageBtn" id="'.$i.'">'.$i.'</button>
                 ';
-
             }
             $o .= '
-            
+            <button type="button" class="btn btn-sm btn-info shadow-sm disabled" id="">Next</button>
             </div>';
-            
+
         }else{
             $o .= '<p>there no data record</p>';
         }
