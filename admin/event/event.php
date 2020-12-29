@@ -88,12 +88,13 @@
             $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT $startFrom, $data_per_page");
             
             if(@mysqli_num_rows($sql) > 0){
-                $count = mysqli_num_rows($sql);
+                $count = 1;
                 $output .= '
                 <div class="table-responsive m-0 p-0">
                 <table class="table table-sm table-striped m-0 p-0">
                     <thead style="border: none !important">
                         <tr>
+                            <th>N<sup>o</sup></th>
                             <th>Username</th>
                             <th>Name</th>
                             <th>Gender</th>
@@ -105,8 +106,10 @@
                 ';
 
                 while($row = mysqli_fetch_array($sql)){
+                    
                     $output .= '
                     <tr class="p-0">
+                        <td class="">'.$count.'</td>
                         <td class="">'.$row['username'].'</td>
                         <td class=" ">'.$row['name'].'</td>
                         <td class="">'.$row['gender'].'</td>
@@ -123,7 +126,9 @@
                         </td>
                     </tr>
                     ';
+                     $count += 1;
                 }
+               
 
                 $output .= '
                         </tbody>

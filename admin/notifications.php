@@ -196,9 +196,9 @@
                         <?php endif;?>
                         <?php else:?>
                         <div class="body-not">
-                            <div id="blog">
-                                <div class="bg-danger p-3 shadow m-3">
-                                    <p class="display-4 text-white">
+                            <div id="blog" class="p-3">
+                                <div class="shadow m-3">
+                                    <p class="alert alert-danger text-white">
                                         Server is switched off
                                     </p>
                                 </div>
