@@ -68,10 +68,29 @@
             print $output;
         }
         if($_POST['action'] == 'userTables'){
-            $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT 13");
+
+            if(isset($_POST['page'])):
+                $page = $_POST['page'];
+            else:
+                $page = 1;
+            endif;
+
+            $selectAll = mysqli_query($con, "SELECT * FROM user_account");
+            $totRows = mysqli_num_rows($selectAll);
+            $data_per_page = 10;
+            $startFrom = ($page - 1) * $data_per_page;
+
+            // To get All pages
+            $totPages = ceil($totRows / $data_per_page);
+
+            
+
+            $sql = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT $startFrom, $data_per_page");
+            
             if(@mysqli_num_rows($sql) > 0){
                 $count = mysqli_num_rows($sql);
                 $output .= '
+                <div class="table-responsive m-0 p-0">
                 <table class="table table-sm table-striped m-0 p-0">
                     <thead style="border: none !important">
                         <tr>
@@ -109,7 +128,27 @@
                 $output .= '
                         </tbody>
                     </table>
+                    </div>
                 ';
+
+                $output .= '
+                    <ul class="pagination mt-5">
+                        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+                    ';
+                    for($i = 1; $i <= $totPages; $i ++):
+                        if($i == $page){
+                            $output .= '
+                                <li class="page-item pageBtn active" id="'.$i.'"><a class="page-link" href="#">'.$i.'</a></li>
+                            ';
+                        }else{
+                            $output .= '
+                                <li class="page-item pageBtn" id="'.$i.'"><a class="page-link" href="#">'.$i.'</a></li>
+                            ';
+                        }
+                    endfor;
+                    $output .= '
+                        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+                    </ul>';
 
             }else{
                 $output .= '<tr class="text-danger">There no data registered</tr>';

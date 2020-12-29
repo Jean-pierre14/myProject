@@ -113,7 +113,12 @@
             </nav>
             <div class="content m-0">
                 <div class="container-fluid m-0 p-0">
-                    <a href="registration.php" class="btn btn-sm btn-fill btn-info mb-1">Add member</a>
+                    <div class="btn-group">
+                        <a href="registration.php" class="btn btn-sm btn-fill btn-info mb-1">Add member</a>
+                        <?php if(isset($_GET['user'])):?>
+                        <a href="users.php" class="btn btn-sm btn-fill btn-primary mb-1">Back</a>
+                        <?php endif;?>
+                    </div>
                 </div>
                 <div class="container-fluid m-0 p-0">
                     <div class="row">
@@ -347,7 +352,7 @@
                                 <span class="top-icon bg-primary">
                                     <i class="fa fa-users fa-2x"></i>
                                 </span>
-                                <div class="table-responsive m-0 p-0">
+                                <div>
 
                                     <div id="userTables"></div>
 
@@ -842,6 +847,13 @@ $(document).ready(function() {
 
     $(document).on('onchange', '#gender', function() {
         alert("changed")
+    })
+
+    // Pagination of the users
+    $(document).on('click', '.pageBtn', function() {
+        let page = $(this).attr('id')
+        // alert(page) this the test of the event
+        userTables(page)
     })
 
     function userTables(page) {
