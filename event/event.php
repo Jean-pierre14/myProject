@@ -442,7 +442,11 @@
                             </div>
                     ';
                 endwhile;
-                $output .= '</div>';
+                $output .= '</div>
+                <div class="text-center mt-3">
+                    <button type="button" class="btn btn-primary">view more weddings</button>
+                </div>
+                ';
             }else{
                 $output .= '<p class="alert alert-success">Welcome to ERC</p>';
             }
