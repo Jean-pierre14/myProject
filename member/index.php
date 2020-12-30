@@ -30,6 +30,11 @@
         </p>
     </div>
 </div>
+<?php 
+                    if(isset($_GET['readWedding'])):
+                        require('./includes/GetMeWedding.php');
+                    endif;
+                ?>
 <section class="post-content-area single-post-area">
     <div class="container">
         <div class="row">
@@ -38,7 +43,7 @@
                 <div id="programmes"></div>
                 <!-- End Programmes -->
                 <!-- API to wedding -->
-                <div id="weddingsFind"></div>
+                <div id="weddingsFind" class="container-fluid p-0"></div>
                 <!-- End API to wedding -->
                 <div class="single-post row">
                     <div class="col-lg-12">
@@ -207,7 +212,6 @@
                     </div>
                     <?php endif;?>
                 </div>
-
             </div>
             <div class="col-lg-4 sidebar-widgets">
                 <div class="widget-wrap">

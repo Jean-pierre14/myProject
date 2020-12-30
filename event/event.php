@@ -396,13 +396,55 @@
         }
         
         if($_POST['action'] == 'weddingsFind'){
-            $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, wedding_tb.husband_id, wedding_tb.context, wedding_tb.title, wedding_tb.created_at FROM user_account INNER JOIN wedding_tb WHERE user_account.id=wedding_tb.husband_id ORDER BY wedding_tb.id DESC LIMIT 4");
+            // $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, wedding_tb.husband_id, wedding_tb.context, wedding_tb.title, wedding_tb.created_at FROM user_account INNER JOIN wedding_tb WHERE user_account.id=wedding_tb.husband_id ORDER BY wedding_tb.id DESC LIMIT 4");
+            $sql = mysqli_query($con, "SELECT * FROM user_account RIGHT JOIN wedding_tb ON user_account.id=wedding_tb.husband_id ORDER BY user_account.id DESC");
             if(@mysqli_num_rows($sql)> 0){
+                $output .= '<h4 class="p-3 my-3 bg-primary text-center text-white">Weddings</h4>
+                    <div class="row">';
                 while($row = mysqli_fetch_array($sql)):
-                    $output .= '<p>'.$row['username'].'</p>';
+                    $output .= '
+                            <div class="col-md-6 my-2">
+                                <div class="box bg-white shadow-sm p-2" style="height: 300px;overflow: auto;">
+                                    <div class="img-area" style="overflow: hidden;width: 100%;height: 150px;">
+                                        <img src="../'.$row['profile_pic'].'" class="img-fluid" width="100%">
+                                    </div>
+                                    <div class="">
+                                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <span class="">
+                                                Husband name:
+                                            </span>
+                                            <span class="">
+                                                '.$row['name'].'
+                                            </span>
+                                        </p>
+                                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <span class="">
+                                                Pastor name:
+                                            </span>
+                                            <span class="">
+                                                '.$row['pastor_name'].'
+                                            </span>
+                                        </p>
+                                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <span class="">
+                                                Date:
+                                            </span>
+                                            <span class="">
+                                                '.$row['date_of'].'
+                                            </span>
+                                        </p>
+                                        <a href="?readWedding='.$row['id'].'" class="ui button blue icon labeled">
+                                            <i class="icon eye"></i>
+                                            Read more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    ';
                 endwhile;
+                $output .= '</div>';
             }else{
-                $output .= '<p class="alert alert-warning">Welcome to ERC goma</p>';
+                $output .= '<p class="alert alert-success">Welcome to ERC</p>';
             }
             print $output;
         }

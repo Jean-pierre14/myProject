@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../../assets/css/lightbox.min.css">
+    <link rel="stylesheet" href="../public/semantic/semantic.min.css">
+    <script src="../public/semantic/semantic.min.js"></script>
 </head>
 
 <body>

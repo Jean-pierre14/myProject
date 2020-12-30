@@ -48,3 +48,27 @@ if(@mysqli_num_rows($sqlf)>0){
         <img class="img-fluid shadow m-1" src="../'.$dataf['profile_pic'].'" width="100%" height="100%">
     </a>';
 }else{$outf.='<img class="img-fluid" src="img/blog/post-img1.jpg">';}
+
+$dataGet = '';
+
+if(isset($_GET['eadWedding'])){
+    $idSelect = mysqli_query($con, "SELECT * FROM wedding_tb  WHERE id = {$id}");
+    if(@mysqli_num_rows($idSelect) > 0){
+        $data = mysqli_fetch_array($idSelect);
+        $selectH = mysqli_query($con, "SELECT * FROM user_account WHERE id = {$data['husband_id']}");
+        $selectW = mysqli_query($con, "SELECT * FROM user_account WHERE id = {$data['wife_id']}");
+        
+        
+        $arrayH = [];
+        while($dataH = mysqli_fetch_array($selectH)){
+            $arrayH[0] = $dataH['id'];
+            $arrayH[1] = $dataH['username'];
+            $arrayH[2] = $dataH['name'];
+        }
+
+        $dataGet .= '<p>'.$data['husband_id'].'</p>';
+    }else{
+        $dataGet .= '';
+    }
+    print $dataGet;
+}

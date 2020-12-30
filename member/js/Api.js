@@ -40,6 +40,7 @@ $(document).ready(function(){
     usersList(5)
     departments()
 })
+
 function usersList(limit){
     let action = 'users-list-5'
     $.ajax({
