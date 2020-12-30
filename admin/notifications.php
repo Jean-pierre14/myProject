@@ -6,6 +6,7 @@
     <title>ERC/Notifications</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
         name='viewport'>
+    <link rel="shortcut icon" href="../assets/images/erc/favicon.png" type="image/png">
     <link rel="stylesheet" href="../public/css/all.min.css">
     <link rel="stylesheet" href="../public/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="../public/css/bootstrap-reboot.min.css">

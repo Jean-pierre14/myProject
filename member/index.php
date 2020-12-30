@@ -86,7 +86,8 @@
                             self-imposed
                         </p>
                         <p>
-                            Good job can make lorem to actually sit through a self-imposed MCSE training. who has the willpower to
+                            Good job can make lorem to actually sit through a self-imposed MCSE training. who has the
+                            willpower to
                             actually sit through a
                             self-imposed
                         </p>
@@ -218,7 +219,8 @@
                         </form>
                     </div>
                     <div class="single-sidebar-widget user-info-widget">
-                        <img src="../<?php print $user_array[10];?>" alt="" class="img-fluid" style="border-radius: 50%">
+                        <img src="../<?php print $user_array[10];?>" alt="" class="img-fluid"
+                            style="border-radius: 50%">
                         <a href="#">
                             <h4><?php print $user_array[2];?></h4>
                         </a>

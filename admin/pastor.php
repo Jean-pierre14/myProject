@@ -119,8 +119,9 @@
             </nav>
             <div class="content m-0">
                 <div class="container-fluid p-0 m-0">
+                    <a href="registration.php?registration=pastor" class="btn btn-fill btn-sm btn-info">Add new</a>
                     <div class="row justify-content-center">
-                        <div class="col-md-8 p-2">
+                        <div class="col-md-10 p-2">
                             <div class="box-dashboard bg-white shadow-lg p-5">
                                 <div class="input-group mb-3">
                                     <input type="search" class="form-control" placeholder="Search" id="demo"
