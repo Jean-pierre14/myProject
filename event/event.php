@@ -455,12 +455,65 @@
 
         if($_POST['action']  == 'moreWedding'){
             $select = mysqli_query($con, "SELECT * FROM wedding_tb ORDER BY id DESC");
-            while($rows = mysqli_fetch_array($select)){
-                $Hid = $rows['husband_id'];
-                $Wid = $rows['wife_id'];
 
-                print 'wedding: '.$Hid.' and '.$Wid.' ';
+            if(@mysqli_num_rows($select) > 0){
+                $output .= '<div class="row">';
+                while($rows = mysqli_fetch_array($select)){
+                    $Hid = $rows['husband_id'];
+                    $Wid = $rows['wife_id'];
+
+                    $sH = mysqli_query($con, "SELECT * FROM user_account WHERE id = {$Hid}");
+                    $sW = mysqli_query($con, "SELECT * FROM user_account WHERE id = {$Wid}");
+
+                    $rH = mysqli_fetch_array($sH);
+                    $rW = mysqli_fetch_array($sW);
+
+                    $output .= '
+                        <div class="col-md-6 my-2">
+                                <div class="box bg-white shadow-sm p-2" style="height: 300px;overflow: auto;">
+                                    <div class="img-area" style="overflow: hidden;width: 100%;height: 150px;">
+                                        <img src="../'.$rH['profile_pic'].'" class="img-fluid" width="100%">
+                                    </div>
+                                    <div class="">
+                                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <span class="">
+                                                Husband name:
+                                            </span>
+                                            <span class="">
+                                                '.$rH['name'].'
+                                            </span>
+                                        </p>
+                                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <span class="">
+                                                Pastor name:
+                                            </span>
+                                            <span class="">
+                                                '.$rows['pastor_name'].'
+                                            </span>
+                                        </p>
+                                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <span class="">
+                                                Date:
+                                            </span>
+                                            <span class="">
+                                                '.$rows['date_of'].'
+                                            </span>
+                                        </p>
+                                        <a href="?readWedding='.$rows['id'].'" class="ui button blue icon labeled">
+                                            <i class="icon eye"></i>
+                                            Read more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                    ';
+                    
+                }
+                $output .= '</div>';
+            }else{
+                $output .= '<p class="ui message negative alert alert-danger">There no wedding Registed</p>';
             }
+            print $output;
         }
         if($_POST['action'] == 'programmes'){
             $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, programmes_tb.userId, programmes_tb.context, programmes_tb.title, programmes_tb.created_at FROM user_account INNER JOIN programmes_tb WHERE user_account.id=programmes_tb.userId ORDER BY programmes_tb.id DESC LIMIT 4");
