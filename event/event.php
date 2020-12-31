@@ -444,7 +444,7 @@
                 endwhile;
                 $output .= '</div>
                 <div class="text-center mt-3">
-                    <button type="button" class="btn btn-primary">view more weddings</button>
+                    <button type="button"data-toggle="modal" data-target="#AllWeddings" class="btn btn-primary">view more weddings</button>
                 </div>
                 ';
             }else{
