@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder</title>
+    <link rel="stylesheet" href="../public/bootstrap/bootstrap.min.css">
+    <script src="../public/bootstrap/jquery.min.js"></script>
+    <script src="../public/bootstrap/popper.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Skeleton display</h2>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            let action = 'inactive'
+            function load_data(last_id = ''){
+                $.ajax({
+                    url: '',
+                    method: 'POST',
+                    data: {},
+                    success: function(data){
+                        
+                    }
+                })
+            }
+        })
+    </script>
+</body>
+</html>
