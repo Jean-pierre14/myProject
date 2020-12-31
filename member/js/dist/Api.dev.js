@@ -41,7 +41,7 @@ $(document).ready(function () {
   programmes();
   pastorsList(5);
   usersList(5);
-  departments();
+  departments(); // moreWedding()
 });
 
 function usersList(limit) {

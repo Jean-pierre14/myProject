@@ -88,12 +88,28 @@ $(document).ready(function() {
             }
         });
     });
+    moreWedding();
 })
+
+function moreWedding() {
+    let action = 'moreWedding'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('#moreWedding').html(data)
+        }
+    })
+}
 </script>
 <script>
 function triggerClick(e) {
     document.querySelector('#profileImage').click();
 }
+
 function displayImage(e) {
     if (e.files[0]) {
         var reader = new FileReader();

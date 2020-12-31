@@ -453,6 +453,15 @@
             print $output;
         }
 
+        if($_POST['action']  == 'moreWedding'){
+            $select = mysqli_query($con, "SELECT * FROM wedding_tb ORDER BY id DESC");
+            while($rows = mysqli_fetch_array($select)){
+                $Hid = $rows['husband_id'];
+                $Wid = $rows['wife_id'];
+
+                print 'wedding: '.$Hid.' and '.$Wid.' ';
+            }
+        }
         if($_POST['action'] == 'programmes'){
             $sql = mysqli_query($con, "SELECT user_account.id, user_account.username, user_account.profile_pic, programmes_tb.userId, programmes_tb.context, programmes_tb.title, programmes_tb.created_at FROM user_account INNER JOIN programmes_tb WHERE user_account.id=programmes_tb.userId ORDER BY programmes_tb.id DESC LIMIT 4");
             if(@mysqli_num_rows($sql) > 0){

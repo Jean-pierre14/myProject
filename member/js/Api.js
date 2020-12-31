@@ -39,7 +39,9 @@ $(document).ready(function(){
     pastorsList(5)
     usersList(5)
     departments()
+    // moreWedding()
 })
+
 
 function usersList(limit){
     let action = 'users-list-5'
