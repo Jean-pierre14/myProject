@@ -1,27 +1,5 @@
 <?php include("./includes/header.php");?>
-<header id="header">
-    <div class="container main-menu">
-        <div class="row align-items-center justify-content-between d-flex">
-            <div id="logo">
-                <a href="index.php">
-                    <img src="../assets/images/erc/logo.png" alt="" title="" width="100" class="img-fluid" />
-                </a>
-            </div>
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li><a href="index.php">Home</a></li>
-                    <li class="menu-active">
-                        <a href="profile.php">Profile</a>
-                    </li>
-                    <li class="menu-has-children">
-                        <a href="#">Blog</a>
-                    </li>
-                    <li class="shadow btn btn-danger"><a href="../logout.php">Logout</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
+
 
 <?php if(isset($_GET['profile'])):?>
 <?php

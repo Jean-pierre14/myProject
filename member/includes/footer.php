@@ -89,7 +89,22 @@ $(document).ready(function() {
         });
     });
     moreWedding();
+    newResults();
 })
+
+function newResults() {
+    let action = 'newResults'
+    $.ajax({
+        url: '../event/event.php',
+        method: 'post',
+        data: {
+            action
+        },
+        success: function(data) {
+            $('#newResults').html(data)
+        }
+    })
+}
 
 function moreWedding() {
     let action = 'moreWedding'

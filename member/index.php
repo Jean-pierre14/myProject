@@ -5,10 +5,20 @@
         <div class="row banner-content">
             <div class="col-lg-12 d-flex align-items-center justify-content-between">
                 <div class="left-part">
-
-                    <h1>
-                        Welcome <span class="text-uppercase"><?php print $user_array[1];?></span>
-                    </h1>
+                    <div id="demo" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <h1>
+                                    Welcome to ERC
+                                </h1>
+                            </div>
+                            <div class="carousel-item">
+                                <h1>
+                                    Dear, <span class="text-uppercase"><?php print $user_array[1];?></span>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="right-part">
                     <a href="index.php">
@@ -31,10 +41,11 @@
     </div>
 </div>
 <?php 
-                    if(isset($_GET['readWedding'])):
-                        require('./includes/GetMeWedding.php');
-                    endif;
-                ?>
+    if(isset($_GET['readWedding'])):
+        require('./includes/GetMeWedding.php');
+    endif;
+?>
+
 <section class="post-content-area single-post-area">
     <div class="container">
         <div class="row">
@@ -51,82 +62,8 @@
                             <img class="img-fluid" src="../assets/images/erc/logo.png" alt="Logo">
                         </div>
                     </div>
-                    <div class="col-lg-3  col-md-3 meta-details">
-                        <ul class="tags departments">
-                            <li><a href="#">Preachers,</a></li>
-                            <li><a href="#">Worship,</a></li>
-                            <li><a href="#">Songs,</a></li>
-                            <li><a href="#">Goma pour Christ</a></li>
-                        </ul>
-                        <div class="user-details row">
-                            <p class="user-name col-lg-12 col-md-12 col-6"><a href="#">Mark wiens</a> <span
-                                    class="lnr lnr-user"></span></p>
-                            <p class="date col-lg-12 col-md-12 col-6"><a href="#">12 Dec, 2017</a> <span
-                                    class="lnr lnr-calendar-full"></span></p>
-                            <p class="view col-lg-12 col-md-12 col-6"><a href="#">1.2M Views</a> <span
-                                    class="lnr lnr-eye"></span>
-                            </p>
-                            <p class="comments col-lg-12 col-md-12 col-6">
-                                <a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 col-md-9">
-                        <h3 class="mt-20 mb-20">Astronomy Binoculars A Great Alternative</h3>
-                        <p class="excert word_of_day">
-                            MCSE boot camps have its supporters and its detractors. Some people do not
-                            understand why you should have to
-                            spend money
-                            on boot camp when you can get the MCSE study materials yourself at a fraction.
-                        </p>
-                        <p>
-                            Boot camps have its supporters and its detractors. Some people do not understand why
-                            you should have to spend
-                            money on boot
-                            camp when you can get the MCSE study materials yourself at a fraction of the camp
-                            price. However, who has the
-                            willpower
-                            to actually sit through a self-imposed MCSE training. who has the willpower to
-                            actually sit through a
-                            self-imposed
-                        </p>
-                        <p>
-                            Good job can make lorem to actually sit through a self-imposed MCSE training. who has the
-                            willpower to
-                            actually sit through a
-                            self-imposed
-                        </p>
-                    </div>
-                    <div class="col-lg-12">
-                        <div class="quotes">
-                            MCSE boot camps have its supporters and its detractors. Some people do not
-                            understand why you should have to
-                            spend money
-                            on boot camp when you can get the MCSE study materials yourself at a fraction of the
-                            camp price. However, who
-                            has
-                            the willpower to actually sit through a self-imposed MCSE training.
-                        </div>
-                        <div class="row mt-30 mb-30">
-                            <div class="col-6">
-                                <?php print $outm;?>
-                            </div>
-                            <div class="col-6">
-                                <?php print $outf;?>
-                            </div>
-                            <div class="col-lg-12 mt-30">
-                                <p class="words">
-                                    ...
-                                </p>
-                                <p>
-                                    ...
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="comments-area">
-
                     <div class="comment-list users-5">
                         <div class="single-comment justify-content-between d-flex">
                             <div class="user justify-content-between d-flex">
@@ -213,7 +150,7 @@
                     <?php endif;?>
                 </div>
             </div>
-            <div class="col-lg-4 sidebar-widgets">
+            <div class="col-lg-4 sidebar-widgets hidden-sm">
                 <div class="widget-wrap">
                     <div class="single-sidebar-widget search-widget">
                         <form class="search-form" action="#">
@@ -357,6 +294,13 @@
                 </div>
             </div>
         </div>
+    </div>
+</section>
+
+<section class="post-content-area" id="newsPage">
+    <div class="container py-5">
+        <h3 class="text-center text-white p-3 bg-primary">News</h3>
+        <div id="newResults"></div>
     </div>
 </section>
 

@@ -453,6 +453,78 @@
             print $output;
         }
 
+        if($_POST['action'] == 'newResults'){
+            $sql = mysqli_query($con, "SELECT * FROM user_account INNER JOIN news_tb ON user_account.id = news_tb.UserId ORDER BY news_tb.id DESC LIMIT 4");
+            if(@mysqli_num_rows($sql) > 0){
+                $output .= '<div class="row">';
+                while($row = mysqli_fetch_array($sql)){
+                    if($row['file'] == ''){
+                        $output .= '
+                            <div class="col-md-12 bg-white mb-5 p-3 shadow">
+                                <h3 class="text-center">
+                                    '.$row['title'].'
+                                </h3>
+                                <p class="text-center">
+                                    '.$row['context'].'
+                                </p>
+                                <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                    <span class="badge badge-sm badge-primary">
+                                        '.$row['create_date'].'
+                                    </span>
+                                    <span class="">
+                                        <a href="profile.php?profile='.$row['id'].'" class="">
+                                            '.$row['username'].' <img src="../'.$row['profile_pic'].'" alt="'.$row['name'].'" class="img-avatar">
+                                        </a>
+                                    </span>
+                                </p>
+                            </div>
+                        ';
+                    }else{
+                        $output .= '
+                        <div class="container py-3">
+                            <div class="row">
+                                <div class="col-md-12 bg-white m-1 shadow">
+                                    <div class="row">
+                                        <div class="col-md-7 p-2">
+                                            <img src="../'.$row['file'].'" alt="'.$row['title'].'" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-5 py-5">
+                                            <h3 class="text-center">
+                                                    '.$row['title'].'
+                                                </h3>
+                                                <p class="text-center">
+                                                    '.$row['context'].'
+                                                </p>
+                                            <p class="d-flex flex-wrap justify-content-between align-items-center">
+                                                <span class="badge badge-sm badge-primary">
+                                                    '.$row['create_date'].'
+                                                </span>
+                                                <span class="">
+                                                    username and img
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        ';    
+                    }
+                }
+                $output .= '</div>';
+            }else{
+                $output .= '
+                    <div class="p-3 bg-white shadow">
+                        <h4 class="text-center text-danger">
+                            ERC... <br>
+                            we are preparing think for you dear. i hope to stay together in the name of Jesus-Christ our lord
+                        </h4>
+                    </div>
+                ';
+            }
+            print $output;
+        }
+
         if($_POST['action']  == 'moreWedding'){
             $select = mysqli_query($con, "SELECT * FROM wedding_tb ORDER BY id DESC");
 
@@ -506,8 +578,7 @@
                                     </div>
                                 </div>
                             </div>
-                    ';
-                    
+                    '; 
                 }
                 $output .= '</div>';
             }else{

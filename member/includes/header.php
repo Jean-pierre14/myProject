@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <title>ERC/<?php print $user_array[1];?></title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,600|Roboto:400,400i,500" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
     <link rel="stylesheet" href="../../assets/css/placelholder.css">
     <link rel="stylesheet" href="css/linearicons.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -39,8 +39,8 @@
                 <nav id="nav-menu-container">
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="index.php">Home</a></li>
+                        <li><a href="index.php#newsPage">News</a></li>
                         <li><a href="profile.php">Profile</a></li>
-
                         <li class="menu-has-children">
                             <a href="#">Blog</a>
                         </li>
