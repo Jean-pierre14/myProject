@@ -77,6 +77,7 @@
 <script src="js/main.js"></script>
 <script src="../js/Api.js"></script>
 <script src="../../assets/js/lightbox-plus-jquery.min.js"></script>
+<script src="../js/scrollTop.js"></script>
 <script>
 $(document).ready(function() {
     $(window).scroll(function() {

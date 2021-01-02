@@ -326,4 +326,6 @@
     </div>
 </div>
 
+<?php include '../includes/scrollTop.php';?>
+
 <?php include("./includes/footer.php");?>
