@@ -33,8 +33,8 @@
 					<ul class="nav-menu">
 						<li class="menu-active"><a href="index.html">Home</a></li>
 						<li><a href="#about">About</a></li>
-						<li class="menu-has-children">
-							<a href="login.php" class="shadow  btn btn-danger">Sign In</a>
+						<li class="">
+							<a href="login.php" class="shadow btn btn-danger">Sign In</a>
 						</li>
 					</ul>
 				</nav>
@@ -96,7 +96,7 @@
 		</div>
 	</section>
 
-	<section class="feature-area">
+	<section class="feature-area" id="#about">
 		<div class="container-fluid py-5">
 			<h1 class="text-center">Who are we?</h1>
 			<div class="row justify-content-center py-4">
@@ -156,12 +156,12 @@
 		</div>
 	</section>
 
-	<section class="p-0 m-0">
+	<div class="py-5">
 		<div class="container">
 			<h3 class="text-center text-secondary my-2">What is a christian?</h3>
 			<div class="row">
 				<div class="col-md-6">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/frMVTtc0JGU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe class="img-fluid" width="100%" src="https://www.youtube.com/embed/frMVTtc0JGU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 				<div class="col-md-6">
 					<h2 class="mt-5">What exactly makes someone a Christian?</h2>
@@ -171,7 +171,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
 	
 	<section class="feature-area">
 		<div class="container">
@@ -243,7 +243,7 @@
 		</div>
 	</section>
 	
-	<section class="about-area" id="about">
+	<section class="about-area">
 		<div class="container slideanim">
 			<div class="row align-items-center">
 				<div class="col-lg-5 home-about-left">
@@ -360,14 +360,14 @@
 	<footer class="footer-area section-gap">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-2 col-md-6 single-footer-widget">
+				<div class="col-lg-2 hidden-sm col-md-6 single-footer-widget">
 					<h4>Pastors</h4>
 					<ul id="pastors-5" class="pastors-list">
 						pastors....
 						<!-- Api using ajax -->
 					</ul>
 				</div>
-				<div class="col-lg-2 col-md-6 single-footer-widget">
+				<div class="col-lg-2 hidden-sm col-md-6 single-footer-widget">
 					<h4>Departement</h4>
 				
 					<ul class="departments">
@@ -377,7 +377,7 @@
 						<li><a href="#">care of Service</a></li>
 					</ul>
 				</div>
-				<div class="col-lg-2 col-md-6 single-footer-widget">
+				<div class="col-lg-2 hidden-sm col-md-6 single-footer-widget">
 					<h4>Parterns</h4>
 					<ul>
 						<li><a href="#">ERC DRC/Kinshasa</a></li>
@@ -387,7 +387,7 @@
 						<li><a href="#">ERC DRC/Goma/ndosho</a></li>
 					</ul>
 				</div>
-				<div class="col-lg-2 col-md-6 single-footer-widget">
+				<div class="col-lg-2 hidden-sm col-md-6 single-footer-widget">
 					<h4>Resources</h4>
 					<ul>
 						<li><a href="#">News</a></li>
@@ -396,7 +396,7 @@
 						<li><a href="#">Prayes</a></li>
 					</ul>
 				</div>
-				<div class="col-lg-4 col-md-6 single-footer-widget">
+				<div class="col-lg-4 hidden-sm col-md-6 single-footer-widget">
 					<h4 class="m-0 p-0">Contact us</h4>
 					<div class="form-wrap p-0 m-0">
 							<h3 class="text-center">contact us</h3>
@@ -429,6 +429,7 @@
 					</div>
 				</div>
 			</div>
+			<a href="#" id="back-to-top" title="Back to top" style="display: none;position: fixed;border-top-left-radius: 20px;border-bottom-left-radius: 20px;bottom: 60px; right: 0;padding: 20px;color:#fff;background: rgba(42, 42, 136, 0.842);"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
 			<div class="footer-bottom row align-items-center">
 				<p class="footer-text m-0 col-lg-6 col-md-12">
 					Copyright &copy; 
@@ -469,7 +470,7 @@
 		</div>
 	</footer>
 	
-
+	
 	<script src="js/vendor/jquery-2.2.4.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
 	<script src="js/tilt.jquery.min.js"></script>
@@ -487,6 +488,7 @@
 	<script src="js/waypoints.min.js"></script>
 	<script src="js/mail-script.js"></script>
 	<script src="js/main.js"></script>
+	<script src="./js/scrollTop.js"></script>
 
 
 	<script>
