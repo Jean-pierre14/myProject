@@ -33,7 +33,7 @@
     </div>
     </div>
 </section>
-<div class="container-fluid bg-primary py-5">
+<div class="container-fluid bg-bible py-5">
     <div class="container">
         <p class="text-center shadow-lg" id="word_of_day">
             <!-- AJax -->
@@ -43,7 +43,7 @@
 <?php 
     if(isset($_GET['readWedding'])):
         require('./includes/GetMeWedding.php');
-    endif;
+    endif;  
 ?>
 
 <section class="post-content-area single-post-area">
@@ -62,92 +62,6 @@
                             <img class="img-fluid" src="../assets/images/erc/logo.png" alt="Logo">
                         </div>
                     </div>
-                </div>
-                <div class="comments-area">
-                    <div class="comment-list users-5">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="../<?php print $user_array[10];?>" alt="" width="50">
-                                </div>
-                                <div class="desc">
-                                    <h5>
-                                        <a
-                                            href="profile.php?profile=<?php print $user_array[0];?>"><?php print $user_array[2];?></a>
-                                    </h5>
-                                    <p class="date"><?php print $user_array[11];?></p>
-                                    <p class="comment">
-                                        <?php print $user_array[4];?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="reply-btn">
-                                <a href="profile.php?profile=<?php print $user_array[0];?>"
-                                    class="btn-reply text-uppercase">view more</a>
-                            </div>
-                        </div>
-                    </div>
-                    <h4>Members</h4>
-                    <div class="comment-list left-padding">
-                        <?php
-                            $select = mysqli_query($con, "SELECT * FROM user_account ORDER BY id DESC LIMIT 5");
-                            if(@mysqli_num_rows($select)>0):
-                                while($data = mysqli_fetch_assoc($select)):
-                        ?>
-
-                        <div class="single-comment justify-content-between d-flex slideanim">
-                            <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="../<?php print $data['profile_pic'];?>" alt="<?php print $data['name'];?>"
-                                        width="60">
-                                </div>
-                                <div class="desc">
-                                    <h5>
-                                        <a href="profile.php?profile=<?php print $data['id'];?>">
-                                            <?php print $data['name'];?>
-                                        </a>
-                                    </h5>
-                                    <p class="date">
-                                        <small>
-                                            <?php print $data['create_at'];?>
-                                        </small>
-                                    </p>
-                                    <p class="comment">
-                                        <?php if(strlen($data['about']) > 20):?>
-                                        <?php print $data['about'];?>
-                                        <a href="profile.php?profile=<?php print $data['id'];?>"
-                                            class="btn btn-sm btn-secondary">read
-                                            more</a>
-                                        <?php else:?>
-                                        <?php print $data['about'];?>
-                                        <?php endif;?>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="reply-btn">
-                                <a href="profile.php?profile=<?php print $data['id'];?>"
-                                    class="btn-reply text-uppercase">view</a>
-                            </div>
-                        </div>
-                        <?php endwhile;?>
-                    </div>
-                    <?php else:?>
-                    <div class="comment-list">
-                        <div class="single-comment justify-content-between d-flex">
-                            <div class="user justify-content-between d-flex">
-                                <div class="thumb">
-                                    <img src="../assets/images/erc/logoERC.jpg" alt="" width="100">
-                                </div>
-                                <div class="desc">
-                                    <h5><a href="#">ERC/Goma</a></h5>
-                                    <p class="comment">
-                                        Jesus christ is the key of every windows
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <?php endif;?>
                 </div>
             </div>
             <div class="col-lg-4 sidebar-widgets hidden-sm">
@@ -303,6 +217,74 @@
         <div id="newResults"></div>
     </div>
 </section>
+
+
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="card m-2">
+                    <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p>Pastor <b>Hadassa Mbanza</b></p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Phone:</span>
+                            <span>+243976454543</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card m-2">
+                    <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p>Pastor <b>Hadassa Mbanza</b></p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Phone:</span>
+                            <span>+243976454543</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card m-2">
+                    <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p>Pastor <b>Hadassa Mbanza</b></p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Phone:</span>
+                            <span>+243976454543</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card m-2">
+                    <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p>Pastor <b>Hadassa Mbanza</b></p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Phone:</span>
+                            <span>+243976454543</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card m-2">
+                    <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
+                        <p>Pastor <b>Hadassa Mbanza</b></p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Phone:</span>
+                            <span>+243976454543</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade" id="AllWeddings">
     <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">

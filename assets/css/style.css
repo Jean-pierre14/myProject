@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+p{
+    font-family: roboto !important;
+}
+.bg-bible{
+  position: relative;
+  display: block;
+  background-image: url('../../assets/images/erc/67221455_2414761412100257_8801631571514753024_n.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

@@ -1,6 +1,6 @@
 <?php include("./lock.php"); ?>
 <!DOCTYPE html>
-<html lang="zxx" class="no-js">
+<html lang="en" class="no-js">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/hexagons.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../assets/css/">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/lightbox.min.css">
     <link rel="stylesheet" href="../public/semantic/semantic.min.css">
     <script src="../public/semantic/semantic.min.js"></script>
