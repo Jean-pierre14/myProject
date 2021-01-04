@@ -206,7 +206,7 @@
                             </div>
                         </div>
                         <div class="footer-not">
-                            
+
                             <form action="" method="post" class="" id="form">
                                 <input type="hidden" id="user_id" value="<?php print $_SESSION['id'];?>"
                                     class="form-control">
@@ -309,6 +309,22 @@ fetch('http://localhost:7000/programmes/all').then(res => res.json().then(data =
 <script>
 $(document).ready(function() {
     RequestAll()
+    $(document).on('click', '.deleteThis', function() {
+        let id = $(this).attr('id');
+        let action = 'deleteThis'
+        $.ajax({
+            url: './event/event.php',
+            method: 'post',
+            data: {
+                id,
+                action
+            },
+            success: function(data) {
+                RequestAll()
+                alert(data)
+            }
+        })
+    })
 })
 // Request 
 function RequestAll() {

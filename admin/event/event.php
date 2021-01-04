@@ -42,9 +42,9 @@
                             <div class="close">
                                 <div class="btn-group">
                                     <a href="#view" class="btn btn-primary btn-sm"><i
-                                            class="fa fa-flag-checkered"></i></a>
-                                    <a href="#view" class="btn btn-danger btn-sm"><i
-                                            class="fa fa-flag-checkered"></i></a>
+                                            class="fa fa-eye"></i></a>
+                                    <a href="#" id="'.$row['id'].'" onlick="confirm" class="deleteThis btn btn-danger btn-sm"><i
+                                            class="fa fa-trash"></i></a>
                                 </div>
                             </div>
                             <a href="mailto:'.$row['email'].'">
@@ -66,6 +66,15 @@
                 $output .= '<p class="alert alert-warning">There is not request send</p>';
             }
             print $output;
+        }
+        if($_POST['action'] == 'deleteThis'){
+            $id = $_POST['id'];
+            $sql = mysqli_query($con, "DELETE FROM suscribe_tb WHERE id = {$id}");
+            if($sql){
+                print "Deleted";
+            }else{
+                print "Do it again";
+            }
         }
         if($_POST['action'] == 'userTables'){
 
