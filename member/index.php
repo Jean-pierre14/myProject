@@ -250,6 +250,22 @@
                 <div class="card m-2">
                     <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
                     <div class="card-body">
+                        <p>Pastor <b>Ndagijimana Yoshua MASASU</b></p>
+                        <p  class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Email</span>
+                            <span></span>
+                        </p>
+                        <p class="d-flex flex-wrap justify-content-between align-items-center">
+                            <span>Phone:</span>
+                            <span>+250786454543</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="card m-2">
+                    <img src="../assets/images/erc/hadassa.jpg" alt="" class="card-img-top">
+                    <div class="card-body">
                         <p>Pastor <b>Hadassa Mbanza</b></p>
                         <p class="d-flex flex-wrap justify-content-between align-items-center">
                             <span>Phone:</span>
