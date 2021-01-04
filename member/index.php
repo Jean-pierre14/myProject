@@ -253,11 +253,11 @@
                         <p>Pastor <b>Ndagijimana Yoshua MASASU</b></p>
                         <p  class="d-flex flex-wrap justify-content-between align-items-center">
                             <span>Email</span>
-                            <span></span>
+                            <span>ndamayo@yahoo.com</span>
                         </p>
                         <p class="d-flex flex-wrap justify-content-between align-items-center">
                             <span>Phone:</span>
-                            <span>+250786454543</span>
+                            <span>+250788305081</span>
                         </p>
                     </div>
                 </div>

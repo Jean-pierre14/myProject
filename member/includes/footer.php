@@ -80,6 +80,7 @@
 <script>
 $(document).ready(function() {
     $(".owl-carousel").owlCarousel();
+
     $(window).scroll(function() {
         $(".slideanim").each(function() {
             var pos = $(this).offset().top;
@@ -135,6 +136,25 @@ function displayImage(e) {
         reader.readAsDataURL(e.files[0]);
     }
 }
+</script>
+<script>
+$('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 90,
+    nav: true,
+    autoplay: true,
+    responsive: {
+        0: {
+            items: 1
+        },
+        600: {
+            items: 2
+        },
+        1000: {
+            items: 3
+        }
+    }
+})
 </script>
 </body>
 
