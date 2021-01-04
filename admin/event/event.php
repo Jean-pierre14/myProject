@@ -47,7 +47,7 @@
                                             class="fa fa-flag-checkered"></i></a>
                                 </div>
                             </div>
-                            <a href="#">
+                            <a href="mailto:'.$row['email'].'">
                                 <small class="m-0 p-0">
                                     '.$row['email'].'
                                 </small>
