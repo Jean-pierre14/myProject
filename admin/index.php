@@ -94,29 +94,22 @@
         <div class="content">
             <div class="container-fluid p-0">
                 <div class="main-content">
-                    <nav class="show-lg bg-white">
-                        <span>
-                            <img src="../assets/images/gun.png" alt="">
-                        </span>
-                        <ul>
-                            <li>
-                                <a href="notifications.php?event=request" class="bg-danger shadow">
-                                    <i class="fa fa-database"></i>
-                                    <span id="requestCount">23</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="users.php" class="bg-primary">
-                                    Members
-                                </a>
-                            </li>
-                            <li><a href="pastor.php" class="bg-hero">Pastors</a></li>
-                            <li><a href="wedding.php" class="bg-pink">Weddings</a></li>
-                        </ul>
-                    </nav>
                     <div class="dashboard">
                         <div class="row p-0 mt-3">
-                            <div class="col-md-4 col-sm-12 p-1">
+                            <div class="col-md-3 col-sm-12 p-1">
+                                <div class="shadow box-dashboard">
+                                    <p class="d-flex justify-content-between py-2 align-items-center">
+                                        <span>
+                                            <b>Requests</b>
+                                        </span>
+                                        <span>
+                                            <span id="requestCount" class="btn btn-sm btn-info">23</span>
+                                        </span>
+                                    </p>
+                                    <a href="./users.php" class="btn btn-sm bg-primary">View more</a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-12 p-1">
                                 <div class="shadow box-dashboard">
                                     <p class="d-flex justify-content-between align-items-center">
                                         <span>
@@ -129,7 +122,7 @@
                                     <a href="./users.php" class="btn btn-sm bg-primary">View more</a>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-12 p-1">
+                            <div class="col-md-3 col-sm-12 p-1">
                                 <div class="shadow box-dashboard">
                                     <p class="d-flex justify-content-between align-items-center">
                                         <span>
@@ -142,7 +135,7 @@
                                     <a href="./pastor.php" class="btn btn-sm bg-hero">View more</a>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-12 p-1">
+                            <div class="col-md-3 col-sm-12 p-1">
                                 <div class="shadow box-dashboard">
                                     <p class="d-flex justify-content-between align-items-center">
                                         <span>
@@ -167,83 +160,6 @@
                                     </div>
                                     <div id="tablePastor" class="table-responsive">
                                         <!-- URL API pastor -->
-                                        <table class="table table-sm table-hover table-striped">
-                                            <thead>
-                                                <tr>
-                                                    <th>Full name</th>
-                                                    <th>E-mail</th>
-                                                    <th>Phone</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Hadassa</td>
-                                                    <td>Goma avenu des volcans</td>
-                                                    <td>09999999999</td>
-                                                    <td>
-                                                        <div class="btn-group delete">
-                                                            <a href="#edit" class="btn btn-sm btn-info"><i
-                                                                    class="fa fa-edit"></i></a>
-                                                            <a href="#delete" class="btn btn-sm btn-danger"><i
-                                                                    class="fa fa-trash"></i></a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
                                     </div>
                                     <a href="./registration.php?registration=pastor" class="btn btn-sm btn-danger">
                                         <i class="fa fa-database"></i>

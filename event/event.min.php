@@ -212,9 +212,13 @@ if(isset($_POST['log'])){
 
             $_SESSION = mysqli_fetch_array($result, MYSQLI_ASSOC);
             $_SESSION['user_level'] = (int)$_SESSION['user_level'];
-
-            $url = ($_SESSION['user_level'] === 1) ? './admin' : './member';
-            header("location: ". $url);
+            
+            $online = mysqli_query($con, "UPDATE user_account SET on_off = 'online' WHERE id = {$_SESSION['id']}");
+            if($online){
+                $url = ($_SESSION['user_level'] === 1) ? './admin' : './member';
+                header("location: ". $url);
+            }
+            
             exit();
             mysqli_free_result($result);
             mysqli_close($con);

@@ -19,7 +19,10 @@
             $('button').click(function(){
                 $('p').show()
             })
-            setTimeout('p', 1000)
+            displayNone()
+            function displayNone(){
+                $('p').delay(1000).hide()               
+            }
         })
     </script>
 </body>
