@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+
+        label{
+            display: block;
+            position: relative;
+            color: rgba(255,255,255,0.8);
+            margin: 10px;
+            font: 12px monospace;
+            user-select: none;
+        }
+	
+        #hint{
+            display: none;
+        }
+        #hint:checked + div{
+            display: block;
+            color: white;
+            font: 12px monospace;
+            padding-left: 10px;
+            user-select: none;
+        }
+        #hint + div{
+            display: none}
+</style>
+</head>
+<body>
+    canvas#canvas
+    
+    //Just a hint thing
+    label(for="hint") Hint (click to hide/show)
+    input#hint(type="checkbox" name="hint" value="Hint")
+    div
+    p Left Click - add one point
+    p Right Click - remove last point
+    <canvas id="canvas"></canvas>
+</body>
+</html>
