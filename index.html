@@ -358,9 +358,9 @@
 		</div>
 	</section>
 
-	<div class="container-fluid">
-		<div class="container">
-			<h3 class="text-center">Where to find us</h3>
+	<div class="container-fluid py-5">
+		<div class="container py-5">
+			<h3 class="text-center text-info my-3">Where to find us</h3>
 			<div class="row">
 				<div class="col-md-5">
 					<h2>icon of address</h2>
@@ -424,7 +424,8 @@
 								</div>
 								<div class="form-group">
 									<label for="message">Message</label>
-									<input type="text" placeholder="Typing..." id="context" class="form-control">
+									<textarea name="message" id="context" class="form-control"></textarea>
+									<!-- <input type="text" placeholder="Typing..." id="context" class="form-control"> -->
 								</div>
 								<div class="form-group">
 									<div class="buttons gray flex-row d-flex" id="request-btn">
@@ -509,6 +510,7 @@
 
 	<script>
 		$(document).ready(function(){
+			
 			users(5);
 			words()
 			function words(){
@@ -560,6 +562,7 @@
 			$('#request-btn').click(function(){
 				let email = $("#email").val().trim()
 				let message = $("#context").val().trim()
+
 				if(!email || !message){
 					alert("Complet all fields please")
 				}else{
