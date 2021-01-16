@@ -103,13 +103,7 @@
             </div>
         </div>
     </div>
-
     <script src="./public/js/jquery-3.4.0.min.js"></script>
-    <script>
-    $().ready(function() {
-
-    });
-    </script>
 </body>
 
 </html>
