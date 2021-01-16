@@ -220,11 +220,13 @@
                                                 <select name="pastor" id="pastor" class=" form-control">
                                                     <option value="">Pastor Name</option>
                                                     <?php
-                                                        $sqlP = mysqli_query($con, "SELECT * FROM pastor_tb order by `name`");
-                                                        if(mysqli_num_rows($sqlP) > 0){
+                                                        $sqlP = mysqli_query($con, "SELECT * FROM pastor_tb ORDER BY `pastor_name`");
+                                                        if(@mysqli_num_rows($sqlP) > 0){
                                                             while($dP = mysqli_fetch_assoc($sqlP)){
                                                                 $outP .= '
-                                                                    <option value="'.$dP['pastor_name'].'">'.$dP['pastor_name'].'</option>
+                                                                    <option value="'.$dP['pastor_name'].'">
+                                                                        '.$dP['pastor_name'].'
+                                                                    </option>
                                                                 ';
                                                             }
                                                         }else{
