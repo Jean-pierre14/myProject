@@ -59,7 +59,8 @@
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="dob">Date of birth</label>
-                                <input type="date" id="dob" name="dob" class="form-control transparent">
+                                <input type="date" value="<?php print $dob; ?>" min="1970-12-31" max="2015-12-31"
+                                    id="dob" name="dob" class="form-control transparent">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="status">Status</label>

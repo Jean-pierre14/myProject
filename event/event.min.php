@@ -96,7 +96,7 @@ if(isset($_POST['register'])){
     $phones = mysqli_real_escape_string($con, htmlentities(trim($_POST['phones'])));
     $status = mysqli_real_escape_string($con, htmlentities(trim($_POST['status'])));
     $gender = mysqli_real_escape_string($con, htmlentities(trim($_POST['gender'])));
-    $depart = mysqli_real_escape_string($con, htmlentities(trim($_POST['depart'])));
+    // $depart = mysqli_real_escape_string($con, htmlentities(trim($_POST['depart'])));
     $dob = mysqli_real_escape_string($con, htmlentities(trim($_POST['dob'])));
     $about = mysqli_real_escape_string($con, htmlentities(trim($_POST['about'])));
 
@@ -113,12 +113,14 @@ if(isset($_POST['register'])){
     if( empty($about) ) { array_push ( $errors, "About you is required"); }
 
     // check if username already exist
-    $check = mysqli_query($con, "SELECT * FROM user_account");
-    $data = mysqli_fetch_assoc($check);
+    $check_username = mysqli_query($con, "SELECT email FROM user_account WHERE email = '$email'");
+    if(@mysqli_num_rows($check_username)> 0){array_push($errors, "This email is taken");}
     
-    if ($data['username'] == $username) { array_push( $errors, "Username already used" ); }
-    if ($data['name'] == $name) { array_push( $errors, "Name already exist" ); }
-    if ($data['email'] == $email) { array_push( $errors, "Email used !!!" ); }
+    $check_email = mysqli_query($con, "SELECT username FROM user_account WHERE username = '$username'");
+    if(@mysqli_num_rows($check_email) > 0){array_push($errors, "This username is taken");}
+
+    
+    
     if( $pass != $cpass ){ array_push( $errors, "Password are not match"); }
     if( count($errors) == 0 ) {
 
@@ -129,6 +131,7 @@ if(isset($_POST['register'])){
         }
         // Criptage of our password
         $password = md5($pass);
+        $depart = 'none';
         
         $sql = "INSERT INTO user_account(`username`,`name`,`email`,`pass`,`locatio`,`phone`,`dob`,`statu`,`gender`,`department`,`about`, `profile_pic`) 
         VALUES('$username','$name','$email','$password','$location','$phones','$dob','$status','$gender','$depart','$about', '$profile_pic')";
