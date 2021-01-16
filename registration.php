@@ -16,7 +16,7 @@
 <body>
     <div class="container-fluid py-5" style="height: 100vh;">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 my-5">
                 <div class="card card-body shadow">
                     <h3 class="text-center text-success">Create an account</h3>
                     <?php require_once("./event/event.min.php");include("error.php");?>
