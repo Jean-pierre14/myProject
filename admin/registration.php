@@ -136,7 +136,6 @@
                             <a class="nav-link" href="?registration=wedding">Wedding</a>
                         </li>
                     </ul>
-
                     <div class="container-fluid p-0 m-0 bg-white py-5">
                         <a href="pastor.php" class="btn btn-fill btn-info btn-sm ml-1 my-2">View list</a>
                         <div class="box-dashboard shadow-lg bg-white m-5 p-5">
@@ -148,9 +147,7 @@
                         </div>
                     </div>
 
-
                     <?php elseif ($_GET['registration'] == 'wedding') : ?>
-
 
                     <ul class="nav nav-tabs nav-justified m-0">
                         <li class="nav-item">
@@ -310,7 +307,7 @@
                                             </span>
                                             <div class="col-md-12">
                                                 <?php if (isset($_GET['member'])) : ?>
-                                                <?php
+                                                <?php 
                                                 $IdMember = $_GET['member'];
                                                 $MemberGet = mysqli_query($con, "SELECT * FROM user_account WHERE id = '$IdMember' ");
                                                 $memberArray = [];
