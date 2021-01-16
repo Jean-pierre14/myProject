@@ -99,19 +99,7 @@
                                             <option value="Female">Female</option>
                                         </select>
                                     </div>
-                                    <div class="form-group col-md-4">
-                                        <label for="status">Department</label>
-                                        <select name="depart" value="<?php print  $depart; ?>" id="depart"
-                                            class="form-control transparent">
-                                            <option value="">-- select --</option>
-                                            <?php
-                                                        $depart = mysqli_query($con, "SELECT * FROM department_tb");
-                                                        while($rowDepart = mysqli_fetch_array($depart)){
-                                                            print '<option value="'.$rowDepart['name'].'">'.$rowDepart['name'].'</option>';
-                                                        }
-                                                    ?>
-                                        </select>
-                                    </div>
+
                                     <div class="form-group col-md-12">
                                         <label for="about">About</label>
                                         <textarea name="about" value="<?php print  $about; ?>" id="about"
