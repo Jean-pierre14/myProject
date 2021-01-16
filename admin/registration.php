@@ -488,7 +488,7 @@
                                                 <?php else : ?>
                                                 <?php require_once("../event/event.min.php");
                                                 include("../error.php"); ?>
-                                                <form action="" method="post">
+                                                <form action="" method="post" autocomplete="off">
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                             <div class="input-group mb-3 input-group-md">
@@ -573,14 +573,15 @@
                                                                 <div class="input-group-prepend">
                                                                     <span class="input-group-text">Date of Birth</span>
                                                                 </div>
-                                                                <input type="date" name="dob" id="dob"
+                                                                <input type="date" name="dob" min="1970-12-31"
+                                                                    max="2015-12-31" id="dob"
                                                                     value="<?php print $dob; ?>"
                                                                     placeholder="Date of birth" class="form-control">
                                                             </div>
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <div class="input-group mb-3 input-group-md">
-                                                                <input type="tel" name="phone" id="phone"
+                                                                <input type="number" name="phone" id="phone"
                                                                     value="<?php print $phones; ?>"
                                                                     placeholder="phone numbers" class="form-control">
                                                                 <div class="input-group-append">

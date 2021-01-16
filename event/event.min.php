@@ -51,13 +51,14 @@ if (isset($_POST['new-user'])) {
     // if ( empty($about) ) { array_push( $errors, "About is empty" ); }
 
     // Check if item is not match to one of DB
-    $check = mysqli_query($con, "SELECT * FROM user_account");
-    $row = mysqli_fetch_assoc($check);
+    $check_email = mysqli_query($con, "SELECT email FROM user_account WHERE email = '$email'");
+    if(@mysqli_num_rows($check_email) > 0){array_push($errors, "Email already taken");}
 
-    // Username
-    if ($row['username'] == $username){ array_push( $errors, "This username is Already used" ); }
-    // Email
-    if ($row['email'] == $email){ array_push( $errors, "This email is already used" ); }
+    $check_username = mysqli_query($con, "SELECT username FROM user_account WHERE username = '$username'");
+    if(@mysqli_num_rows($check_username) > 0){array_push($errors, "This username already taken");}
+
+    $check_phone = mysqli_query($con, "SELECT phone FROM user_account WHERE phone = '$phones'");
+    if(@mysqli_num_rows($check_phone) > 0){array_push($errors, "This phone number already taken");}
 
     // Zero error
     if( count($errors) == 0 ){
