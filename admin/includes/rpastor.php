@@ -24,6 +24,10 @@
         
         if(@mysqli_num_rows($check) > 0){array_push($errors, '<p class="ui message negative alert alert-danger">He already registrated</p>');}
         
+        // check the name of pastor
+        $check_name = mysqli_query($con, "SELECT pastor_name FROM pastor_name = '$pastorName'");
+        if(@mysqli_num_rows($check_name) > 0) { array_push($errors, "This name is taken"); }
+        
         // If There no error now we can execute those line of codes
         if(count($errors) == 0){
             $NEW = mysqli_query($con, "INSERT INTO pastor_tb(`user_id`, `pastor_name`) VALUES('$userId', '$pastorName')");
@@ -49,18 +53,18 @@
             <select name="pastorId" id="pastorId" class="custom-select">
                 <option value="">-- Select Pastor ---</option>
                 <?php
-                                $item = '';
-                                $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
-                                if (@mysqli_num_rows($recordPastor) > 0) {
-                                    while ($rowrecord = mysqli_fetch_array($recordPastor)) {
-                                        $pastorId = $rowrecord['id'];
-                                        $pastorname = $rowrecord['name'];
-                                        print '<option value="' . $pastorId . '">' . $pastorname . '</option>';
-                                    }
-                                } else {
-                                    $item .= '<option class="text-danger">There no data</option>';
-                                }
-                                ?>
+                    $item = '';
+                    $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
+                    if (@mysqli_num_rows($recordPastor) > 0) {
+                        while ($rowrecord = mysqli_fetch_array($recordPastor)) {
+                            $pastorId = $rowrecord['id'];
+                            $pastorname = $rowrecord['name'];
+                            print '<option value="' . $pastorId . '">' . $pastorname . '</option>';
+                        }
+                    } else {
+                        $item .= '<option class="text-danger">There no data</option>';
+                    }
+                ?>
             </select>
         </div>
         <div class="form-group">

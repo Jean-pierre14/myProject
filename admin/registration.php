@@ -231,7 +231,7 @@
                                                             }
                                                         }else{
                                                             $outP .= '
-                                                            <option value="" class="bg-danger"></option>';
+                                                            <option value="" class="bg-danger">There no data</option>';
                                                         }
                                                         print $outP;
                                                     ?>
