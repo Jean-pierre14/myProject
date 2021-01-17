@@ -34,10 +34,11 @@
             
             // success message
             if($NEW){
+                $update = mysqli_query($con, "UPDATE user_account SET statu = 'married' WHERE id = '$userId'");
                 print '<p class="ui message positive alert alert-success">Registration success</p>';
             }else{    
             // error message
-                print '<p class="ui message positive alert alert-success">Registration success</p>';
+                print '<p class="ui message positive alert alert-success">Registration failed</p>';
             };
         }
         /** The end */
@@ -54,7 +55,7 @@
                 <option value="">-- Select Pastor ---</option>
                 <?php
                     $item = '';
-                    $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce')");
+                    $recordPastor = mysqli_query($con, "SELECT * FROM user_account WHERE (statu = 'married' OR statu = 'divorce') AND department != 'pastor'");
                     if (@mysqli_num_rows($recordPastor) > 0) {
                         while ($rowrecord = mysqli_fetch_array($recordPastor)) {
                             $pastorId = $rowrecord['id'];
