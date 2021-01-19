@@ -209,8 +209,8 @@
                                                                 '.$row['about'].'
                                                             </p>
                                                             <button type="button" data-toggle="modal" data-target="#editAbout" class="btn btn-sm btn-block btn-fill btn-danger">
-                                                                <i class="fa fa-edit"></i>
                                                                 edit
+                                                                <i class="fa fa-edit"></i>
                                                             </button>
                                                         </div>
                                                     </div>
