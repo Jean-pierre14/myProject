@@ -307,6 +307,16 @@
         </footer>
     </div>
 </div>
+
+<?php
+if(isset($_GET['delete'])){
+    $id = $_GET['delete'];
+    
+    $del = mysqli_query($con, "DELETE FROM pastor_tb WHERE user_id ='$id'");
+
+}
+?>
+
 </body>
 <script src="../public/bootstrap/jquery.min.js" type="text/javascript"></script>
 <script src="../public/bootstrap/popper.min.js" type="text/javascript"></script>

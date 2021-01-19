@@ -782,10 +782,10 @@ if (isset($_POST['action'])) {
                         <td class="">'.$data['phone'].'</td>
                         <td class="">
                             <div class="btn-group delete">
-                                <a href="#edit'.$row['user_id'].'" class="btn btn-sm btn-info">
+                                <a href="pastor.php?get='.$row['user_id'].'" class="btn btn-sm btn-info">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a href="#delete'.$row['user_id'].'" class="btn btn-sm btn-danger">
+                                <a href="index.php?delete='.$row['user_id'].'" class="btn btn-sm btn-danger">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </div>
