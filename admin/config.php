@@ -785,7 +785,7 @@ if (isset($_POST['action'])) {
                                 <a href="pastor.php?get='.$row['user_id'].'" class="btn btn-sm btn-info">
                                     <i class="fa fa-edit"></i>
                                 </a>
-                                <a href="index.php?delete='.$row['user_id'].'" class="btn btn-sm btn-danger">
+                                <a href="index.php?delete='.$row['user_id'].'" onclick="confirm(`do you want to delete`)" class="btn btn-sm btn-danger">
                                     <i class="fa fa-trash"></i>
                                 </a>
                             </div>

@@ -122,6 +122,16 @@
                     <a href="registration.php?registration=pastor" class="btn btn-fill btn-sm btn-info">Add new</a>
                     <div class="row justify-content-center">
                         <div class="col-md-10 p-2">
+                            <?php if(isset($_GET['get'])):?>
+                            <?php
+                                    $id = $_GET['get'];
+                                    $select = mysqli_query($con, "SELECT * FROM pastor_name WHERE user_id = '$id'");
+                                    $datas = '';
+                                    while($row = mysqli_fetch_array($select)){
+                                        $datas .= '';
+                                    }    
+                                ?>
+                            <?php else:?>
                             <div class="box-dashboard bg-white shadow-lg p-5">
                                 <div class="input-group mb-3">
                                     <input type="search" class="form-control" placeholder="Search" id="demo"
@@ -136,6 +146,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php endif;?>
                         </div>
                     </div>
                 </div>
