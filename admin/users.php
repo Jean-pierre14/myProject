@@ -335,6 +335,29 @@
                                                                     </button>
                                                                 </span>
                                                             </p>
+                                                            <p class="d-flex justify-content-between align-items-center mt-2">
+                                                                <span>
+                                                                    <b>
+                                                                        Add as admin
+                                                                    </b>
+                                                                </span>
+                                                                <span class="text-right">
+                                                                ';
+                                                                if($row['user_level'] == 1){
+                                                                    $level = 'Admin';
+                                                                }else{
+                                                                    $level = 'Member';
+                                                                }
+                                                                $getUser .= '
+                                                                    '.$level.'
+                                                                </span>
+                                                                <span>
+                                                                    <a href="users.php?Add-admin='.$row['id'].'" id="'.$row['id'].'"
+                                                                        class="btn  border-0 btn-fill btn-warning p-2 shadow-sm-sm-sm color-hero">
+                                                                        <i class="fa fa-check"></i>
+                                                                    </a>
+                                                                </span>
+                                                            </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -342,6 +365,20 @@
                                             }
                                             print $getUser;
                                         ?>
+                                    <?php
+                                        if(isset($_GET['Add-admin'])){
+                                            $ID = $_GET['Add-admin'];
+                                            $sqlUP = mysqli_query($con, "UPDATE user_account SET user_level= 1 WHERE id = '$ID'");
+
+                                            if($sqlUP){
+                                                ?>
+                                    <script>
+                                    window.location.href = 'users.php'
+                                    </script>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -844,6 +881,12 @@ $(document).ready(function() {
     memberList()
 
     userTables()
+
+    $(document).on('click', '.add-admin', function() {
+        let id = $(this).attr
+        let action = 'add-admin'
+        alert(id)
+    })
 
     $(document).on('onchange', '#gender', function() {
         alert("changed")
