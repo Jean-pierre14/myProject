@@ -352,10 +352,10 @@
                                                                     '.$level.'
                                                                 </span>
                                                                 <span>
-                                                                    <a href="users.php?Add-admin='.$row['id'].'" id="'.$row['id'].'"
+                                                                    <button type="button" data-target="#editAdmin" data-toggle="modal" id="'.$row['id'].'"
                                                                         class="btn  border-0 btn-fill btn-warning p-2 shadow-sm-sm-sm color-hero">
                                                                         <i class="fa fa-check"></i>
-                                                                    </a>
+                                                                    </button>
                                                                 </span>
                                                             </p>
                                                         </div>
@@ -365,20 +365,6 @@
                                             }
                                             print $getUser;
                                         ?>
-                                    <?php
-                                        if(isset($_GET['Add-admin'])){
-                                            $ID = $_GET['Add-admin'];
-                                            $sqlUP = mysqli_query($con, "UPDATE user_account SET user_level= 1 WHERE id = '$ID'");
-
-                                            if($sqlUP){
-                                                ?>
-                                    <script>
-                                    window.location.href = 'users.php'
-                                    </script>
-                                    <?php
-                                            }
-                                        }
-                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -858,7 +844,42 @@
                 <div class="modal-footer">
                     <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm btn-fill btn-danger">Close</a>
                 </div>
-
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editAdmin">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header p-1">
+                    <h4 class="modal-title text-info m-1 ml-1 mt-2">User level <i class="fa fa-gift"></i></h4>
+                    <a href="users.php?user=<?php print $thisArr[0];?>"
+                        class="btn btn-sm border-0 shadow-sm-sm-sm text-danger close m-1"
+                        style="outline: none;font-size: 20px;">
+                        &times;
+                    </a>
+                </div>
+                <div class="modal-body">
+                    <form action="" autocomplete="off" method="post">
+                        <div class="form-group">
+                            <label for="dob">Add as admin</label>
+                            <input type="hidden" value="<?php print $thisArr[0];?>" id="id_up" class="form-control">
+                            <select name="user_level" id="user_level" class="form-control">
+                                <option value="">select</option>
+                                <option value="0">Member</option>
+                                <option value="1">Admin</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="button" id="btn-Edit-admin" class="btn btn-sm btn-warning btn-fill about_btn">
+                                <i class="fa fa-arrow-circle-right"></i>
+                                Update Date of birth
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="users.php?user=<?php print $thisArr[0];?>" class="btn btn-sm btn-fill btn-danger">Close</a>
+                </div>
             </div>
         </div>
     </div>
@@ -980,6 +1001,28 @@ $(document).ready(function() {
                     action: action,
                     id: id,
                     username: username
+                },
+                success: function(data) {
+                    alert(data)
+                }
+            })
+            $('#username').val('');
+        }
+    });
+    $('#btn-Edit-admin').click(function() {
+        let action = 'btn-Edit-admin';
+        const id = $('#id_up').val();
+        let user_level = $('#user_level').val();
+        if (user_level === null) {
+
+        } else {
+            $.ajax({
+                url: './config.php',
+                method: 'post',
+                data: {
+                    action,
+                    id,
+                    user_level
                 },
                 success: function(data) {
                     alert(data)
