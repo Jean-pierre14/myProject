@@ -1013,8 +1013,8 @@ $(document).ready(function() {
         let action = 'btn-Edit-admin';
         const id = $('#id_up').val();
         let user_level = $('#user_level').val();
-        if (user_level === null) {
-
+        if (user_level === null || user_level === undefined ) {
+            alert("You can't! select first")
         } else {
             $.ajax({
                 url: './config.php',

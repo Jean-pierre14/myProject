@@ -138,6 +138,20 @@ if (isset($_POST['action'])) {
             }
         }
     }
+    if ($_POST['action'] == 'editUsername') {
+        $id = $_POST['id'];
+        $user_level = htmlentities(mysqli_real_escape_string($con, trim($_POST['user_level'])));
+        if (empty($user_level)) {
+            print 'User level is empty sorry try again';
+        } else {
+            $sql = mysqli_query($con, "UPDATE `user_account` SET user_level = '$user_level' WHERE id= '$id'");
+            if ($sql) {
+                print 'User level updated';
+            } else {
+                print 'There is a problem with your query';
+            }
+        }
+    }
     if ($_POST['action'] == 'editAbout') {
         $id = $_POST['id'];
         $about = htmlentities(mysqli_real_escape_string($con, trim($_POST['about'])));
